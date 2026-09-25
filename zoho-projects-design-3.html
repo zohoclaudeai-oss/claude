@@ -162,7 +162,7 @@ body{margin:0}
 .hb .wave-div--top{top:-1px}.hb .wave-div--bot{bottom:-1px}
 .hb .wave-div svg{display:block;width:100%;height:60px}
 
-/* ===== 1. HERO ===== */
+/* ===== 1. HERO - KANBAN ===== */
 .hb .hero3{position:relative;overflow:hidden;padding:clamp(72px,7vw,110px) 0 clamp(64px,6vw,100px);background:#E9EDF3;
   background-image:radial-gradient(circle at 10% 8%,rgba(35,110,180,.08),transparent 50%),radial-gradient(circle at 90% 16%,rgba(62,169,0,.08),transparent 50%)}
 .hb .hero3-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4vw,60px);align-items:center}
@@ -176,29 +176,37 @@ body{margin:0}
 .hb .hero3-trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:13px;color:#374151}
 .hb .hero3-trust span{display:inline-flex;align-items:center;gap:7px}
 .hb .hero3-trust i{color:var(--green-d)}
-/* Pipeline visualization */
-.hb .pipeline{position:relative;width:100%;max-width:440px;margin:0 auto;aspect-ratio:1/1.15}
-.hb .pipeline svg{width:100%;height:100%}
-.hb .pipe-node{cursor:default;transition:filter .3s}
-.hb .pipe-node:hover{filter:drop-shadow(0 0 12px rgba(35,110,180,.5))}
-@keyframes pipeParticle{0%{offset-distance:0%}100%{offset-distance:100%}}
-@keyframes pipeGlow{0%,100%{opacity:.4}50%{opacity:1}}
-.hb .pipe-particle{width:10px;height:10px;border-radius:50%;background:var(--grad);box-shadow:0 0 12px rgba(62,169,0,.6);position:absolute;offset-path:path('M80,40 C120,100 60,160 180,200 S320,240 360,320 S200,400 220,440');animation:pipeParticle 4s linear infinite,pipeGlow 2s ease-in-out infinite}
-.hb .pipe-particle:nth-child(2){animation-delay:-1.3s;opacity:.7}
-.hb .pipe-particle:nth-child(3){animation-delay:-2.6s;opacity:.5}
-/* Mouse parallax target */
-.hb .parallax-wrap{perspective:600px}
+/* Kanban board */
+.hb .kanban{position:relative;width:100%;max-width:480px;margin:0 auto;background:#fff;border-radius:16px;border:1px solid var(--line2);box-shadow:0 20px 60px -20px rgba(3,7,18,.22);overflow:hidden}
+.hb .kanban-bar{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line2);background:#FAFBFC}
+.hb .kanban-bar img{width:40px;height:40px;object-fit:contain}
+.hb .kanban-bar b{font-size:14px;color:#111827}
+.hb .kanban-bar span{font-size:11px;color:var(--muted);margin-left:auto}
+.hb .kanban-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0}
+.hb .kanban-col{padding:10px 8px;border-right:1px solid var(--line2);min-height:200px}
+.hb .kanban-col:last-child{border-right:0}
+.hb .kanban-col-head{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding:0 2px;display:flex;align-items:center;gap:4px}
+.hb .kanban-col-head .dot{width:7px;height:7px;border-radius:50%;flex:none}
+.hb .kb-card{background:#fff;border:1px solid var(--line2);border-radius:8px;padding:8px 9px;margin-bottom:6px;font-size:10px;color:#374151;line-height:1.35;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:transform .4s var(--ease),box-shadow .4s}
+.hb .kb-card b{display:block;font-size:10.5px;color:#111827;margin-bottom:3px}
+.hb .kb-card .kb-tag{display:inline-block;font-size:8px;font-weight:600;padding:1px 5px;border-radius:3px;margin-top:3px}
+.hb .kb-card .kb-av{display:flex;gap:2px;margin-top:4px}
+.hb .kb-card .kb-av span{width:16px;height:16px;border-radius:50%;font-size:7px;font-weight:700;color:#fff;display:grid;place-items:center}
+@keyframes kbFloat1{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes kbFloat2{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes kbFloat3{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.hb .kb-card:nth-child(2){animation:kbFloat1 3s ease-in-out infinite}
+.hb .kb-card:nth-child(3){animation:kbFloat2 3.5s ease-in-out infinite .5s}
+.hb .kb-card:nth-child(4){animation:kbFloat3 4s ease-in-out infinite 1s}
 
 /* ===== 2. TRUSTED ===== */
 .hb .stat3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:30px}
-.hb .stat3{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px 24px;position:relative;overflow:hidden;
-  transition:transform .5s var(--ease);transform-style:preserve-3d}
+.hb .stat3{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px 24px;position:relative;overflow:hidden;transition:transform .5s var(--ease);transform-style:preserve-3d}
 .hb .stat3:hover{transform:perspective(600px) rotateY(4deg) translateY(-6px);box-shadow:var(--shadow-lg)}
 .hb .stat3 .num{display:block;font-size:clamp(42px,4.5vw,60px);font-weight:700;letter-spacing:-.02em;line-height:1}
 .hb .stat3 h3{font-size:17px;margin-top:12px;line-height:1.3;color:var(--forest)}
 .hb .stat3 p{font-size:14px;color:var(--ink3);margin-top:8px;line-height:1.62}
 .hb .stat3 .spark{margin-top:12px;height:36px}
-/* Marquee */
 .hb .marquee{overflow:hidden;position:relative;padding:16px 0}
 .hb .marquee::before,.hb .marquee::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:2;pointer-events:none}
 .hb .marquee::before{left:0;background:linear-gradient(90deg,var(--white),transparent)}
@@ -207,7 +215,7 @@ body{margin:0}
 @keyframes marqueeScroll{to{transform:translateX(-50%)}}
 .hb .marquee-track span{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#374151;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;box-shadow:0 2px 10px -6px rgba(16,32,56,.3);white-space:nowrap}
 
-/* ===== 3. WHAT IS ZOHO PROJECTS (storytelling) ===== */
+/* ===== 3. WHAT IS ZOHO PROJECTS ===== */
 .hb .story-paras{display:grid;gap:20px}
 .hb .story-para{font-size:16px;color:#444;line-height:1.68;max-width:70ch}
 .hb .wavy-path{position:relative;display:grid;gap:0;margin-top:40px}
@@ -219,18 +227,15 @@ body{margin:0}
 .hb .waypoint p{font-size:14px;color:var(--ink3);margin-top:4px;line-height:1.6}
 .hb .story-logos{display:flex;gap:12px;align-items:center;margin-top:8px;flex-wrap:wrap}
 .hb .story-logos img{width:28px;height:28px;object-fit:contain}
-.hb .eco3{margin-top:clamp(40px,4vw,60px);border-radius:var(--r-lg);background:var(--forest);color:#DFF3E7;padding:clamp(24px,3vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px);align-items:center;position:relative;overflow:hidden}
-.hb .eco3::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-240px;background:radial-gradient(closest-side,rgba(62,169,0,.26),transparent 70%);animation:hbFloat 14s ease-in-out infinite alternate;pointer-events:none}
+/* Product icons grid */
+.hb .prod-icons-grid{margin-top:clamp(40px,4vw,60px);border-radius:var(--r-lg);background:var(--forest);padding:clamp(24px,3vw,44px);display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center;position:relative;overflow:hidden}
+.hb .prod-icons-grid::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-240px;background:radial-gradient(closest-side,rgba(62,169,0,.26),transparent 70%);animation:hbFloat 14s ease-in-out infinite alternate;pointer-events:none}
 @keyframes hbFloat{to{transform:translate(40px,30px) scale(1.08)}}
-.hb .eco3>*{position:relative;z-index:1}
-.hb .eco3 h3{color:#fff;font-size:clamp(21px,2.2vw,27px);line-height:1.28}
-.hb .eco3 p{margin-top:12px;font-size:14.8px;color:#CFE9D8;line-height:1.7}
-.hb .eco3-map{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.hb .eco3-tile{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px}
-.hb .eco3-tile b{display:block;color:#fff;font-size:14.5px;line-height:1.3}
-.hb .eco3-tile>div>span{display:block;font-size:12.8px;color:#CFE9D8;line-height:1.5;margin-top:2px}
+.hb .prod-icon{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);display:grid;place-items:center;padding:8px;transition:transform .3s var(--ease),background .3s}
+.hb .prod-icon:hover{transform:scale(1.15);background:rgba(255,255,255,.2)}
+.hb .prod-icon img{width:100%;height:100%;object-fit:contain}
 
-/* ===== 4. PAIN POINTS (horizontal scroll strip) ===== */
+/* ===== 4. PAIN POINTS ===== */
 .hb .pain-strip{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 0 20px;scrollbar-width:none}
 .hb .pain-strip::-webkit-scrollbar{display:none}
 .hb .pain-card{flex:0 0 min(340px,85vw);scroll-snap-align:start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:28px 24px;position:relative}
@@ -242,7 +247,7 @@ body{margin:0}
 .hb .pain-dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.25);transition:all .3s}
 .hb .pain-dots span.active{width:28px;border-radius:10px;background:var(--green)}
 
-/* ===== 5. TRANSFORMATION (drawing timeline) ===== */
+/* ===== 5. TRANSFORMATION ===== */
 .hb .draw-tl{position:relative;padding:40px 0 0}
 .hb .draw-tl-line{position:absolute;left:50%;top:60px;bottom:0;width:4px;margin-left:-2px;background:var(--line2);border-radius:4px}
 .hb .draw-tl-fill{position:absolute;left:0;top:0;width:100%;height:0;background:var(--grad);border-radius:4px;transition:height .3s linear}
@@ -259,7 +264,7 @@ body{margin:0}
 .hb .tl3-card h3{font-size:17px;margin-top:4px;line-height:1.3;color:var(--forest)}
 .hb .tl3-card p{font-size:13.5px;color:var(--ink3);margin-top:8px;line-height:1.62}
 
-/* ===== 6. KEY FEATURES (pill tabs, 3-col grid) ===== */
+/* ===== 6. KEY FEATURES ===== */
 .hb .pill-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:28px}
 .hb .pill-tab{display:inline-flex;align-items:center;gap:9px;padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:14.5px;color:#1F2937;transition:all .25s var(--ease)}
 .hb .pill-tab i{color:var(--blue);font-size:14px;transition:color .25s}
@@ -279,24 +284,32 @@ body{margin:0}
 .hb .feat3-card dt{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--green-d);margin-top:12px}
 .hb .feat3-card dd{font-size:13.3px;color:var(--ink3);line-height:1.6;margin-top:2px}
 
-/* ===== 7. WHY ETC (S-curve snake) ===== */
-.hb .snake{position:relative;max-width:900px;margin:0 auto}
-.hb .snake-svg{position:absolute;left:50%;top:0;bottom:0;width:4px;margin-left:-2px;pointer-events:none}
-.hb .snake-step{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;align-items:start;margin-bottom:16px}
-.hb .snake-step:nth-child(odd) .snake-content{grid-column:1;text-align:right;padding-right:24px}
-.hb .snake-step:nth-child(odd) .snake-dot{grid-column:2}
-.hb .snake-step:nth-child(odd)::after{grid-column:3}
-.hb .snake-step:nth-child(even) .snake-content{grid-column:3;text-align:left;padding-left:24px}
-.hb .snake-step:nth-child(even) .snake-dot{grid-column:2;grid-row:1}
-.hb .snake-step:nth-child(even)::after{grid-column:1;grid-row:1}
-.hb .snake-dot{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:700;color:#fff;background:var(--grad);box-shadow:0 4px 12px -4px rgba(35,110,180,.5);position:relative;z-index:2}
-.hb .snake-content{padding:10px 0 24px}
-.hb .snake-content h4{font-size:16px;color:var(--forest);line-height:1.35}
-.hb .snake-content p{font-size:13.5px;color:var(--ink3);margin-top:4px;line-height:1.6}
-.hb .snake-line{position:absolute;left:50%;top:20px;bottom:20px;width:4px;margin-left:-2px;background:var(--line2);border-radius:4px}
-.hb .snake-fill{position:absolute;left:0;top:0;width:100%;height:0;background:var(--grad);border-radius:4px;transition:height .2s linear}
+/* ===== 7. CONSULTING - ORBITAL ===== */
+.hb .orbital-wrap{position:relative;min-height:620px;display:flex;align-items:center;justify-content:center}
+.hb .orbital-center{width:140px;height:140px;border-radius:50%;background:var(--forest);color:#B9F8CF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;position:relative;z-index:3;box-shadow:0 12px 40px -16px rgba(3,46,21,.6)}
+.hb .orbital-center b{font-size:16px;line-height:1.2;color:#fff}
+.hb .orbital-center span{font-size:11px;color:#9CCFB0}
+.hb .orbital-ring{position:absolute;width:560px;height:560px;top:50%;left:50%;margin-left:-280px;margin-top:-280px;border:2px dashed rgba(3,46,21,.15);border-radius:50%;animation:orbSpin 60s linear infinite}
+@keyframes orbSpin{to{transform:rotate(360deg)}}
+.hb .orbital-item{position:absolute;width:130px;text-align:center;transform:translate(-50%,-50%)}
+.hb .orbital-item .orb-no{font-size:24px;font-weight:700;line-height:1}
+.hb .orbital-item h4{font-size:11.5px;color:var(--forest);line-height:1.25;margin-top:3px}
+.hb .orbital-item .orb-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--green);top:50%;left:50%;margin:-3px 0 0 -3px}
+/* Dotted lines from items to center via SVG overlay */
+.hb .orbital-lines{position:absolute;width:560px;height:560px;top:50%;left:50%;margin-left:-280px;margin-top:-280px;pointer-events:none;z-index:1}
+/* Positions for 10 items around circle */
+.hb .orbital-item:nth-child(1){left:50%;top:0}
+.hb .orbital-item:nth-child(2){left:84%;top:9.5%}
+.hb .orbital-item:nth-child(3){left:100%;top:34.5%}
+.hb .orbital-item:nth-child(4){left:100%;top:65.5%}
+.hb .orbital-item:nth-child(5){left:84%;top:90.5%}
+.hb .orbital-item:nth-child(6){left:50%;top:100%}
+.hb .orbital-item:nth-child(7){left:16%;top:90.5%}
+.hb .orbital-item:nth-child(8){left:0%;top:65.5%}
+.hb .orbital-item:nth-child(9){left:0%;top:34.5%}
+.hb .orbital-item:nth-child(10){left:16%;top:9.5%}
 
-/* ===== 8. AUTOMATION SCENARIOS (accordion) ===== */
+/* ===== 8. AUTOMATION (accordion) ===== */
 .hb .acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .hb .acc-item{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .3s,box-shadow .3s}
 .hb .acc-item.is-open{border-color:#A0C0E0;box-shadow:var(--shadow)}
@@ -312,7 +325,7 @@ body{margin:0}
 .hb .acc-steps li:last-child{padding-bottom:0;font-weight:600;color:var(--forest)}
 .hb .acc-steps li::before{content:"";position:absolute;left:-6px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid #fff}
 
-/* ===== 9. INDUSTRY VERTICALS (hex grid) ===== */
+/* ===== 9. INDUSTRY VERTICALS ===== */
 .hb .hex-grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:800px;margin:0 auto}
 .hb .hex-tile{width:120px;height:120px;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);background:var(--ground2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:background .3s,transform .3s;text-align:center;padding:10px}
 .hb .hex-tile:hover,.hb .hex-tile.is-active{background:var(--forest);color:#fff;transform:scale(1.06)}
@@ -328,29 +341,28 @@ body{margin:0}
 .hb .hex-detail .hex-uses li{display:flex;gap:10px;font-size:14px;color:#1F2937;line-height:1.5;padding:12px;border:1px solid var(--line2);border-radius:12px;background:var(--ground)}
 .hb .hex-detail .hex-uses li i{color:var(--green-d);margin-top:3px;font-size:12px;flex:none}
 
-/* ===== 10. FUNCTIONAL SCOPE (radial) ===== */
-.hb .radial-wrap{position:relative;min-height:600px;display:flex;align-items:center;justify-content:center}
-.hb .radial-hub{width:160px;height:160px;border-radius:50%;background:var(--forest);color:#B9F8CF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;position:relative;z-index:2;box-shadow:0 12px 40px -16px rgba(3,46,21,.6)}
-.hb .radial-hub b{font-size:32px;line-height:1;color:#fff}
-.hb .radial-hub span{font-size:12px;color:#9CCFB0}
-.hb .radial-ring{position:absolute;width:540px;height:540px;top:50%;left:50%;margin-left:-270px;margin-top:-270px}
-.hb .radial-item{position:absolute;width:140px;text-align:center;transform:translate(-50%,-50%)}
-.hb .radial-item .no{font-size:28px;font-weight:700;line-height:1}
-.hb .radial-item h4{font-size:12.5px;color:var(--forest);line-height:1.25;margin-top:4px}
-/* Positions around circle */
-.hb .radial-item:nth-child(1){left:50%;top:0}
-.hb .radial-item:nth-child(2){left:80%;top:7%}
-.hb .radial-item:nth-child(3){left:97%;top:30%}
-.hb .radial-item:nth-child(4){left:97%;top:62%}
-.hb .radial-item:nth-child(5){left:80%;top:88%}
-.hb .radial-item:nth-child(6){left:50%;top:100%}
-.hb .radial-item:nth-child(7){left:20%;top:88%}
-.hb .radial-item:nth-child(8){left:3%;top:62%}
-.hb .radial-item:nth-child(9){left:3%;top:30%}
-.hb .radial-item:nth-child(10){left:20%;top:7%}
-.hb .radial-item:nth-child(11){left:50%;top:50%;display:none}
+/* ===== 10. MODULES - ORBITAL WITH COUNTER ===== */
+.hb .mod-orbital-wrap{position:relative;min-height:600px;display:flex;align-items:center;justify-content:center}
+.hb .mod-orbital-hub{width:160px;height:160px;border-radius:50%;background:var(--forest);color:#B9F8CF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;position:relative;z-index:3;box-shadow:0 12px 40px -16px rgba(3,46,21,.6)}
+.hb .mod-orbital-hub b{font-size:32px;line-height:1;color:#fff}
+.hb .mod-orbital-hub span{font-size:12px;color:#9CCFB0}
+.hb .mod-orbital-ring{position:absolute;width:540px;height:540px;top:50%;left:50%;margin-left:-270px;margin-top:-270px;border:2px dashed rgba(3,46,21,.12);border-radius:50%;animation:modOrbSpin 80s linear infinite}
+@keyframes modOrbSpin{to{transform:rotate(360deg)}}
+.hb .mod-orbital-ring .radial-item{position:absolute;width:140px;text-align:center;transform:translate(-50%,-50%)}
+.hb .mod-orbital-ring .radial-item .no{font-size:28px;font-weight:700;line-height:1}
+.hb .mod-orbital-ring .radial-item h4{font-size:12.5px;color:var(--forest);line-height:1.25;margin-top:4px}
+.hb .mod-orbital-ring .radial-item:nth-child(1){left:50%;top:0}
+.hb .mod-orbital-ring .radial-item:nth-child(2){left:80%;top:7%}
+.hb .mod-orbital-ring .radial-item:nth-child(3){left:97%;top:30%}
+.hb .mod-orbital-ring .radial-item:nth-child(4){left:97%;top:62%}
+.hb .mod-orbital-ring .radial-item:nth-child(5){left:80%;top:88%}
+.hb .mod-orbital-ring .radial-item:nth-child(6){left:50%;top:100%}
+.hb .mod-orbital-ring .radial-item:nth-child(7){left:20%;top:88%}
+.hb .mod-orbital-ring .radial-item:nth-child(8){left:3%;top:62%}
+.hb .mod-orbital-ring .radial-item:nth-child(9){left:3%;top:30%}
+.hb .mod-orbital-ring .radial-item:nth-child(10){left:20%;top:7%}
 
-/* ===== 11. COMPARISON (traffic light) ===== */
+/* ===== 11. COMPARISON ===== */
 .hb .tablew3{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r);border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
 .hb .cmp3{width:100%;min-width:980px;border-collapse:collapse;font-size:14px}
 .hb .cmp3 th,.hb .cmp3 td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top;line-height:1.55}
@@ -365,39 +377,40 @@ body{margin:0}
 .hb .cmp3 td i.fa-minus{color:#D97706;margin-right:6px}
 .hb .cmp3 tbody tr:last-child td{border-bottom:0}
 .hb .cmp3 tbody tr:hover td:not(.us){background:#FAFAFA}
-.hb .cmp3 [data-tip]{position:relative;cursor:help;border-bottom:1px dotted currentColor}
-.hb .cmp3 [data-tip]:hover::after{content:attr(data-tip);position:absolute;bottom:100%;left:0;background:#0f172a;color:#fff;font-size:12px;padding:6px 10px;border-radius:6px;white-space:nowrap;z-index:10;margin-bottom:4px}
 .hb .swipe3{display:none;font-size:12.5px;color:var(--muted);margin-bottom:10px}
 
-/* ===== 12. PACKAGES (expandable stacked) ===== */
-.hb .pkg-stack{display:grid;gap:16px;max-width:800px;margin:0 auto}
-.hb .pkg{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .3s var(--ease),border-color .3s}
-.hb .pkg.is-open{box-shadow:var(--shadow-lg);border-color:#A0C0E0}
-.hb .pkg--pop{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box}
-.hb .pkg-head{display:flex;align-items:center;gap:16px;padding:22px 26px;cursor:pointer;transition:background .2s}
-.hb .pkg-head:hover{background:var(--ground)}
-.hb .pkg-head h3{font-size:20px;color:#000;flex:1}
-.hb .pkg-flag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:999px;padding:4px 12px}
-.hb .pkg-flag--dark{background:var(--forest)}
-.hb .pkg-meta{display:flex;gap:16px;align-items:baseline;font-size:13px;color:var(--muted)}
-.hb .pkg-meta b{font-size:20px;color:#000}
-.hb .pkg-head .chevron{font-size:14px;color:var(--blue);transition:transform .35s var(--ease)}
-.hb .pkg.is-open .pkg-head .chevron{transform:rotate(180deg)}
-.hb .pkg-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.34,1.56,.64,1)}
-.hb .pkg-body>div{overflow:hidden}
-.hb .pkg.is-open .pkg-body{grid-template-rows:1fr}
-.hb .pkg-inner{padding:0 26px 26px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.hb .pkg-desc{font-size:14px;color:var(--ink3);line-height:1.6;grid-column:1/-1}
-.hb .pkg-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;grid-column:1/-1}
-.hb .pkg-stat{text-align:center;padding:12px 8px;border:1px solid var(--line2);border-radius:10px;background:var(--ground)}
-.hb .pkg-stat b{display:block;font-size:24px;color:var(--forest)}
-.hb .pkg-stat span{font-size:11px;color:var(--muted)}
-.hb .pkg-mods{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);grid-column:1/-1;margin-top:4px}
-.hb .pkg-list{display:grid;gap:8px}
-.hb .pkg-list li{display:flex;gap:9px;font-size:13.5px;color:#374151;line-height:1.45}
-.hb .pkg-list li i{color:var(--green-d);font-size:12px;margin-top:4px}
+/* ===== 12. PRICING TABS ===== */
+.hb .price-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.hb .price-tab{padding:10px 22px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:14px;color:#374151;cursor:pointer;transition:all .25s var(--ease)}
+.hb .price-tab:hover{border-color:#94A3B8}
+.hb .price-tab.is-active{background:var(--forest);color:#fff;border-color:var(--forest)}
+.hb .price-panel{display:none}
+.hb .price-panel.is-active{display:block;animation:hexSlide .4s var(--ease)}
+.hb .price-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hb .price-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s}
+.hb .price-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--line2)}
+.hb .price-card--pop::before{background:var(--grad)}
+.hb .price-card--pop{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--grad) border-box}
+.hb .price-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.hb .price-card .pc-flag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:999px;padding:3px 10px;margin-bottom:12px}
+.hb .price-card .pc-flag--dark{background:var(--forest)}
+.hb .price-card h3{font-size:22px;color:#000;line-height:1.2}
+.hb .price-card .pc-timeline{font-size:14px;color:var(--muted);margin-top:6px;display:flex;align-items:center;gap:6px}
+.hb .price-card .pc-timeline b{font-size:28px;color:var(--forest);font-weight:700}
+.hb .price-card .pc-desc{font-size:13.5px;color:var(--ink3);line-height:1.6;margin-top:12px}
+.hb .price-card .pc-list{margin-top:16px;display:grid;gap:6px}
+.hb .price-card .pc-list li{display:flex;gap:8px;font-size:13px;color:#374151;line-height:1.45}
+.hb .price-card .pc-list li i{color:var(--green-d);font-size:11px;margin-top:4px;flex:none}
+.hb .price-card .pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.hb .price-card .pc-stat{text-align:center;padding:10px 6px;border:1px solid var(--line2);border-radius:8px;background:var(--ground)}
+.hb .price-card .pc-stat b{display:block;font-size:20px;color:var(--forest)}
+.hb .price-card .pc-stat span{font-size:10px;color:var(--muted)}
+.hb .price-detail-table{margin-top:20px;width:100%;border-collapse:collapse;font-size:13px}
+.hb .price-detail-table th,.hb .price-detail-table td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line2)}
+.hb .price-detail-table th{background:var(--ground);font-weight:700;color:#374151;font-size:12px}
+.hb .price-detail-table td i.fa-check{color:var(--green-d);margin-right:4px}
 
-/* ===== 13. FAQ (chat bubble) ===== */
+/* ===== 13. FAQ ===== */
 .hb .chat-faq{max-width:700px;margin:0 auto;display:grid;gap:14px}
 .hb .chat-q{background:var(--forest);color:#fff;padding:14px 20px;border-radius:16px 16px 4px 16px;font-size:15px;font-weight:600;line-height:1.45;cursor:pointer;position:relative;max-width:85%;justify-self:end;transition:transform .2s}
 .hb .chat-q:hover{transform:scale(1.01)}
@@ -409,92 +422,94 @@ body{margin:0}
 .hb .chat-a.is-open{grid-template-rows:1fr;padding:14px 20px;border-width:1px}
 .hb .chat-pair{display:contents}
 
-/* ===== 14. TESTIMONIALS (stacked deck) ===== */
-.hb .deck-wrap{position:relative;min-height:360px;max-width:500px;margin:0 auto;perspective:800px}
-.hb .deck-card{position:absolute;left:0;right:0;top:0;background:#fff;border:1px solid var(--line2);border-radius:18px;padding:28px 24px;box-shadow:0 6px 24px -12px rgba(3,7,18,.2);transition:transform .6s var(--ease),opacity .6s;cursor:pointer;display:flex;flex-direction:column}
-.hb .deck-card .qm{font-size:40px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;height:26px}
-.hb .deck-card blockquote{margin-top:14px;font-size:14.5px;line-height:1.7;color:#374151;flex:1}
-.hb .deck-card blockquote mark{background:linear-gradient(180deg,transparent 58%,rgba(62,169,0,.22) 58%);color:#111827;font-weight:600;padding:0 2px}
-.hb .deck-card .who{margin-top:18px;padding-top:14px;border-top:1px solid var(--line2);display:flex;align-items:center;gap:12px}
-.hb .deck-card .who img{width:48px;height:48px;border-radius:50%;object-fit:contain;border:1px solid var(--line2);padding:4px;background:#fff}
-.hb .deck-card .who b{display:block;font-size:13.5px;color:#111827}
-.hb .deck-card .who span{display:block;font-size:12px;color:var(--muted)}
+/* ===== 14. TESTIMONIALS - CAROUSEL ===== */
+.hb .carousel-wrap{overflow:hidden;position:relative;padding:0 0 40px}
+.hb .tst-track{display:flex;gap:20px;transition:transform .5s var(--ease);width:max-content}
+.hb .tsc{flex:0 0 min(360px,85vw);background:#fff;border:1px solid var(--line2);border-radius:18px;padding:24px 22px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.hb .tsc__stars{display:flex;gap:3px;margin-bottom:12px}
+.hb .tsc__stars i{font-size:14px;color:#F59E0B}
+.hb .tsc__stars i.empty{color:#D4D4D8}
+.hb .tsc blockquote{font-size:14px;line-height:1.7;color:#374151;flex:1}
+.hb .tsc__by{margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);display:flex;align-items:center;gap:12px}
+.hb .tsc__ph{width:48px;height:48px;border-radius:50%;object-fit:contain;border:1px solid var(--line2);padding:4px;background:#fff;flex:none}
+.hb .tsc__by b{display:block;font-size:13px;color:#111827}
+.hb .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.hb .carousel-dots span{width:10px;height:10px;border-radius:50%;background:var(--line);cursor:pointer;transition:all .3s}
+.hb .carousel-dots span.active{width:28px;border-radius:10px;background:var(--green)}
 
-/* ===== 15. CONTACT ===== */
-.hb .ct3{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px);align-items:start}
-.hb .eco-viz{position:relative;width:100%;height:340px;display:flex;align-items:center;justify-content:center;margin-top:24px}
-.hb .eco-viz-center{width:80px;height:80px;border-radius:50%;background:var(--grad);display:grid;place-items:center;z-index:2;box-shadow:0 8px 24px -8px rgba(35,110,180,.5)}
-.hb .eco-viz-center img{width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1)}
-.hb .eco-orbit{position:absolute;width:280px;height:280px;border-radius:50%;border:2px dashed var(--line);animation:ecoSpin 40s linear infinite}
-@keyframes ecoSpin{to{transform:rotate(360deg)}}
-.hb .eco-orb{position:absolute;width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line2);display:grid;place-items:center;padding:6px;box-shadow:var(--shadow)}
-.hb .eco-orb img{width:100%;height:100%;object-fit:contain}
-.hb .eco-orb:nth-child(1){top:-20px;left:calc(50% - 20px)}
-.hb .eco-orb:nth-child(2){top:20%;right:-20px}
-.hb .eco-orb:nth-child(3){bottom:20%;right:-20px}
-.hb .eco-orb:nth-child(4){bottom:-20px;left:calc(50% - 20px)}
-.hb .eco-orb:nth-child(5){bottom:20%;left:-20px}
-.hb .eco-orb:nth-child(6){top:20%;left:-20px}
-.hb .ct3-points{margin-top:26px;display:grid;gap:16px;background:var(--forest);border-radius:var(--r-lg);padding:24px 22px}
-.hb .ct3-point{display:flex;gap:14px;align-items:center}
-.hb .ct3-point .chip{width:42px;height:42px;font-size:16px;border-radius:12px;background:#fff;color:var(--forest)}
-.hb .ct3-point b{display:block;font-size:15px;color:#fff}
-.hb .ct3-point b a{color:inherit}
-.hb .ct3-point>div>span{display:block;font-size:13.5px;color:#CFE9D8}
-.hb .form-slot{background:#fff;border:1px solid #E5E7EB;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg)}
-.hb .form-head{padding:22px 28px;background:#F9FAFB;border-bottom:1px solid #E5E7EB}
-.hb .form-head b{display:block;font-size:17px;color:#000}
-.hb .form-head span{font-size:13.5px;color:var(--ink3)}
-.hb .form-body{padding:26px 28px 30px;min-height:120px}
+/* ===== 15. CONTACT - PAYROLL STYLE ===== */
+.hb .ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px);align-items:start}
+.hb .ct-grid .ct-left .ct-icon{width:48px;height:48px;border-radius:12px;background:var(--grad);padding:8px;display:grid;place-items:center;box-shadow:0 6px 14px -8px rgba(35,110,180,.8);margin-bottom:12px}
+.hb .ct-grid .ct-left .ct-icon img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 1px 1px rgba(0,0,0,.15))}
+.hb .ct-grid .ct-left .ct-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.hb .ct-grid .ct-left h2{font-size:clamp(24px,2.6vw,34px);color:#000;line-height:1.26}
+.hb .ct-grid .ct-left .ct-desc{font-size:15px;color:#444;line-height:1.68;margin-top:12px;max-width:50ch}
+.hb .ct-info-points{margin-top:28px;display:grid;gap:14px}
+.hb .ct-info-point{display:flex;gap:14px;align-items:center}
+.hb .ct-info-point .chip{width:42px;height:42px;font-size:16px;border-radius:12px;background:var(--forest);color:#B9F8CF}
+.hb .ct-info-point b{display:block;font-size:14.5px;color:#111827}
+.hb .ct-info-point b a{color:inherit}
+.hb .ct-info-point>div>span{display:block;font-size:13px;color:var(--ink3)}
+.hb .ct-form-slot{background:#fff;border:1px solid #E5E7EB;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg)}
+.hb .ct-form-slot .form-head{padding:22px 28px;background:#F9FAFB;border-bottom:1px solid #E5E7EB}
+.hb .ct-form-slot .form-head b{display:block;font-size:17px;color:#000}
+.hb .ct-form-slot .form-head span{font-size:13.5px;color:var(--ink3)}
+.hb .ct-form-slot .form-body{padding:26px 28px 30px;min-height:120px}
 
-/* ===== 16. FINAL CTA ===== */
-.hb .final3{background:var(--forest);color:#DFF3E7;position:relative;overflow:hidden}
-.hb .final3::before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;right:10%;top:-100px;background:radial-gradient(closest-side,rgba(62,169,0,.35),transparent 70%);animation:hbFloat 14s ease-in-out infinite alternate}
-.hb .final3::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;left:5%;bottom:-80px;background:radial-gradient(closest-side,rgba(35,110,180,.3),transparent 70%);animation:hbFloat 18s ease-in-out infinite alternate-reverse}
-.hb .final3 .box{position:relative;z-index:2}
-.hb .logo-ring{position:relative;width:200px;height:200px;margin:30px auto 0;animation:ecoSpin 30s linear infinite}
-.hb .logo-ring img{position:absolute;width:36px;height:36px;object-fit:contain;border-radius:50%;background:#fff;padding:5px;box-shadow:var(--shadow)}
-.hb .logo-ring img:nth-child(1){top:-18px;left:calc(50% - 18px)}
-.hb .logo-ring img:nth-child(2){top:10%;right:-18px}
-.hb .logo-ring img:nth-child(3){top:50%;right:-18px}
-.hb .logo-ring img:nth-child(4){bottom:10%;right:10%}
-.hb .logo-ring img:nth-child(5){bottom:-18px;left:calc(50% - 18px)}
-.hb .logo-ring img:nth-child(6){bottom:10%;left:10%}
-.hb .logo-ring img:nth-child(7){top:50%;left:-18px}
-.hb .logo-ring img:nth-child(8){top:10%;left:10%}
+/* ===== 16. FINAL CTA - PAYROLL STYLE ===== */
+.hb .final-sec{background:var(--forest);color:#DFF3E7;position:relative;overflow:hidden;padding:clamp(64px,7vw,100px) 0}
+.hb .final-sec::before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;right:10%;top:-100px;background:radial-gradient(closest-side,rgba(62,169,0,.35),transparent 70%);animation:hbFloat 14s ease-in-out infinite alternate}
+.hb .final-sec::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;left:5%;bottom:-80px;background:radial-gradient(closest-side,rgba(35,110,180,.3),transparent 70%);animation:hbFloat 18s ease-in-out infinite alternate-reverse}
+.hb .final-sec .box{position:relative;z-index:2}
+.hb .final-sec .final-icon{width:56px;height:56px;margin:0 auto 20px;display:grid;place-items:center}
+.hb .final-sec .final-icon img{width:100%;height:100%;object-fit:contain;filter:brightness(0) invert(1)}
+.hb .final-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.hb .final-step{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:24px 20px;text-align:center}
+.hb .final-step .fs-num{width:40px;height:40px;border-radius:50%;background:var(--grad);color:#fff;font-weight:700;font-size:16px;display:grid;place-items:center;margin:0 auto 12px;box-shadow:0 6px 14px -6px rgba(35,110,180,.6)}
+.hb .final-step h4{color:#fff;font-size:15px;line-height:1.3}
+.hb .final-step p{font-size:13px;color:#CFE9D8;margin-top:6px;line-height:1.55}
 .hb .fine{margin-top:28px;font-size:13px;color:#9CCFB0;text-align:center}
 .hb .fine a{color:#B9F8CF}
 
 /* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+  .hb .orbital-wrap,.hb .mod-orbital-wrap{min-height:auto;flex-direction:column;gap:20px}
+  .hb .orbital-ring{position:relative;width:100%;height:auto;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;border:0;animation:none}
+  .hb .orbital-item{position:relative;transform:none;width:auto}
+  .hb .mod-orbital-ring{position:relative;width:100%;height:auto;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;border:0;animation:none}
+  .hb .mod-orbital-ring .radial-item{position:relative;transform:none;width:auto}
+  .hb .orbital-lines{display:none}
+}
 @media(max-width:991px){
   .hb .hero3-grid{grid-template-columns:1fr}
-  .hb .pipeline{max-width:340px}
+  .hb .kanban{max-width:400px}
   .hb .stat3-grid{grid-template-columns:1fr}
-  .hb .eco3{grid-template-columns:1fr}
   .hb .tl3-item{grid-template-columns:1fr;gap:0}
   .hb .tl3-item:nth-child(odd) .tl3-card,.hb .tl3-item:nth-child(even) .tl3-card{grid-column:1}
   .hb .draw-tl-line{left:20px}
   .hb .tl3-item::after{left:4px!important}
   .hb .feat3-grid{grid-template-columns:1fr 1fr}
-  .hb .snake-step{grid-template-columns:40px 1fr;gap:0}
-  .hb .snake-step:nth-child(odd) .snake-content,.hb .snake-step:nth-child(even) .snake-content{grid-column:2;text-align:left;padding-left:16px;padding-right:0}
-  .hb .snake-step:nth-child(odd) .snake-dot,.hb .snake-step:nth-child(even) .snake-dot{grid-column:1;grid-row:1}
-  .hb .snake-line{left:20px;margin-left:-2px}
   .hb .acc-grid{grid-template-columns:1fr}
   .hb .hex-grid{gap:4px}.hb .hex-tile{width:100px;height:100px}
   .hb .hex-detail .hex-uses{grid-template-columns:1fr}
-  .hb .radial-wrap{min-height:auto;flex-direction:column;gap:20px}
-  .hb .radial-ring{position:relative;width:100%;height:auto;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .hb .radial-item{position:relative;transform:none;width:auto}
-  .hb .pkg-inner{grid-template-columns:1fr}
-  .hb .ct3{grid-template-columns:1fr}
+  .hb .price-cards{grid-template-columns:1fr}
+  .hb .ct-grid{grid-template-columns:1fr}
+  .hb .final-steps{grid-template-columns:1fr}
   .hb .swipe3{display:block}
+}
+@media(max-width:768px){
+  .hb .kanban-cols{grid-template-columns:repeat(2,1fr)}
+  .hb .kanban-col:nth-child(2){border-right:0}
+  .hb .kanban-col:nth-child(3),.hb .kanban-col:nth-child(4){border-top:1px solid var(--line2)}
 }
 @media(max-width:639px){
   .hb .feat3-grid{grid-template-columns:1fr}
   .hb .stat3-grid{grid-template-columns:1fr}
-  .hb .pkg-stats{grid-template-columns:1fr}
-  .hb .radial-ring{grid-template-columns:1fr 1fr}
+  .hb .mod-orbital-ring{grid-template-columns:1fr 1fr}
+  .hb .orbital-ring{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hb .kanban-cols{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -502,7 +517,7 @@ body{margin:0}
 <div class="hb">
 <div class="progress" aria-hidden="true"></div>
 
-<!-- ===== 1. HERO ===== -->
+<!-- ===== 1. HERO - KANBAN BOARD ===== -->
 <section class="hero3 sec" id="hero">
   <div class="box hero3-grid">
     <div class="hero3-copy rv">
@@ -529,26 +544,37 @@ body{margin:0}
         <span><i class="fa-solid fa-headset"></i> Post go-live hypercare</span>
       </div>
     </div>
-    <div class="parallax-wrap rv rv--s">
-      <div class="pipeline" id="pipeline" role="img" aria-label="Pipeline visualization: Deal flows through WBS, Gantt, Timesheet to Invoice via Zoho product integrations">
-        <svg viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M80,60 C130,120 50,180 200,220 S350,260 320,340 S180,400 200,440" stroke="url(#pipeGrad)" stroke-width="3" stroke-dasharray="8 6" fill="none" class="pipe-path"/>
-          <defs><linearGradient id="pipeGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#236EB4"/><stop offset="100%" stop-color="#3EA900"/></linearGradient></defs>
-          <!-- Nodes -->
-          <g class="pipe-node" transform="translate(60,36)"><circle cx="28" cy="28" r="28" fill="#fff" stroke="#236EB4" stroke-width="2"/><image href="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" x="8" y="8" width="40" height="40"/></g>
-          <text x="60" y="100" font-size="11" font-weight="600" fill="#374151" font-family="Inter,sans-serif">Deal Won</text>
-          <g class="pipe-node" transform="translate(160,176)"><circle cx="28" cy="28" r="28" fill="#fff" stroke="#3EA900" stroke-width="2"/><image href="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" x="8" y="8" width="40" height="40"/></g>
-          <text x="160" y="240" font-size="11" font-weight="600" fill="#374151" font-family="Inter,sans-serif">WBS &amp; Gantt</text>
-          <g class="pipe-node" transform="translate(280,230)"><circle cx="28" cy="28" r="28" fill="#fff" stroke="#236EB4" stroke-width="2"/><image href="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" x="8" y="8" width="40" height="40"/></g>
-          <text x="280" y="294" font-size="11" font-weight="600" fill="#374151" font-family="Inter,sans-serif">Timesheets</text>
-          <g class="pipe-node" transform="translate(260,310)"><circle cx="28" cy="28" r="28" fill="#fff" stroke="#3EA900" stroke-width="2"/><image href="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" x="8" y="8" width="40" height="40"/></g>
-          <text x="260" y="374" font-size="11" font-weight="600" fill="#374151" font-family="Inter,sans-serif">Analytics</text>
-          <g class="pipe-node" transform="translate(160,400)"><circle cx="28" cy="28" r="28" fill="#fff" stroke="#236EB4" stroke-width="2"/><image href="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" x="8" y="8" width="40" height="40"/></g>
-          <text x="160" y="464" font-size="11" font-weight="600" fill="#374151" font-family="Inter,sans-serif">Invoice</text>
-        </svg>
-        <div class="pipe-particle" aria-hidden="true"></div>
-        <div class="pipe-particle" aria-hidden="true"></div>
-        <div class="pipe-particle" aria-hidden="true"></div>
+    <div class="rv rv--s">
+      <div class="kanban" role="img" aria-label="Kanban board visualization showing task workflow columns: To Do, In Progress, Review, Done">
+        <div class="kanban-bar">
+          <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" style="width:40px;height:40px">
+          <b>Zoho Projects</b>
+          <span>Sprint 14</span>
+        </div>
+        <div class="kanban-cols">
+          <div class="kanban-col">
+            <div class="kanban-col-head"><span class="dot" style="background:#94A3B8"></span> To Do</div>
+            <div class="kb-card"><b>API Integration</b>REST endpoints for billing sync<div class="kb-tag" style="background:#DBEAFE;color:#1E40AF">Backend</div><div class="kb-av"><span style="background:#236EB4">IK</span></div></div>
+            <div class="kb-card"><b>SOW Sign-off</b>Client deliverable approval<div class="kb-tag" style="background:#FEF3C6;color:#92400E">Milestone</div></div>
+            <div class="kb-card"><b>Budget Setup</b>EVM baseline config<div class="kb-tag" style="background:#E0E7FF;color:#3730A3">Finance</div></div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-col-head"><span class="dot" style="background:#236EB4"></span> In Progress</div>
+            <div class="kb-card"><b>WBS Templates</b>3-level task hierarchy<div class="kb-tag" style="background:#B9F8CF;color:#016630">Planning</div><div class="kb-av"><span style="background:#3EA900">AN</span><span style="background:#236EB4">RK</span></div></div>
+            <div class="kb-card"><b>Gantt Dependencies</b>FS/SS/FF linking<div class="kb-tag" style="background:#DBEAFE;color:#1E40AF">Schedule</div></div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-col-head"><span class="dot" style="background:#F59E0B"></span> Review</div>
+            <div class="kb-card"><b>Blueprint Rules</b>Stage-gate QA checks<div class="kb-tag" style="background:#FEF3C6;color:#92400E">Governance</div><div class="kb-av"><span style="background:#DC2626">QA</span></div></div>
+            <div class="kb-card"><b>Timesheet Flow</b>Multi-tier approval chain<div class="kb-tag" style="background:#B9F8CF;color:#016630">HR</div></div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-col-head"><span class="dot" style="background:#3EA900"></span> Done</div>
+            <div class="kb-card" style="opacity:.7"><b>Portal Setup</b>Workspace &amp; roles<div class="kb-tag" style="background:#F3F4F6;color:#6B7280">Setup</div></div>
+            <div class="kb-card" style="opacity:.7"><b>CRM Sync</b>Deal-to-project trigger<div class="kb-tag" style="background:#F3F4F6;color:#6B7280">Integration</div></div>
+            <div class="kb-card" style="opacity:.7"><b>Calendar Config</b>Work hours &amp; holidays<div class="kb-tag" style="background:#F3F4F6;color:#6B7280">Setup</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -608,9 +634,32 @@ body{margin:0}
       <div class="waypoint flip"><span class="wp-num">6</span><div><h4>Stage-Gate Blueprints</h4><p>Visual state machine workflows enforce mandatory sign-offs before task stage transitions.</p></div></div>
       <div class="waypoint flip"><span class="wp-num">7</span><div><h4>Milestone Billing &amp; Accounting</h4><p>Approved timesheets push directly into Zoho Books for 1-click invoicing.</p><div class="story-logos"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="Zoho Books" loading="lazy"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/invoice.svg" alt="Zoho Invoice" loading="lazy"></div></div></div>
     </div>
-    <div class="eco3 rv">
-      <div><h3>What Business Process Does It Manage?</h3><p>Zoho Projects integrates upstream with Zoho CRM to auto-create projects upon Deal Won, syncs employee leaves and working shifts directly from Zoho People, routes customer support escalations from Zoho Desk, and posts approved timesheet billing directly into Zoho Books for instant invoicing.</p></div>
-      <div class="eco3-map"><div class="eco3-tile"><span class="chip chip--mint"><i class="fa-solid fa-handshake"></i></span><div><b>Zoho CRM</b><span>Auto-creates the project when a Deal is Won</span></div></div><div class="eco3-tile"><span class="chip chip--mint"><i class="fa-solid fa-calendar-check"></i></span><div><b>Zoho People</b><span>Syncs employee leaves and working shifts</span></div></div><div class="eco3-tile"><span class="chip chip--mint"><i class="fa-solid fa-headset"></i></span><div><b>Zoho Desk</b><span>Routes customer support escalations</span></div></div><div class="eco3-tile"><span class="chip chip--mint"><i class="fa-solid fa-file-invoice-dollar"></i></span><div><b>Zoho Books</b><span>Receives approved timesheet billing for instant invoicing</span></div></div></div>
+    <!-- Product Icons Grid (icons only, no labels) -->
+    <div class="prod-icons-grid rv" aria-label="Zoho ecosystem products">
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/invoice.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/inventory.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/expense.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/payroll.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/recruit.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/desk.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sprints.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/mail.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/cliq.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/meeting.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/workdrive.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/creator.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/flow.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/campaigns.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sign.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/forms.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/writer.svg" alt="" loading="lazy"></div>
+      <div class="prod-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sheet.svg" alt="" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -618,7 +667,7 @@ body{margin:0}
 <!-- wave -->
 <div style="position:relative;z-index:3;margin-top:-1px"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;width:100%;height:60px"><path d="M0,60 C480,0 960,0 1440,60 L1440,60 L0,60Z" fill="#032E15"/></svg></div>
 
-<!-- ===== 4. PAIN POINTS (horizontal scroll) ===== -->
+<!-- ===== 4. PAIN POINTS ===== -->
 <section class="sec sec--dark" id="problems">
   <div class="box">
     <div class="rv">
@@ -643,7 +692,7 @@ body{margin:0}
 <!-- wave -->
 <div style="position:relative;z-index:3;margin-top:-1px"><svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;width:100%;height:60px"><path d="M0,0 C480,60 960,60 1440,0 L1440,60 L0,60Z" fill="#fff"/></svg></div>
 
-<!-- ===== 5. TRANSFORMATION (drawing timeline) ===== -->
+<!-- ===== 5. TRANSFORMATION ===== -->
 <section class="sec sec--white" id="solution">
   <div class="box">
     <div class="intro intro--mid rv">
@@ -707,7 +756,7 @@ body{margin:0}
   </div>
 </section>
 
-<!-- ===== 7. WHY ELITE TECH CORP (snake path) ===== -->
+<!-- ===== 7. CONSULTING & IMPLEMENTATION RIGOR - ORBITAL ===== -->
 <section class="sec sec--white" id="why-us">
   <div class="box">
     <div class="intro intro--mid rv">
@@ -715,23 +764,37 @@ body{margin:0}
       <h2 class="h2">Why <span class="hl">Elite Tech Corp + Zoho Projects</span></h2>
       <p class="lede"><strong>We do not simply switch Zoho Projects on.</strong> We architect your Work Breakdown Structures, stage-gate Blueprints, and financial costing models to mirror how your organization actually delivers.</p>
     </div>
-    <div class="snake" id="snakePath">
-      <div class="snake-line"><div class="snake-fill"></div></div>
-      <div class="snake-step flip"><span class="snake-dot">01</span><div class="snake-content"><h4>Project Delivery &amp; PMO Audit</h4><p>Deep-dive audit of current task tracking, milestone governance, timesheet approvals, and billing cycles.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">02</span><div class="snake-content"><h4>WBS, Templates &amp; Governance Study</h4><p>Mapping standardized deliverable hierarchies, rate cards, role authorization matrices, and reporting requirements.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">03</span><div class="snake-content"><h4>Workspace Architecture &amp; Custom Fields</h4><p>Portal profiles, corporate calendars, custom fields, dynamic layout visibility rules, and role-based permissions.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">04</span><div class="snake-content"><h4>Milestone &amp; Task Blueprints</h4><p>Visual state machine Blueprints enforcing mandatory checklists and authorized digital approvals.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">05</span><div class="snake-content"><h4>Gantt Scheduling &amp; CPM Engine</h4><p>Interactive Gantt charts with all four dependency types, Critical Path calculation, and baseline engines.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">06</span><div class="snake-content"><h4>Timesheets, Billing &amp; Ecosystem</h4><p>Multi-tier billing rates, approval chains, Zoho Books timesheet-to-invoice sync, and CRM Deal triggers.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">07</span><div class="snake-content"><h4>Role-Based PMO Training Sprints</h4><p>Tailored training for Project Managers, Resource Planners, Engineers, and Finance Admins with recorded SOPs.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">08</span><div class="snake-content"><h4>25+ Scenario End-to-End UAT</h4><p>Rigorous simulation covering scope changes, critical path shifts, subcontractor entries, and billing runs.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">09</span><div class="snake-content"><h4>Production Cutover &amp; Go-Live</h4><p>Formal cutover, master template instantiation, live project provisioning, and command center go-live support.</p></div></div>
-      <div class="snake-step flip"><span class="snake-dot">10</span><div class="snake-content"><h4>30 to 45-Day Post Go-Live Hypercare</h4><p>Dedicated Senior Solution Architect on-call through two full monthly billing runs and PMO optimization reviews.</p></div></div>
+    <div class="orbital-wrap rv" id="orbitalConsulting">
+      <svg class="orbital-lines" viewBox="0 0 560 560" fill="none" aria-hidden="true">
+        <line x1="280" y1="280" x2="280" y2="0" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="470" y2="53" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="560" y2="193" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="560" y2="367" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="470" y2="507" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="280" y2="560" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="90" y2="507" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="0" y2="367" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="0" y2="193" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="280" y1="280" x2="90" y2="53" stroke="#D4D4D8" stroke-width="1" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="orbital-ring" id="orbRing">
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="1">01</span><h4>PMO Audit</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="2">02</span><h4>WBS &amp; Governance Study</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="3">03</span><h4>Workspace Architecture</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="4">04</span><h4>Milestone Blueprints</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="5">05</span><h4>Gantt &amp; CPM Engine</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="6">06</span><h4>Timesheets &amp; Billing</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="7">07</span><h4>PMO Training Sprints</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="8">08</span><h4>End-to-End UAT</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="9">09</span><h4>Production Go-Live</h4></div>
+        <div class="orbital-item"><span class="orb-no grad-text" data-count="10">10</span><h4>Post Go-Live Hypercare</h4></div>
+      </div>
+      <div class="orbital-center"><b>10 Steps</b><span>Implementation</span><span>Methodology</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 8. AUTOMATION SCENARIOS (accordion) ===== -->
+<!-- ===== 8. AUTOMATION SCENARIOS ===== -->
 <section class="sec" id="scenarios">
   <div class="box">
     <div class="intro intro--mid rv">
@@ -756,7 +819,7 @@ body{margin:0}
   </div>
 </section>
 
-<!-- ===== 9. INDUSTRY VERTICALS (hex grid) ===== -->
+<!-- ===== 9. INDUSTRY VERTICALS ===== -->
 <section class="sec sec--alt" id="industries">
   <div class="box">
     <div class="intro intro--mid rv">
@@ -789,7 +852,7 @@ body{margin:0}
   </div>
 </section>
 
-<!-- ===== 10. FUNCTIONAL SCOPE (radial) ===== -->
+<!-- ===== 10. MODULES - ORBITAL WITH COUNTER ===== -->
 <section class="sec sec--white" id="modules">
   <div class="box">
     <div class="intro intro--mid rv">
@@ -797,21 +860,23 @@ body{margin:0}
       <h2 class="h2">Complete Zoho Projects <span class="hl">Functional Scope</span></h2>
       <p class="lede">11 integrated functional modules and up to 34 configured enterprise activities covering the entire delivery lifecycle.</p>
     </div>
-    <div class="radial-wrap rv">
-      <div class="radial-ring">
+    <div class="mod-orbital-wrap rv" id="modOrbital">
+      <div class="mod-orbital-ring">
         <div class="radial-item"><span class="no grad-text">01</span><h4>Workspace Architecture &amp; Security</h4></div>
         <div class="radial-item"><span class="no grad-text">02</span><h4>Master Templates &amp; WBS</h4></div>
         <div class="radial-item"><span class="no grad-text">03</span><h4>Custom Fields &amp; Layouts</h4></div>
         <div class="radial-item"><span class="no grad-text">04</span><h4>Blueprints &amp; Governance</h4></div>
-        <div class="radial-item"><span class="no grad-text">05</span><h4>Gantt, Dependencies &amp; CPM</h4></div>
+        <div class="radial-item"><span class="no grad-text">05</span><h4>Gantt Dependencies &amp; CPM</h4></div>
         <div class="radial-item"><span class="no grad-text">06</span><h4>Baseline Variance Engine</h4></div>
         <div class="radial-item"><span class="no grad-text">07</span><h4>Resource &amp; Workload Balancing</h4></div>
         <div class="radial-item"><span class="no grad-text">08</span><h4>Timesheets &amp; Billing Rates</h4></div>
         <div class="radial-item"><span class="no grad-text">09</span><h4>Project Budgeting &amp; EVM</h4></div>
         <div class="radial-item"><span class="no grad-text">10</span><h4>Client &amp; Contractor Portals</h4></div>
-        <div class="radial-item"><span class="no grad-text">11</span><h4>Deluge, DevOps &amp; BI</h4></div>
       </div>
-      <div class="radial-hub"><b>11</b><span>Modules</span><b style="font-size:24px;margin-top:4px">34</b><span>Activities</span></div>
+      <div class="mod-orbital-hub">
+        <b data-counter="11">0</b><span>Modules</span>
+        <b style="font-size:24px;margin-top:4px" data-counter="34">0</b><span>Activities</span>
+      </div>
     </div>
   </div>
 </section>
@@ -845,24 +910,138 @@ body{margin:0}
   </div>
 </section>
 
-<!-- ===== 12. IMPLEMENTATION PACKAGES (expandable stacked) ===== -->
+<!-- ===== 12. PRICING - TAB FORMAT ===== -->
 <section class="sec sec--white" id="packages">
   <div class="box">
     <div class="intro intro--mid rv">
       <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>TRANSPARENT SCOPE TIERS</em></div>
       <h2 class="h2">Zoho Projects <span class="hl">Implementation Packages</span></h2>
-      <p class="lede">Three turnkey, fixed-scope implementation packages. Click any package to review every module, activity, and delivery timeline.</p>
+      <p class="lede">Three turnkey, fixed-scope implementation packages. Select a tab to review every module, activity, and delivery timeline.</p>
     </div>
-    <div class="pkg-stack st" id="pkgStack">
-      <div class="pkg"><div class="pkg-head"><h3>Basic Package</h3><div class="pkg-meta"><b>7-10</b> Working Days</div><span class="chevron"><i class="fa-solid fa-chevron-down"></i></span></div><div class="pkg-body"><div><div class="pkg-inner"><p class="pkg-desc">Early-stage teams, creative agencies &amp; startups needing structured task tracking, milestones, basic timesheets &amp; templates.</p><div class="pkg-stats"><div class="pkg-stat"><b>10</b><span>Modules</span></div><div class="pkg-stat"><b>28</b><span>Activities</span></div><div class="pkg-stat"><b>26.0</b><span>Hours</span></div></div><p class="pkg-mods">Included scope modules</p><ul class="pkg-list"><li><i class="fa-solid fa-check"></i>Organization &amp; Portal Setup</li><li><i class="fa-solid fa-check"></i>User Profiles &amp; Roles</li><li><i class="fa-solid fa-check"></i>Project Work Calendar</li><li><i class="fa-solid fa-check"></i>Master Project Templates</li><li><i class="fa-solid fa-check"></i>Milestone &amp; WBS</li><li><i class="fa-solid fa-check"></i>Task &amp; Checklist Management</li><li><i class="fa-solid fa-check"></i>Gantt Charts &amp; Dependencies</li><li><i class="fa-solid fa-check"></i>Work Logging &amp; Timesheets</li><li><i class="fa-solid fa-check"></i>Meeting, Mail &amp; Cliq Sync</li><li><i class="fa-solid fa-check"></i>End-User Training &amp; Handover</li></ul><ul class="pkg-list"></ul><a class="btn btn--o" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_basic#/sales-enquiries" style="grid-column:1/-1">Schedule a Demo</a></div></div></div></div>
-      <div class="pkg pkg--pop is-open"><div class="pkg-head"><span class="pkg-flag">Most Popular</span><h3>Professional Package</h3><div class="pkg-meta"><b>15-20</b> Working Days</div><span class="chevron"><i class="fa-solid fa-chevron-down"></i></span></div><div class="pkg-body"><div><div class="pkg-inner"><p class="pkg-desc">Growing mid-market enterprises, IT services &amp; engineering firms needing custom layouts, Blueprints, resource leveling &amp; Books/CRM sync.</p><div class="pkg-stats"><div class="pkg-stat"><b>11</b><span>Modules</span></div><div class="pkg-stat"><b>33</b><span>Activities</span></div><div class="pkg-stat"><b>63.0</b><span>Hours</span></div></div><p class="pkg-mods">Included scope modules</p><ul class="pkg-list"><li><i class="fa-solid fa-check"></i>Custom Layouts &amp; Dynamic Rules</li><li><i class="fa-solid fa-check"></i>Milestone &amp; Task Blueprints</li><li><i class="fa-solid fa-check"></i>CPM &amp; Baseline Variance Engine</li><li><i class="fa-solid fa-check"></i>Resource Capacity &amp; Heatmap</li><li><i class="fa-solid fa-check"></i>Zoho People Leave &amp; Shift Sync</li><li><i class="fa-solid fa-check"></i>Advanced Timesheets &amp; Billing Rates</li><li><i class="fa-solid fa-check"></i>Issue SLA Management &amp; Rules</li><li><i class="fa-solid fa-check"></i>Zoho Books Timesheet-to-Invoice</li><li><i class="fa-solid fa-check"></i>Zoho CRM Deal-to-Project Sync</li><li><i class="fa-solid fa-check"></i>MS 365 &amp; Google Workspace</li><li><i class="fa-solid fa-check"></i>30-Day Post Go-Live Hypercare</li></ul><ul class="pkg-list"></ul><a class="btn btn--g" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_professional#/sales-enquiries" style="grid-column:1/-1">Schedule a Demo</a></div></div></div></div>
-      <div class="pkg"><div class="pkg-head"><span class="pkg-flag pkg-flag--dark">Enterprise Flagship</span><h3>Elite Package</h3><div class="pkg-meta"><b>30-45</b> Working Days</div><span class="chevron"><i class="fa-solid fa-chevron-down"></i></span></div><div class="pkg-body"><div><div class="pkg-inner"><p class="pkg-desc">High-growth enterprises, EPC/construction corporations &amp; PMOs requiring multi-entity governance, Project Budgeting Flow, EVM, Portals &amp; Deluge.</p><div class="pkg-stats"><div class="pkg-stat"><b>11</b><span>Modules</span></div><div class="pkg-stat"><b>34</b><span>Activities</span></div><div class="pkg-stat"><b>115.0</b><span>Hours</span></div></div><p class="pkg-mods">Included scope modules</p><ul class="pkg-list"><li><i class="fa-solid fa-check"></i>CPM, Schedule Risk &amp; Baselines</li><li><i class="fa-solid fa-check"></i>Multi-Project Resource Forecasting</li><li><i class="fa-solid fa-check"></i>Project Budgeting &amp; EVM Flow</li><li><i class="fa-solid fa-check"></i>Custom Modules &amp; Issue Governance</li><li><i class="fa-solid fa-check"></i>Subcontractor Sandboxed Portals</li><li><i class="fa-solid fa-check"></i>Client Collaboration Portal &amp; Wiki</li><li><i class="fa-solid fa-check"></i>Zoho Ecosystem (Desk/People/Sprints)</li><li><i class="fa-solid fa-check"></i>Custom Deluge Scripting</li><li><i class="fa-solid fa-check"></i>DevOps Webhooks &amp; APIs (GitHub)</li><li><i class="fa-solid fa-check"></i>Zoho Analytics Executive BI</li><li><i class="fa-solid fa-check"></i>50+ UAT Simulation &amp; 45-Day Hypercare</li></ul><ul class="pkg-list"></ul><a class="btn btn--o" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_elite#/sales-enquiries" style="grid-column:1/-1">Schedule a Demo</a></div></div></div></div>
+    <div class="price-tabs rv" id="priceTabs">
+      <button class="price-tab is-active" data-ptab="all">All</button>
+      <button class="price-tab" data-ptab="basic">Basic</button>
+      <button class="price-tab" data-ptab="growth">Growth</button>
+      <button class="price-tab" data-ptab="enterprise">Enterprise</button>
+    </div>
+    <!-- ALL TAB -->
+    <div class="price-panel is-active" data-ppanel="all">
+      <div class="price-cards st" id="priceCards">
+        <div class="price-card">
+          <h3>Basic Package</h3>
+          <div class="pc-timeline"><b>7-10</b> Working Days</div>
+          <p class="pc-desc">Early-stage teams, creative agencies and startups needing structured task tracking, milestones, basic timesheets and templates.</p>
+          <div class="pc-stats"><div class="pc-stat"><b>10</b><span>Modules</span></div><div class="pc-stat"><b>28</b><span>Activities</span></div><div class="pc-stat"><b>26.0</b><span>Hours</span></div></div>
+          <ul class="pc-list">
+            <li><i class="fa-solid fa-check"></i>Organization &amp; Portal Setup</li>
+            <li><i class="fa-solid fa-check"></i>Master Project Templates</li>
+            <li><i class="fa-solid fa-check"></i>Gantt Charts &amp; Dependencies</li>
+            <li><i class="fa-solid fa-check"></i>Work Logging &amp; Timesheets</li>
+            <li><i class="fa-solid fa-check"></i>End-User Training</li>
+          </ul>
+          <a class="btn btn--o" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_basic#/sales-enquiries" style="width:100%;margin-top:16px">Schedule a Demo</a>
+        </div>
+        <div class="price-card price-card--pop">
+          <span class="pc-flag">Most Popular</span>
+          <h3>Professional Package</h3>
+          <div class="pc-timeline"><b>15-20</b> Working Days</div>
+          <p class="pc-desc">Growing mid-market enterprises, IT services and engineering firms needing custom layouts, Blueprints, resource leveling and Books/CRM sync.</p>
+          <div class="pc-stats"><div class="pc-stat"><b>11</b><span>Modules</span></div><div class="pc-stat"><b>33</b><span>Activities</span></div><div class="pc-stat"><b>63.0</b><span>Hours</span></div></div>
+          <ul class="pc-list">
+            <li><i class="fa-solid fa-check"></i>Custom Layouts &amp; Dynamic Rules</li>
+            <li><i class="fa-solid fa-check"></i>CPM &amp; Baseline Variance Engine</li>
+            <li><i class="fa-solid fa-check"></i>Resource Capacity &amp; Heatmap</li>
+            <li><i class="fa-solid fa-check"></i>Zoho Books Timesheet-to-Invoice</li>
+            <li><i class="fa-solid fa-check"></i>30-Day Hypercare</li>
+          </ul>
+          <a class="btn btn--g" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_professional#/sales-enquiries" style="width:100%;margin-top:16px">Schedule a Demo</a>
+        </div>
+        <div class="price-card">
+          <span class="pc-flag pc-flag--dark">Enterprise Flagship</span>
+          <h3>Elite Package</h3>
+          <div class="pc-timeline"><b>30-45</b> Working Days</div>
+          <p class="pc-desc">High-growth enterprises, EPC/construction corporations and PMOs requiring multi-entity governance, Budgeting, EVM, Portals and Deluge.</p>
+          <div class="pc-stats"><div class="pc-stat"><b>11</b><span>Modules</span></div><div class="pc-stat"><b>34</b><span>Activities</span></div><div class="pc-stat"><b>115.0</b><span>Hours</span></div></div>
+          <ul class="pc-list">
+            <li><i class="fa-solid fa-check"></i>Project Budgeting &amp; EVM Flow</li>
+            <li><i class="fa-solid fa-check"></i>Subcontractor Sandboxed Portals</li>
+            <li><i class="fa-solid fa-check"></i>Custom Deluge Scripting</li>
+            <li><i class="fa-solid fa-check"></i>Zoho Analytics Executive BI</li>
+            <li><i class="fa-solid fa-check"></i>50+ UAT &amp; 45-Day Hypercare</li>
+          </ul>
+          <a class="btn btn--o" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_elite#/sales-enquiries" style="width:100%;margin-top:16px">Schedule a Demo</a>
+        </div>
+      </div>
+    </div>
+    <!-- BASIC TAB -->
+    <div class="price-panel" data-ppanel="basic">
+      <div class="price-cards" style="grid-template-columns:1fr"><div class="price-card" style="max-width:600px;margin:0 auto">
+        <h3>Basic Package</h3><div class="pc-timeline"><b>7-10</b> Working Days &middot; 26.0 Hours &middot; 10 Modules &middot; 28 Activities</div>
+        <p class="pc-desc">Early-stage teams, creative agencies and startups needing structured task tracking, milestones, basic timesheets and templates.</p>
+        <table class="price-detail-table"><thead><tr><th>Module</th><th>Included</th></tr></thead><tbody>
+          <tr><td>Organization &amp; Portal Setup</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>User Profiles &amp; Roles</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Project Work Calendar</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Master Project Templates</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Milestone &amp; WBS</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Task &amp; Checklist Management</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Gantt Charts &amp; Dependencies</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Work Logging &amp; Timesheets</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Meeting, Mail &amp; Cliq Sync</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>End-User Training &amp; Handover</td><td><i class="fa-solid fa-check"></i></td></tr>
+        </tbody></table>
+        <a class="btn btn--o" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_basic#/sales-enquiries" style="width:100%;margin-top:16px">Schedule a Demo</a>
+      </div></div>
+    </div>
+    <!-- GROWTH TAB -->
+    <div class="price-panel" data-ppanel="growth">
+      <div class="price-cards" style="grid-template-columns:1fr"><div class="price-card price-card--pop" style="max-width:600px;margin:0 auto">
+        <span class="pc-flag">Most Popular</span>
+        <h3>Professional Package</h3><div class="pc-timeline"><b>15-20</b> Working Days &middot; 63.0 Hours &middot; 11 Modules &middot; 33 Activities</div>
+        <p class="pc-desc">Growing mid-market enterprises, IT services and engineering firms needing custom layouts, Blueprints, resource leveling and Books/CRM sync.</p>
+        <table class="price-detail-table"><thead><tr><th>Module</th><th>Included</th></tr></thead><tbody>
+          <tr><td>Custom Layouts &amp; Dynamic Rules</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Milestone &amp; Task Blueprints</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>CPM &amp; Baseline Variance Engine</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Resource Capacity &amp; Heatmap</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Zoho People Leave &amp; Shift Sync</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Advanced Timesheets &amp; Billing Rates</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Issue SLA Management &amp; Rules</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Zoho Books Timesheet-to-Invoice</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Zoho CRM Deal-to-Project Sync</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>MS 365 &amp; Google Workspace</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>30-Day Post Go-Live Hypercare</td><td><i class="fa-solid fa-check"></i></td></tr>
+        </tbody></table>
+        <a class="btn btn--g" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_professional#/sales-enquiries" style="width:100%;margin-top:16px">Schedule a Demo</a>
+      </div></div>
+    </div>
+    <!-- ENTERPRISE TAB -->
+    <div class="price-panel" data-ppanel="enterprise">
+      <div class="price-cards" style="grid-template-columns:1fr"><div class="price-card" style="max-width:600px;margin:0 auto">
+        <span class="pc-flag pc-flag--dark">Enterprise Flagship</span>
+        <h3>Elite Package</h3><div class="pc-timeline"><b>30-45</b> Working Days &middot; 115.0 Hours &middot; 11 Modules &middot; 34 Activities</div>
+        <p class="pc-desc">High-growth enterprises, EPC/construction corporations and PMOs requiring multi-entity governance, Project Budgeting Flow, EVM, Portals and Deluge.</p>
+        <table class="price-detail-table"><thead><tr><th>Module</th><th>Included</th></tr></thead><tbody>
+          <tr><td>CPM, Schedule Risk &amp; Baselines</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Multi-Project Resource Forecasting</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Project Budgeting &amp; EVM Flow</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Custom Modules &amp; Issue Governance</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Subcontractor Sandboxed Portals</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Client Collaboration Portal &amp; Wiki</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Zoho Ecosystem (Desk/People/Sprints)</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Custom Deluge Scripting</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>DevOps Webhooks &amp; APIs (GitHub)</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>Zoho Analytics Executive BI</td><td><i class="fa-solid fa-check"></i></td></tr>
+          <tr><td>50+ UAT Simulation &amp; 45-Day Hypercare</td><td><i class="fa-solid fa-check"></i></td></tr>
+        </tbody></table>
+        <a class="btn btn--o" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=pricing_elite#/sales-enquiries" style="width:100%;margin-top:16px">Schedule a Demo</a>
+      </div></div>
     </div>
     <p class="rv" style="margin-top:26px;text-align:center;font-size:13px;color:var(--muted);max-width:92ch;margin-inline:auto">*Note: Pricing is shared on request. Implementation effort is calculated based on verified scope hours. Zoho Projects subscription licenses are billed separately by Zoho.*</p>
   </div>
 </section>
 
-<!-- ===== 13. FAQ (chat bubble) ===== -->
+<!-- ===== 13. FAQ ===== -->
 <section class="sec" id="faq">
   <div class="box">
     <div class="intro intro--mid rv">
@@ -888,7 +1067,7 @@ body{margin:0}
   </div>
 </section>
 
-<!-- ===== 14. TESTIMONIALS (stacked deck) ===== -->
+<!-- ===== 14. TESTIMONIALS - CAROUSEL ===== -->
 <section class="sec sec--white" id="testimonials">
   <div class="box">
     <div class="intro intro--mid rv">
@@ -896,70 +1075,99 @@ body{margin:0}
       <h2 class="h2">Don't Take Our Word for It. <span class="hl">Take Theirs.</span></h2>
       <p class="lede">What organisations say after Elite Tech Corp implemented Zoho for them, in their own words.</p>
     </div>
-    <div class="deck-wrap rv" id="deckWrap">
-      <figure class="deck-card" data-deck="0"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>I would strongly recommend Elite Tech Corp to any organization looking to implement Zoho products with <mark>long-term scalability, process discipline, and business impact</mark> in mind.</blockquote><figcaption class="who"><img src="https://www.elitetechcorp.com/wp-content/uploads/2026/01/Megawin.png" alt="Megawin Switchgear" loading="lazy"><div><b>Megawin Switchgear Private Limited</b><span>Valued: Scalability</span></div></figcaption></figure>
-      <figure class="deck-card" data-deck="1"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Elite Tech Corp has been a great partner. They've successfully implemented landing pages, forms, APIs, workflows and more. <mark>Their support has made a meaningful difference.</mark></blockquote><figcaption class="who"><img src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_39_admin-ajax-14.webp" alt="Vashini Exports" loading="lazy"><div><b>Vashini Exports</b><span>Valued: Workflows and APIs</span></div></figcaption></figure>
-      <figure class="deck-card" data-deck="2"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Ikram and the Elite Tech Corp team made our <mark>transition from Salesforce to Zoho seamless.</mark> Their consultative approach and custom API development were invaluable.</blockquote><figcaption class="who"><img src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_41_lEANDING-usa-1.webp" alt="LendingUSA" loading="lazy"><div><b>LendingUSA</b><span>Valued: Migration</span></div></figcaption></figure>
-      <figure class="deck-card" data-deck="3"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>We had the pleasure of working with Elite Tech Corp. Their expertise ensured <mark>smooth implementation, effective training and responsive support.</mark></blockquote><figcaption class="who"><img src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_40_bIG-bANG-2.webp" alt="BigBang" loading="lazy"><div><b>BigBang</b><span>Valued: Training and support</span></div></figcaption></figure>
-      <figure class="deck-card" data-deck="4"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>We recently started using Zoho software. The system is easy to use. <mark>Our team was able to adapt quickly</mark> and features are helpful for daily operations.</blockquote><figcaption class="who"><img src="https://www.elitetechcorp.com/wp-content/uploads/2025/12/Kings-Royal-Army.png" alt="Kings Royal Army" loading="lazy"><div><b>Kings Royal Army HLG</b><span>Valued: Adoption</span></div></figcaption></figure>
-      <figure class="deck-card" data-deck="5"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Your efforts in ensuring <mark>smooth operations and promptly resolving any issues</mark> are greatly appreciated. Your expertise makes a significant impact on our success.</blockquote><figcaption class="who"><img src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_37_mdl-1.webp" alt="MDL Vishal" loading="lazy"><div><b>MDL Vishal India Pvt Ltd</b><span>Valued: Responsiveness</span></div></figcaption></figure>
-      <figure class="deck-card" data-deck="6"><span class="qm" aria-hidden="true">&ldquo;</span><blockquote>Your understanding of our requirements and customization of Zoho Books have positively impacted our operations. <mark>The successful implementation of APIs and workflows has streamlined processes.</mark></blockquote><figcaption class="who"><img src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_38_fCARE-1.webp" alt="F Care Group" loading="lazy"><div><b>F Care Group</b><span>Valued: Streamlined processes</span></div></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 15. CONTACT ===== -->
-<section class="sec" id="contact">
-  <div class="box ct3">
-    <div class="rv rv--l">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>Assess your project delivery</em></div>
-      <h2 class="h2">Walk Us Through <span class="hl">One Live Project</span></h2>
-      <p class="lede">Tell us how a project is planned, tracked, billed and closed today. We will show you where delivery slips, and which package closes the gap.</p>
-      <div class="eco-viz rv" aria-label="Zoho ecosystem visualization">
-        <div class="eco-orbit">
-          <div class="eco-orb"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="CRM" loading="lazy"></div>
-          <div class="eco-orb"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="Books" loading="lazy"></div>
-          <div class="eco-orb"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" alt="People" loading="lazy"></div>
-          <div class="eco-orb"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/desk.svg" alt="Desk" loading="lazy"></div>
-          <div class="eco-orb"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="Analytics" loading="lazy"></div>
-          <div class="eco-orb"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/flow.svg" alt="Flow" loading="lazy"></div>
+    <div class="carousel-wrap rv" id="carouselWrap">
+      <div class="tst-track" id="tstTrack">
+        <!-- 1. MEGAWIN SWITCHGEAR - 4 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star empty"></i></div>
+          <blockquote>I would strongly recommend Elite Tech Corp to any organization looking to implement Zoho products with long-term scalability, process discipline, and business impact in mind.</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="https://www.elitetechcorp.com/wp-content/uploads/2026/01/Megawin.png" alt="MEGAWIN SWITCHGEAR" loading="lazy"><div><b>MEGAWIN SWITCHGEAR</b></div></div>
         </div>
-        <div class="eco-viz-center"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects"></div>
+        <!-- 2. Vashini Exports - 5 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <blockquote>At Elite Tech Corp has been a great partner. Ikram and Anand truly understand Zoho One applications. They&rsquo;ve successfully implemented landing pages, forms, APIs, workflows and more for our company. Their support has made a meaningful difference. It&rsquo;s been a pleasure working with them and we appreciate their continued dedication and excellent service.</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_39_admin-ajax-14.webp" alt="Vashini Exports" loading="lazy"><div><b>Vashini Exports</b></div></div>
+        </div>
+        <!-- 3. LendingUSA - 5 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <blockquote>Ikram and the Elite Tech Corp team made our transition from Salesforce to Zoho seamless. Their consultative approach, best practice insights and custom API development were invaluable. They understand Zoho One deeply and have successfully delivered landing pages, forms and workflows. It&rsquo;s been a pleasure partnering with them they&rsquo;ve truly elevated our operations</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_41_lEANDING-usa-1.webp" alt="LendingUSA" loading="lazy"><div><b>LendingUSA</b></div></div>
+        </div>
+        <!-- 4. BigBang - 5 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <blockquote>We had the pleasure of working with Elite Tech Corp to implement Zoho solutions and the experience was exceptional. Their expertise, communication and customization aligned perfectly with our needs. They ensured smooth implementation, effective training and responsive support. Thanks to their efforts, our operations are more efficient. Highly recommended for any Zoho implementation</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_40_bIG-bANG-2.webp" alt="BigBang" loading="lazy"><div><b>BigBang</b></div></div>
+        </div>
+        <!-- 5. ECOLINE INFRA - 5 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <blockquote>A highly professional and knowledgeable consultant. Their advice has consistently helped us make the right decisions. I am extremely satisfied with their service and would confidently recommend them to anyone looking for expert guidance</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="data:image/webp;base64,UklGRmwJAABXRUJQVlA4WAoAAAAQAAAATwAAUQAAQUxQSIQBAAARkFZrb95ILwRBEJRAMARDCIOaQcMgYdAySBh4GCgMBEEzu0nqWNqPnxExAfjbpzTOq4iZmdZ1LgN5ojSJNZQ5kY/hpdZ+Tt3RQ+1mydwTPdQ6lEc/WaxTyX3wah2/uINRrWvNd9HTun/ew9UcVr6BxVwKN2Mxp8KNWMytcBMWcyzcoprrSp89zfnzo2zuxw9Y/Slfe1mA66VsIeYrEoPQ2cOCLCcsUSgdZQuzHEkcepAs0OG3JZIXALJIlYAUiiVgiWUCJBYBWbA0RJNKNOMSzbxGs9VoRMOx/757NBpOXaPZlmjmMZqSohkoGsIeiwBTLDOQYkkAaSgE4B3JDABDJOk3aByCwxJHPiKNQvgIJYqCU5IYBBdzDPkK1gjeuMzqT/kaRn8Zn07eJnxM1VdFQxZPwi3A4kcYbVm8CKM1iw9htOfqoTJunfqbCDdn7UtH3M/vnjZGl1l6kYxui/SghdAxZ7lLC6H3tNyg7wEuKS3SYp8SwTENZdm+9Ld935YxEe4GVlA4IMIHAADQIgCdASpQAFIAPjkUiEQiISEfdAAgA4SygGnj6v22Tmf87WXoA20fO++kz/Y+nH1FfoAdKf/gsmW8O/wD6APIn+6c9r3d9kPRK/ZtoN9XPsf5cf0v9s+cH1EeoF+Jfx/+3flL+S/GFAA/Mf5h/iPzS8TP0R70/9E/zvGDfTv8f7AH82/qX/I/tvuj/tf/E/vn5Q+0f8t/sv/A/tfwC/yf+d/6X+6fu9/kv///9Pt69jv7VeyZ+r6SpXLox8eBf+iluG4a8acmAM6nST11fSeS87L2Qc7H+smy9Nn62QFmifWqNwV2AfUthVLolpukCuaLe6vbxBHPIw9HxoVB6E6ck7BNL+M4TYJatSfCIqUb0WVFRfBrE0ZRSdes5ZMEAAD++Nn//9H///0eP//+i8G2AeQ4cGaS5J/F7gnuh04ZMQp8wBlGEVrIuHCysEi86ZGV1Sd0Kq99AeKlP+QqtGlsn8ONPUG/cSv5Znww77T8cZplulqnz3GmtSKIXwWgTh3ZtiOhelw68gw8meKAhdknSTP//ucp//6N1//o8f//9G8PURV/p7hyMLNh7CbewcRdrdzx7rvpr4we7rGuVKFtOxR/JEi+4ou1V0O98xsD+4uIx09+PytaLa4mH0ANeJ78RWCIYVuUrrduv455ge6hCBOlc9D5dhE8k6YPi5/eFr2GP/9bTfiEIXWf7mohLMHnms0K/gQbaH9lhqxsd4rg/0uMudNISYmzO6lk+W+3bsa5BmIvXs5wbI/587eOsY5yDtNvWNdYl8GGn70NWQuxf+TYyFzuPKEW7/RtfIvQO8mxvWjPVys+vlu8CYMRLgyqt5F81b3ktz1UYnOUBHGYhtsboUKBCySXtQGD1R0PQv4CwpD68bHkBXECvucpuy+OmHG0kSUfh4RgK0IzIGLlWun4PJyWkGERqY36iaKTRPvBbsvVdiB1K9rKGeX/QyBw6FE6xcumSmQCItXKPKJ/kM+E+ZaQ89jSJQlzXkoqO7ystB/jC76QjaaK8cm0DN7v3APEqg+Czmc1XVh60mUZnx87Fxbs9TCXwlAwQkwtzF/U7rMvAiPc8YRrLYUKHw2yDfjEI1EaY4eaf3HH6k2N6NXL64j+4QinLfzp+LF/WTpEKOWQSkofIjcj/4r5nQwsFy7oBpNG7nMdHy/WW4wsEExj7Nfw7PFtWmjyV3RiLcuGEiOWAULjrJ2wBiJWeBVL77Y4rWbFDFwPAQ3/6hniY8iAiy/n0/bb+dGd5cg8lTQ9mi//2MjIpQtlQQrvsPvRNgC2WpKq+v8tQXlh9KC9/WcK7XlKXUT8ybUVm7/BIBW2BcziZNVJTNl9tDvwK+yFZBJtIV20l/GbkxPw9KZiWFu7UHYcUOGwhOa9dYW2Wzk4H44SOOQwBMPpSGELA/ku93Bwy5Cc8bzG0CZvzoiu5PXgvzGSQVvdkU853i4R0hbEKuDn8otkMfNMSGn8tGb4tWW68MSSIFUVfXl3xihMR/BcP/aw6mevj5IqzYtwcyk6+8XA2hooy/UwzYAuymtg0mgIZ/40h0gAXv5zD0uTGXnV0oceO+SXk4ALsoAFPRTcOyu+OaHSLUlM0IIG1s7gwd3rKv5Pl/2KUN90J0qv5ezlNgtKWGYwfJRytvV5t9fTxPen1nJHmFb3UTVvH2YuW0E/xgn/kIt6mFfnti31+6v949qgwGspGwmHkAfH/VfBemDbxNzlfVXFJkr5/eOvzcICL3u4X2x/1cg6DmrKSIELx2WJfq324Xf45GVxUpXzh6cqkcaYmhQDaHZ1OwMSdalZ51pRP3gyjrflbHAy0nugvBZliiBtwCUd9kBcud/prMTz1WT0IuB7skf0rtYXMxrOXxgAIlqYMZHHn/+kxl+fhbDDq7Lum/5jEJTAxS6/t57cImADlFRTA+Tl44p9bzrUYyobfkXLkTWA1t1UxLt1cOt18z3nV9h9NPcwz7+sJjO2mLZS64we0SDO+M2h3G8cJQeZ79DNMNnu2T/xHDVAhW9dP8OVf7spYoSYtvEwD+T5/rMD+CEg8D9m3Aub63JRd7V8UyjmnEkmBPhP/exzCR/3zLrldfyZApUoDMwD+ZdVdPbS/wKdQ/P4/jgfbg29md/Hb4sSra4YcNfPFIiAXyvTmSjZ5gc1YMKSR1Myh/3/hXc6CNjC6rBf2/vv4EMyxgQ2fs8Sg7WmEidW6GDF57Z4ZtZg9uRJgHZgwF6F+CzrilgsbD7SFlQbasywfoLUOSnm5V68Q/xaoo//yRy0MW9JuhULbC/Xx941G+Ee4ewkrVNt2HY170RMcMyjJ6ac0WD767j9X2oHtKhAo6HzXoHgGnp3NU/eVT6d5DNO2T1dXSAbmyga1pSce+Rm+JmKl0NTvtk38f/CA/SRVMA+pywDAlgcgCTUQf4wMKXvgg3uGQW+SWwrzoKvf16f7ZUqxgYmG1O+pmMeyx+g8LMg9oQs6Z1L20QS1//m4+3g2SSXBGtx1NCHK/m3pcDLA9Vyke//KI2MY09Xi3cPd+cXhsipWi/tOT6HIWZ3xk3lh8bJ8I7kqxxv5aBGzTSMT7qFM5bi9xuALvViwyUlO7n8YOYtLo6y1zk9nfw8twrBRNIn4Q9f1+SBEGW/3qoA1/+6SI///0m0P/+9VAAAAAA==" alt="ECOLINE INFRA" loading="lazy"><div><b>ECOLINE INFRA</b></div></div>
+        </div>
+        <!-- 6. Kings Royal Army HLG - 5 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <blockquote>We recently started using Zoho software in our company, and our experience has been good so far. The system is easy to use and has helped us manage our work more efficiently. Our team was able to adapt quickly, and the features are helpful for our daily operations. We are satisfied with Zoho and look forward to using it more in the future.</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="https://www.elitetechcorp.com/wp-content/uploads/2025/12/Kings-Royal-Army.png" alt="Kings Royal Army HLG" loading="lazy"><div><b>Kings Royal Army HLG</b></div></div>
+        </div>
+        <!-- 7. MDL VISHAL INDIA PVT LTD - 5 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <blockquote>I want to express my immense pleasure and gratitude for the exceptional work and dedication of the elite team. Your efforts in ensuring smooth operations and promptly resolving any issues are greatly appreciated. Your expertise and professionalism make a significant impact on our sales needs and overall success. Keep up the great work it&rsquo;s truly valued by everyone</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_37_mdl-1.webp" alt="MDL VISHAL INDIA PVT LTD" loading="lazy"><div><b>MDL VISHAL INDIA PVT LTD</b></div></div>
+        </div>
+        <!-- 8. F CARE GROUP - 5 stars -->
+        <div class="tsc">
+          <div class="tsc__stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <blockquote>I want to express my gratitude for the great partnership with At Elite Tech Corp. Your understanding of our requirements and customization of Zoho Books have positively impacted our operations. The successful implementation of APIs and workflows has streamlined processes. Thank you for your dedication looking forward to continuing this productive and rewarding collaboration.</blockquote>
+          <div class="tsc__by"><img class="tsc__ph" src="https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_38_fCARE-1.webp" alt="F CARE GROUP" loading="lazy"><div><b>F CARE GROUP</b></div></div>
+        </div>
       </div>
-      <div class="ct3-points st">
-        <div class="ct3-point"><span class="chip"><i class="fa-solid fa-check"></i></span><div><b>Authorized Zoho Advanced Partner</b><span>Enterprise PMO implementation by certified Zoho consultants.</span></div></div>
-        <div class="ct3-point"><span class="chip"><i class="fa-solid fa-layer-group"></i></span><div><b>Basic, Professional or Elite</b><span>Fixed-scope packages, reviewed before you commit.</span></div></div>
-        <div class="ct3-point"><span class="chip"><i class="fa-solid fa-bolt"></i></span><div><b>Live in 7 to 45 working days</b><span>Counted from the discovery audit and your master templates.</span></div></div>
-        <div class="ct3-point"><span class="chip"><i class="fa-solid fa-location-dot"></i></span><div><b>Coimbatore, Tamil Nadu</b><span>On site where it helps, remote where it does not.</span></div></div>
-        <div class="ct3-point"><span class="chip"><i class="fa-solid fa-envelope"></i></span><div><b><a href="mailto:sales@elitetechcorp.com">sales@elitetechcorp.com</a></b><span>We reply within one business hour.</span></div></div>
-      </div>
-    </div>
-    <div class="form-slot rv rv--r">
-      <div class="form-head"><b>Assess My Project Delivery</b><span>Share a few details and we will send a <strong>package recommendation</strong> for your organisation.</span></div>
-      <div class="form-body">[wpcode id="XXXXX"]</div>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== 16. FINAL CTA ===== -->
-<section class="sec sec--dark final3" id="final-cta">
+<!-- ===== 15. CONTACT - ZOHO PAYROLL STYLE ===== -->
+<section class="sec" id="contact">
+  <div class="box ct-grid">
+    <div class="ct-left rv rv--l">
+      <div class="ct-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects"></div>
+      <div class="ct-label">Zoho Projects</div>
+      <h2 class="h2">Transform Your <span class="hl">Project Management</span> Today</h2>
+      <p class="ct-desc">Walk us through one live project. We will show you where delivery slips, and which package closes the gap. Our certified consultants are ready to architect your governed PMO.</p>
+      <div class="ct-info-points st">
+        <div class="ct-info-point"><span class="chip" style="background:var(--forest);color:#B9F8CF"><i class="fa-solid fa-certificate"></i></span><div><b>Authorized Zoho Advanced Partner</b><span>Enterprise PMO implementation by certified consultants</span></div></div>
+        <div class="ct-info-point"><span class="chip" style="background:var(--forest);color:#B9F8CF"><i class="fa-solid fa-location-dot"></i></span><div><b>Coimbatore, Tamil Nadu</b><span>On site where it helps, remote where it does not</span></div></div>
+        <div class="ct-info-point"><span class="chip" style="background:var(--forest);color:#B9F8CF"><i class="fa-solid fa-envelope"></i></span><div><b><a href="mailto:sales@elitetechcorp.com">sales@elitetechcorp.com</a></b><span>We reply within one business hour</span></div></div>
+        <div class="ct-info-point"><span class="chip" style="background:var(--forest);color:#B9F8CF"><i class="fa-solid fa-headset"></i></span><div><b>Post Go-Live Support Included</b><span>30 to 45 days of dedicated hypercare after deployment</span></div></div>
+      </div>
+    </div>
+    <div class="ct-form-slot rv rv--r">
+      <div class="form-head"><b>Get in Touch with Our Experts</b><span>Share a few details and we will send a package recommendation for your organisation.</span></div>
+      <div class="form-body">[wpcode id="47446"]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 16. FINAL CTA - ZOHO PAYROLL STYLE ===== -->
+<section class="final-sec sec" id="final-cta">
   <div class="box">
     <div class="intro intro--mid rv" style="margin-bottom:0">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>The next step</em></div>
-      <h2 class="h2" style="font-size:clamp(28px,3.6vw,46px)">A Governed PMO<br class="br-lg"> <span class="hl">Starts With One Conversation</span></h2>
-      <p class="lede">Walk us through one live project. You leave with a clear view of where delivery, time and billing break today, and what a governed setup would change.</p>
+      <div class="final-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects"></div>
+      <div class="eyebrow" style="justify-content:center"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b style="color:#fff">Zoho Projects</b></span><em style="color:#9CCFB0;border-color:rgba(255,255,255,.2)">The next step</em></div>
+      <h2 class="h2" style="font-size:clamp(28px,3.6vw,46px);color:#fff">A Governed PMO <span class="hl">Starts With One Conversation</span></h2>
+      <p class="lede" style="color:#CFE9D8;margin-inline:auto">Walk us through one live project. You leave with a clear view of where delivery, time and billing break today, and what a governed setup would change.</p>
     </div>
-    <div class="logo-ring" aria-hidden="true">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="" loading="lazy">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="" loading="lazy">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" alt="" loading="lazy">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/desk.svg" alt="" loading="lazy">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="" loading="lazy">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sprints.svg" alt="" loading="lazy">
-      <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/flow.svg" alt="" loading="lazy">
+    <div class="final-steps st">
+      <div class="final-step"><div class="fs-num">1</div><h4>Discovery Audit</h4><p>Deep-dive into your current project delivery, task tracking, and billing cycles.</p></div>
+      <div class="final-step"><div class="fs-num">2</div><h4>Package Recommendation</h4><p>Receive a tailored scope document mapping your workflows to the right implementation tier.</p></div>
+      <div class="final-step"><div class="fs-num">3</div><h4>Go-Live in Days</h4><p>Governed PMO deployed in 7 to 45 working days with UAT, training, and hypercare included.</p></div>
     </div>
-    <div class="btnrow rv" style="justify-content:center;margin-top:30px">
+    <div class="btnrow rv" style="justify-content:center;margin-top:36px">
       <a class="btn btn--g" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=final_cta#/sales-enquiries">Assess My Project Delivery <i class="fa-solid fa-arrow-right"></i></a>
       <a class="btn btn--ghost" href="#packages">Compare Packages</a>
     </div>
@@ -970,7 +1178,7 @@ body{margin:0}
 </div><!-- /.hb -->
 
 <script>
-/* Design 3: Flow Pipeline - All behaviour */
+/* Design 3: Kanban Board - All behaviour */
 (function(){
 var roots=document.querySelectorAll('.hb');
 if(!roots.length)return;
@@ -978,7 +1186,7 @@ var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce
 var hasIO='IntersectionObserver' in window;
 if(hasIO&&!reduce)roots.forEach(function(r){r.classList.add('js')});
 
-/* Reveal on scroll (FLIP-IN effect) */
+/* Reveal on scroll */
 var revealSel='.rv, .st, .eyebrow, .flip, [data-anim]';
 function show(el){el.classList.add('in');el.dispatchEvent(new CustomEvent('hb:in',{bubbles:false}))}
 if(hasIO&&!reduce){
@@ -992,34 +1200,38 @@ if(hasIO&&!reduce){
 var bar=document.querySelector('.hb .progress');
 if(bar){var ticking=false;function prog(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight);bar.style.transform='scaleX('+p.toFixed(4)+')';ticking=false}window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(prog)}},{passive:true})}
 
-/* Feature Tabs */
+/* Feature Tabs with auto-switch */
 var featTabs=document.getElementById('featTabs');
 if(featTabs){
   var tabs=featTabs.querySelectorAll('.pill-tab');
   var panels=document.querySelectorAll('.feat3-panel');
-  tabs.forEach(function(t){t.addEventListener('click',function(){
+  var ftIdx=0;
+  function switchFeatTab(idx){
     tabs.forEach(function(tb){tb.classList.remove('is-active')});
-    t.classList.add('is-active');
+    tabs[idx].classList.add('is-active');
     panels.forEach(function(p){p.classList.remove('is-active');p.style.display='none'});
-    var target=document.querySelector('[data-fpanel="'+t.getAttribute('data-ftab')+'"]');
+    var target=document.querySelector('[data-fpanel="'+tabs[idx].getAttribute('data-ftab')+'"]');
     if(target){target.classList.add('is-active');target.style.display='block';
       var grid=target.querySelector('.st');if(grid){grid.classList.remove('in');void grid.offsetWidth;grid.classList.add('in')}}
-  })});
+  }
+  tabs.forEach(function(t,i){t.addEventListener('click',function(){ftIdx=i;switchFeatTab(i)})});
+  if(!reduce){setInterval(function(){ftIdx=(ftIdx+1)%tabs.length;switchFeatTab(ftIdx)},3000)}
 }
 
-/* Pain points scroll indicator */
+/* Pain points scroll + auto-scroll */
 var painStrip=document.getElementById('painStrip');
 var painDots=document.getElementById('painDots');
 if(painStrip&&painDots){
-  var cards=painStrip.querySelectorAll('.pain-card');
-  for(var i=0;i<cards.length;i++){var d=document.createElement('span');painDots.appendChild(d)}
+  var pCards=painStrip.querySelectorAll('.pain-card');
+  for(var i=0;i<pCards.length;i++){var d=document.createElement('span');painDots.appendChild(d)}
   function updatePainDots(){
     var sl=painStrip.scrollLeft,sw=painStrip.scrollWidth-painStrip.clientWidth;
-    var idx=Math.round((sl/sw)*(cards.length-1))||0;
+    var idx=Math.round((sl/sw)*(pCards.length-1))||0;
     Array.prototype.forEach.call(painDots.children,function(dot,k){dot.classList.toggle('active',k===idx)});
   }
   painStrip.addEventListener('scroll',updatePainDots,{passive:true});
   updatePainDots();
+  if(!reduce){var pIdx=0;setInterval(function(){pIdx=(pIdx+1)%pCards.length;pCards[pIdx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'})},3000)}
 }
 
 /* Drawing timeline */
@@ -1038,21 +1250,7 @@ if(drawTl){
   updateDraw();
 }
 
-/* Snake path fill */
-var snakePath=document.getElementById('snakePath');
-if(snakePath){
-  var sFill=snakePath.querySelector('.snake-fill');
-  function updateSnake(){
-    var r=snakePath.getBoundingClientRect();
-    var mark=window.innerHeight*0.6;
-    var p=Math.max(0,Math.min(1,(mark-r.top)/r.height));
-    if(sFill)sFill.style.height=(p*100).toFixed(2)+'%';
-  }
-  window.addEventListener('scroll',updateSnake,{passive:true});
-  updateSnake();
-}
-
-/* Accordion (scenarios) */
+/* Accordion */
 document.querySelectorAll('.acc-item').forEach(function(item){
   var head=item.querySelector('.acc-head');
   if(!head)return;
@@ -1093,17 +1291,97 @@ if(hexGrid&&hexDetail){
   });
 }
 
-/* Package accordion */
-var pkgStack=document.getElementById('pkgStack');
-if(pkgStack){
-  pkgStack.querySelectorAll('.pkg').forEach(function(pkg){
-    var head=pkg.querySelector('.pkg-head');
-    head.addEventListener('click',function(){
-      var wasOpen=pkg.classList.contains('is-open');
-      pkgStack.querySelectorAll('.pkg').forEach(function(p){p.classList.remove('is-open')});
-      if(!wasOpen)pkg.classList.add('is-open');
+/* Counter animation for modules orbital */
+var modOrbital=document.getElementById('modOrbital');
+if(modOrbital&&hasIO){
+  var counters=modOrbital.querySelectorAll('[data-counter]');
+  var counted=false;
+  function animateCounters(){
+    if(counted)return;counted=true;
+    counters.forEach(function(el){
+      var target=parseInt(el.getAttribute('data-counter'));
+      var start=performance.now();
+      var duration=1200;
+      function step(now){
+        var elapsed=now-start;
+        var progress=Math.min(elapsed/duration,1);
+        var eased=1-Math.pow(1-progress,3);
+        el.textContent=Math.round(eased*target);
+        if(progress<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     });
+  }
+  var cIO=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){animateCounters();cIO.unobserve(en.target)}})},{threshold:0.3});
+  cIO.observe(modOrbital);
+}
+
+/* Orbital consulting - counter animation on scroll reveal */
+var orbConsulting=document.getElementById('orbitalConsulting');
+if(orbConsulting&&hasIO&&!reduce){
+  var orbNums=orbConsulting.querySelectorAll('[data-count]');
+  var orbCounted=false;
+  function animateOrbNums(){
+    if(orbCounted)return;orbCounted=true;
+    orbNums.forEach(function(el){
+      var target=parseInt(el.getAttribute('data-count'));
+      var start=performance.now();
+      var duration=800;
+      function step(now){
+        var elapsed=now-start;
+        var progress=Math.min(elapsed/duration,1);
+        var eased=1-Math.pow(1-progress,3);
+        var val=Math.round(eased*target);
+        el.textContent=val<10?'0'+val:val;
+        if(progress<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var oIO=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){animateOrbNums();oIO.unobserve(en.target)}})},{threshold:0.2});
+  oIO.observe(orbConsulting);
+}
+
+/* Pricing Tabs with auto-switch */
+var priceTabs=document.getElementById('priceTabs');
+if(priceTabs){
+  var ptabs=priceTabs.querySelectorAll('.price-tab');
+  var ppanels=document.querySelectorAll('.price-panel');
+  var ptIdx=0;
+  function switchPriceTab(idx){
+    ptabs.forEach(function(tb){tb.classList.remove('is-active')});
+    ptabs[idx].classList.add('is-active');
+    ppanels.forEach(function(p){p.classList.remove('is-active')});
+    var target=document.querySelector('[data-ppanel="'+ptabs[idx].getAttribute('data-ptab')+'"]');
+    if(target){target.classList.add('is-active')}
+  }
+  ptabs.forEach(function(t,i){t.addEventListener('click',function(){ptIdx=i;switchPriceTab(i)})});
+  if(!reduce){setInterval(function(){ptIdx=(ptIdx+1)%ptabs.length;switchPriceTab(ptIdx)},3000)}
+}
+
+/* Testimonial Carousel with auto-scroll */
+var carouselWrap=document.getElementById('carouselWrap');
+var tstTrack=document.getElementById('tstTrack');
+var carouselDots=document.getElementById('carouselDots');
+if(carouselWrap&&tstTrack&&carouselDots){
+  var tCards=tstTrack.querySelectorAll('.tsc');
+  var tTotal=tCards.length;
+  var tCurrent=0;
+  for(var ci=0;ci<tTotal;ci++){var dot=document.createElement('span');carouselDots.appendChild(dot)}
+  function updateCarousel(){
+    var cardW=tCards[0].offsetWidth+20;
+    tstTrack.style.transform='translateX(-'+tCurrent*cardW+'px)';
+    Array.prototype.forEach.call(carouselDots.children,function(dot,k){dot.classList.toggle('active',k===tCurrent)});
+  }
+  carouselDots.addEventListener('click',function(e){
+    if(e.target.tagName==='SPAN'){
+      var idx=Array.prototype.indexOf.call(carouselDots.children,e.target);
+      if(idx>=0){tCurrent=idx;updateCarousel()}
+    }
   });
+  updateCarousel();
+  window.addEventListener('resize',updateCarousel);
+  if(!reduce){setInterval(function(){tCurrent=(tCurrent+1)%tTotal;updateCarousel()},3000)}
 }
 
 /* Chat FAQ */
@@ -1114,36 +1392,6 @@ document.querySelectorAll('[data-chat]').forEach(function(q){
     if(a)a.classList.toggle('is-open',isOpen);
   });
 });
-
-/* Testimonial deck */
-var deckWrap=document.getElementById('deckWrap');
-if(deckWrap){
-  var cards=deckWrap.querySelectorAll('.deck-card');
-  var total=cards.length;
-  var current=0;
-  function layoutDeck(){
-    cards.forEach(function(c,i){
-      var offset=(i-current+total)%total;
-      var z=total-offset;
-      c.style.zIndex=z;
-      c.style.transform='translateY('+offset*8+'px) scale('+(1-offset*0.03)+')';
-      c.style.opacity=offset>3?0:1;
-    });
-  }
-  cards.forEach(function(c){c.addEventListener('click',function(){current=(current+1)%total;layoutDeck()})});
-  layoutDeck();
-  if(!reduce){setInterval(function(){current=(current+1)%total;layoutDeck()},5000)}
-}
-
-/* Mouse parallax on hero pipeline */
-var pipeline=document.getElementById('pipeline');
-if(pipeline&&!reduce){
-  document.addEventListener('mousemove',function(e){
-    var x=(e.clientX/window.innerWidth-.5)*12;
-    var y=(e.clientY/window.innerHeight-.5)*12;
-    pipeline.style.transform='translate('+x+'px,'+y+'px)';
-  });
-}
 
 /* Smooth anchors */
 document.querySelectorAll('.hb a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){
