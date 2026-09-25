@@ -414,8 +414,10 @@ body{margin:0}
 .hb .d1-faq-item.is-open .d1-faq-a{grid-template-rows:1fr}
 .hb .d1-faq-item.is-open .d1-faq-q i{transform:rotate(45deg)}
 
-/* 14. TESTIMONIALS - Grid */
-.hb .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+/* 14. TESTIMONIALS - Carousel 3-per-row */
+.hb .carousel-wrap{position:relative;overflow:hidden;padding-bottom:48px}
+.hb .tst-track{display:flex;transition:transform .55s var(--ease)}
+.hb .tsc{flex:0 0 33.333%;padding:0 10px;box-sizing:border-box}
 .hb .tsc-inner{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;height:100%;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s}
 .hb .tsc-inner:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 .hb .tsc__ph{width:72px;height:72px;border-radius:14px;background:var(--ground);border:1px solid var(--line2);display:grid;place-items:center;padding:10px;margin-bottom:14px;flex:none}
@@ -423,6 +425,13 @@ body{margin:0}
 .hb .tsc__stars{display:flex;gap:2px;margin-bottom:10px;color:#F59E0B;font-size:14px}
 .hb .tsc p{font-size:14px;line-height:1.7;color:#374151;flex:1}
 .hb .tsc__by{margin-top:14px;font-size:14px;font-weight:700;color:#111827}
+.hb .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.hb .carousel-dot{width:9px;height:9px;border-radius:50%;background:var(--line);transition:all .3s;cursor:pointer;border:0;padding:0}
+.hb .carousel-dot.is-active{width:24px;border-radius:10px;background:var(--green)}
+.hb .tst-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink);transition:all .3s var(--ease);cursor:pointer}
+.hb .tst-nav:hover{background:var(--forest);color:#fff;border-color:var(--forest);box-shadow:var(--shadow-lg)}
+.hb .tst-prev{left:-22px}
+.hb .tst-next{right:-22px}
 
 /* 15. CONTACT - ct-grid */
 .hb .sec--contact{background:linear-gradient(135deg,#EEF6FF 0%,#F0FDF4 50%,#F5F3FF 100%);position:relative;overflow:hidden}
@@ -468,7 +477,8 @@ body{margin:0}
   .hb .d1-feat-tabs{flex-direction:row;overflow-x:auto;gap:8px;position:static}
   .hb .d1-feat-tab.is-active::before{display:none}
   .hb .d1-faq-cols{grid-template-columns:1fr}
-  .hb .tst-grid{grid-template-columns:repeat(2,1fr)}
+  .hb .tsc{flex:0 0 50%}
+  .hb .tst-nav{display:none}
   .hb .d1-impl-grid{grid-template-columns:1fr}
   .hb .d1-ind-strip{grid-template-columns:repeat(2,1fr)}
   .hb .d1-xform{grid-template-columns:1fr;gap:0}
@@ -500,7 +510,7 @@ body{margin:0}
   .hb .d1-ind-strip{grid-template-columns:repeat(2,1fr)}
   .hb .d1-barchart-float{width:140px;right:-8px;bottom:-8px}
   .hb .d1-uc-btn{display:none}
-  .hb .tst-grid{grid-template-columns:1fr}
+  .hb .tsc{flex:0 0 100%}
 }
 @media(max-width:480px){
   .hb .d1-pills span{font-size:11px;padding:4px 10px 4px 8px}
@@ -1208,7 +1218,10 @@ body{margin:0}
       <h2 class="h2">Don't Take Our Word for It. <span class="hl">Take Theirs.</span></h2>
       <p class="lede">What organisations say after Elite Tech Corp implemented Zoho for them.</p>
     </div>
-    <div class="tst-grid st">
+    <div class="carousel-wrap rv" id="tstCarousel">
+      <button class="tst-nav tst-prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="tst-nav tst-next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="tst-track" id="tstTrack">
         <div class="tsc">
           <div class="tsc-inner">
             <div class="tsc__ph"><img src="https://www.elitetechcorp.com/wp-content/uploads/2026/01/Megawin.png" alt="MEGAWIN SWITCHGEAR" loading="lazy"></div>
@@ -1273,6 +1286,8 @@ body{margin:0}
             <div class="tsc__by">F CARE GROUP</div>
           </div>
         </div>
+      </div>
+      <div class="carousel-dots" id="tstDots"></div>
     </div>
   </div>
 </section>
@@ -1396,6 +1411,35 @@ body{margin:0}
   function activatePkg(key){pkgTabBtns.forEach(function(t){t.classList.toggle('is-active',t.getAttribute('data-pkg')===key)});pkgPanels.forEach(function(p){p.classList.toggle('is-active',p.getAttribute('data-pkgpanel')===key)})}
   pkgTabBtns.forEach(function(t){t.addEventListener('click',function(){activatePkg(t.getAttribute('data-pkg'))})})
 
+  /* Testimonials carousel - 3 per row */
+  var tstCarousel=document.getElementById('tstCarousel');
+  var tstTrack=document.getElementById('tstTrack');
+  var tstDotsWrap=document.getElementById('tstDots');
+  var tstPrevBtn=tstCarousel?tstCarousel.querySelector('.tst-prev'):null;
+  var tstNextBtn=tstCarousel?tstCarousel.querySelector('.tst-next'):null;
+  if(tstCarousel&&tstTrack&&tstDotsWrap){
+    var cards=tstTrack.querySelectorAll('.tsc');
+    var total=cards.length;
+    if(total>0){
+      function getPerView(){return window.innerWidth>992?3:window.innerWidth>640?2:1}
+      var perView=getPerView();
+      var pageCount=Math.ceil(total/perView);
+      var curPage=0;
+      var tstPaused=false;
+      function buildDots(){tstDotsWrap.innerHTML='';for(var d=0;d<pageCount;d++){var dot=document.createElement('button');dot.className='carousel-dot'+(d===curPage?' is-active':'');dot.setAttribute('aria-label','Page '+(d+1));(function(idx){dot.addEventListener('click',function(){goToPage(idx)})})(d);tstDotsWrap.appendChild(dot)}}
+      buildDots();
+      function goToPage(pg){curPage=pg;var cardW=100/perView;var pct=-(pg*perView*cardW);var maxPct=-((total-perView)*cardW);if(pct<maxPct)pct=maxPct;tstTrack.style.transform='translateX('+pct+'%)';var dots=tstDotsWrap.querySelectorAll('.carousel-dot');dots.forEach(function(dt,i){dt.classList.toggle('is-active',i===pg)})}
+      if(tstPrevBtn)tstPrevBtn.addEventListener('click',function(){goToPage(curPage>0?curPage-1:pageCount-1)});
+      if(tstNextBtn)tstNextBtn.addEventListener('click',function(){goToPage(curPage<pageCount-1?curPage+1:0)});
+      if(!reduce){setInterval(function(){if(tstPaused)return;goToPage((curPage+1)%pageCount)},4000)}
+      tstCarousel.addEventListener('mouseenter',function(){tstPaused=true});
+      tstCarousel.addEventListener('mouseleave',function(){tstPaused=false});
+      var touchX=0;
+      tstCarousel.addEventListener('touchstart',function(e){touchX=e.touches[0].clientX;tstPaused=true},{passive:true});
+      tstCarousel.addEventListener('touchend',function(e){var diff=touchX-e.changedTouches[0].clientX;if(Math.abs(diff)>40){if(diff>0&&curPage<pageCount-1)goToPage(curPage+1);else if(diff<0&&curPage>0)goToPage(curPage-1)}tstPaused=false},{passive:true});
+      window.addEventListener('resize',function(){var newPer=getPerView();if(newPer!==perView){perView=newPer;pageCount=Math.ceil(total/perView);if(curPage>=pageCount)curPage=0;buildDots();goToPage(curPage)}});
+    }
+  }
 
   /* Orbital modules - position items and animate rotation */
   var orbitRing=document.getElementById('orbitRing');
