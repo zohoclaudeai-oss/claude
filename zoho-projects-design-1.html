@@ -427,14 +427,17 @@ body{margin:0}
 .hb .carousel-dot.is-active{width:24px;border-radius:10px;background:var(--green)}
 
 /* 15. CONTACT - ct-grid */
-.hb .ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,60px);align-items:start}
-.hb .ct-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9CCFB0;margin-bottom:12px}
+.hb .sec--contact{background:linear-gradient(135deg,#EEF6FF 0%,#F0FDF4 50%,#F5F3FF 100%);position:relative;overflow:hidden}
+.hb .sec--contact::before{content:"";position:absolute;top:-120px;right:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(closest-side,rgba(35,110,180,.08),transparent 70%)}
+.hb .sec--contact::after{content:"";position:absolute;bottom:-100px;left:-60px;width:350px;height:350px;border-radius:50%;background:radial-gradient(closest-side,rgba(62,169,0,.07),transparent 70%)}
+.hb .ct-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,60px);align-items:start;position:relative;z-index:1}
+.hb .ct-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
 .hb .ct-info-list{display:grid;gap:14px;margin-top:28px}
-.hb .ct-info{display:flex;gap:12px;align-items:center;font-size:14px;color:#DFF3E7}
-.hb .ct-info i{color:#B9F8CF;font-size:16px;width:20px;text-align:center;flex:none}
-.hb .ct-form-slot{background:#fff;border:1px solid #E5E7EB;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-lg)}
-.hb .ct-form-head{padding:22px 28px;background:#F9FAFB;border-bottom:1px solid #E5E7EB}
-.hb .ct-form-head b{display:block;font-size:17px;color:#000}
+.hb .ct-info{display:flex;gap:12px;align-items:center;font-size:14px;color:#374151}
+.hb .ct-info i{color:var(--blue);font-size:16px;width:20px;text-align:center;flex:none}
+.hb .ct-form-slot{background:#fff;border:1px solid #E5E7EB;border-radius:var(--r);overflow:hidden;box-shadow:0 8px 30px rgba(35,110,180,.1)}
+.hb .ct-form-head{padding:22px 28px;background:var(--forest);border-bottom:none}
+.hb .ct-form-head b{display:block;font-size:17px;color:#fff}
 .hb .ct-form-body{padding:26px 28px 30px;min-height:120px}
 
 /* 16. FINAL CTA */
@@ -1223,18 +1226,18 @@ body{margin:0}
 </section>
 
 <!-- ===== 15. CONTACT ===== -->
-<section class="sec sec--dark" id="contact">
+<section class="sec sec--contact" id="contact">
   <div class="box">
     <div class="ct-grid">
       <div class="rv">
-        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" style="width:48px;height:48px;filter:brightness(0) invert(1);margin-bottom:12px" loading="lazy">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" style="width:48px;height:48px;margin-bottom:12px" loading="lazy">
         <span class="ct-label">START YOUR PROJECT</span>
-        <h2 class="h2" style="color:#fff">Walk Us Through <span class="hl">One Live Project</span></h2>
-        <p class="lede">Tell us how a project is planned, tracked, billed and closed today. We will show you where delivery slips, and which package closes the gap.</p>
+        <h2 class="h2">Walk Us Through <span class="hl">One Live Project</span></h2>
+        <p class="lede" style="color:#4B5563">Tell us how a project is planned, tracked, billed and closed today. We will show you where delivery slips, and which package closes the gap.</p>
         <div class="ct-info-list">
           <div class="ct-info"><i class="fa-solid fa-certificate"></i><span>Authorized Zoho Advanced Partner</span></div>
           <div class="ct-info"><i class="fa-solid fa-location-dot"></i><span>Coimbatore, Tamil Nadu</span></div>
-          <div class="ct-info"><i class="fa-solid fa-envelope"></i><span><a href="mailto:sales@elitetechcorp.com" style="color:#B9F8CF;text-decoration:underline">sales@elitetechcorp.com</a></span></div>
+          <div class="ct-info"><i class="fa-solid fa-envelope"></i><span><a href="mailto:sales@elitetechcorp.com" style="color:var(--blue);text-decoration:underline">sales@elitetechcorp.com</a></span></div>
           <div class="ct-info"><i class="fa-solid fa-headset"></i><span>We reply within one business hour</span></div>
         </div>
       </div>
