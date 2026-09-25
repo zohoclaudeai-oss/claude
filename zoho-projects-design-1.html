@@ -414,10 +414,8 @@ body{margin:0}
 .hb .d1-faq-item.is-open .d1-faq-a{grid-template-rows:1fr}
 .hb .d1-faq-item.is-open .d1-faq-q i{transform:rotate(45deg)}
 
-/* 14. TESTIMONIALS - Carousel */
-.hb .carousel-wrap{position:relative;overflow:hidden;padding-bottom:48px}
-.hb .tst-track{display:flex;transition:transform .55s var(--ease)}
-.hb .tsc{flex:0 0 50%;padding:0 10px;box-sizing:border-box}
+/* 14. TESTIMONIALS - Grid */
+.hb .tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .hb .tsc-inner{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;height:100%;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s}
 .hb .tsc-inner:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 .hb .tsc__ph{width:72px;height:72px;border-radius:14px;background:var(--ground);border:1px solid var(--line2);display:grid;place-items:center;padding:10px;margin-bottom:14px;flex:none}
@@ -425,9 +423,6 @@ body{margin:0}
 .hb .tsc__stars{display:flex;gap:2px;margin-bottom:10px;color:#F59E0B;font-size:14px}
 .hb .tsc p{font-size:14px;line-height:1.7;color:#374151;flex:1}
 .hb .tsc__by{margin-top:14px;font-size:14px;font-weight:700;color:#111827}
-.hb .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
-.hb .carousel-dot{width:9px;height:9px;border-radius:50%;background:var(--line);transition:all .3s;cursor:pointer;border:0;padding:0}
-.hb .carousel-dot.is-active{width:24px;border-radius:10px;background:var(--green)}
 
 /* 15. CONTACT - ct-grid */
 .hb .sec--contact{background:linear-gradient(135deg,#EEF6FF 0%,#F0FDF4 50%,#F5F3FF 100%);position:relative;overflow:hidden}
@@ -473,7 +468,7 @@ body{margin:0}
   .hb .d1-feat-tabs{flex-direction:row;overflow-x:auto;gap:8px;position:static}
   .hb .d1-feat-tab.is-active::before{display:none}
   .hb .d1-faq-cols{grid-template-columns:1fr}
-  .hb .tsc{flex:0 0 100%}
+  .hb .tst-grid{grid-template-columns:repeat(2,1fr)}
   .hb .d1-impl-grid{grid-template-columns:1fr}
   .hb .d1-ind-strip{grid-template-columns:repeat(2,1fr)}
   .hb .d1-xform{grid-template-columns:1fr;gap:0}
@@ -505,6 +500,7 @@ body{margin:0}
   .hb .d1-ind-strip{grid-template-columns:repeat(2,1fr)}
   .hb .d1-barchart-float{width:140px;right:-8px;bottom:-8px}
   .hb .d1-uc-btn{display:none}
+  .hb .tst-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .hb .d1-pills span{font-size:11px;padding:4px 10px 4px 8px}
@@ -535,18 +531,18 @@ body{margin:0}
   <div class="box d1-hero-grid" style="position:relative;z-index:1">
     <div class="d1-hero-copy rv">
       <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" loading="eager"></span></span><em>AUTHORIZED ZOHO ADVANCED PARTNER &middot; ENTERPRISE PMO IMPLEMENTATION</em></div>
-      <h1 class="h1">From Disconnected Spreadsheets &amp; Chat Chaos to a <span class="hl">Governed, Predictable PMO</span></h1>
-      <p class="lede">Work Breakdown Structures, stage-gate Blueprints, Critical Path (CPM), live timesheet billing, resource capacity heatmaps, and enterprise project budgeting. Implemented end-to-end around how your organization actually delivers. Live in 7 to 45 working days.</p>
+      <h1 class="h1">Plan, Track &amp; Deliver Every Project on Time with <span class="hl">Zoho Projects</span></h1>
+      <p class="lede">Gantt charts with critical path, task dependencies &amp; milestones, automated Blueprints, timesheet-to-invoice billing, resource utilization heatmaps, and real-time project dashboards. Configured and deployed around your delivery workflow. Live in 7 to 45 working days.</p>
       <div class="d1-pills" aria-label="Capabilities implemented">
-        <span><i class="fa-solid fa-sitemap"></i> WBS</span>
-        <span><i class="fa-solid fa-route"></i> CPM</span>
+        <span><i class="fa-solid fa-chart-gantt"></i> Gantt &amp; CPM</span>
         <span><i class="fa-solid fa-diagram-next"></i> Blueprints</span>
         <span><i class="fa-solid fa-stopwatch"></i> Timesheets</span>
-        <span><i class="fa-solid fa-sack-dollar"></i> Budgeting</span>
+        <span><i class="fa-solid fa-users-gear"></i> Resource Planning</span>
+        <span><i class="fa-solid fa-chart-pie"></i> Dashboards</span>
       </div>
       <div class="btnrow">
-        <a class="btn btn--g" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=hero_cta#/sales-enquiries">Assess My Project Delivery <i class="fa-solid fa-arrow-right"></i></a>
-        <a class="btn btn--o" href="#features">Explore Zoho Projects Features</a>
+        <a class="btn btn--g" target="_blank" rel="noopener" href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&amp;utm_medium=cta&amp;utm_campaign=zoho_projects_implementation&amp;utm_content=hero_cta#/sales-enquiries">Get Zoho Projects Implementation <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn btn--o" href="#features">See All Zoho Projects Features</a>
       </div>
       <div class="d1-trust">
         <span><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 30 1024 330'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23089949;%7D .st1%7Bfill:%23F9B21D;%7D .st2%7Bfill:%23E42527;%7D .st3%7Bfill:%23226DB4;%7D %3C/style%3E%3Cpath class='st0' d='M458.1,353c-7.7,0-15.5-1.6-23-4.9l0,0l-160-71.3c-28.6-12.7-41.5-46.4-28.8-75l71.3-160 c12.7-28.6,46.4-41.5,75-28.8l160,71.3c28.6,12.7,41.5,46.4,28.8,75l-71.3,160C500.6,340.5,479.8,353,458.1,353z M448.4,318.1 c12.1,5.4,26.3-0.1,31.7-12.1l71.3-160c5.4-12.1-0.1-26.3-12.1-31.7L379.2,43c-12.1-5.4-26.3,0.1-31.7,12.1l-71.3,160 c-5.4,12.1,0.1,26.3,12.1,31.7L448.4,318.1z'/%3E%3Cpath class='st1' d='M960,353.1H784.8c-31.3,0-56.8-25.5-56.8-56.8V121.1c0-31.3,25.5-56.8,56.8-56.8H960 c31.3,0,56.8,25.5,56.8,56.8v175.2C1016.8,327.6,991.3,353.1,960,353.1z M784.8,97.1c-13.2,0-24,10.8-24,24v175.2 c0,13.2,10.8,24,24,24H960c13.2,0,24-10.8,24-24V121.1c0-13.2-10.8-24-24-24H784.8z'/%3E%3Cpath class='st2' d='M303.9,153.2L280.3,206c-0.3,0.6-0.6,1.1-0.9,1.6l9.2,56.8c2.1,13.1-6.8,25.4-19.8,27.5l-173,28 c-6.3,1-12.7-0.5-17.9-4.2c-5.2-3.7-8.6-9.3-9.6-15.6l-28-173c-1-6.3,0.5-12.7,4.2-17.9c3.7-5.2,9.3-8.6,15.6-9.6l173-28 c1.3-0.2,2.6-0.3,3.8-0.3c11.5,0,21.8,8.4,23.7,20.2l9.3,57.2L294.3,94l-1.3-7.7c-5-30.9-34.2-52-65.1-47l-173,28 C40,69.6,26.8,77.7,18,90c-8.9,12.3-12.4,27.3-10,42.3l28,173c2.4,15,10.5,28.1,22.8,37C68.5,349.4,80,353,91.9,353 c3,0,6.1-0.2,9.2-0.7l173-28c30.9-5,52-34.2,47-65.1L303.9,153.2z'/%3E%3Cpath class='st3' d='M511.4,235.8l25.4-56.9l-7.2-52.9c-0.9-6.3,0.8-12.6,4.7-17.7c3.9-5.1,9.5-8.4,15.9-9.2l173.6-23.6 c1.1-0.1,2.2-0.2,3.3-0.2c5.2,0,10.2,1.7,14.5,4.9c0.8,0.6,1.5,1.3,2.2,1.9c7.7-8.1,17.8-13.9,29.1-16.4 c-3.2-4.4-7-8.3-11.5-11.7c-12.1-9.2-27-13.1-42-11.1L545.6,66.5c-15,2-28.4,9.8-37.5,21.9c-9.2,12.1-13.1,27-11.1,42 L511.4,235.8z'/%3E%3Cpath class='st3' d='M806.8,265.1l-22.8-168c-12.8,0.4-23.1,11-23.1,23.9v49.3l13.5,99.2c0.9,6.3-0.8,12.6-4.7,17.7 s-9.5,8.4-15.9,9.2l-173.6,23.6c-6.3,0.9-12.6-0.8-17.7-4.7c-5.1-3.9-8.4-9.5-9.2-15.9l-8-58.9l-25.4,56.9l0.9,6.4 c2,15,9.8,28.4,21.9,37.5c10,7.6,21.9,11.6,34.3,11.6c2.6,0,5.2-0.2,7.8-0.5L758.2,329c15-2,28.4-9.8,37.5-21.9 C804.9,295,808.8,280.1,806.8,265.1z'/%3E%3C/svg%3E" alt="Zoho" style="width:36px;height:36px;object-fit:contain;vertical-align:middle"> Zoho Advanced Partner</span>
@@ -1212,8 +1208,7 @@ body{margin:0}
       <h2 class="h2">Don't Take Our Word for It. <span class="hl">Take Theirs.</span></h2>
       <p class="lede">What organisations say after Elite Tech Corp implemented Zoho for them.</p>
     </div>
-    <div class="carousel-wrap rv" id="tstCarousel">
-      <div class="tst-track" id="tstTrack">
+    <div class="tst-grid st">
         <div class="tsc">
           <div class="tsc-inner">
             <div class="tsc__ph"><img src="https://www.elitetechcorp.com/wp-content/uploads/2026/01/Megawin.png" alt="MEGAWIN SWITCHGEAR" loading="lazy"></div>
@@ -1278,8 +1273,6 @@ body{margin:0}
             <div class="tsc__by">F CARE GROUP</div>
           </div>
         </div>
-      </div>
-      <div class="carousel-dots" id="tstDots"></div>
     </div>
   </div>
 </section>
@@ -1403,55 +1396,6 @@ body{margin:0}
   function activatePkg(key){pkgTabBtns.forEach(function(t){t.classList.toggle('is-active',t.getAttribute('data-pkg')===key)});pkgPanels.forEach(function(p){p.classList.toggle('is-active',p.getAttribute('data-pkgpanel')===key)})}
   pkgTabBtns.forEach(function(t){t.addEventListener('click',function(){activatePkg(t.getAttribute('data-pkg'))})})
 
-  /* Testimonials carousel with buildCarousel pattern */
-  var tstCarousel=document.getElementById('tstCarousel');
-  var tstTrack=document.getElementById('tstTrack');
-  var tstDotsWrap=document.getElementById('tstDots');
-  if(tstCarousel&&tstTrack&&tstDotsWrap){
-    var cards=tstTrack.querySelectorAll('.tsc');
-    var total=cards.length;
-    if(total>0){
-      var perView=window.innerWidth>992?2:1;
-      var pageCount=Math.ceil(total/perView);
-      var curPage=0;
-      var tstPaused=false;
-
-      /* build dots */
-      for(var d=0;d<pageCount;d++){
-        var dot=document.createElement('button');
-        dot.className='carousel-dot'+(d===0?' is-active':'');
-        dot.setAttribute('aria-label','Page '+(d+1));
-        (function(idx){dot.addEventListener('click',function(){goToPage(idx)})})(d);
-        tstDotsWrap.appendChild(dot);
-      }
-      var dots=tstDotsWrap.querySelectorAll('.carousel-dot');
-
-      function goToPage(pg){
-        curPage=pg;
-        var pct=-(pg*(100/perView)*perView);
-        /* clamp to not scroll past end */
-        var maxPct=-((total-perView)*(100/perView));
-        if(pct<maxPct)pct=maxPct;
-        tstTrack.style.transform='translateX('+pct+'%)';
-        dots.forEach(function(dt,i){dt.classList.toggle('is-active',i===pg)});
-      }
-
-      /* auto scroll */
-      if(!reduce){setInterval(function(){if(tstPaused)return;goToPage((curPage+1)%pageCount)},3000)}
-
-      /* pause on hover */
-      tstCarousel.addEventListener('mouseenter',function(){tstPaused=true});
-      tstCarousel.addEventListener('mouseleave',function(){tstPaused=false});
-
-      /* touch swipe */
-      var touchX=0;
-      tstCarousel.addEventListener('touchstart',function(e){touchX=e.touches[0].clientX;tstPaused=true},{passive:true});
-      tstCarousel.addEventListener('touchend',function(e){var diff=touchX-e.changedTouches[0].clientX;if(Math.abs(diff)>40){if(diff>0&&curPage<pageCount-1)goToPage(curPage+1);else if(diff<0&&curPage>0)goToPage(curPage-1)}tstPaused=false},{passive:true});
-
-      /* responsive perView update */
-      window.addEventListener('resize',function(){var newPer=window.innerWidth>992?2:1;if(newPer!==perView){perView=newPer;pageCount=Math.ceil(total/perView);tstDotsWrap.innerHTML='';for(var d2=0;d2<pageCount;d2++){var dot2=document.createElement('button');dot2.className='carousel-dot'+(d2===0?' is-active':'');dot2.setAttribute('aria-label','Page '+(d2+1));(function(idx){dot2.addEventListener('click',function(){goToPage(idx)})})(d2);tstDotsWrap.appendChild(dot2)}dots=tstDotsWrap.querySelectorAll('.carousel-dot');if(curPage>=pageCount)curPage=0;goToPage(curPage)}});
-    }
-  }
 
   /* Orbital modules - position items and animate rotation */
   var orbitRing=document.getElementById('orbitRing');
