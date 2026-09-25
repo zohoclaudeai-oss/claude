@@ -102,8 +102,8 @@ body{margin:0}
 .hb .eyebrow em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-left:12px;border-left:1px solid var(--line)}
 .hb .sec--dark .eyebrow em{color:#9CCFB0;border-color:rgba(255,255,255,.2)}
 .hb .pmark{display:inline-flex;align-items:center;gap:8px}
-.hb .pmark .pmark-ic{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hb .pmark .pmark-ic img{width:100%;height:100%;object-fit:contain;display:block}
+.hb .pmark .pmark-ic{height:28px;display:inline-flex;align-items:center;flex-shrink:0}
+.hb .pmark .pmark-ic img{height:100%;width:auto;display:block}
 .hb .pmark b{font-size:15px;font-weight:700;color:#000;letter-spacing:-.01em}
 .hb .sec--dark .pmark b{color:#fff}
 .hb .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -288,7 +288,8 @@ body{margin:0}
 .hb .d1-step-num{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px}
 
 /* 8. USE CASES - Horizontal Scroll Strip */
-.hb .d1-uc-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.hb .d1-uc-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 20px;scrollbar-width:none}
+.hb .d1-uc-strip::-webkit-scrollbar{display:none}
 .hb .d1-uc-strip:hover{animation-play-state:paused}
 .hb .d1-uc-card{flex:0 0 320px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s;min-height:280px}
 .hb .d1-uc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
@@ -301,7 +302,8 @@ body{margin:0}
 .hb .d1-uc-flow li:last-child{font-weight:600;color:var(--forest)}
 
 /* 9. INDUSTRIES - Horizontal Scroll */
-.hb .d1-ind-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;position:relative}
+.hb .d1-ind-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 20px;scrollbar-width:none;position:relative}
+.hb .d1-ind-strip::-webkit-scrollbar{display:none}
 .hb .d1-ind-card{flex:0 0 260px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .3s var(--ease),box-shadow .3s}
 .hb .d1-ind-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 .hb .d1-ind-card i.ind-ico{font-size:22px;color:var(--blue)}
@@ -322,7 +324,8 @@ body{margin:0}
 .hb .orbit-name{display:block;font-size:10.5px;font-weight:600;color:var(--forest);line-height:1.3;margin-top:3px}
 
 /* 11. COMPARISON TABLE */
-.hb .d1-tblw{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r);border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+.hb .d1-tblw{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);scrollbar-width:none}
+.hb .d1-tblw::-webkit-scrollbar{display:none}
 .hb .d1-cmp{width:100%;min-width:900px;border-collapse:collapse;font-size:14px}
 .hb .d1-cmp th,.hb .d1-cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top;line-height:1.55}
 .hb .d1-cmp thead th{background:var(--ground);font-size:13px;color:#374151;font-weight:700}
@@ -364,7 +367,8 @@ body{margin:0}
 .hb .pkg-card-features li{display:flex;gap:9px;font-size:13px;color:#374151;line-height:1.45}
 .hb .pkg-card-features li i{color:var(--green-d);font-size:12px;margin-top:3px;flex:none}
 .hb .pkg-detail-desc{font-size:15px;color:var(--ink3);line-height:1.7;margin-bottom:24px;max-width:80ch}
-.hb .pkg-tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r);border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+.hb .pkg-tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);scrollbar-width:none}
+.hb .pkg-tbl-wrap::-webkit-scrollbar{display:none}
 .hb .pkg-tbl{width:100%;min-width:900px;border-collapse:collapse;font-size:13px}
 .hb .pkg-tbl th{background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:12px 14px;text-align:left;letter-spacing:.03em}
 .hb .pkg-tbl td{padding:11px 14px;border-bottom:1px solid var(--line2);vertical-align:top;line-height:1.5;color:var(--ink3)}
