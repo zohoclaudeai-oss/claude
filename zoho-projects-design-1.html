@@ -176,8 +176,23 @@ body{margin:0}
 @keyframes orbitSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 
 /* 1. HERO */
+@keyframes d1BgIco1{0%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(12px,-10px) rotate(8deg)}100%{transform:translate(0,0) rotate(0deg)}}
+@keyframes d1BgIco2{0%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-8px,14px) rotate(-6deg)}100%{transform:translate(0,0) rotate(0deg)}}
+@keyframes d1BgIco3{0%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(10px,8px) rotate(10deg)}100%{transform:translate(0,0) rotate(0deg)}}
 .hb .d1-hero{position:relative;overflow:hidden;padding:clamp(72px,7vw,110px) 0 clamp(64px,6vw,100px);background:#E9EDF3;
   background-image:radial-gradient(circle at 10% 8%,rgba(35,110,180,.08),transparent 50%),radial-gradient(circle at 90% 16%,rgba(62,169,0,.08),transparent 50%)}
+.hb .d1-hero-bg-icons{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hb .d1-hero-bg-icons i{position:absolute;color:rgba(35,110,180,.07);font-size:48px}
+.hb .d1-hero-bg-icons i:nth-child(1){top:8%;left:3%;font-size:56px;color:rgba(62,169,0,.06);animation:d1BgIco1 9s ease-in-out infinite}
+.hb .d1-hero-bg-icons i:nth-child(2){top:18%;right:8%;font-size:44px;animation:d1BgIco2 11s ease-in-out infinite}
+.hb .d1-hero-bg-icons i:nth-child(3){bottom:25%;left:6%;font-size:40px;color:rgba(62,169,0,.06);animation:d1BgIco3 13s ease-in-out infinite}
+.hb .d1-hero-bg-icons i:nth-child(4){top:35%;left:22%;font-size:36px;color:rgba(35,110,180,.05);animation:d1BgIco2 10s ease-in-out infinite .5s}
+.hb .d1-hero-bg-icons i:nth-child(5){bottom:12%;right:4%;font-size:52px;animation:d1BgIco1 12s ease-in-out infinite 1s}
+.hb .d1-hero-bg-icons i:nth-child(6){top:6%;left:42%;font-size:34px;color:rgba(62,169,0,.05);animation:d1BgIco3 8s ease-in-out infinite .3s}
+.hb .d1-hero-bg-icons i:nth-child(7){bottom:35%;right:18%;font-size:38px;color:rgba(35,110,180,.05);animation:d1BgIco1 14s ease-in-out infinite .7s}
+.hb .d1-hero-bg-icons i:nth-child(8){bottom:8%;left:32%;font-size:42px;color:rgba(62,169,0,.06);animation:d1BgIco2 9s ease-in-out infinite 1.2s}
+.hb .d1-hero-bg-icons i:nth-child(9){top:45%;right:30%;font-size:30px;animation:d1BgIco3 11s ease-in-out infinite .8s}
+.hb .d1-hero-bg-icons i:nth-child(10){top:12%;left:60%;font-size:46px;color:rgba(35,110,180,.04);animation:d1BgIco2 15s ease-in-out infinite}
 .hb .d1-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4vw,60px);align-items:center}
 .hb .d1-hero-copy .h1{font-size:clamp(26px,3vw,40px);line-height:1.22}
 .hb .d1-hero-copy .lede{font-size:16.5px}
@@ -497,7 +512,19 @@ body{margin:0}
 
 <!-- ===== 1. HERO ===== -->
 <section class="d1-hero sec" id="hero">
-  <div class="box d1-hero-grid">
+  <div class="d1-hero-bg-icons" aria-hidden="true">
+    <i class="fa-solid fa-chart-gantt"></i>
+    <i class="fa-solid fa-sitemap"></i>
+    <i class="fa-solid fa-stopwatch"></i>
+    <i class="fa-solid fa-diagram-next"></i>
+    <i class="fa-solid fa-route"></i>
+    <i class="fa-solid fa-layer-group"></i>
+    <i class="fa-solid fa-sack-dollar"></i>
+    <i class="fa-solid fa-users-gear"></i>
+    <i class="fa-solid fa-clipboard-check"></i>
+    <i class="fa-solid fa-shield-halved"></i>
+  </div>
+  <div class="box d1-hero-grid" style="position:relative;z-index:1">
     <div class="d1-hero-copy rv">
       <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" loading="eager"></span></span><em>AUTHORIZED ZOHO ADVANCED PARTNER &middot; ENTERPRISE PMO IMPLEMENTATION</em></div>
       <h1 class="h1">From Disconnected Spreadsheets &amp; Chat Chaos to a <span class="hl">Governed, Predictable PMO</span></h1>
@@ -514,7 +541,7 @@ body{margin:0}
         <a class="btn btn--o" href="#features">Explore Zoho Projects Features</a>
       </div>
       <div class="d1-trust">
-        <span><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho" style="width:30px;height:30px;object-fit:contain;vertical-align:middle"> Zoho Advanced Partner</span>
+        <span><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho" style="width:36px;height:36px;object-fit:contain;vertical-align:middle"> Zoho Advanced Partner</span>
         <span><i class="fa-solid fa-bolt"></i> Live in 7-45 days</span>
         <span><i class="fa-solid fa-headset"></i> Post go-live hypercare</span>
       </div>
@@ -635,9 +662,9 @@ body{margin:0}
       <div class="d1-stat"><span class="num grad-text">Zero</span><h3>Margin Drift &amp; Unbilled Scope</h3><p>Real-time timesheet cost burn tracking against contractual rate cards, milestone baselines, and hard-stop budget freezes.</p></div>
     </div>
     <div class="partners rv">
-      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho One" style="width:32px;height:32px;object-fit:contain"> Zoho Advanced Partner</span>
-      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/creator.svg" alt="Zoho Creator" style="width:32px;height:32px;object-fit:contain"> Zoho Creator Partner</span>
-      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/catalyst.svg" alt="Zoho Catalyst" style="width:32px;height:32px;object-fit:contain"> Zoho Catalyst Partner</span>
+      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho One" style="width:42px;height:42px;object-fit:contain"> Zoho Advanced Partner</span>
+      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/creator.svg" alt="Zoho Creator" style="width:42px;height:42px;object-fit:contain"> Zoho Creator Partner</span>
+      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/catalyst.svg" alt="Zoho Catalyst" style="width:42px;height:42px;object-fit:contain"> Zoho Catalyst Partner</span>
     </div>
   </div>
 </section>
