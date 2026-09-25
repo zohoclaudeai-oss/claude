@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zoho Product Icons – Complete Brand Kit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #1a1a2e;
+      padding: 40px 24px;
+    }
+
+    /* ── Page header ── */
+    .page-header {
+      max-width: 1200px;
+      margin: 0 auto 48px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .page-header img { height: 40px; }
+    .page-header-text h1 {
+      font-size: 26px; font-weight: 700; color: #0f172a;
+    }
+    .page-header-text p {
+      font-size: 14px; color: #64748b; margin-top: 4px;
+    }
+    .total-badge {
+      margin-left: auto;
+      background: #E42527;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── Category section ── */
+    .category {
+      max-width: 1200px;
+      margin: 0 auto 44px;
+    }
+    .category-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 16px;
+      padding-left: 2px;
+    }
+
+    /* ── Icon grid ── */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }
+
+    /* ── Icon card ── */
+    .icon-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 18px 12px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: box-shadow 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+      position: relative;
+      text-decoration: none;
+    }
+    .icon-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      border-color: #c7d2fe;
+      transform: translateY(-2px);
+    }
+    .icon-card:hover .copy-hint { opacity: 1; }
+
+    .icon-wrap {
+      width: 72px; height: 72px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .icon-wrap img {
+      width: 72px; height: 72px;
+      object-fit: contain;
+    }
+    /* Fallback icon (shown if SVG fails to load) */
+    .icon-wrap img.broken {
+      display: none;
+    }
+    .icon-fallback {
+      display: none;
+      width: 72px; height: 72px;
+      background: #f1f5f9;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+    .icon-wrap img.broken + .icon-fallback { display: flex; }
+
+    .icon-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #334155;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .icon-slug {
+      font-size: 9px;
+      color: #94a3b8;
+      font-family: monospace;
+      text-align: center;
+    }
+
+    /* Copy hint tooltip */
+    .copy-hint {
+      position: absolute;
+      top: 8px; right: 8px;
+      background: #0f172a;
+      color: #fff;
+      font-size: 9px;
+      padding: 3px 7px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    /* URL bar at bottom */
+    .icon-url {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      font-size: 8.5px;
+      color: #94a3b8;
+      padding: 5px 8px;
+      border-radius: 0 0 14px 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: 0;
+      transition: opacity 0.18s;
+    }
+    .icon-card:hover .icon-url { opacity: 1; }
+
+    /* Toast notification */
+    #toast {
+      position: fixed;
+      bottom: 32px; left: 50%; transform: translateX(-50%);
+      background: #0f172a;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 9999;
+    }
+    #toast.show { opacity: 1; }
+
+    /* ── Section divider ── */
+    hr.divider {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      border: none;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 1200px;
+      margin: 20px auto 0;
+      font-size: 12px;
+      color: #94a3b8;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+    }
+    footer a { color: #226DB4; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     PAGE HEADER
+════════════════════════════════════════ -->
+<header class="page-header">
+  <img src="https://www.zohowebstatic.com/sites/zweb/images/commonroot/zoho-logo-web.svg"
+       alt="Zoho" onerror="this.src='https://www.zoho.com/favicon.ico'"/>
+  <div class="page-header-text">
+    <h1>Zoho Product Icons</h1>
+    <p>Official SVG logos from <code>zohowebstatic.com/sites/zweb/images/productlogos/</code></p>
+  </div>
+  <div class="total-badge">55+ Products</div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     HELPER: renders one card
+     Usage: add .icon-card divs below
+════════════════════════════════════════ -->
+
+<!-- ── SALES ── -->
+<section class="category">
+  <div class="category-title">Sales</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('crm')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="Zoho CRM" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CRM</div>
+      </div>
+      <div class="icon-url">…/productlogos/crm.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('bigin')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/bigin.svg" alt="Bigin" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">BG</div>
+      </div>
+      <div class="icon-url">…/productlogos/bigin.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('salesiq')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/salesiq.svg" alt="SalesIQ" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SQ</div>
+      </div>
+      <div class="icon-url">…/productlogos/salesiq.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('crmplus')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crmplus.svg" alt="CRM Plus" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CRM+</div>
+      </div>
+      <div class="icon-url">…/productlogos/crmplus.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── MARKETING ── -->
+<section class="category">
+  <div class="category-title">Marketing</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('campaigns')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/campaigns.svg" alt="Campaigns" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CP</div>
+      </div>
+      <div class="icon-url">…/productlogos/campaigns.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('social')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/social.svg" alt="Social" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SO</div>
+      </div>
+      <div class="icon-url">…/productlogos/social.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('survey')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/survey.svg" alt="Survey" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SV</div>
+      </div>
+      <div class="icon-url">…/productlogos/survey.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('pagesense')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/pagesense.svg" alt="PageSense" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">PS</div>
+      </div>
+      <div class="icon-url">…/productlogos/pagesense.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('backstage')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/backstage.svg" alt="Backstage" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">BS</div>
+      </div>
+      <div class="icon-url">…/productlogos/backstage.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('bookings')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/bookings.svg" alt="Bookings" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">BK</div>
+      </div>
+      <div class="icon-url">…/productlogos/bookings.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('forms')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/forms.svg" alt="Forms" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">FM</div>
+      </div>
+      <div class="icon-url">…/productlogos/forms.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('marketingautomation')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/marketingautomation.svg" alt="Marketing Automation" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">MA</div>
+      </div>
+      <div class="icon-url">…/productlogos/marketingautomation.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('landingpage')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/landingpage.svg" alt="LandingPage" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">LP</div>
+      </div>
+      <div class="icon-url">…/productlogos/landingpage.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── COMMERCE & POS ── -->
+<section class="category">
+  <div class="category-title">Commerce &amp; POS</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('commerce')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/commerce.svg" alt="Commerce" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CO</div>
+      </div>
+      <div class="icon-url">…/productlogos/commerce.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('checkout')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/checkout.svg" alt="Checkout" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CH</div>
+      </div>
+      <div class="icon-url">…/productlogos/checkout.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SERVICE ── -->
+<section class="category">
+  <div class="category-title">Service</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('desk')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/desk.svg" alt="Desk" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">DK</div>
+      </div>
+      <div class="icon-url">…/productlogos/desk.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('assist')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/assist.svg" alt="Assist" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">AS</div>
+      </div>
+      <div class="icon-url">…/productlogos/assist.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('lens')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/lens.svg" alt="Lens" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">LN</div>
+      </div>
+      <div class="icon-url">…/productlogos/lens.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('fsm')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/fsm.svg" alt="FSM" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">FS</div>
+      </div>
+      <div class="icon-url">…/productlogos/fsm.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FINANCE ── -->
+<section class="category">
+  <div class="category-title">Finance</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('books')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="Books" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">BK</div>
+      </div>
+      <div class="icon-url">…/productlogos/books.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('invoice')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/invoice.svg" alt="Invoice" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">IN</div>
+      </div>
+      <div class="icon-url">…/productlogos/invoice.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('inventory')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/inventory.svg" alt="Inventory" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">IV</div>
+      </div>
+      <div class="icon-url">…/productlogos/inventory.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('expense')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/expense.svg" alt="Expense" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">EX</div>
+      </div>
+      <div class="icon-url">…/productlogos/expense.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('payroll')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/payroll.svg" alt="Payroll" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">PR</div>
+      </div>
+      <div class="icon-url">…/productlogos/payroll.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('subscriptions')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/subscriptions.svg" alt="Subscriptions" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SB</div>
+      </div>
+      <div class="icon-url">…/productlogos/subscriptions.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EMAIL, STORAGE & COLLABORATION ── -->
+<section class="category">
+  <div class="category-title">Email, Storage &amp; Collaboration</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('mail')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/mail.svg" alt="Mail" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">ML</div>
+      </div>
+      <div class="icon-url">…/productlogos/mail.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('cliq')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/cliq.svg" alt="Cliq" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CL</div>
+      </div>
+      <div class="icon-url">…/productlogos/cliq.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('meeting')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/meeting.svg" alt="Meeting" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">MT</div>
+      </div>
+      <div class="icon-url">…/productlogos/meeting.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('workdrive')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/workdrive.svg" alt="WorkDrive" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">WD</div>
+      </div>
+      <div class="icon-url">…/productlogos/workdrive.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('writer')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/writer.svg" alt="Writer" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">WR</div>
+      </div>
+      <div class="icon-url">…/productlogos/writer.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('sheet')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sheet.svg" alt="Sheet" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SH</div>
+      </div>
+      <div class="icon-url">…/productlogos/sheet.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('show')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/show.svg" alt="Show" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SW</div>
+      </div>
+      <div class="icon-url">…/productlogos/show.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('connect')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/connect.svg" alt="Connect" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CN</div>
+      </div>
+      <div class="icon-url">…/productlogos/connect.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('learn')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/learn.svg" alt="Learn" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">LR</div>
+      </div>
+      <div class="icon-url">…/productlogos/learn.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('sign')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sign.svg" alt="Sign" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SG</div>
+      </div>
+      <div class="icon-url">…/productlogos/sign.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('teaminbox')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/teaminbox.svg" alt="TeamInbox" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">TI</div>
+      </div>
+      <div class="icon-url">…/productlogos/teaminbox.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('notebook')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/notebook.svg" alt="Notebook" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">NB</div>
+      </div>
+      <div class="icon-url">…/productlogos/notebook.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── HUMAN RESOURCES ── -->
+<section class="category">
+  <div class="category-title">Human Resources</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('people')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" alt="People" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">PP</div>
+      </div>
+      <div class="icon-url">…/productlogos/people.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('recruit')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/recruit.svg" alt="Recruit" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">RC</div>
+      </div>
+      <div class="icon-url">…/productlogos/recruit.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('workerly')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/workerly.svg" alt="Workerly" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">WL</div>
+      </div>
+      <div class="icon-url">…/productlogos/workerly.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('shifts')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/shifts.svg" alt="Shifts" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SF</div>
+      </div>
+      <div class="icon-url">…/productlogos/shifts.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── LEGAL ── -->
+<section class="category">
+  <div class="category-title">Legal</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('contracts')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/contracts.svg" alt="Contracts" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CT</div>
+      </div>
+      <div class="icon-url">…/productlogos/contracts.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SECURITY & IT MANAGEMENT ── -->
+<section class="category">
+  <div class="category-title">Security &amp; IT Management</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('vault')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/vault.svg" alt="Vault" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">VT</div>
+      </div>
+      <div class="icon-url">…/productlogos/vault.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('oneauth')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/oneauth.svg" alt="OneAuth" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">OA</div>
+      </div>
+      <div class="icon-url">…/productlogos/oneauth.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('directory')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/directory.svg" alt="Directory" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">DR</div>
+      </div>
+      <div class="icon-url">…/productlogos/directory.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('mdm')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/mdm.svg" alt="MDM" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">MD</div>
+      </div>
+      <div class="icon-url">…/productlogos/mdm.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BI & ANALYTICS ── -->
+<section class="category">
+  <div class="category-title">BI &amp; Analytics</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('analytics')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="Analytics" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">AN</div>
+      </div>
+      <div class="icon-url">…/productlogos/analytics.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('dataprep')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/dataprep.svg" alt="DataPrep" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">DP</div>
+      </div>
+      <div class="icon-url">…/productlogos/dataprep.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROJECT MANAGEMENT ── -->
+<section class="category">
+  <div class="category-title">Project Management</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('projects')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Projects" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">PJ</div>
+      </div>
+      <div class="icon-url">…/productlogos/projects.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('sprints')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sprints.svg" alt="Sprints" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">SP</div>
+      </div>
+      <div class="icon-url">…/productlogos/sprints.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('bugtracker')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/bugtracker.svg" alt="BugTracker" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">BT</div>
+      </div>
+      <div class="icon-url">…/productlogos/bugtracker.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── DEVELOPER PLATFORMS ── -->
+<section class="category">
+  <div class="category-title">Developer Platforms</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('creator')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/creator.svg" alt="Creator" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CR</div>
+      </div>
+      <div class="icon-url">…/productlogos/creator.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('flow')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/flow.svg" alt="Flow" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">FL</div>
+      </div>
+      <div class="icon-url">…/productlogos/flow.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('catalyst')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/catalyst.svg" alt="Catalyst" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">CA</div>
+      </div>
+      <div class="icon-url">…/productlogos/catalyst.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('apptics')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/apptics.svg" alt="Apptics" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">AP</div>
+      </div>
+      <div class="icon-url">…/productlogos/apptics.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('sites')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sites.svg" alt="Sites" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">ST</div>
+      </div>
+      <div class="icon-url">…/productlogos/sites.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SUITE & PLATFORM ── -->
+<section class="category">
+  <div class="category-title">Suite &amp; Platform</div>
+  <div class="icon-grid">
+
+    <div class="icon-card" onclick="copyUrl('one')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho One" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">Z1</div>
+      </div>
+      <div class="icon-url">…/productlogos/one.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('marketplace')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/marketplace.svg" alt="Marketplace" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">MK</div>
+      </div>
+      <div class="icon-url">…/productlogos/marketplace.svg</div>
+    </div>
+
+    <div class="icon-card" onclick="copyUrl('accounts')">
+      <span class="copy-hint">Copy URL</span>
+      <div class="icon-wrap">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/accounts.svg" alt="Accounts" onerror="this.classList.add('broken')"/>
+        <div class="icon-fallback">AC</div>
+      </div>
+      <div class="icon-url">…/productlogos/accounts.svg</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Toast -->
+<div id="toast">URL copied!</div>
+
+<footer>
+  Icons served from
+  <a href="https://www.zohowebstatic.com/sites/zweb/images/productlogos/" target="_blank">
+    zohowebstatic.com/sites/zweb/images/productlogos/
+  </a>
+  &nbsp;·&nbsp; Zoho brand assets are property of Zoho Corporation &nbsp;·&nbsp;
+  <a href="https://www.zoho.com/branding/" target="_blank">Official Branding Guidelines</a>
+</footer>
+
+<script>
+  var BASE = 'https://www.zohowebstatic.com/sites/zweb/images/productlogos/';
+
+  function copyUrl(slug) {
+    var url = BASE + slug + '.svg';
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(showToast);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = url; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast();
+    }
+  }
+
+  function showToast() {
+    var t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){ t.classList.remove('show'); }, 2000);
+  }
+</script>
+</body>
+</html>
