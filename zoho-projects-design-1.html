@@ -102,7 +102,7 @@ body{margin:0}
 .hb .eyebrow em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-left:12px;border-left:1px solid var(--line)}
 .hb .sec--dark .eyebrow em{color:#9CCFB0;border-color:rgba(255,255,255,.2)}
 .hb .pmark{display:inline-flex;align-items:center;gap:8px}
-.hb .pmark .pmark-ic{height:28px;display:inline-flex;align-items:center;flex-shrink:0}
+.hb .pmark .pmark-ic{height:36px;display:inline-flex;align-items:center;flex-shrink:0}
 .hb .pmark .pmark-ic img{height:100%;width:auto;display:block}
 .hb .pmark b{font-size:15px;font-weight:700;color:#000;letter-spacing:-.01em}
 .hb .sec--dark .pmark b{color:#fff}
@@ -267,27 +267,31 @@ body{margin:0}
 .hb .d1-fc dt{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--green-d)}
 .hb .d1-fc dd{font-size:13px;color:var(--ink3);line-height:1.6;margin-top:2px}
 
-/* 7. WHY CHOOSE US - Vertical Timeline */
-.hb .d1-roadmap{position:relative;max-width:900px;margin:0 auto}
-.hb .d1-tl-line{position:absolute;left:50%;top:20px;bottom:20px;width:4px;margin-left:-2px;background:var(--line2);border-radius:4px}
-.hb .d1-tl-fill{position:absolute;left:0;top:0;width:100%;height:0;background:var(--grad);border-radius:4px;transition:height .2s linear}
-.hb .d1-step{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:28px;position:relative}
-.hb .d1-step:nth-child(odd) .d1-step-card{grid-column:1;text-align:right}
-.hb .d1-step:nth-child(even) .d1-step-card{grid-column:2}
-.hb .d1-step::after{content:"";position:absolute;top:12px;left:calc(50% - 16px);width:32px;height:32px;border-radius:50%;background:#fff;border:4px solid var(--line);z-index:2;transition:background .5s var(--ease),border-color .5s}
-.hb .d1-step.reached::after{background:var(--green);border-color:var(--green)}
-.hb .d1-step-card{padding:18px 22px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);transition:transform .3s var(--ease),box-shadow .3s}
-.hb .d1-step-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.hb .d1-step-card .phase{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:6px}
+/* 7. WHY CHOOSE US - Process Grid */
+.hb .d1-impl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.hb .d1-impl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:transform .3s var(--ease),box-shadow .3s;position:relative;overflow:hidden}
+.hb .d1-impl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.hb .d1-impl-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px}
+.hb .d1-impl-card--discover::before{background:#236EB4}
+.hb .d1-impl-card--build::before{background:var(--green)}
+.hb .d1-impl-card--prove::before{background:#F59E0B}
+.hb .d1-impl-card--run::before{background:#E42527}
+.hb .d1-impl-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.hb .d1-impl-no{font-size:28px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;flex:none}
+.hb .phase{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px}
 .hb .phase--discover{background:#DBEAFE;color:#1447E6}
 .hb .phase--build{background:var(--mint);color:#016630}
 .hb .phase--prove{background:var(--amber);color:#973C00}
 .hb .phase--run{background:var(--rose);color:#C10007}
-.hb .d1-step-card h4{font-size:15px;color:var(--forest);line-height:1.32}
-.hb .d1-step-card p{font-size:13px;color:var(--ink3);margin-top:6px;line-height:1.6}
-.hb .d1-step-num{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.hb .d1-impl-card h4{font-size:15.5px;color:var(--forest);line-height:1.32}
+.hb .d1-impl-card p{font-size:13px;color:var(--ink3);margin-top:8px;line-height:1.6}
 
-/* 8. USE CASES - Horizontal Scroll Strip */
+/* 8. USE CASES - Horizontal Scroll Strip with Nav */
+.hb .d1-uc-nav{position:relative}
+.hb .d1-uc-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink);transition:all .3s var(--ease);cursor:pointer}
+.hb .d1-uc-btn:hover{background:var(--forest);color:#fff;border-color:var(--forest);box-shadow:var(--shadow-lg)}
+.hb .d1-uc-prev{left:-22px}
+.hb .d1-uc-next{right:-22px}
 .hb .d1-uc-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 20px;scrollbar-width:none}
 .hb .d1-uc-strip::-webkit-scrollbar{display:none}
 .hb .d1-uc-strip:hover{animation-play-state:paused}
@@ -301,10 +305,9 @@ body{margin:0}
 .hb .d1-uc-flow li::before{content:"";position:absolute;left:-5px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--green);border:2px solid #fff}
 .hb .d1-uc-flow li:last-child{font-weight:600;color:var(--forest)}
 
-/* 9. INDUSTRIES - Horizontal Scroll */
-.hb .d1-ind-strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 20px;scrollbar-width:none;position:relative}
-.hb .d1-ind-strip::-webkit-scrollbar{display:none}
-.hb .d1-ind-card{flex:0 0 260px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .3s var(--ease),box-shadow .3s}
+/* 9. INDUSTRIES - 4-Column Grid */
+.hb .d1-ind-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:10px 0 20px}
+.hb .d1-ind-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:8px;transition:transform .3s var(--ease),box-shadow .3s}
 .hb .d1-ind-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 .hb .d1-ind-card i.ind-ico{font-size:22px;color:var(--blue)}
 .hb .d1-ind-card h3{font-size:15px;color:var(--forest);line-height:1.3}
@@ -449,10 +452,8 @@ body{margin:0}
   .hb .d1-feat-tab.is-active::before{display:none}
   .hb .d1-faq-cols{grid-template-columns:1fr}
   .hb .tsc{flex:0 0 100%}
-  .hb .d1-step{grid-template-columns:1fr;gap:0}
-  .hb .d1-step:nth-child(odd) .d1-step-card,.hb .d1-step:nth-child(even) .d1-step-card{grid-column:1;text-align:left;margin-left:50px}
-  .hb .d1-tl-line{left:20px}
-  .hb .d1-step::after{left:4px!important}
+  .hb .d1-impl-grid{grid-template-columns:1fr}
+  .hb .d1-ind-strip{grid-template-columns:repeat(2,1fr)}
   .hb .d1-xform{grid-template-columns:1fr;gap:0}
   .hb .d1-xform-mid{padding:20px 0}
   .hb .d1-xform-mid::after{top:50%;bottom:auto;left:0;right:0;width:auto;height:2px;margin:0}
@@ -479,11 +480,13 @@ body{margin:0}
   .hb .d1-cards4{grid-template-columns:1fr}
   .hb .d1-eco-map{grid-template-columns:1fr}
   .hb .d1-uc-card{flex:0 0 280px}
-  .hb .d1-ind-card{flex:0 0 240px}
+  .hb .d1-ind-strip{grid-template-columns:repeat(2,1fr)}
+  .hb .d1-uc-btn{display:none}
 }
 @media(max-width:480px){
   .hb .d1-pills span{font-size:11px;padding:4px 10px 4px 8px}
   .hb .orbit-ring{grid-template-columns:1fr}
+  .hb .d1-ind-strip{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -496,7 +499,7 @@ body{margin:0}
 <section class="d1-hero sec" id="hero">
   <div class="box d1-hero-grid">
     <div class="d1-hero-copy rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" loading="eager"></span><b>Zoho Projects</b></span><em>AUTHORIZED ZOHO ADVANCED PARTNER &middot; ENTERPRISE PMO IMPLEMENTATION</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" loading="eager"></span></span><em>AUTHORIZED ZOHO ADVANCED PARTNER &middot; ENTERPRISE PMO IMPLEMENTATION</em></div>
       <h1 class="h1">From Disconnected Spreadsheets &amp; Chat Chaos to a <span class="hl">Governed, Predictable PMO</span></h1>
       <p class="lede">Work Breakdown Structures, stage-gate Blueprints, Critical Path (CPM), live timesheet billing, resource capacity heatmaps, and enterprise project budgeting. Implemented end-to-end around how your organization actually delivers. Live in 7 to 45 working days.</p>
       <div class="d1-pills" aria-label="Capabilities implemented">
@@ -511,7 +514,7 @@ body{margin:0}
         <a class="btn btn--o" href="#features">Explore Zoho Projects Features</a>
       </div>
       <div class="d1-trust">
-        <span><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho" style="width:24px;height:24px;object-fit:contain;vertical-align:middle"> Zoho Advanced Partner</span>
+        <span><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho" style="width:30px;height:30px;object-fit:contain;vertical-align:middle"> Zoho Advanced Partner</span>
         <span><i class="fa-solid fa-bolt"></i> Live in 7-45 days</span>
         <span><i class="fa-solid fa-headset"></i> Post go-live hypercare</span>
       </div>
@@ -623,7 +626,7 @@ body{margin:0}
 <section class="sec sec--white" id="trusted">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>Proof of delivery</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>Proof of delivery</em></div>
       <h2 class="h2">Trusted by Project Leaders Who Need <span class="hl">Predictable Delivery and Protected Margins</span></h2>
     </div>
     <div class="d1-stats st">
@@ -632,9 +635,9 @@ body{margin:0}
       <div class="d1-stat"><span class="num grad-text">Zero</span><h3>Margin Drift &amp; Unbilled Scope</h3><p>Real-time timesheet cost burn tracking against contractual rate cards, milestone baselines, and hard-stop budget freezes.</p></div>
     </div>
     <div class="partners rv">
-      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho One" style="width:26px;height:26px;object-fit:contain"> Zoho Advanced Partner</span>
-      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/creator.svg" alt="Zoho Creator" style="width:26px;height:26px;object-fit:contain"> Zoho Creator Partner</span>
-      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/catalyst.svg" alt="Zoho Catalyst" style="width:26px;height:26px;object-fit:contain"> Zoho Catalyst Partner</span>
+      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/one.svg" alt="Zoho One" style="width:32px;height:32px;object-fit:contain"> Zoho Advanced Partner</span>
+      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/creator.svg" alt="Zoho Creator" style="width:32px;height:32px;object-fit:contain"> Zoho Creator Partner</span>
+      <span class="partner"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/catalyst.svg" alt="Zoho Catalyst" style="width:32px;height:32px;object-fit:contain"> Zoho Catalyst Partner</span>
     </div>
   </div>
 </section>
@@ -643,7 +646,7 @@ body{margin:0}
 <section class="sec" id="intro">
   <div class="box">
     <div class="rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>Platform overview</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>Platform overview</em></div>
       <h2 class="h2">What Is <span class="hl">Zoho Projects</span></h2>
     </div>
     <div class="d1-intro-grid" style="margin-top:28px">
@@ -674,7 +677,7 @@ body{margin:0}
 <section class="sec sec--alt" id="problems">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>Symptoms of spreadsheets</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>Symptoms of spreadsheets</em></div>
       <h2 class="h2">Is Your Project Delivery Still Running on <span class="hl">Spreadsheets, Chat and Hope?</span></h2>
       <p class="lede">Most professional service, engineering, and contracting firms do not have a talent problem. They have an operational visibility and process governance problem.</p>
     </div>
@@ -695,7 +698,7 @@ body{margin:0}
 <section class="sec sec--dark" id="solution">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>FROM CHAOS TO GOVERNANCE</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>FROM CHAOS TO GOVERNANCE</em></div>
       <h2 class="h2">From Fragmented Tasks to <span class="hl">Governed Delivery</span></h2>
       <p class="lede">Zoho Projects replaces the chaos of disconnected project management with a closed-loop system that enforces process discipline, protects profitability, and scales delivery.</p>
     </div>
@@ -717,7 +720,7 @@ body{margin:0}
 <section class="sec sec--white" id="features">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>18 core features</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>18 core features</em></div>
       <h2 class="h2"><span class="hl">Key Features</span> of Zoho Projects</h2>
       <p class="lede">Comprehensive capability across all 18 core functional domains of modern project management and PMO operations.</p>
     </div>
@@ -782,22 +785,21 @@ body{margin:0}
 <section class="sec" id="why-us">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>IMPLEMENTATION RIGOR</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>IMPLEMENTATION RIGOR</em></div>
       <h2 class="h2">Why <span class="hl">Elite Tech Corp + Zoho Projects</span></h2>
       <p class="lede"><strong>We do not simply switch Zoho Projects on.</strong> We architect your WBS, stage-gate Blueprints, and financial costing models to mirror how your organization actually delivers. 10 steps across 4 phases.</p>
     </div>
-    <div class="d1-roadmap rv" id="d1Roadmap">
-      <div class="d1-tl-line"><div class="d1-tl-fill"></div></div>
-      <div class="d1-step"><div class="d1-step-card" style="grid-column:1;text-align:right"><span class="d1-step-num">Step 01</span><span class="phase phase--discover">Discover</span><h4>Project Delivery &amp; PMO Audit</h4><p>Deep-dive audit of current task tracking, milestone governance, timesheet approvals, and billing cycles.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card"><span class="d1-step-num">Step 02</span><span class="phase phase--discover">Discover</span><h4>WBS, Templates &amp; Governance Study</h4><p>Map standardized deliverable hierarchies, rate cards, role authorization matrices, and stage-gate sign-offs.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card" style="grid-column:1;text-align:right"><span class="d1-step-num">Step 03</span><span class="phase phase--build">Build</span><h4>Workspace Architecture &amp; Custom Fields</h4><p>Setup of portal profiles, corporate calendars, custom fields, dynamic layout rules, and role-based permissions.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card"><span class="d1-step-num">Step 04</span><span class="phase phase--build">Build</span><h4>Milestone &amp; Task Blueprints</h4><p>Visual state machine Blueprints enforcing mandatory checklists, document attachments, and digital approvals.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card" style="grid-column:1;text-align:right"><span class="d1-step-num">Step 05</span><span class="phase phase--build">Build</span><h4>Gantt, CPM Engine &amp; Resource Pools</h4><p>Interactive Gantt charts with FS/SS/FF/SF dependencies, Critical Path calculation, and resource capacity limits.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card"><span class="d1-step-num">Step 06</span><span class="phase phase--build">Build</span><h4>Timesheets, Billing &amp; Ecosystem Integrations</h4><p>Multi-tier billing rates, approval chains, Zoho Books timesheet-to-invoice sync, and CRM Deal triggers.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card" style="grid-column:1;text-align:right"><span class="d1-step-num">Step 07</span><span class="phase phase--prove">Prove</span><h4>Role-Based PMO &amp; Team Training</h4><p>Tailored training academies for PMs, Resource Planners, Engineers, and Finance administrators with recorded SOPs.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card"><span class="d1-step-num">Step 08</span><span class="phase phase--prove">Prove</span><h4>25+ Scenario End-to-End UAT Simulation</h4><p>Rigorous simulation covering scope changes, baseline shifts, subcontractor entries, and client billing runs.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card" style="grid-column:1;text-align:right"><span class="d1-step-num">Step 09</span><span class="phase phase--run">Run</span><h4>Production Cutover &amp; Live Launch</h4><p>Formal cutover, master template instantiation, live project provisioning, and go-live command center support.</p></div></div>
-      <div class="d1-step"><div class="d1-step-card"><span class="d1-step-num">Step 10</span><span class="phase phase--run">Run</span><h4>30 to 45-Day Post Go-Live Hypercare</h4><p>Dedicated Senior Solution Architect on-call through two full billing runs and PMO optimization reviews.</p></div></div>
+    <div class="d1-impl-grid st">
+      <div class="d1-impl-card d1-impl-card--discover"><div class="d1-impl-top"><span class="d1-impl-no">01</span><span class="phase phase--discover">Discover</span></div><h4>Project Delivery &amp; PMO Audit</h4><p>Deep-dive audit of current task tracking, milestone governance, timesheet approvals, and billing cycles.</p></div>
+      <div class="d1-impl-card d1-impl-card--discover"><div class="d1-impl-top"><span class="d1-impl-no">02</span><span class="phase phase--discover">Discover</span></div><h4>WBS, Templates &amp; Governance Study</h4><p>Map standardized deliverable hierarchies, rate cards, role authorization matrices, and stage-gate sign-offs.</p></div>
+      <div class="d1-impl-card d1-impl-card--build"><div class="d1-impl-top"><span class="d1-impl-no">03</span><span class="phase phase--build">Build</span></div><h4>Workspace Architecture &amp; Custom Fields</h4><p>Setup of portal profiles, corporate calendars, custom fields, dynamic layout rules, and role-based permissions.</p></div>
+      <div class="d1-impl-card d1-impl-card--build"><div class="d1-impl-top"><span class="d1-impl-no">04</span><span class="phase phase--build">Build</span></div><h4>Milestone &amp; Task Blueprints</h4><p>Visual state machine Blueprints enforcing mandatory checklists, document attachments, and digital approvals.</p></div>
+      <div class="d1-impl-card d1-impl-card--build"><div class="d1-impl-top"><span class="d1-impl-no">05</span><span class="phase phase--build">Build</span></div><h4>Gantt, CPM Engine &amp; Resource Pools</h4><p>Interactive Gantt charts with FS/SS/FF/SF dependencies, Critical Path calculation, and resource capacity limits.</p></div>
+      <div class="d1-impl-card d1-impl-card--build"><div class="d1-impl-top"><span class="d1-impl-no">06</span><span class="phase phase--build">Build</span></div><h4>Timesheets, Billing &amp; Ecosystem Integrations</h4><p>Multi-tier billing rates, approval chains, Zoho Books timesheet-to-invoice sync, and CRM Deal triggers.</p></div>
+      <div class="d1-impl-card d1-impl-card--prove"><div class="d1-impl-top"><span class="d1-impl-no">07</span><span class="phase phase--prove">Prove</span></div><h4>Role-Based PMO &amp; Team Training</h4><p>Tailored training academies for PMs, Resource Planners, Engineers, and Finance administrators with recorded SOPs.</p></div>
+      <div class="d1-impl-card d1-impl-card--prove"><div class="d1-impl-top"><span class="d1-impl-no">08</span><span class="phase phase--prove">Prove</span></div><h4>25+ Scenario End-to-End UAT Simulation</h4><p>Rigorous simulation covering scope changes, baseline shifts, subcontractor entries, and client billing runs.</p></div>
+      <div class="d1-impl-card d1-impl-card--run"><div class="d1-impl-top"><span class="d1-impl-no">09</span><span class="phase phase--run">Run</span></div><h4>Production Cutover &amp; Live Launch</h4><p>Formal cutover, master template instantiation, live project provisioning, and go-live command center support.</p></div>
+      <div class="d1-impl-card d1-impl-card--run"><div class="d1-impl-top"><span class="d1-impl-no">10</span><span class="phase phase--run">Run</span></div><h4>30 to 45-Day Post Go-Live Hypercare</h4><p>Dedicated Senior Solution Architect on-call through two full billing runs and PMO optimization reviews.</p></div>
     </div>
   </div>
 </section>
@@ -806,11 +808,14 @@ body{margin:0}
 <section class="sec sec--alt" id="scenarios">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>OPERATIONAL SCENARIOS</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>OPERATIONAL SCENARIOS</em></div>
       <h2 class="h2">What Can You <span class="hl">Automate</span> With Zoho Projects</h2>
       <p class="lede">Twelve everyday project delivery journeys, each with a 4-step automated workflow.</p>
     </div>
-    <div class="d1-uc-strip rv" id="ucStrip">
+    <div class="d1-uc-nav rv">
+    <button class="d1-uc-btn d1-uc-prev" aria-label="Previous scenarios"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="d1-uc-btn d1-uc-next" aria-label="Next scenarios"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="d1-uc-strip" id="ucStrip">
       <div class="d1-uc-card"><small>Scenario 01</small><h3>Deal-to-Project Auto-Provisioning</h3><p>Instantly create project structures when a deal is Won in CRM, pre-populated with the right template, milestones, and team assignments.</p><ul class="d1-uc-flow"><li>Deal Won in CRM</li><li>Auto-Select Template</li><li>Populate WBS &amp; Milestones</li><li>Assign Project Team</li></ul></div>
       <div class="d1-uc-card"><small>Scenario 02</small><h3>Critical Path Schedule Compression</h3><p>Detect schedule slippage on zero-slack critical path tasks and alert project managers before milestone deadlines are breached.</p><ul class="d1-uc-flow"><li>Task Delayed</li><li>CPM Analyzes Slack</li><li>Dynamic Schedule Shift</li><li>PM Mitigation Alert</li></ul></div>
       <div class="d1-uc-card"><small>Scenario 03</small><h3>Cross-Project Resource Rebalancing</h3><p>Eliminate double-booking and burnout across concurrent client deliverables with real-time utilization heatmap visibility.</p><ul class="d1-uc-flow"><li>Heatmap Breach (&gt;100%)</li><li>Flag Over-Allocation</li><li>Drag-and-Drop Re-Leveling</li><li>Sync Zoho People Calendar</li></ul></div>
@@ -824,6 +829,7 @@ body{margin:0}
       <div class="d1-uc-card"><small>Scenario 11</small><h3>Automated Executive Portfolio Digest</h3><p>Deliver scheduled C-suite portfolio health, margin forecasting, and resource demand reports across the entire project book.</p><ul class="d1-uc-flow"><li>Live Data Aggregated</li><li>Zoho Analytics BI Model</li><li>EVM CPI/SPI Computed</li><li>Automated CEO Digest</li></ul></div>
       <div class="d1-uc-card"><small>Scenario 12</small><h3>Subcontractor Sandboxed Work Logging</h3><p>Allow external contractors to view only their assigned deliverables and submit timesheets without accessing internal billing or client data.</p><ul class="d1-uc-flow"><li>Contractor Invited</li><li>View Restricted to Scope</li><li>Hours Logged via Timer</li><li>Internal PM Verification</li></ul></div>
     </div>
+    </div>
   </div>
 </section>
 
@@ -831,10 +837,10 @@ body{margin:0}
 <section class="sec sec--white" id="industries">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>TAILORED VERTICAL SOLUTIONS</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>TAILORED VERTICAL SOLUTIONS</em></div>
       <h2 class="h2">Zoho Projects for <span class="hl">Every Industry Delivering Complex Engagements</span></h2>
     </div>
-    <div class="d1-ind-strip rv" id="indStrip">
+    <div class="d1-ind-strip st">
       <div class="d1-ind-card"><i class="fa-solid fa-solar-panel ind-ico"></i><h3>Solar &amp; Renewable EPC</h3><p>Site survey milestones, civil/electrical WBS, subcontractor portals, BOM cost tracking, and commissioning stage-gates.</p></div>
       <div class="d1-ind-card"><i class="fa-solid fa-industry ind-ico"></i><h3>Manufacturing &amp; Engineering</h3><p>Stage-gate NPI processes, equipment dependencies, vendor submittals, cross-plant ECOs, and quality gate sign-offs.</p></div>
       <div class="d1-ind-card"><i class="fa-solid fa-code ind-ico"></i><h3>Software &amp; SaaS</h3><p>Hybrid agile sprints, GitHub commit sync, bug SLA escalations, billable timesheets, and release milestone tracking.</p></div>
@@ -858,7 +864,7 @@ body{margin:0}
 <section class="sec" id="modules">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>COMPLETE SCOPE ARCHITECTURE</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>COMPLETE SCOPE ARCHITECTURE</em></div>
       <h2 class="h2">Complete Zoho Projects <span class="hl">Functional Scope</span></h2>
       <p class="lede">11 integrated functional modules and up to 34 configured enterprise activities.</p>
     </div>
@@ -892,7 +898,7 @@ body{margin:0}
 <section class="sec sec--alt" id="comparison">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>STRATEGIC EVALUATION</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>STRATEGIC EVALUATION</em></div>
       <h2 class="h2">Zoho Projects + Elite Tech Corp <span class="hl">vs Alternative Solutions</span></h2>
     </div>
     <p class="d1-swipe"><i class="fa-solid fa-arrows-left-right"></i> Swipe to compare</p>
@@ -919,7 +925,7 @@ body{margin:0}
 <section class="sec sec--white" id="packages">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>TRANSPARENT SCOPE TIERS</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>TRANSPARENT SCOPE TIERS</em></div>
       <h2 class="h2">Zoho Projects <span class="hl">Implementation Packages</span></h2>
       <p class="lede">Three turnkey, fixed-scope implementation packages. Select the scope that matches your operational complexity.</p>
     </div>
@@ -1090,7 +1096,7 @@ body{margin:0}
 <section class="sec" id="faq">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>KNOWLEDGE BASE</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>KNOWLEDGE BASE</em></div>
       <h2 class="h2">Zoho Projects <span class="hl">Implementation FAQ</span></h2>
     </div>
     <div class="d1-faq-search rv"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="faqFilter" placeholder="Filter questions..." aria-label="Filter FAQ questions"></div>
@@ -1113,7 +1119,7 @@ body{margin:0}
 <section class="sec sec--white" id="testimonials">
   <div class="box">
     <div class="intro intro--mid rv">
-      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span><b>Zoho Projects</b></span><em>Customer voices</em></div>
+      <div class="eyebrow"><span class="pmark"><span class="pmark-ic"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" loading="lazy"></span></span><em>Customer voices</em></div>
       <h2 class="h2">Don't Take Our Word for It. <span class="hl">Take Theirs.</span></h2>
       <p class="lede">What organisations say after Elite Tech Corp implemented Zoho for them.</p>
     </div>
@@ -1194,7 +1200,7 @@ body{margin:0}
   <div class="box">
     <div class="ct-grid">
       <div class="rv">
-        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" style="width:40px;height:40px;filter:brightness(0) invert(1);margin-bottom:12px" loading="lazy">
+        <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" style="width:48px;height:48px;filter:brightness(0) invert(1);margin-bottom:12px" loading="lazy">
         <span class="ct-label">START YOUR PROJECT</span>
         <h2 class="h2" style="color:#fff">Walk Us Through <span class="hl">One Live Project</span></h2>
         <p class="lede">Tell us how a project is planned, tracked, billed and closed today. We will show you where delivery slips, and which package closes the gap.</p>
@@ -1302,13 +1308,11 @@ body{margin:0}
   var faqInput=document.getElementById('faqFilter');
   if(faqInput){faqInput.addEventListener('input',function(){var q=faqInput.value.toLowerCase();document.querySelectorAll('.d1-faq-item').forEach(function(item){item.style.display=item.textContent.toLowerCase().indexOf(q)>-1?'':'none'})})}
 
-  /* Pricing tabs + auto-switch */
+  /* Pricing tabs - click only */
   var pkgTabBtns=document.querySelectorAll('#pkgTabs .pkg-tab');
   var pkgPanels=document.querySelectorAll('[data-pkgpanel]');
-  var pkgIdx=0;
-  function activatePkg(key){pkgTabBtns.forEach(function(t,i){var match=t.getAttribute('data-pkg')===key;t.classList.toggle('is-active',match);if(match)pkgIdx=i});pkgPanels.forEach(function(p){p.classList.toggle('is-active',p.getAttribute('data-pkgpanel')===key)})}
-  pkgTabBtns.forEach(function(t){t.addEventListener('click',function(){activatePkg(t.getAttribute('data-pkg'))})});
-  if(!reduce&&pkgTabBtns.length){var pkgPaused=false;var pkgWrap=document.getElementById('pkgTabs');if(pkgWrap){pkgWrap.parentNode.addEventListener('mouseenter',function(){pkgPaused=true});pkgWrap.parentNode.addEventListener('mouseleave',function(){pkgPaused=false})}setInterval(function(){if(pkgPaused)return;pkgIdx=(pkgIdx+1)%pkgTabBtns.length;activatePkg(pkgTabBtns[pkgIdx].getAttribute('data-pkg'))},3000)}
+  function activatePkg(key){pkgTabBtns.forEach(function(t){t.classList.toggle('is-active',t.getAttribute('data-pkg')===key)});pkgPanels.forEach(function(p){p.classList.toggle('is-active',p.getAttribute('data-pkgpanel')===key)})}
+  pkgTabBtns.forEach(function(t){t.addEventListener('click',function(){activatePkg(t.getAttribute('data-pkg'))})})
 
   /* Testimonials carousel with buildCarousel pattern */
   var tstCarousel=document.getElementById('tstCarousel');
@@ -1404,26 +1408,14 @@ body{margin:0}
     }
   }
 
-  /* roadmap timeline fill */
-  var roadmap=document.getElementById('d1Roadmap');
-  if(roadmap){
-    var fill=roadmap.querySelector('.d1-tl-fill');
-    var steps=roadmap.querySelectorAll('.d1-step');
-    function updateRoadmap(){var r=roadmap.getBoundingClientRect();var mark=window.innerHeight*0.6;var p=Math.max(0,Math.min(1,(mark-r.top)/r.height));if(fill)fill.style.height=(p*100).toFixed(2)+'%';steps.forEach(function(s){s.classList.toggle('reached',s.getBoundingClientRect().top<mark)})}
-    window.addEventListener('scroll',updateRoadmap,{passive:true});updateRoadmap();
+  /* use case strip nav buttons */
+  var ucStrip=document.getElementById('ucStrip');
+  var ucPrev=document.querySelector('.d1-uc-prev');
+  var ucNext=document.querySelector('.d1-uc-next');
+  if(ucStrip&&ucPrev&&ucNext){
+    ucPrev.addEventListener('click',function(){ucStrip.scrollBy({left:-340,behavior:'smooth'})});
+    ucNext.addEventListener('click',function(){ucStrip.scrollBy({left:340,behavior:'smooth'})});
   }
-
-  /* industry & use case strip auto-scroll */
-  function autoScroll(id){
-    var strip=document.getElementById(id);
-    if(!strip||reduce)return;
-    var dir=1,paused=false;
-    strip.addEventListener('mouseenter',function(){paused=true});
-    strip.addEventListener('mouseleave',function(){paused=false});
-    setInterval(function(){if(paused)return;strip.scrollLeft+=dir;if(strip.scrollLeft>=strip.scrollWidth-strip.clientWidth-2)dir=-1;if(strip.scrollLeft<=0)dir=1},30);
-  }
-  autoScroll('indStrip');
-  autoScroll('ucStrip');
 
   /* smooth anchors */
   document.querySelectorAll('.hb a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
