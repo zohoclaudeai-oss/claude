@@ -1,0 +1,796 @@
+<!--
+  Zoho Projects Implementation – Design 4 "Mission Control Dashboard"
+  Elite Tech Corp · Authorized Zoho Advanced Partner
+  Standalone Elementor HTML Widget Page
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zoho Projects Implementation Partner | Elite Tech Corp</title>
+<meta name="description" content="Enterprise Zoho Projects implementation by Elite Tech Corp, Authorized Zoho Advanced Partner. WBS, Blueprints, CPM, timesheets, resource heatmaps and budgeting — live in 7-45 days.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://elitetechcorp.com/zoho-projects-implementation/">
+<meta property="og:title" content="Zoho Projects Implementation Partner | Elite Tech Corp">
+<meta property="og:description" content="Enterprise Zoho Projects implementation — WBS, Blueprints, CPM, live timesheets, resource heatmaps and budgeting. Live in 7-45 working days.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elitetechcorp.com/zoho-projects-implementation/">
+<meta property="og:image" content="https://elitetechcorp.com/wp-content/uploads/2024/12/elite-tech-corp-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Elite Tech Corp","description":"Authorized Zoho Advanced Partner providing enterprise Zoho Projects implementation services.","url":"https://elitetechcorp.com","telephone":"+91-422-4957575","email":"sales@elitetechcorp.com","address":{"@type":"PostalAddress","addressLocality":"Coimbatore","addressRegion":"Tamil Nadu","addressCountry":"IN"},"areaServed":"Worldwide","priceRange":"$$","sameAs":["https://www.linkedin.com/company/elitetechcorp"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Zoho Projects Implementation","itemListElement":[{"@type":"Offer","name":"Basic Package","description":"7-10 working days, 10 modules, 28 activities"},{"@type":"Offer","name":"Professional Package","description":"15-20 working days, 11 modules, 33 activities"},{"@type":"Offer","name":"Elite Package","description":"30-45 working days, 11 modules, 34 activities"}]}}
+</script>
+<style>
+@font-face{font-family:'zoho-puvi';src:url('/wp-content/uploads/useanyfont/6759zoho-puvi.woff2') format('woff2');font-display:swap}
+@font-face{font-family:'zoho-puvi';src:url('https://elitetechcorp.com/wp-content/uploads/useanyfont/6759zoho-puvi.woff2') format('woff2');font-display:swap}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+.hb{
+  --ground:#F9FAFB;--ground2:#F3F4F6;--white:#FFFFFF;--ink:#030712;--ink2:#364153;--ink3:#4A5565;
+  --muted:#8A8A94;--blue:#236EB4;--green:#3EA900;--green-d:#008236;--forest:#032E15;
+  --mint:#B9F8CF;--amber:#FEF3C6;--rose:#FFE2E2;--sky:#DBEAFE;--line:#E5E7EB;
+  --grad:linear-gradient(90deg,#236EB4 0%,#3EA900 100%);
+  --hl:linear-gradient(90deg,#3EA900 0%,#2E8C5A 48%,#236EB4 100%);
+  font-family:'zoho-puvi','Inter',system-ui,-apple-system,sans-serif;
+  color:#334155;font-size:15px;line-height:1.65;background:var(--ground);
+  overflow-x:hidden;
+}
+.hb .wrap{max-width:1200px;margin:0 auto;padding-inline:24px}
+.hb section{padding:clamp(84px,8vw,128px) 0}
+.hb h1{font-size:clamp(30px,3.6vw,46px);font-weight:600;color:var(--ink);line-height:1.15;letter-spacing:-.02em}
+.hb h2{font-size:clamp(25px,2.8vw,36px);font-weight:600;color:var(--ink);line-height:1.2;letter-spacing:-.015em}
+.hb h3{font-size:clamp(17px,1.4vw,20px);font-weight:600;color:var(--ink);line-height:1.3}
+.hb p{font-size:14.5px;color:#444;line-height:1.65}
+.hb .eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:inline-block}
+.hb .hl{background:var(--hl);color:#fff;padding:2px 12px;border-radius:6px;background-size:0% 100%;background-repeat:no-repeat;transition:background-size .6s ease}
+.hb .hl.vis{background-size:100% 100%}
+.hb .btn--g{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--grad);color:#fff;font-weight:600;font-size:15px;border:2px solid #008236;border-radius:10px;text-decoration:none;box-shadow:0 4px 14px rgba(35,110,180,.25);transition:transform .2s,box-shadow .2s;cursor:pointer}
+.hb .btn--g:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(35,110,180,.35)}
+.hb .btn--o{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--white);color:var(--ink);font-weight:600;font-size:15px;border:1.5px solid var(--line);border-radius:10px;text-decoration:none;transition:border-color .2s,transform .2s;cursor:pointer}
+.hb .btn--o:hover{border-color:var(--blue);transform:translateY(-2px)}
+.hb .btn--ghost{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;color:#fff;font-weight:600;font-size:15px;border:1.5px solid rgba(255,255,255,.4);border-radius:10px;text-decoration:none;transition:border-color .2s,background .2s;cursor:pointer}
+.hb .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.hb .card{background:var(--white);border:1px solid var(--line);border-radius:16px;transition:transform .3s,box-shadow .3s}
+.hb .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+/* Progress bar */
+.hb .scroll-prog{position:fixed;top:0;left:0;height:3px;background:var(--grad);width:0;z-index:9999;transition:width .1s linear}
+/* Reveal animations */
+.hb .rv{opacity:0;transform:translateY(20px);filter:blur(8px);transition:opacity .6s ease,transform .6s ease,filter .6s ease}
+.hb .rv.vis{opacity:1;transform:translateY(0);filter:blur(0)}
+.hb .st>*{opacity:0;transform:translateY(20px);filter:blur(8px);transition:opacity .5s ease,transform .5s ease,filter .5s ease}
+.hb .st.vis>*{opacity:1;transform:translateY(0);filter:blur(0)}
+.hb .st.vis>*:nth-child(1){transition-delay:.07s}.hb .st.vis>*:nth-child(2){transition-delay:.14s}.hb .st.vis>*:nth-child(3){transition-delay:.21s}
+.hb .st.vis>*:nth-child(4){transition-delay:.28s}.hb .st.vis>*:nth-child(5){transition-delay:.35s}.hb .st.vis>*:nth-child(6){transition-delay:.42s}
+.hb .st.vis>*:nth-child(7){transition-delay:.49s}.hb .st.vis>*:nth-child(8){transition-delay:.56s}.hb .st.vis>*:nth-child(9){transition-delay:.63s}
+.hb .st.vis>*:nth-child(10){transition-delay:.7s}.hb .st.vis>*:nth-child(11){transition-delay:.77s}.hb .st.vis>*:nth-child(12){transition-delay:.84s}
+.hb .st.vis>*:nth-child(13){transition-delay:.91s}.hb .st.vis>*:nth-child(14){transition-delay:.98s}.hb .st.vis>*:nth-child(15){transition-delay:1.05s}
+.hb .st.vis>*:nth-child(16){transition-delay:1.12s}.hb .st.vis>*:nth-child(17){transition-delay:1.19s}.hb .st.vis>*:nth-child(18){transition-delay:1.26s}
+.hb .eyebrow.rv{transform:translateY(-12px)}
+@media(prefers-reduced-motion:reduce){.hb .rv,.hb .st>*{opacity:1;transform:none;filter:none;transition:none}}
+
+/* -------- S01 HERO -------- */
+.hb .s01{background:var(--ground);position:relative;overflow:hidden}
+.hb .s01::before{content:'';position:absolute;inset:0;background-image:
+  linear-gradient(rgba(35,110,180,.06) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(35,110,180,.06) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none}
+.hb .s01 .hero-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}
+.hb .s01 .hero-txt .lede{font-size:16px;color:var(--ink3);margin:20px 0 32px;max-width:520px}
+.hb .s01 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hb .s01 .dash{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.06)}
+.hb .s01 .dash-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.hb .s01 .dm{background:var(--ground);border-radius:12px;padding:16px;text-align:center}
+.hb .s01 .dm .dm-val{font-size:28px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hb .s01 .dm .dm-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.hb .s01 .dm .bar-track{height:6px;background:var(--ground2);border-radius:3px;margin-top:8px;overflow:hidden}
+.hb .s01 .dm .bar-fill{height:100%;border-radius:3px;background:var(--grad);width:0;transition:width 1.2s ease}
+.hb .s01 .dm.vis .bar-fill{width:var(--fill)}
+.hb .s01 .dash-chart{height:120px;background:var(--ground);border-radius:12px;display:flex;align-items:end;gap:6px;padding:16px 12px 12px}
+.hb .s01 .dash-chart .bar{flex:1;background:var(--grad);border-radius:4px 4px 0 0;min-height:4px;transition:height 1s ease;height:0}
+.hb .s01 .dash-chart.vis .bar{height:var(--h)}
+.hb .s01 .ring{width:48px;height:48px;margin:0 auto 4px}
+.hb .s01 .ring circle{fill:none;stroke-width:4}
+.hb .s01 .ring .track{stroke:var(--ground2)}.hb .s01 .ring .prog{stroke:url(#ringGrad);stroke-linecap:round;stroke-dasharray:126;stroke-dashoffset:126;transition:stroke-dashoffset 1.2s ease;transform:rotate(-90deg);transform-origin:center}
+.hb .s01 .dm.vis .ring .prog{stroke-dashoffset:var(--off)}
+
+/* -------- S02 TRUSTED BY -------- */
+.hb .s02{background:var(--white)}
+.hb .s02 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.hb .s02 .stat-card{background:var(--ground);border:1px solid var(--line);border-radius:16px;padding:36px 28px;text-align:center;perspective:800px;transition:transform .4s}
+.hb .s02 .stat-card:hover{transform:rotateY(6deg) rotateX(2deg)}
+.hb .s02 .stat-card .big{font-size:clamp(36px,4vw,52px);font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hb .s02 .stat-card h3{margin:12px 0 8px}.hb .s02 .stat-card p{font-size:13.5px;color:var(--muted)}
+.hb .s02 .stat-card .spark{margin-top:16px;height:32px}
+.hb .s02 .partner{text-align:center;margin-top:48px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:13px;color:var(--muted)}
+.hb .s02 .partner img{height:28px}
+
+/* -------- S03 INTRO -------- */
+.hb .s03{background:var(--ground)}
+.hb .s03 .intro-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.hb .s03 .persona-stack{display:flex;flex-direction:column;gap:12px}
+.hb .s03 .persona{display:flex;gap:14px;align-items:flex-start;padding:14px;border-radius:12px;border:1px solid var(--line);transition:border-color .2s}
+.hb .s03 .persona:hover{border-color:var(--blue)}
+.hb .s03 .persona .p-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;color:#fff}
+.hb .s03 .persona h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px}.hb .s03 .persona p{font-size:12.5px;margin:0}
+.hb .s03 .eco-banner{margin-top:36px;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px 36px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.hb .s03 .eco-banner img{height:32px}.hb .s03 .eco-banner .arrow{color:var(--green);font-size:22px}
+
+/* -------- S04 PROBLEMS -------- */
+.hb .s04{background:var(--white);position:relative;padding-bottom:0!important}
+.hb .s04 .prob-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.hb .s04 .prob{background:var(--ground);border:1px solid var(--line);border-radius:14px;padding:28px 22px;border-top:3px solid var(--rose)}
+.hb .s04 .prob:nth-child(even){border-top-color:var(--amber)}
+.hb .s04 .prob .p-ico{width:40px;height:40px;border-radius:10px;background:var(--rose);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:16px;color:#991B1B}
+.hb .s04 .prob:nth-child(even) .p-ico{background:var(--amber);color:#92400E}
+.hb .s04 .prob h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}.hb .s04 .prob p{font-size:13px}
+.hb .s04 .wave{display:block;width:100%;margin-top:64px}
+
+/* -------- S05 SOLUTION -------- */
+.hb .s05{background:var(--forest);color:#fff}
+.hb .s05 h2,.hb .s05 h3{color:#fff}.hb .s05 p{color:rgba(255,255,255,.75)}
+.hb .s05 .phase-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+.hb .s05 .phase-row::before{content:'';position:absolute;top:48px;left:10%;right:10%;height:3px;background:var(--grad);border-radius:2px}
+.hb .s05 .phase{text-align:center;position:relative;z-index:1;padding:0 16px}
+.hb .s05 .phase .ph-icon{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:20px;backdrop-filter:blur(8px)}
+.hb .s05 .phase h3{font-size:17px;margin-bottom:8px}.hb .s05 .phase p{font-size:13px}
+
+/* -------- S06 FEATURES -------- */
+.hb .s06{background:var(--ground)}
+.hb .s06 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.hb .s06 .feat{padding:28px 24px}
+.hb .s06 .feat .chip{width:38px;height:38px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:14px}
+.hb .s06 .feat h3{font-size:16px;margin-bottom:8px}
+.hb .s06 .feat .what{font-size:13.5px;color:#444;margin-bottom:6px}.hb .s06 .feat .how{font-size:12.5px;color:var(--muted);font-style:italic}
+
+/* -------- S07 WHY CHOOSE US (Roadmap) -------- */
+.hb .s07{background:var(--white)}
+.hb .s07 .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.hb .s07 .tl-phase{background:var(--ground);border:1px solid var(--line);border-radius:16px;padding:28px 22px}
+.hb .s07 .tl-phase .badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;margin-bottom:16px}
+.hb .s07 .tl-phase .step{display:flex;gap:10px;align-items:flex-start;margin-top:14px}
+.hb .s07 .tl-phase .step .num{width:26px;height:26px;border-radius:50%;background:var(--grad);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hb .s07 .tl-phase .step p{font-size:13px;color:var(--ink2)}
+
+/* -------- S08 USE CASES -------- */
+.hb .s08{background:var(--ground)}
+.hb .s08 .uc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+.hb .s08 .uc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 24px;cursor:pointer;transition:border-color .2s}
+.hb .s08 .uc:hover{border-color:var(--blue)}
+.hb .s08 .uc .uc-head{display:flex;justify-content:space-between;align-items:center}
+.hb .s08 .uc .uc-head h4{font-size:14.5px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:10px}
+.hb .s08 .uc .uc-head h4 span{width:28px;height:28px;border-radius:50%;background:var(--grad);color:#fff;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.hb .s08 .uc .uc-head .toggle{font-size:18px;color:var(--muted);transition:transform .3s}
+.hb .s08 .uc.open .toggle{transform:rotate(45deg)}
+.hb .s08 .uc .uc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.hb .s08 .uc.open .uc-body{grid-template-rows:1fr}
+.hb .s08 .uc .uc-inner{overflow:hidden}
+.hb .s08 .uc .flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:14px}
+.hb .s08 .uc .flow .pill{padding:6px 14px;background:var(--sky);color:var(--blue);font-size:12px;font-weight:600;border-radius:20px;white-space:nowrap}
+.hb .s08 .uc .flow .arr{color:var(--green);font-size:13px}
+.hb .s08 .uc .ctx{font-size:13px;color:var(--ink3);margin-top:10px}
+
+/* -------- S09 INDUSTRIES -------- */
+.hb .s09{background:var(--white);position:relative}
+.hb .s09 .wave-top{display:block;width:100%;position:absolute;top:-1px;left:0}
+.hb .s09 .ind-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px}
+.hb .s09 .ind{background:var(--ground);border:1px solid var(--line);border-radius:14px;padding:24px 18px;text-align:center;transition:transform .3s,box-shadow .3s}
+.hb .s09 .ind:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.hb .s09 .ind .ind-ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:17px}
+.hb .s09 .ind h4{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:4px}.hb .s09 .ind p{font-size:11.5px;color:var(--muted)}
+
+/* -------- S10 MODULES -------- */
+.hb .s10{background:var(--ground)}
+.hb .s10 .mod-layout{display:grid;grid-template-columns:280px 1fr;gap:28px;margin-top:48px}
+.hb .s10 .mod-nav{display:flex;flex-direction:column;gap:6px}
+.hb .s10 .mod-nav button{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 18px;text-align:left;font-size:14px;font-weight:500;color:var(--ink2);cursor:pointer;transition:all .2s;font-family:inherit}
+.hb .s10 .mod-nav button.active{background:var(--forest);color:#fff;border-color:var(--forest)}
+.hb .s10 .mod-detail{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:36px}
+.hb .s10 .mod-detail h3{margin-bottom:16px}.hb .s10 .mod-detail ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hb .s10 .mod-detail li{font-size:13.5px;color:var(--ink2);padding:6px 0;padding-left:20px;position:relative}
+.hb .s10 .mod-detail li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;color:var(--green);font-size:11px}
+
+/* -------- S11 COMPARISON -------- */
+.hb .s11{background:var(--white)}
+.hb .s11 .comp-wrap{overflow-x:auto;margin-top:48px;border-radius:16px;border:1px solid var(--line)}
+.hb .s11 table{width:100%;border-collapse:collapse;min-width:700px}
+.hb .s11 thead th{background:#003366;color:#fff;padding:16px 18px;font-size:13px;font-weight:600;text-align:left;white-space:nowrap}
+.hb .s11 thead th:first-child{border-radius:0}
+.hb .s11 tbody td{padding:14px 18px;font-size:13.5px;border-bottom:1px solid var(--line);color:var(--ink2)}
+.hb .s11 tbody tr:hover{background:rgba(35,110,180,.03)}
+.hb .s11 tbody td:nth-child(2){background:rgba(62,169,0,.04)}
+.hb .s11 .ck{color:var(--green);font-weight:700}.hb .s11 .xx{color:#DC2626;font-weight:700}
+
+/* -------- S12 PRICING -------- */
+.hb .s12{background:var(--ground)}
+.hb .s12 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.hb .s12 .pkg{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:36px 28px;display:flex;flex-direction:column;position:relative;transition:transform .3s,box-shadow .3s}
+.hb .s12 .pkg:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.hb .s12 .pkg.pop{border:2px solid var(--green)}
+.hb .s12 .pkg .pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:11px;font-weight:700;padding:4px 18px;border-radius:20px;white-space:nowrap}
+.hb .s12 .pkg h3{font-size:20px;margin-bottom:4px}.hb .s12 .pkg .price{font-size:36px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:8px 0 2px}
+.hb .s12 .pkg .gst{font-size:12px;color:var(--muted)}.hb .s12 .pkg .timeline-badge{display:inline-block;background:var(--sky);color:var(--blue);font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;margin:16px 0 12px}
+.hb .s12 .pkg .metrics{display:flex;gap:4px;justify-content:center;font-size:12px;color:var(--muted);margin-bottom:16px}
+.hb .s12 .pkg .metrics span{padding:3px 10px;background:var(--ground);border-radius:6px}
+.hb .s12 .pkg .target{font-size:13px;color:var(--ink3);margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.hb .s12 .pkg .checklist{list-style:none;flex:1}
+.hb .s12 .pkg .checklist li{font-size:13px;padding:5px 0 5px 22px;position:relative;color:var(--ink2)}
+.hb .s12 .pkg .checklist li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;left:0;color:var(--green);font-size:11px}
+.hb .s12 .pkg .btn--g{width:100%;justify-content:center;margin-top:24px}
+.hb .s12 .footnote{text-align:center;margin-top:32px;font-size:13px;color:var(--muted)}
+
+/* -------- S13 FAQ -------- */
+.hb .s13{background:var(--white)}
+.hb .s13 .faq-search{width:100%;max-width:420px;margin:24px auto 36px;display:block;padding:12px 18px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+.hb .s13 .faq-search:focus{border-color:var(--blue)}
+.hb .s13 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hb .s13 .faq{background:var(--ground);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:opacity .2s}
+.hb .s13 .faq.hidden{display:none}
+.hb .s13 .faq .fq{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;font-size:14.5px;font-weight:600;color:var(--ink);gap:12px}
+.hb .s13 .faq .fq .plus{font-size:18px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.hb .s13 .faq.open .fq .plus{transform:rotate(45deg);color:var(--blue)}
+.hb .s13 .faq .fa-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.hb .s13 .faq.open .fa-body{grid-template-rows:1fr}
+.hb .s13 .faq .fa-inner{overflow:hidden}
+.hb .s13 .faq .fa-inner p{padding:0 22px 18px;font-size:13.5px}
+
+/* -------- S14 TESTIMONIALS -------- */
+.hb .s14{background:var(--ground)}
+.hb .s14 .test-display{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;margin-top:48px;min-height:220px}
+.hb .s14 .test-logo{width:200px;height:200px;background:var(--white);border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:24px}
+.hb .s14 .test-logo img{max-width:100%;max-height:100%;object-fit:contain}
+.hb .s14 .test-content blockquote{font-size:17px;color:var(--ink);line-height:1.6;font-style:italic;margin-bottom:16px}
+.hb .s14 .test-content mark{background:none;color:var(--green-d);font-weight:600;text-decoration:underline;text-decoration-color:var(--green);text-underline-offset:3px}
+.hb .s14 .test-content .meta{font-size:14px;font-weight:600;color:var(--ink)}.hb .s14 .test-content .aspect{font-size:13px;color:var(--muted)}
+.hb .s14 .dots{display:flex;gap:8px;justify-content:center;margin-top:32px}
+.hb .s14 .dots span{width:10px;height:10px;border-radius:50%;background:var(--line);cursor:pointer;transition:background .3s}
+.hb .s14 .dots span.active{background:var(--blue)}
+
+/* -------- S15 CONTACT -------- */
+.hb .s15{background:var(--forest);color:#fff}
+.hb .s15 h2{color:#fff}.hb .s15 p{color:rgba(255,255,255,.75)}
+.hb .s15 .contact-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+.hb .s15 .info-cards{display:flex;flex-direction:column;gap:14px}
+.hb .s15 .info-card{display:flex;gap:14px;align-items:center;padding:16px;background:rgba(255,255,255,.06);border-radius:12px;border:1px solid rgba(255,255,255,.1)}
+.hb .s15 .info-card .ic-icon{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;color:var(--mint)}
+.hb .s15 .info-card p{font-size:13.5px;color:rgba(255,255,255,.85);margin:0}
+.hb .s15 .form-slot{background:var(--white);border-radius:16px;padding:36px;color:var(--ink)}
+.hb .s15 .form-slot h3{color:var(--ink);margin-bottom:8px}.hb .s15 .form-slot p{color:var(--muted)}
+
+/* -------- S16 CTA -------- */
+.hb .s16{background:var(--forest);color:#fff;position:relative;overflow:hidden;text-align:center}
+.hb .s16 h2{color:#fff}.hb .s16 p{color:rgba(255,255,255,.75);max-width:560px;margin:16px auto 32px}
+.hb .s16 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hb .s16 .footer-line{margin-top:48px;font-size:12px;color:rgba(255,255,255,.4)}
+.hb .s16 .float-logo{position:absolute;opacity:.07;animation:d2Float 6s ease-in-out infinite}
+@keyframes d2Float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(3deg)}}
+.hb .s16 .glow{position:absolute;width:300px;height:300px;border-radius:50%;filter:blur(80px);opacity:.08;pointer-events:none}
+
+/* -------- RESPONSIVE -------- */
+@media(max-width:1100px){
+  .hb .s04 .prob-grid{grid-template-columns:repeat(2,1fr)}
+  .hb .s06 .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .hb .s09 .ind-grid{grid-template-columns:repeat(3,1fr)}
+  .hb .s07 .timeline{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:992px){
+  .hb .s01 .hero-row{grid-template-columns:1fr;text-align:center}
+  .hb .s01 .hero-txt .lede{margin-inline:auto}
+  .hb .s01 .hero-btns{justify-content:center}
+  .hb .s02 .stat-grid{grid-template-columns:1fr}
+  .hb .s03 .intro-card{grid-template-columns:1fr}
+  .hb .s05 .phase-row{grid-template-columns:repeat(2,1fr);gap:24px}
+  .hb .s05 .phase-row::before{display:none}
+  .hb .s10 .mod-layout{grid-template-columns:1fr}
+  .hb .s11 table{min-width:600px}
+  .hb .s12 .price-grid{grid-template-columns:1fr}
+  .hb .s14 .test-display{grid-template-columns:1fr;text-align:center}
+  .hb .s14 .test-logo{margin:0 auto}
+  .hb .s15 .contact-row{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hb .s04 .prob-grid{grid-template-columns:1fr 1fr}
+  .hb .s06 .feat-grid{grid-template-columns:1fr}
+  .hb .s07 .timeline{grid-template-columns:1fr}
+  .hb .s08 .uc-grid{grid-template-columns:1fr}
+  .hb .s09 .ind-grid{grid-template-columns:repeat(3,1fr)}
+  .hb .s13 .faq-grid{grid-template-columns:1fr}
+  .hb .s10 .mod-detail ul{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .hb .s01 .dash-metrics{grid-template-columns:1fr}
+  .hb .s04 .prob-grid{grid-template-columns:1fr}
+  .hb .s05 .phase-row{grid-template-columns:1fr}
+  .hb .s09 .ind-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .hb .wrap{padding-inline:16px}
+  .hb .s03 .intro-card{padding:24px}
+  .hb .s09 .ind-grid{grid-template-columns:1fr}
+  .hb .btn--g,.hb .btn--o,.hb .btn--ghost{padding:12px 24px;font-size:14px}
+}
+</style>
+
+<div class="hb">
+<div class="scroll-prog" id="scrollProg"></div>
+
+<!-- ============ S01 HERO ============ -->
+<section class="s01">
+<div class="wrap">
+ <div class="hero-row">
+  <div class="hero-txt">
+   <p class="eyebrow rv">AUTHORIZED ZOHO ADVANCED PARTNER &middot; ENTERPRISE PMO IMPLEMENTATION</p>
+   <h1 class="rv">From Disconnected Spreadsheets &amp; Chat Chaos to a <span class="hl">Governed, Predictable PMO</span></h1>
+   <p class="lede rv">Work Breakdown Structures, stage-gate Blueprints, Critical Path (CPM), live timesheet billing, resource capacity heatmaps, and enterprise project budgeting. Implemented end-to-end around how your organization actually delivers. Live in 7 to 45 working days.</p>
+   <div class="hero-btns rv">
+    <a href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&utm_medium=cta&utm_campaign=zoho_projects_implementation&utm_content=hero_cta#/sales-enquiries" class="btn--g"><i class="fa-solid fa-calendar-check"></i> Book Strategy Call</a>
+    <a href="#features" class="btn--o"><i class="fa-solid fa-layer-group"></i> Explore Features</a>
+   </div>
+  </div>
+  <div class="dash rv">
+   <svg width="0" height="0"><defs><linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#236EB4"/><stop offset="100%" stop-color="#3EA900"/></linearGradient></defs></svg>
+   <div class="dash-metrics st" id="heroMetrics">
+    <div class="dm" data-fill="82" style="--fill:82%"><svg class="ring" viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="20"/><circle class="prog" cx="22" cy="22" r="20" style="--off:23"/></svg><div class="dm-val"><span class="ctr" data-target="47">0</span></div><div class="dm-label">Active Projects</div></div>
+    <div class="dm" data-fill="94" style="--fill:94%"><div class="dm-val"><span class="ctr" data-target="94">0</span>%</div><div class="dm-label">On-Time Delivery</div><div class="bar-track"><div class="bar-fill"></div></div></div>
+    <div class="dm" data-fill="78" style="--fill:78%"><div class="dm-val"><span class="ctr" data-target="78">0</span>%</div><div class="dm-label">Team Capacity</div><div class="bar-track"><div class="bar-fill"></div></div></div>
+    <div class="dm" data-fill="85" style="--fill:85%"><svg class="ring" viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="20"/><circle class="prog" cx="22" cy="22" r="20" style="--off:19"/></svg><div class="dm-val"><span class="ctr" data-target="2840">0</span></div><div class="dm-label">Billed Hours</div></div>
+   </div>
+   <div class="dash-chart" id="heroChart">
+    <div class="bar" style="--h:60%"></div><div class="bar" style="--h:45%"></div><div class="bar" style="--h:78%"></div><div class="bar" style="--h:55%"></div><div class="bar" style="--h:90%"></div><div class="bar" style="--h:65%"></div><div class="bar" style="--h:82%"></div><div class="bar" style="--h:70%"></div><div class="bar" style="--h:88%"></div><div class="bar" style="--h:72%"></div><div class="bar" style="--h:95%"></div><div class="bar" style="--h:68%"></div>
+   </div>
+  </div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S02 TRUSTED BY ============ -->
+<section class="s02">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">PROVEN DELIVERY RECORD</p>
+ <h2 class="rv" style="text-align:center">Numbers That Speak for Themselves</h2>
+ <div class="stat-grid st">
+  <div class="stat-card"><div class="big"><span class="ctr" data-target="500">0</span>+</div><h3>Enterprise Projects</h3><p>Zoho Projects implementations across global industries, delivered on time and on budget.</p><svg class="spark" viewBox="0 0 120 32"><polyline points="0,28 15,22 30,25 45,16 60,18 75,10 90,12 105,6 120,4" fill="none" stroke="url(#ringGrad)" stroke-width="2"/></svg></div>
+  <div class="stat-card"><div class="big"><span class="ctr" data-target="100">0</span>%</div><h3>Milestone Traceability</h3><p>Every milestone mapped, tracked, and governed with Blueprint-enforced stage gates.</p><svg class="spark" viewBox="0 0 120 32"><polyline points="0,30 20,20 40,22 60,14 80,8 100,6 120,4" fill="none" stroke="url(#ringGrad)" stroke-width="2"/></svg></div>
+  <div class="stat-card"><div class="big">Zero</div><h3>Margin Drift</h3><p>Real-time budget vs. actual tracking eliminates financial surprises on every project.</p><svg class="spark" viewBox="0 0 120 32"><polyline points="0,16 20,16 40,16 60,16 80,16 100,16 120,16" fill="none" stroke="url(#ringGrad)" stroke-width="2" stroke-dasharray="4,4"/></svg></div>
+ </div>
+ <div class="partner rv"><span>Powered by</span><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" loading="lazy"></div>
+</div>
+</section>
+
+<!-- ============ S03 INTRODUCTION ============ -->
+<section class="s03">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">PLATFORM OVERVIEW</p>
+ <h2 class="rv" style="text-align:center">What Is <span class="hl">Zoho Projects</span></h2>
+ <div class="intro-card rv" style="margin-top:40px">
+  <div>
+   <p>Zoho Projects is a cloud-native project management platform built for organizations that need more than task lists. It provides Work Breakdown Structures, Gantt charts with Critical Path rendering, stage-gate Blueprint automation, timesheet-driven billing, resource allocation heatmaps, and cross-project portfolio dashboards. Unlike lightweight tools, Zoho Projects connects natively to the entire Zoho ecosystem -- CRM, Books, Invoice, People, Analytics -- creating a single operating layer from pipeline to cash. Elite Tech Corp implements it as a governed PMO operating system, not just a tool deployment.</p>
+  </div>
+  <div class="persona-stack st">
+   <div class="persona"><div class="p-icon" style="background:var(--blue)"><i class="fa-solid fa-chess-king"></i></div><div><h4>CEO / Managing Director</h4><p>Portfolio-level visibility, real-time P&amp;L per project.</p></div></div>
+   <div class="persona"><div class="p-icon" style="background:var(--green)"><i class="fa-solid fa-chart-gantt"></i></div><div><h4>PMO Head / Program Manager</h4><p>Gantt scheduling, Blueprint stage-gates, milestone governance.</p></div></div>
+   <div class="persona"><div class="p-icon" style="background:#7C3AED"><i class="fa-solid fa-users-gear"></i></div><div><h4>Operations / Delivery Manager</h4><p>Resource capacity heatmaps and workload balancing.</p></div></div>
+   <div class="persona"><div class="p-icon" style="background:#DC2626"><i class="fa-solid fa-file-invoice-dollar"></i></div><div><h4>Finance Controller / CFO</h4><p>Timesheet-to-invoice pipeline and budget variance alerts.</p></div></div>
+   <div class="persona"><div class="p-icon" style="background:var(--forest)"><i class="fa-solid fa-laptop-code"></i></div><div><h4>Team Leads / Engineers</h4><p>Task dependencies, sprint boards, and time logging.</p></div></div>
+  </div>
+ </div>
+ <div class="eco-banner rv">
+  <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="Zoho CRM" loading="lazy">
+  <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+  <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects" loading="lazy">
+  <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+  <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="Zoho Books" loading="lazy">
+  <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+  <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/invoice.svg" alt="Zoho Invoice" loading="lazy">
+  <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+  <img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="Zoho Analytics" loading="lazy">
+ </div>
+</div>
+</section>
+
+<!-- ============ S04 PROBLEMS ============ -->
+<section class="s04">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">THE PROBLEM</p>
+ <h2 class="rv" style="text-align:center">Symptoms of a <span class="hl">Broken PMO</span></h2>
+ <div class="prob-grid st">
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-table-cells"></i></div><h4>Scattered Spreadsheets</h4><p>Project data lives across dozens of Excel files, Google Sheets, and email threads with no single source of truth.</p></div>
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-eye-slash"></i></div><h4>Zero Visibility</h4><p>Leadership cannot see real-time project status, resource utilization, or budget burn without requesting manual reports.</p></div>
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-clock-rotate-left"></i></div><h4>Missed Deadlines</h4><p>Without critical path tracking or dependency management, delays cascade silently across the portfolio.</p></div>
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-coins"></i></div><h4>Budget Overruns</h4><p>No real-time budget vs. actual tracking means financial surprises surface only at project closure.</p></div>
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-user-clock"></i></div><h4>Timesheet Chaos</h4><p>Manual time tracking across tools makes billing inaccurate and resource planning unreliable.</p></div>
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-shuffle"></i></div><h4>Process Inconsistency</h4><p>Every PM runs projects differently with no standardized stage-gates, templates, or approval workflows.</p></div>
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-plug-circle-xmark"></i></div><h4>Disconnected Tools</h4><p>CRM, finance, HR, and project management operate as isolated islands requiring manual data transfer.</p></div>
+  <div class="prob"><div class="p-ico"><i class="fa-solid fa-chart-line"></i></div><h4>No Forecasting</h4><p>Resource demand, capacity gaps, and revenue projections are guesswork without unified project data.</p></div>
+ </div>
+</div>
+<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80Z" fill="var(--forest)"/></svg>
+</section>
+
+<!-- ============ S05 SOLUTION OVERVIEW ============ -->
+<section class="s05">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center;color:var(--mint)">THE TRANSFORMATION</p>
+ <h2 class="rv" style="text-align:center">How We Engineer Your PMO</h2>
+ <div class="phase-row st">
+  <div class="phase"><div class="ph-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h3>Problem</h3><p>Fragmented tools, no governance, inconsistent delivery, and invisible project economics.</p></div>
+  <div class="phase"><div class="ph-icon"><i class="fa-solid fa-gears"></i></div><h3>Engine</h3><p>Zoho Projects configured with WBS, Blueprints, CPM, budgets, timesheets, and cross-app integrations.</p></div>
+  <div class="phase"><div class="ph-icon"><i class="fa-solid fa-diagram-project"></i></div><h3>Flow</h3><p>Automated workflows, stage-gate enforcement, resource heatmaps, and real-time portfolio dashboards.</p></div>
+  <div class="phase"><div class="ph-icon"><i class="fa-solid fa-bullseye"></i></div><h3>Result</h3><p>Governed, predictable delivery with full financial visibility from project kickoff to final invoice.</p></div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S06 KEY FEATURES ============ -->
+<section class="s06" id="features">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">CAPABILITY MAP</p>
+ <h2 class="rv" style="text-align:center">18 Features That <span class="hl">Transform Delivery</span></h2>
+ <div class="feat-grid st">
+  <div class="feat card"><div class="chip" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-sitemap"></i></div><h3>Work Breakdown Structure</h3><p class="what">Decompose complex deliverables into manageable, assignable task hierarchies.</p><p class="how">Parent-child task trees with roll-up progress, effort, and cost calculations.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-route"></i></div><h3>Blueprint Stage-Gates</h3><p class="what">Enforce standardized approval workflows at every project phase transition.</p><p class="how">Configurable state machines with mandatory field checks and role-based transitions.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-chart-gantt"></i></div><h3>Gantt with Critical Path</h3><p class="what">Visualize task dependencies and identify the longest path driving project completion.</p><p class="how">Auto-calculated CPM with drag-and-drop rescheduling and slack analysis.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--rose);color:#991B1B"><i class="fa-solid fa-stopwatch"></i></div><h3>Timesheet Engine</h3><p class="what">Capture billable and non-billable hours at task level with approval workflows.</p><p class="how">Timer-based or manual entry with weekly views and manager sign-off stages.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-fire-flame-curved"></i></div><h3>Resource Heatmaps</h3><p class="what">See real-time team capacity, over-allocations, and availability across projects.</p><p class="how">Color-coded utilization grids with drag-and-drop rebalancing controls.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-wallet"></i></div><h3>Project Budgeting</h3><p class="what">Set and track planned vs. actual cost at project, milestone, and task levels.</p><p class="how">Cost-rate matrices with real-time burn rate dashboards and variance alerts.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-layer-group"></i></div><h3>Portfolio Dashboard</h3><p class="what">Monitor health, progress, and financials across all active projects in one view.</p><p class="how">Aggregated KPI tiles, RAG status indicators, and drill-down capabilities.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--rose);color:#991B1B"><i class="fa-solid fa-code-branch"></i></div><h3>Task Dependencies</h3><p class="what">Define finish-to-start, start-to-start, and other dependency relationships.</p><p class="how">Four dependency types with lag/lead time support and conflict detection.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-robot"></i></div><h3>Workflow Automation</h3><p class="what">Automate status updates, notifications, assignments, and field changes on triggers.</p><p class="how">IF-THEN rule engine with multi-condition logic and webhook integration.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-file-contract"></i></div><h3>Project Templates</h3><p class="what">Clone standardized project structures with tasks, milestones, and assignments.</p><p class="how">Parameterized templates with auto-date-shifting and role-based task mapping.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-comments"></i></div><h3>Collaboration Hub</h3><p class="what">Centralize project discussions, file sharing, and decision logging.</p><p class="how">Forum-style threads, @mentions, file versioning, and feed-based activity streams.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--rose);color:#991B1B"><i class="fa-solid fa-bug"></i></div><h3>Issue Tracker</h3><p class="what">Log, categorize, and resolve project issues with severity-based workflows.</p><p class="how">Customizable issue types, SLA timers, and linkage to parent tasks.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-gauge-high"></i></div><h3>Custom Dashboards</h3><p class="what">Build role-specific views with drag-and-drop widgets and real-time data.</p><p class="how">Chart, table, and KPI widgets with filter parameters and sharing controls.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-link"></i></div><h3>Zoho CRM Integration</h3><p class="what">Auto-create projects from won deals with customer data pre-populated.</p><p class="how">Bi-directional sync of deal fields, contacts, and project milestones.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-book"></i></div><h3>Zoho Books Sync</h3><p class="what">Push approved timesheets and expenses to accounting for invoicing.</p><p class="how">Scheduled sync with cost center mapping and tax rate configuration.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--rose);color:#991B1B"><i class="fa-solid fa-user-shield"></i></div><h3>Role-Based Access</h3><p class="what">Control data visibility and action permissions at project and organization level.</p><p class="how">Granular role profiles with field-level security and IP-based restrictions.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-mobile-screen"></i></div><h3>Mobile App</h3><p class="what">Manage tasks, log time, and approve workflows from any device.</p><p class="how">Native iOS and Android apps with offline mode and push notifications.</p></div>
+  <div class="feat card"><div class="chip" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-chart-pie"></i></div><h3>Advanced Analytics</h3><p class="what">Generate cross-project reports with Zoho Analytics integration.</p><p class="how">Pre-built report templates, scheduled distribution, and embedded dashboards.</p></div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S07 WHY CHOOSE US / ROADMAP ============ -->
+<section class="s07">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">IMPLEMENTATION ROADMAP</p>
+ <h2 class="rv" style="text-align:center">10 Steps in <span class="hl">4 Phases</span></h2>
+ <div class="timeline st">
+  <div class="tl-phase"><div class="badge" style="background:var(--blue)">Phase 1 &middot; Discover</div>
+   <div class="step"><div class="num">1</div><p>Stakeholder interviews and current-state PMO audit</p></div>
+   <div class="step"><div class="num">2</div><p>Requirements gathering and process mapping workshops</p></div>
+   <div class="step"><div class="num">3</div><p>Solution architecture and integration blueprint</p></div>
+  </div>
+  <div class="tl-phase"><div class="badge" style="background:var(--green)">Phase 2 &middot; Build</div>
+   <div class="step"><div class="num">4</div><p>Zoho Projects configuration and Blueprint setup</p></div>
+   <div class="step"><div class="num">5</div><p>Integration development (CRM, Books, People, Analytics)</p></div>
+   <div class="step"><div class="num">6</div><p>Template creation and workflow automation</p></div>
+  </div>
+  <div class="tl-phase"><div class="badge" style="background:#7C3AED">Phase 3 &middot; Launch</div>
+   <div class="step"><div class="num">7</div><p>Data migration and historical project import</p></div>
+   <div class="step"><div class="num">8</div><p>UAT testing and stakeholder sign-off</p></div>
+   <div class="step"><div class="num">9</div><p>Training and change management rollout</p></div>
+  </div>
+  <div class="tl-phase"><div class="badge" style="background:var(--forest)">Phase 4 &middot; Evolve</div>
+   <div class="step"><div class="num">10</div><p>Post-go-live support, optimization, and PMO maturity roadmap</p></div>
+  </div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S08 USE CASES ============ -->
+<section class="s08">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">AUTOMATION SCENARIOS</p>
+ <h2 class="rv" style="text-align:center">12 Ways Zoho Projects <span class="hl">Works For You</span></h2>
+ <div class="uc-grid st" id="ucGrid">
+  <div class="uc" data-uc><div class="uc-head"><h4><span>1</span> Deal-to-Project Handoff</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">When a CRM deal closes, the project spins up automatically with pre-built scope.</p><div class="flow"><span class="pill">Deal Won</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Auto-Create Project</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Assign PM</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Kickoff Task Created</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>2</span> Stage-Gate Enforcement</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Blueprint prevents phase transitions until mandatory deliverables are signed off.</p><div class="flow"><span class="pill">Phase Complete</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Checklist Verified</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Approver Sign-Off</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Next Phase Unlocked</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>3</span> Timesheet-to-Invoice</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Approved timesheets flow directly into Zoho Books for client billing.</p><div class="flow"><span class="pill">Log Hours</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Manager Approves</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Push to Books</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Invoice Generated</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>4</span> Budget Overrun Alert</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Automated alerts fire when project spend exceeds threshold percentages.</p><div class="flow"><span class="pill">Cost Logged</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Budget Check</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Alert Triggered</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Escalation Email</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>5</span> Resource Rebalancing</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">When a team member is over-allocated, the heatmap triggers reassignment suggestions.</p><div class="flow"><span class="pill">Over-Allocation Detected</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Heatmap Alert</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Suggest Alternate</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Reassign Task</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>6</span> Milestone Risk Escalation</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">When a milestone is at risk due to dependency delays, stakeholders are auto-notified.</p><div class="flow"><span class="pill">Dependency Slips</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">CPM Recalculates</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Risk Flagged</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Stakeholder Notified</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>7</span> Sprint Board Sync</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Agile sprints sync with Gantt timelines for hybrid project management.</p><div class="flow"><span class="pill">Sprint Planned</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Tasks Mapped to Gantt</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Progress Synced</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Burndown Updated</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>8</span> Client Portal Updates</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">External stakeholders see milestone progress through a branded client portal.</p><div class="flow"><span class="pill">Milestone Reached</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Status Published</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Client Notified</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Feedback Captured</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>9</span> Issue-to-Task Escalation</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Critical issues automatically spawn corrective action tasks with deadlines.</p><div class="flow"><span class="pill">Issue Logged</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Severity Assessed</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Task Created</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Owner Assigned</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>10</span> Cross-Project Dependency</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Dependencies across projects are tracked and delays propagated to affected timelines.</p><div class="flow"><span class="pill">Dependency Set</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Source Delayed</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Cascade Calculated</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">PMs Alerted</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>11</span> Employee Onboarding Project</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Zoho People triggers an onboarding project template with all setup tasks.</p><div class="flow"><span class="pill">New Hire in People</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Template Launched</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Tasks Assigned</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Day-1 Ready</span></div></div></div></div>
+  <div class="uc" data-uc><div class="uc-head"><h4><span>12</span> Executive Portfolio Report</h4><div class="toggle">+</div></div><div class="uc-body"><div class="uc-inner"><p class="ctx">Weekly portfolio reports auto-generate and email to the leadership team.</p><div class="flow"><span class="pill">Data Aggregated</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Report Built</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">PDF Rendered</span><span class="arr"><i class="fa-solid fa-arrow-right"></i></span><span class="pill">Email Delivered</span></div></div></div></div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S09 INDUSTRIES ============ -->
+<section class="s09">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">INDUSTRY EXPERTISE</p>
+ <h2 class="rv" style="text-align:center">15 Verticals We <span class="hl">Serve</span></h2>
+ <div class="ind-grid st">
+  <div class="ind"><div class="ind-ico" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-microchip"></i></div><h4>Technology</h4><p>Software development and SaaS delivery</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-building-columns"></i></div><h4>Financial Services</h4><p>Banking and fintech project governance</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-hard-hat"></i></div><h4>Construction</h4><p>Capital project scheduling and tracking</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--rose);color:#991B1B"><i class="fa-solid fa-heartbeat"></i></div><h4>Healthcare</h4><p>Clinical program management</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-graduation-cap"></i></div><h4>Education</h4><p>Institutional project coordination</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-industry"></i></div><h4>Manufacturing</h4><p>Production scheduling and NPD tracking</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-cart-shopping"></i></div><h4>Retail &amp; E-commerce</h4><p>Omnichannel rollout management</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--rose);color:#991B1B"><i class="fa-solid fa-truck-fast"></i></div><h4>Logistics</h4><p>Supply chain project tracking</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-bolt"></i></div><h4>Energy &amp; Utilities</h4><p>Infrastructure project governance</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-gavel"></i></div><h4>Legal &amp; Compliance</h4><p>Case and regulatory project tracking</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-bullhorn"></i></div><h4>Marketing &amp; Media</h4><p>Campaign and content delivery</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--rose);color:#991B1B"><i class="fa-solid fa-hotel"></i></div><h4>Hospitality</h4><p>Property launches and renovations</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--sky);color:var(--blue)"><i class="fa-solid fa-plane"></i></div><h4>Travel &amp; Aviation</h4><p>Fleet and operations project management</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--mint);color:var(--forest)"><i class="fa-solid fa-seedling"></i></div><h4>Agriculture</h4><p>Farm-to-market project coordination</p></div>
+  <div class="ind"><div class="ind-ico" style="background:var(--amber);color:#92400E"><i class="fa-solid fa-landmark"></i></div><h4>Government</h4><p>Public sector program management</p></div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S10 PRODUCT MODULES ============ -->
+<section class="s10">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">FUNCTIONAL MODULES</p>
+ <h2 class="rv" style="text-align:center">11 Modules We <span class="hl">Implement</span></h2>
+ <div class="mod-layout rv" id="modLayout">
+  <div class="mod-nav" id="modNav"></div>
+  <div class="mod-detail" id="modDetail"></div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S11 COMPARISON ============ -->
+<section class="s11">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">COMPARISON MATRIX</p>
+ <h2 class="rv" style="text-align:center">Why Zoho Projects + <span class="hl">Elite Tech Corp</span></h2>
+ <div class="comp-wrap rv">
+  <table>
+   <thead><tr><th>Evaluation Dimension</th><th>Zoho Projects + Elite Tech Corp</th><th>Spreadsheets / Manual</th><th>Legacy PM Tools</th></tr></thead>
+   <tbody>
+    <tr><td>Work Breakdown Structure</td><td class="ck"><i class="fa-solid fa-circle-check"></i> Multi-level WBS with roll-ups</td><td class="xx"><i class="fa-solid fa-circle-xmark"></i> Flat task lists</td><td>Limited hierarchy</td></tr>
+    <tr><td>Blueprint Stage-Gates</td><td class="ck"><i class="fa-solid fa-circle-check"></i> Automated enforcement</td><td class="xx"><i class="fa-solid fa-circle-xmark"></i> Manual checklists</td><td>Basic workflows</td></tr>
+    <tr><td>Critical Path Analysis</td><td class="ck"><i class="fa-solid fa-circle-check"></i> Auto CPM with slack</td><td class="xx"><i class="fa-solid fa-circle-xmark"></i> Not possible</td><td>Some tools support</td></tr>
+    <tr><td>Resource Heatmaps</td><td class="ck"><i class="fa-solid fa-circle-check"></i> Real-time capacity view</td><td class="xx"><i class="fa-solid fa-circle-xmark"></i> Manual tracking</td><td>Separate add-on</td></tr>
+    <tr><td>Timesheet-to-Billing</td><td class="ck"><i class="fa-solid fa-circle-check"></i> End-to-end automation</td><td class="xx"><i class="fa-solid fa-circle-xmark"></i> Copy-paste</td><td>Third-party integration</td></tr>
+    <tr><td>Ecosystem Integration</td><td class="ck"><i class="fa-solid fa-circle-check"></i> Native CRM, Books, People</td><td class="xx"><i class="fa-solid fa-circle-xmark"></i> Zero integration</td><td>API-only / costly</td></tr>
+    <tr><td>Implementation Support</td><td class="ck"><i class="fa-solid fa-circle-check"></i> Certified partner delivery</td><td>DIY setup</td><td>Vendor-dependent</td></tr>
+    <tr><td>Total Cost of Ownership</td><td class="ck"><i class="fa-solid fa-circle-check"></i> Competitive per-user pricing</td><td>Low upfront / high hidden</td><td class="xx"><i class="fa-solid fa-circle-xmark"></i> Expensive licensing</td></tr>
+    <tr><td>Time to Value</td><td class="ck"><i class="fa-solid fa-circle-check"></i> 7-45 working days</td><td>Ongoing / never</td><td>3-12 months</td></tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+</section>
+
+<!-- ============ S12 PRICING ============ -->
+<section class="s12">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">IMPLEMENTATION PACKAGES</p>
+ <h2 class="rv" style="text-align:center">Choose Your <span class="hl">Package</span></h2>
+ <div class="price-grid st">
+  <!-- Basic -->
+  <div class="pkg">
+   <h3>Basic</h3>
+   <div class="price">xxx</div>
+   <p class="gst">excluding GST</p>
+   <div class="timeline-badge">7 - 10 Working Days</div>
+   <div class="metrics"><span>10 Modules</span><span>28 Activities</span><span>26 Hours</span></div>
+   <p class="target">Ideal for small teams starting their PMO journey with core project management capabilities.</p>
+   <ul class="checklist">
+    <li>Portal Setup &amp; Configuration</li>
+    <li>Project Templates (up to 3)</li>
+    <li>Task &amp; Milestone Setup</li>
+    <li>Gantt Chart Configuration</li>
+    <li>Basic Timesheet Setup</li>
+    <li>Team User Onboarding</li>
+    <li>Basic Dashboard</li>
+    <li>Email Notifications</li>
+    <li>Document Management</li>
+    <li>Training Session (2 hrs)</li>
+   </ul>
+   <a href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&utm_medium=cta&utm_campaign=zoho_projects_implementation&utm_content=pricing_basic#/sales-enquiries" class="btn--g">Schedule a Demo</a>
+  </div>
+  <!-- Professional -->
+  <div class="pkg pop">
+   <div class="pop-badge">Most Popular</div>
+   <h3>Professional</h3>
+   <div class="price">xxx</div>
+   <p class="gst">excluding GST</p>
+   <div class="timeline-badge">15 - 20 Working Days</div>
+   <div class="metrics"><span>11 Modules</span><span>33 Activities</span><span>63 Hours</span></div>
+   <p class="target">For growing organizations that need Blueprint workflows, integrations, and resource management.</p>
+   <ul class="checklist">
+    <li>Everything in Basic</li>
+    <li>Blueprint Stage-Gate Setup</li>
+    <li>Zoho CRM Integration</li>
+    <li>Resource Allocation Heatmaps</li>
+    <li>Advanced Timesheet &amp; Billing</li>
+    <li>Project Budgeting Module</li>
+    <li>Custom Dashboards (up to 5)</li>
+    <li>Workflow Automation (up to 10)</li>
+    <li>Issue Tracker Configuration</li>
+    <li>Data Migration Assistance</li>
+    <li>Training Sessions (6 hrs)</li>
+   </ul>
+   <a href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&utm_medium=cta&utm_campaign=zoho_projects_implementation&utm_content=pricing_pro#/sales-enquiries" class="btn--g">Schedule a Demo</a>
+  </div>
+  <!-- Elite -->
+  <div class="pkg">
+   <h3>Elite</h3>
+   <div class="price">xxx</div>
+   <p class="gst">excluding GST</p>
+   <div class="timeline-badge">30 - 45 Working Days</div>
+   <div class="metrics"><span>11 Modules</span><span>34 Activities</span><span>115 Hours</span></div>
+   <p class="target">For enterprise PMOs requiring full portfolio governance, advanced analytics, and deep integrations.</p>
+   <ul class="checklist">
+    <li>Everything in Professional</li>
+    <li>Portfolio Dashboard Setup</li>
+    <li>Critical Path (CPM) Config</li>
+    <li>Zoho Books &amp; Invoice Sync</li>
+    <li>Zoho People Integration</li>
+    <li>Zoho Analytics Dashboards</li>
+    <li>Custom API Integrations</li>
+    <li>Advanced Automation (25+)</li>
+    <li>Client Portal Configuration</li>
+    <li>Executive Reporting Suite</li>
+    <li>Training Sessions (12 hrs)</li>
+    <li>30-Day Post-Go-Live Support</li>
+   </ul>
+   <a href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&utm_medium=cta&utm_campaign=zoho_projects_implementation&utm_content=pricing_elite#/sales-enquiries" class="btn--g">Schedule a Demo</a>
+  </div>
+ </div>
+ <p class="footnote rv">Detailed pricing available on request. All prices exclusive of applicable taxes. Zoho subscription fees billed separately by Zoho.</p>
+</div>
+</section>
+
+<!-- ============ S13 FAQ ============ -->
+<section class="s13">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">FREQUENTLY ASKED QUESTIONS</p>
+ <h2 class="rv" style="text-align:center">Got Questions? <span class="hl">We Answer</span></h2>
+ <input type="text" class="faq-search" id="faqSearch" placeholder="Search questions...">
+ <div class="faq-grid" id="faqGrid">
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>What is Zoho Projects and who is it for?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Zoho Projects is a cloud-based project management platform designed for organizations of all sizes. It offers task management, Gantt charts, timesheets, Blueprint workflows, and resource management. It is ideal for PMOs, delivery teams, and organizations needing structured project governance.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>How long does implementation take?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Implementation timelines range from 7 working days for Basic setups to 45 working days for Elite enterprise deployments. The exact duration depends on scope, integrations, data migration requirements, and organizational complexity.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>Can Zoho Projects integrate with our existing CRM?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Yes. Zoho Projects integrates natively with Zoho CRM, enabling automatic project creation from won deals, bi-directional data sync, and unified customer-project views. Integration with third-party CRMs is also possible via APIs and Zoho Flow.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>Do you provide training for our team?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Yes. Every package includes hands-on training sessions ranging from 2 hours (Basic) to 12 hours (Elite). Training covers platform usage, workflow management, reporting, and admin functions tailored to each user role.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>What happens after go-live?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Our Elite package includes 30 days of post-go-live support. All packages include documentation and knowledge transfer. Extended support and managed services contracts are available for ongoing optimization.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>Can you migrate data from our existing tools?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Yes. We handle data migration from spreadsheets, MS Project, Jira, Asana, Trello, and other project management tools. Professional and Elite packages include migration assistance with data validation and integrity checks.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>Is Zoho Projects suitable for Agile teams?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Absolutely. Zoho Projects supports sprint boards, backlog management, and velocity tracking alongside traditional Gantt and waterfall views, making it ideal for hybrid Agile-waterfall environments.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>What industries do you specialize in?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>We serve 15+ verticals including technology, financial services, construction, healthcare, manufacturing, retail, logistics, and government. Our implementation approach is tailored to each industry's specific project governance needs.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>How does timesheet billing work?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Team members log time against tasks. Managers approve timesheets through a defined workflow. Approved hours flow to Zoho Books or Invoice with cost-rate calculations, enabling automated client billing with full audit trails.</p></div></div></div>
+  <div class="faq" data-faq><div class="fq" onclick="toggleFaq(this)"><span>What is the pricing model?</span><span class="plus">+</span></div><div class="fa-body"><div class="fa-inner"><p>Our implementation is a one-time project fee based on the package selected. Zoho Projects subscription fees are billed separately by Zoho on a per-user basis. Detailed pricing is available on request during the strategy call.</p></div></div></div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S14 TESTIMONIALS ============ -->
+<section class="s14">
+<div class="wrap">
+ <p class="eyebrow rv" style="text-align:center">CLIENT VOICES</p>
+ <h2 class="rv" style="text-align:center">Trusted by <span class="hl">Industry Leaders</span></h2>
+ <div class="test-display rv" id="testDisplay"></div>
+ <div class="dots" id="testDots"></div>
+</div>
+</section>
+
+<!-- ============ S15 CONTACT ============ -->
+<section class="s15">
+<div class="wrap">
+ <div class="contact-row">
+  <div>
+   <p class="eyebrow rv" style="color:var(--mint)">GET STARTED</p>
+   <h2 class="rv">Let's Build Your <span class="hl">PMO Engine</span></h2>
+   <p class="rv" style="margin:16px 0 32px;max-width:480px">Our implementation specialists will assess your current project management maturity and design a tailored Zoho Projects deployment plan.</p>
+   <div class="info-cards st">
+    <div class="info-card"><div class="ic-icon"><i class="fa-solid fa-circle-check"></i></div><p>Authorized Zoho Advanced Partner with 500+ implementations</p></div>
+    <div class="info-card"><div class="ic-icon"><i class="fa-solid fa-layer-group"></i></div><p>End-to-end delivery: discovery, build, migration, training, support</p></div>
+    <div class="info-card"><div class="ic-icon"><i class="fa-solid fa-bolt"></i></div><p>Go live in 7-45 working days based on package scope</p></div>
+    <div class="info-card"><div class="ic-icon"><i class="fa-solid fa-location-dot"></i></div><p>Coimbatore, Tamil Nadu, India &middot; Serving clients worldwide</p></div>
+    <div class="info-card"><div class="ic-icon"><i class="fa-solid fa-envelope"></i></div><p>sales@elitetechcorp.com</p></div>
+   </div>
+  </div>
+  <div class="form-slot rv">
+   <h3>Assess My Project Delivery</h3>
+   <p>Fill in your details and our PMO consultant will reach out within 24 hours.</p>
+   <div style="margin-top:20px;padding:40px 20px;text-align:center;border:2px dashed var(--line);border-radius:12px;color:var(--muted);font-size:13px">[wpcode id="47446"]</div>
+  </div>
+ </div>
+</div>
+</section>
+
+<!-- ============ S16 CTA ============ -->
+<section class="s16">
+ <div class="glow" style="background:var(--blue);top:-80px;left:10%"></div>
+ <div class="glow" style="background:var(--green);bottom:-80px;right:15%"></div>
+ <img class="float-logo" src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="" style="width:60px;top:15%;left:8%;animation-delay:0s" loading="lazy">
+ <img class="float-logo" src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="" style="width:50px;top:25%;right:12%;animation-delay:1.2s" loading="lazy">
+ <img class="float-logo" src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="" style="width:45px;bottom:20%;left:15%;animation-delay:2.4s" loading="lazy">
+ <img class="float-logo" src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="" style="width:48px;top:40%;right:6%;animation-delay:3.6s" loading="lazy">
+ <img class="float-logo" src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" alt="" style="width:42px;bottom:30%;right:20%;animation-delay:4.8s" loading="lazy">
+<div class="wrap" style="position:relative;z-index:1">
+ <p class="eyebrow rv" style="color:var(--mint)">READY TO TRANSFORM?</p>
+ <h2 class="rv" style="font-size:clamp(28px,3.2vw,42px)">A Governed PMO Starts With<br>One Conversation</h2>
+ <p class="rv">Stop guessing project health. Start governing it with a platform built for predictable delivery. Our certified team will have you live in weeks, not months.</p>
+ <div class="cta-btns rv">
+  <a href="https://elitemeetings.elitetechcorp.com/?utm_source=zoho-projects-landing&utm_medium=cta&utm_campaign=zoho_projects_implementation&utm_content=footer_cta#/sales-enquiries" class="btn--g"><i class="fa-solid fa-rocket"></i> Book Strategy Call</a>
+  <a href="#features" class="btn--ghost"><i class="fa-solid fa-arrow-up"></i> Back to Features</a>
+ </div>
+ <p class="footer-line">Elite Tech Corp &middot; Authorized Zoho Advanced Partner &middot; Coimbatore, India</p>
+</div>
+</section>
+
+</div><!-- /.hb -->
+
+<script>
+(function(){
+ /* --- Scroll progress --- */
+ var prog=document.getElementById('scrollProg');
+ window.addEventListener('scroll',function(){var s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;prog.style.width=(s/h*100)+'%'},{passive:true});
+
+ /* --- IntersectionObserver reveals --- */
+ var mo=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+ if(!mo){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.hb .rv,.hb .st,.hb .hl,.hb .dm,.hb .dash-chart').forEach(function(el){obs.observe(el)});
+ }else{
+  document.querySelectorAll('.hb .rv,.hb .st,.hb .hl,.hb .dm,.hb .dash-chart').forEach(function(el){el.classList.add('vis')});
+ }
+
+ /* --- Counter animation --- */
+ var ctrObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){animCtr(e.target);ctrObs.unobserve(e.target)}})},{threshold:.5});
+ document.querySelectorAll('.hb .ctr').forEach(function(el){ctrObs.observe(el)});
+ function animCtr(el){var t=parseInt(el.dataset.target),d=1200,st=performance.now();(function step(now){var p=Math.min((now-st)/d,1);var eased=1-Math.pow(1-p,3);el.textContent=Math.round(eased*t).toLocaleString();if(p<1)requestAnimationFrame(step)})(st)}
+
+ /* --- FAQ toggle --- */
+ window.toggleFaq=function(btn){var faq=btn.parentElement;var wasOpen=faq.classList.contains('open');document.querySelectorAll('.hb .faq.open').forEach(function(f){f.classList.remove('open')});if(!wasOpen)faq.classList.add('open')};
+
+ /* --- FAQ search --- */
+ var faqSearch=document.getElementById('faqSearch');
+ if(faqSearch){faqSearch.addEventListener('input',function(){var q=this.value.toLowerCase();document.querySelectorAll('.hb .faq[data-faq]').forEach(function(f){var txt=f.textContent.toLowerCase();f.classList.toggle('hidden',q&&txt.indexOf(q)===-1)})})}
+
+ /* --- Use Case accordion --- */
+ document.querySelectorAll('.hb .uc[data-uc]').forEach(function(uc){uc.querySelector('.uc-head').addEventListener('click',function(){var wasOpen=uc.classList.contains('open');document.querySelectorAll('.hb .uc.open').forEach(function(u){u.classList.remove('open')});if(!wasOpen)uc.classList.add('open')})});
+
+ /* --- Modules sidebar --- */
+ var modules=[
+  {name:'Portal & Org Setup',items:['Organization hierarchy config','Portal branding & theme','User role matrix','Security policies & IP restrictions','License allocation planning']},
+  {name:'Project Architecture',items:['Project template library','WBS hierarchy design','Milestone framework','Task dependency mapping','Custom field configuration']},
+  {name:'Blueprint Workflows',items:['Stage-gate state machines','Transition rules & conditions','Mandatory field enforcement','Role-based approvals','SLA timer configuration']},
+  {name:'Gantt & Scheduling',items:['Gantt chart configuration','Critical Path Method setup','Baseline schedule capture','Resource-leveled scheduling','Lag/lead time management']},
+  {name:'Resource Management',items:['Capacity heatmap setup','Utilization tracking views','Skill-based allocation rules','Cross-project balancing','Availability calendar sync']},
+  {name:'Timesheet & Billing',items:['Time entry policies','Approval workflow chains','Cost rate matrices','Billable/non-billable rules','Zoho Books/Invoice sync']},
+  {name:'Budget & Cost',items:['Project budget templates','Cost center mapping','Expense categorization','Variance alert thresholds','Forecast modeling setup']},
+  {name:'Collaboration',items:['Forum & discussion setup','File management structure','Feed notification rules','@mention & subscription config','Client portal configuration']},
+  {name:'Issue Tracking',items:['Issue type taxonomy','Severity & priority matrix','Auto-assignment rules','SLA escalation paths','Issue-to-task linking']},
+  {name:'Analytics & Reporting',items:['Dashboard widget library','Scheduled report distribution','Cross-project roll-up views','Zoho Analytics integration','Executive summary templates']},
+  {name:'Integrations',items:['Zoho CRM bi-directional sync','Zoho Books accounting bridge','Zoho People HR data link','Zoho Analytics connectors','REST API & webhook setup']}
+ ];
+ var modNav=document.getElementById('modNav'),modDetail=document.getElementById('modDetail');
+ if(modNav&&modDetail){
+  modules.forEach(function(m,i){var btn=document.createElement('button');btn.textContent=m.name;if(i===0)btn.className='active';btn.addEventListener('click',function(){modNav.querySelectorAll('button').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');showMod(i)});modNav.appendChild(btn)});
+  function showMod(i){var m=modules[i];modDetail.innerHTML='<h3>'+m.name+'</h3><ul>'+m.items.map(function(it){return '<li>'+it+'</li>'}).join('')+'</ul>'}
+  showMod(0);
+ }
+
+ /* --- Testimonials auto-rotate --- */
+ var testimonials=[
+  {company:'MEGAWIN SWITCHGEAR PRIVATE LIMITED',logo:'https://www.elitetechcorp.com/wp-content/uploads/2026/01/Megawin.png',quote:'I would strongly recommend Elite Tech Corp to any organization looking to implement Zoho products with <mark>long-term scalability, process discipline, and business impact</mark> in mind.',aspect:'Project Governance & Scalability'},
+  {company:'Vashini Exports',logo:'https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_39_admin-ajax-14.webp',quote:'Elite Tech Corp has been a great partner. Ikram and Anand truly understand Zoho One applications. They’ve successfully implemented <mark>landing pages, forms, APIs, workflows</mark> and more for our company.',aspect:'Workflow Automation & Integration'},
+  {company:'LendingUSA',logo:'https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_41_lEANDING-usa-1.webp',quote:'Ikram and the Elite Tech Corp team made our <mark>transition from Salesforce to Zoho seamless</mark>. Their consultative approach, best practice insights and custom API development were invaluable.',aspect:'Migration & Consultative Approach'},
+  {company:'BigBang',logo:'https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_40_bIG-bANG-2.webp',quote:'We had the pleasure of working with Elite Tech Corp to implement Zoho solutions and the experience was exceptional. Their <mark>expertise, communication and customization</mark> aligned perfectly with our needs.',aspect:'Implementation Excellence'},
+  {company:'Kings Royal Army HLG',logo:'https://www.elitetechcorp.com/wp-content/uploads/2025/12/Kings-Royal-Army.png',quote:'We recently started using Zoho software in our company, and our experience has been good so far. The system is <mark>easy to use and has helped us manage our work more efficiently</mark>.',aspect:'Ease of Use & Efficiency'},
+  {company:'MDL VISHAL INDIA PVT LTD',logo:'https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_37_mdl-1.webp',quote:'I want to express my immense pleasure and gratitude for the <mark>exceptional work and dedication</mark> of the elite team. Your expertise and professionalism make a significant impact on our operations.',aspect:'Dedication & Professionalism'},
+  {company:'F CARE GROUP',logo:'https://www.elitetechcorp.com/wp-content/uploads/2025/07/imgi_38_fCARE-1.webp',quote:'I want to express my gratitude for the great partnership with Elite Tech Corp. Your understanding of our requirements and <mark>customization of Zoho</mark> have positively impacted our operations.',aspect:'Partnership & Customization'}
+ ];
+ var testDisplay=document.getElementById('testDisplay'),testDots=document.getElementById('testDots'),currentTest=0;
+ if(testDisplay&&testDots){
+  testimonials.forEach(function(_,i){var d=document.createElement('span');if(i===0)d.className='active';d.addEventListener('click',function(){currentTest=i;showTest(i)});testDots.appendChild(d)});
+  function showTest(i){
+   var t=testimonials[i];
+   testDisplay.innerHTML='<div class="test-logo"><img src="'+t.logo+'" alt="'+t.company+'" loading="lazy"></div><div class="test-content"><blockquote>'+t.quote+'</blockquote><p class="meta">'+t.company+'</p><p class="aspect">'+t.aspect+'</p></div>';
+   testDots.querySelectorAll('span').forEach(function(d,j){d.classList.toggle('active',j===i)});
+  }
+  showTest(0);
+  setInterval(function(){currentTest=(currentTest+1)%testimonials.length;showTest(currentTest)},6000);
+ }
+})();
+</script>
