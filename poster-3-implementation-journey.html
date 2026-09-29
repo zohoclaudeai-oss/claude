@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poster 3 – Live in 7-45 Working Days</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#E4EEE9;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px}
+.poster{width:1080px;height:1350px;background:#FFFFFF;border-radius:32px;overflow:hidden;font-family:'Inter',Arial,sans-serif;position:relative;display:flex;flex-direction:column}
+
+/* Decorative top gradient */
+.top-gradient{height:8px;background:linear-gradient(90deg,#236EB4,#3EA900)}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;padding:36px 56px 0}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-icon{width:52px;height:52px;background:linear-gradient(135deg,#12675D,#0B4A43);border-radius:14px;display:flex;align-items:center;justify-content:center}
+.logo-text{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:22px;font-weight:800;color:#0F2B28}
+.badge{background:#F0FDF4;color:#16A34A;font-size:13px;font-weight:700;padding:10px 20px;border-radius:999px;letter-spacing:.04em;border:1px solid #BBF7D0}
+
+/* Zoho Ecosystem Orbit Row */
+.zoho-orbit{display:flex;align-items:center;justify-content:center;gap:12px;padding:24px 56px 0;position:relative}
+.orbit-icon{width:42px;height:42px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);border:1px solid #E4EEE9;display:flex;align-items:center;justify-content:center;padding:6px;transition:transform .3s}
+.orbit-icon:hover{transform:scale(1.1)}
+.orbit-icon img{width:100%;height:100%;object-fit:contain}
+.orbit-icon--center{width:56px;height:56px;border:2px solid #12675D;box-shadow:0 4px 16px rgba(18,103,93,.2)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.orbit-icon--center{animation:float 3s ease-in-out infinite}
+.orbit-label{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:12px;font-weight:700;color:#12675D;text-align:center;padding-top:6px}
+
+/* Hero */
+.hero{padding:20px 56px 0;text-align:center}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#12675D;margin-bottom:12px}
+.hero h1{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:48px;line-height:1.15;font-weight:800;color:#0F2B28;letter-spacing:-.5px}
+.hero h1 span{color:#12675D}
+.hero p{font-size:16px;line-height:1.6;color:#3D504D;margin-top:12px;max-width:800px;margin-left:auto;margin-right:auto}
+
+/* Timeline */
+.timeline{padding:28px 56px 0;flex:1;position:relative}
+.timeline-line{position:absolute;left:50%;top:28px;bottom:12px;width:4px;background:linear-gradient(180deg,#236EB4,#3EA900);border-radius:4px;transform:translateX(-50%)}
+.phases{display:grid;gap:16px;position:relative;z-index:2}
+.phase{display:grid;grid-template-columns:1fr 70px 1fr;gap:0;align-items:center}
+.phase:nth-child(even) .phase-content{grid-column:3}
+.phase:nth-child(even) .phase-empty{grid-column:1}
+.phase-content{background:#F4F8F6;border:2px solid #E4EEE9;border-radius:18px;padding:22px;position:relative}
+.phase-content::after{content:"";position:absolute;top:50%;width:16px;height:4px;background:linear-gradient(90deg,#236EB4,#3EA900)}
+.phase:nth-child(odd) .phase-content::after{right:-16px}
+.phase:nth-child(even) .phase-content::after{left:-16px}
+.phase-dot{width:70px;display:flex;align-items:center;justify-content:center}
+.dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:17px;font-weight:800;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.15)}
+.dot--blue{background:#236EB4}
+.dot--green{background:#3EA900}
+.dot--amber{background:#F59E0B}
+.dot--red{background:#E42527}
+.phase-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:6px}
+.label--discover{background:#DBEAFE;color:#1447E6}
+.label--build{background:#DCFCE7;color:#016630}
+.label--prove{background:#FEF3C6;color:#973C00}
+.label--run{background:#FFE2E2;color:#C10007}
+.phase-content h3{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;font-weight:800;color:#0F2B28;line-height:1.3}
+.phase-content p{font-size:13px;color:#3D504D;line-height:1.5;margin-top:5px}
+.phase-time{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:11px;font-weight:700;color:#12675D;background:#E4F1EE;padding:3px 10px;border-radius:999px}
+
+/* Stats Row */
+.stats-row{display:flex;justify-content:center;gap:32px;padding:20px 56px}
+.stat{text-align:center;background:#F4F8F6;border-radius:14px;padding:16px 28px;border:1px solid #E4EEE9}
+.stat-num{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:32px;font-weight:800;color:#12675D}
+.stat-label{font-size:11px;color:#3D504D;font-weight:600;margin-top:4px}
+
+/* CTA */
+.cta-row{text-align:center;padding:0 56px 16px}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:#12675D;color:#fff;font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:17px;font-weight:700;padding:14px 34px;border-radius:14px;border:0;cursor:pointer;box-shadow:0 8px 24px rgba(18,103,93,.3)}
+
+/* Footer */
+.footer{background:#0F2B28;padding:28px 56px;display:flex;justify-content:space-between;align-items:center}
+.footer-site{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:18px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.globe{width:28px;height:28px;border:2px solid #9EE7B8;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.footer-phone{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:18px;font-weight:700;color:#9EE7B8;display:flex;align-items:center;gap:10px}
+.phone-icon{width:28px;height:28px;background:#16A34A;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+@media(max-width:1120px){
+  .poster{transform-origin:top center;transform:scale(.45);margin-bottom:-740px}
+}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="top-gradient"></div>
+
+  <div class="header">
+    <div class="logo">
+      <div class="logo-icon"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="12" stroke="#9EE7B8" stroke-width="2.5"/><path d="M10 15l4 4 7-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="logo-text">elite<br>Tech Corp</span>
+    </div>
+    <div class="badge">&#9679; Zia AI Ready</div>
+  </div>
+
+  <!-- Zoho Product Ecosystem Orbit -->
+  <div class="zoho-orbit">
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="CRM"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="Books"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/desk.svg" alt="Desk"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" alt="People"></div>
+    <div class="orbit-icon orbit-icon--center"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Projects"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="Analytics"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/campaigns.svg" alt="Campaigns"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/social.svg" alt="Social"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sign.svg" alt="Sign"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/forms.svg" alt="Forms"></div>
+    <div class="orbit-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/salesiq.svg" alt="SalesIQ"></div>
+  </div>
+  <div class="orbit-label">Zoho Projects + Full Ecosystem</div>
+
+  <div class="hero">
+    <div class="eyebrow">Zoho Projects Implementation</div>
+    <h1>Your PMO, Live in<br><span>7 to 45 Working Days.</span></h1>
+    <p>We architect your WBS, Blueprints, and costing models to mirror how your organization actually delivers.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    <div class="phases">
+
+      <div class="phase">
+        <div class="phase-content">
+          <span class="phase-label label--discover">Discover</span>
+          <h3>PMO Audit &amp; WBS Design</h3>
+          <p>Deep-dive audit of task tracking, milestone governance, timesheet approvals, and bottlenecks.</p>
+          <span class="phase-time">&#9201; Steps 01&ndash;02</span>
+        </div>
+        <div class="phase-dot"><div class="dot dot--blue">1</div></div>
+        <div class="phase-empty"></div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-empty"></div>
+        <div class="phase-dot"><div class="dot dot--green">2</div></div>
+        <div class="phase-content">
+          <span class="phase-label label--build">Build</span>
+          <h3>Workspace, Blueprints &amp; Integrations</h3>
+          <p>Custom fields, layouts, stage-gate Blueprints, Gantt &amp; CPM config, CRM &amp; Books integration.</p>
+          <span class="phase-time">&#9201; Steps 03&ndash;06</span>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-content">
+          <span class="phase-label label--prove">Prove</span>
+          <h3>Training &amp; UAT Simulation</h3>
+          <p>Role-based training academies with recorded SOPs. 25+ end-to-end scenario simulations.</p>
+          <span class="phase-time">&#9201; Steps 07&ndash;08</span>
+        </div>
+        <div class="phase-dot"><div class="dot dot--amber">3</div></div>
+        <div class="phase-empty"></div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-empty"></div>
+        <div class="phase-dot"><div class="dot dot--red">4</div></div>
+        <div class="phase-content">
+          <span class="phase-label label--run">Run</span>
+          <h3>Go-Live &amp; 45-Day Hypercare</h3>
+          <p>Formal cutover, live project provisioning, and a Senior Solution Architect on-call.</p>
+          <span class="phase-time">&#9201; Steps 09&ndash;10</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Projects Delivered</div></div>
+    <div class="stat"><div class="stat-num">4.9/5</div><div class="stat-label">Client Rating</div></div>
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Implementation Steps</div></div>
+    <div class="stat"><div class="stat-num">45</div><div class="stat-label">Days Hypercare</div></div>
+  </div>
+
+  <div class="cta-row">
+    <button class="cta-btn">Assess My Project Delivery &rarr;</button>
+  </div>
+
+  <div class="footer">
+    <div class="footer-site"><span class="globe"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#9EE7B8" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" stroke="#9EE7B8" stroke-width="2"/></svg></span> elitetechcorp.com</div>
+    <div class="footer-phone"><span class="phone-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#fff" stroke-width="2"/></svg></span> +91 89259 24785</div>
+  </div>
+</div>
+</body>
+</html>

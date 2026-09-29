@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poster 1 – From Spreadsheet Chaos to Governed PMO</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#E4EEE9;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px}
+.poster{width:1080px;height:1350px;background:#F4F8F6;border-radius:32px;overflow:hidden;font-family:'Inter',Arial,sans-serif;position:relative;display:flex;flex-direction:column}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;padding:44px 56px 0}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-icon{width:52px;height:52px;background:linear-gradient(135deg,#12675D,#0B4A43);border-radius:14px;display:flex;align-items:center;justify-content:center}
+.logo-text{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:22px;font-weight:800;color:#0F2B28}
+.badge{background:#0F2B28;color:#9EE7B8;font-size:13px;font-weight:700;padding:10px 20px;border-radius:999px;letter-spacing:.04em}
+
+/* Zoho Projects Logo Section */
+.zoho-brand{display:flex;align-items:center;justify-content:center;gap:16px;padding:28px 56px 0}
+.zoho-logo-img{width:56px;height:56px;object-fit:contain}
+.zoho-brand-text{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:24px;font-weight:800;color:#12675D}
+
+/* Hero */
+.hero{padding:24px 56px 0;text-align:center}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#12675D;margin-bottom:16px}
+.hero h1{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:52px;line-height:1.15;font-weight:800;color:#0F2B28;letter-spacing:-.5px}
+.hero h1 span{color:#12675D}
+.hero p{font-size:17px;line-height:1.6;color:#3D504D;margin-top:14px;max-width:820px;margin-left:auto;margin-right:auto}
+
+/* Zoho Ecosystem Orbit */
+.ecosystem{display:flex;align-items:center;justify-content:center;gap:12px;padding:20px 56px 0;flex-wrap:wrap}
+.eco-icon{width:44px;height:44px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;padding:6px;transition:transform .3s}
+.eco-icon:hover{transform:scale(1.15)}
+.eco-icon img{width:100%;height:100%;object-fit:contain}
+.eco-icon--main{width:56px;height:56px;box-shadow:0 4px 16px rgba(18,103,93,.25);border:2px solid #12675D}
+
+/* Transformation Grid */
+.transform{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;margin:24px 56px 0;flex:1}
+.before,.after{padding:28px;border-radius:20px}
+.before{background:#FFF5F5;border:2px solid #FECACA}
+.after{background:#F0FDF4;border:2px solid #BBF7D0}
+.col-label{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.before .col-label{color:#DC2626}
+.before .col-label::before{content:"";width:10px;height:10px;border-radius:50%;background:#DC2626}
+.after .col-label{color:#16A34A}
+.after .col-label::before{content:"";width:10px;height:10px;border-radius:50%;background:#16A34A}
+.item{display:flex;align-items:flex-start;gap:10px;margin-bottom:14px;font-size:15px;line-height:1.45}
+.before .item{color:#7F1D1D}
+.after .item{color:#14532D}
+.item-icon{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:13px}
+.before .item-icon{background:#FECACA;color:#DC2626}
+.after .item-icon{background:#BBF7D0;color:#16A34A}
+.arrow-col{display:flex;align-items:center;justify-content:center}
+.arrow-circle{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#12675D,#0B4A43);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(18,103,93,.35)}
+
+/* Stats Bar */
+.stats-bar{display:flex;justify-content:center;gap:36px;padding:24px 56px;margin-top:auto}
+.stat{text-align:center}
+.stat-num{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:36px;font-weight:800;background:linear-gradient(90deg,#12675D,#0B4A43);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat-label{font-size:12px;color:#3D504D;font-weight:600;margin-top:4px}
+
+/* Footer */
+.footer{background:#0F2B28;padding:32px 56px;display:flex;justify-content:space-between;align-items:center}
+.footer-site{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:18px;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.globe{width:28px;height:28px;border:2px solid #9EE7B8;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.footer-phone{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:18px;font-weight:700;color:#9EE7B8;display:flex;align-items:center;gap:10px}
+.phone-icon{width:28px;height:28px;background:#16A34A;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+@media(max-width:1120px){
+  .poster{transform-origin:top center;transform:scale(.45);margin-bottom:-740px}
+}
+
+/* Pulse animation for main icon */
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.eco-icon--main{animation:pulse 2.5s ease-in-out infinite}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="header">
+    <div class="logo">
+      <div class="logo-icon"><svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="12" stroke="#9EE7B8" stroke-width="2.5"/><path d="M10 15l4 4 7-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="logo-text">elite<br>Tech Corp</span>
+    </div>
+    <div class="badge">&#9679; Zoho Advanced Partner</div>
+  </div>
+
+  <!-- Zoho Projects Branding -->
+  <div class="zoho-brand">
+    <img class="zoho-logo-img" src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Zoho Projects">
+    <span class="zoho-brand-text">Zoho Projects</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Enterprise PMO Implementation</div>
+    <h1>From Spreadsheet Chaos<br>to <span>Governed PMO.</span></h1>
+    <p>Stop losing margins to disconnected Excel sheets, guessed timesheets, and scope creep agreed over WhatsApp.</p>
+  </div>
+
+  <!-- Zoho Ecosystem Icons -->
+  <div class="ecosystem">
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/crm.svg" alt="CRM"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/books.svg" alt="Books"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/desk.svg" alt="Desk"></div>
+    <div class="eco-icon eco-icon--main"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/projects.svg" alt="Projects"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/people.svg" alt="People"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/analytics.svg" alt="Analytics"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/campaigns.svg" alt="Campaigns"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/social.svg" alt="Social"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/forms.svg" alt="Forms"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/salesiq.svg" alt="SalesIQ"></div>
+    <div class="eco-icon"><img src="https://www.zohowebstatic.com/sites/zweb/images/productlogos/sign.svg" alt="Sign"></div>
+  </div>
+
+  <div class="transform">
+    <div class="before">
+      <div class="col-label">Before</div>
+      <div class="item"><span class="item-icon">&#10005;</span><span>Disconnected Excel sheets drift out of sync within hours</span></div>
+      <div class="item"><span class="item-icon">&#10005;</span><span>Scope changes agreed via WhatsApp &mdash; zero audit trail</span></div>
+      <div class="item"><span class="item-icon">&#10005;</span><span>Timesheets guessed on Friday afternoon</span></div>
+      <div class="item"><span class="item-icon">&#10005;</span><span>6+ hours weekly compiling status reports</span></div>
+      <div class="item"><span class="item-icon">&#10005;</span><span>Finance can't bill &mdash; sign-offs buried in email</span></div>
+    </div>
+    <div class="arrow-col">
+      <div class="arrow-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6l6 6-6 6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+    <div class="after">
+      <div class="col-label">After &mdash; Zoho Projects</div>
+      <div class="item"><span class="item-icon">&#10003;</span><span>Single WBS, Gantt, resources &amp; accounting in one platform</span></div>
+      <div class="item"><span class="item-icon">&#10003;</span><span>Stage-gate Blueprints enforce mandatory sign-offs</span></div>
+      <div class="item"><span class="item-icon">&#10003;</span><span>Live stopwatch timesheets with multi-tier approvals</span></div>
+      <div class="item"><span class="item-icon">&#10003;</span><span>Automated real-time dashboards &amp; portfolio reports</span></div>
+      <div class="item"><span class="item-icon">&#10003;</span><span>Approved milestones push to Zoho Books &mdash; 1-click invoice</span></div>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Enterprise Projects<br>Governed</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Milestone<br>Traceability</div></div>
+    <div class="stat"><div class="stat-num">Zero</div><div class="stat-label">Margin Drift &amp;<br>Unbilled Scope</div></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-site"><span class="globe"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#9EE7B8" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" stroke="#9EE7B8" stroke-width="2"/></svg></span> elitetechcorp.com</div>
+    <div class="footer-phone"><span class="phone-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#fff" stroke-width="2"/></svg></span> +91 89259 24785</div>
+  </div>
+</div>
+</body>
+</html>
