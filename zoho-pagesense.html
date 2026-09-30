@@ -552,6 +552,15 @@ body{margin:0;overflow-x:hidden}
 .elementor-widget-html .hb .box{max-width:var(--box)!important;margin-inline:auto!important;padding-inline:var(--gut)!important;width:100%!important}
 .elementor-widget-html .hb .cta-full{overflow:visible!important}
 .elementor-section.elementor-section-stretched .elementor-container{max-width:none!important;padding:0!important}
+/* Fix: dark CTA text visibility + missing base classes */
+.hb.hb .final-sec h2,.hb.hb .final-sec h3,.hb.hb .final-sec h4{color:#fff!important}
+.hb.hb .final-sec .lede{color:#CFE9D8!important}
+.hb.hb .final-sec .hl{background:var(--hl)!important;color:#fff!important;padding:2px 10px 4px!important;border-radius:6px!important;display:inline-block!important;box-decoration-break:clone!important;-webkit-box-decoration-break:clone!important;box-shadow:0 6px 16px -10px rgba(35,110,180,.85)!important}
+.hb.hb .intro{margin-bottom:clamp(40px,3.8vw,60px)!important}
+.hb.hb .intro--mid{text-align:center!important}
+.hb.hb .intro--mid .lede{margin-inline:auto!important}
+.hb.hb .br-lg{display:inline!important}
+.hb.hb .h2{font-size:clamp(25px,2.8vw,36px)!important;line-height:1.26!important}
 /* Contact - ct-grid */
 @keyframes d1Float{0%{transform:translate(0,0)}50%{transform:translate(10px,-8px)}100%{transform:translate(0,0)}}
 .hb.hb .sec--contact{background:linear-gradient(135deg,#EEF6FF 0%,#F0FDF4 50%,#F5F3FF 100%)!important;position:relative!important;overflow:hidden!important}
