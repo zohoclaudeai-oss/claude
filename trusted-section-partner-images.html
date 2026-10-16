@@ -1,0 +1,54 @@
+<style>
+/* Partner badges: real PNG images (replaces the inline SVG logo pills) */
+.etc-sec .partner-strip{
+    display: flex; justify-content: center; align-items: center;
+    gap: clamp(14px, 2.2vw, 30px); flex-wrap: wrap; margin-top: 22px;
+}
+.etc-sec .partner-strip .partner-img{
+    display: block; width: auto; height: 56px; max-width: 100%;
+    object-fit: contain; border-radius: 0; box-shadow: none;
+    transition: transform .3s cubic-bezier(.22,.75,.26,1), filter .3s;
+}
+.etc-sec .partner-strip .partner-img:hover{ transform: translateY(-3px); filter: drop-shadow(0 8px 14px rgba(16,32,56,.18)); }
+@media (max-width: 768px){ .etc-sec .partner-strip .partner-img{ height: 48px; } }
+@media (max-width: 560px){
+    .etc-sec .partner-strip{ gap: 12px; }
+    .etc-sec .partner-strip .partner-img{ height: 42px; }
+}
+</style>
+
+<div class="etc-sec"><section class="sec sec--alt" id="trusted">
+        <div class="box">
+            <div class="intro intro--mid reveal sweep-host">
+                <div class="zlogo zlogo--center">
+                    <span class="zlogo-icon" role="img" aria-label="Zoho Expense"></span>
+                    <em>Global Spend Control</em>
+                </div>
+                <h2 class="h2" data-anim="head">Trusted by Businesses That Need<br class="br-lg"><span class="hl">Better Control</span> Over Business Spend</h2>
+                <p class="lede">Zoho Expense is used across <strong>150+ countries and 50+ industries</strong>, supporting organizations that need centralized travel and expense management across teams, locations, currencies and entities.</p>
+            </div>
+
+            <!-- Trust Statistics & Metrics with Animated Counters -->
+            <div class="strip-top stagger" style="margin-bottom:28px;">
+                <div class="strip-card">
+                    <div class="strip-num"><span class="stat-counter" data-target="300">0</span>+</div>
+                    <div class="strip-lbl">Projects Delivered</div>
+                </div>
+                <div class="strip-card">
+                    <div class="strip-num"><span class="stat-counter" data-target="100">0</span>+</div>
+                    <div class="strip-lbl">Certified Consultants</div>
+                </div>
+                <div class="strip-card">
+                    <div class="strip-num"><span class="stat-counter" data-target="22">0</span>+</div>
+                    <div class="strip-lbl">Zoho Certifications</div>
+                </div>
+            </div>
+
+            <!-- Partner Badges (real images) -->
+            <div class="partner-strip">
+                <img class="partner-img" src="https://www.elitetechcorp.com/wp-content/uploads/2025/11/Frame-1984079405-scaled.png" alt="Zoho Advanced Partner" loading="lazy" decoding="async">
+                <img class="partner-img" src="https://www.elitetechcorp.com/wp-content/uploads/2025/11/Frame-1984079406-scaled.png" alt="Zoho Creator Registered Partner" loading="lazy" decoding="async">
+                <img class="partner-img" src="https://www.elitetechcorp.com/wp-content/uploads/2025/11/Frame-1984079407-scaled.png" alt="Zoho Catalyst Partner" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </section></div>
