@@ -1,0 +1,2199 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+.etc-sec,.etc-sec *,.etc-sec *::before,.etc-sec *::after{box-sizing:border-box}
+.etc-sec{text-align:left;text-indent:0;letter-spacing:normal;text-transform:none;word-spacing:normal;font-style:normal}
+.etc-sec p,.etc-sec h1,.etc-sec h2,.etc-sec h3,.etc-sec h4,.etc-sec h5,.etc-sec h6,.etc-sec ul,.etc-sec ol,.etc-sec li,.etc-sec dl,.etc-sec dd,.etc-sec figure,.etc-sec blockquote,.etc-sec pre,.etc-sec fieldset{margin:0;padding:0;text-indent:0;text-align:inherit;letter-spacing:inherit;max-width:none;width:auto;float:none}
+.etc-sec ul,.etc-sec ol{list-style:none}
+.etc-sec a{text-decoration:none;color:inherit;box-shadow:none}
+.etc-sec a:hover{text-decoration:none}
+.etc-sec img,.etc-sec svg{max-width:100%;height:auto;border:0;display:block;border-radius:0;box-shadow:none}
+.etc-sec table{border-collapse:collapse;border-spacing:0;border:0;width:auto;margin:0;font-size:inherit}
+.etc-sec th,.etc-sec td{border:0;padding:0;text-align:inherit;vertical-align:inherit}
+.etc-sec button,.etc-sec input,.etc-sec select,.etc-sec textarea{font:inherit;color:inherit;letter-spacing:inherit;margin:0;min-width:0;min-height:0;max-width:none;text-transform:none}
+.etc-sec hr{border:0;margin:0}
+</style>
+<style>
+
+        /* ═══════════════════════════════════════════════════════════════
+           ZOHO EXPENSE - OFFICIAL DESIGN SYSTEM (ELITE TECH CORP)
+           Matching Section Width & Tokens to https://www.zoho.com/in/expense/
+           Typography: zoho-puvi, system-ui, -apple-system, Segoe UI, Roboto
+           ═══════════════════════════════════════════════════════════════ */
+        /* Official Elite Tech Corp webfont (zoho-puvi) - matched to https://www.elitetechcorp.com/ */
+        @font-face {
+            font-family: 'zoho-puvi';
+            /* same-origin path first (works once this page lives on elitetechcorp.com), absolute as fallback */
+            src: url('/wp-content/uploads/useanyfont/6759zoho-puvi.woff2') format('woff2'),
+                 url('/wp-content/uploads/useanyfont/6759zoho-puvi.woff') format('woff'),
+                 url('https://www.elitetechcorp.com/wp-content/uploads/useanyfont/6759zoho-puvi.woff2') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root{
+            --ground: #F9FAFB;
+            --ground2: #F3F4F6;
+            --white: #FFFFFF;
+            --ink: #030712;
+            --ink2: #364153;
+            --ink3: #4A5565;
+            --muted: #9F9FA9;
+            --line: #D4D4D8;
+            --line2: #E4E4E7;
+            --blue: #236EB4;
+            --green: #3EA900;
+            --green-d: #008236;
+            --forest: #032E15;
+            --mint: #B9F8CF;
+            --amber: #FEF3C6;
+            --rose: #FFE2E2;
+            --sky: #DBEAFE;
+            --grad: linear-gradient(90deg, #236EB4 0%, #3EA900 100%);
+            /* Official Zoho brand mark (zoho-logo-web.svg), wordmark cropped off */
+            --zoho-mark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 30 1024 330'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23089949;%7D .st1%7Bfill:%23F9B21D;%7D .st2%7Bfill:%23E42527;%7D .st3%7Bfill:%23226DB4;%7D %3C/style%3E%3Cpath class='st0' d='M458.1,353c-7.7,0-15.5-1.6-23-4.9l0,0l-160-71.3c-28.6-12.7-41.5-46.4-28.8-75l71.3-160 c12.7-28.6,46.4-41.5,75-28.8l160,71.3c28.6,12.7,41.5,46.4,28.8,75l-71.3,160C500.6,340.5,479.8,353,458.1,353z M448.4,318.1 c12.1,5.4,26.3-0.1,31.7-12.1l71.3-160c5.4-12.1-0.1-26.3-12.1-31.7L379.2,43c-12.1-5.4-26.3,0.1-31.7,12.1l-71.3,160 c-5.4,12.1,0.1,26.3,12.1,31.7L448.4,318.1z'/%3E%3Cpath class='st1' d='M960,353.1H784.8c-31.3,0-56.8-25.5-56.8-56.8V121.1c0-31.3,25.5-56.8,56.8-56.8H960 c31.3,0,56.8,25.5,56.8,56.8v175.2C1016.8,327.6,991.3,353.1,960,353.1z M784.8,97.1c-13.2,0-24,10.8-24,24v175.2 c0,13.2,10.8,24,24,24H960c13.2,0,24-10.8,24-24V121.1c0-13.2-10.8-24-24-24H784.8z'/%3E%3Cpath class='st2' d='M303.9,153.2L280.3,206c-0.3,0.6-0.6,1.1-0.9,1.6l9.2,56.8c2.1,13.1-6.8,25.4-19.8,27.5l-173,28 c-6.3,1-12.7-0.5-17.9-4.2c-5.2-3.7-8.6-9.3-9.6-15.6l-28-173c-1-6.3,0.5-12.7,4.2-17.9c3.7-5.2,9.3-8.6,15.6-9.6l173-28 c1.3-0.2,2.6-0.3,3.8-0.3c11.5,0,21.8,8.4,23.7,20.2l9.3,57.2L294.3,94l-1.3-7.7c-5-30.9-34.2-52-65.1-47l-173,28 C40,69.6,26.8,77.7,18,90c-8.9,12.3-12.4,27.3-10,42.3l28,173c2.4,15,10.5,28.1,22.8,37C68.5,349.4,80,353,91.9,353 c3,0,6.1-0.2,9.2-0.7l173-28c30.9-5,52-34.2,47-65.1L303.9,153.2z'/%3E%3Cpath class='st3' d='M511.4,235.8l25.4-56.9l-7.2-52.9c-0.9-6.3,0.8-12.6,4.7-17.7c3.9-5.1,9.5-8.4,15.9-9.2l173.6-23.6 c1.1-0.1,2.2-0.2,3.3-0.2c5.2,0,10.2,1.7,14.5,4.9c0.8,0.6,1.5,1.3,2.2,1.9c7.7-8.1,17.8-13.9,29.1-16.4 c-3.2-4.4-7-8.3-11.5-11.7c-12.1-9.2-27-13.1-42-11.1L545.6,66.5c-15,2-28.4,9.8-37.5,21.9c-9.2,12.1-13.1,27-11.1,42 L511.4,235.8z'/%3E%3Cpath class='st3' d='M806.8,265.1l-22.8-168c-12.8,0.4-23.1,11-23.1,23.9v49.3l13.5,99.2c0.9,6.3-0.8,12.6-4.7,17.7 s-9.5,8.4-15.9,9.2l-173.6,23.6c-6.3,0.9-12.6-0.8-17.7-4.7c-5.1-3.9-8.4-9.5-9.2-15.9l-8-58.9l-25.4,56.9l0.9,6.4 c2,15,9.8,28.4,21.9,37.5c10,7.6,21.9,11.6,34.3,11.6c2.6,0,5.2-0.2,7.8-0.5L758.2,329c15-2,28.4-9.8,37.5-21.9 C804.9,295,808.8,280.1,806.8,265.1z'/%3E%3C/svg%3E");
+
+            /* Zoho Expense Standard Container Width */
+            --box: 1200px;
+            --gut: 24px;
+            --r: 16px;
+            --r-sm: 4px;
+            --r-lg: 24px;
+            --shadow: 0 1px 2px rgba(3,7,18,.04), 0 8px 24px -12px rgba(3,7,18,.12);
+            --shadow-lg: 0 2px 4px rgba(3,7,18,.04), 0 24px 56px -24px rgba(3,7,18,.18);
+            --ease: cubic-bezier(.22, .75, .26, 1);
+            --font: 'zoho-puvi', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-heading: 'zoho-puvi', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            /* Typography tokens mirrored from https://www.elitetechcorp.com/ */
+            --fs-body: 15px;          /* site body 14.59px */
+            --lh-body: 1.65;          /* site 24.08/14.59 = 1.65 */
+            --ls-body: normal;        /* site letter-spacing: normal */
+            --ws-body: 0px;           /* site word-spacing: 0px */
+            --ink-body: #334155;      /* site body colour rgb(51,65,85) */
+            --ink-para: #444444;      /* site paragraph colour rgb(68,68,68) */
+            --ink-head: #000000;      /* site headings rgb(0,0,0) */
+            --ink-h3: #032E15;        /* site h3 rgb(3,46,21) */
+            --fw-head: 600;           /* site headings are 600, never 700 */
+
+            /* Official Zoho Expense Logo SVG */
+            --ze-logo: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 910 296' style='enable-background:new 0 0 910 296;' xml:space='preserve'%3E %3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%23E42527;%7D .st2%7Bfill:%23F9B21D;%7D %3C/style%3E %3Cg%3E %3Cg%3E %3Cpath d='M382.17,140.79h39.94c24.17,0,43.08,9.73,43.08,36.18c0,29.11-22.99,35.39-47.56,35.39h-13.18v43.32h-22.29V140.79z M421.95,196.35c13.73,0,21.5-5.65,21.5-19.54c0-14.44-8.48-19.15-21.5-19.15h-17.5v38.69H421.95z'/%3E %3Cpath d='M524.05,245.4c-6.36,8.48-15.69,11.85-26.05,11.85c-15.77,0-28.17-8-28.17-24.48c0-23.31,24.64-27,44.18-27h9.89v-1.33 c0-12.01-2.83-19.62-16.4-19.62c-8.16,0-15.7,4.24-18.68,12.01l-15.62-6.75c5.65-14.83,21.34-20.25,36.33-20.25 c19.85,0,34.29,9.57,34.29,30.92v54.93h-19.78V245.4z M513.77,218.09c-9.26,0-24.01,1.1-24.01,13.81 c0,8.08,5.89,11.07,13.42,11.07c10.2,0,20.72-5.34,20.72-16.72v-8.16H513.77z'/%3E %3Cpath d='M588.24,247.13l-32.96-75.49h21.5l22.05,53.68l20.56-53.68h19.54l-46.22,112.85h-19.7L588.24,247.13z'/%3E %3Cpath d='M652.35,171.63h20.09v15.77c5.65-11.54,14.83-17.03,27.62-17.03v18.6c-16.24,0-27.62,5.34-27.62,23.31v43.4h-20.09V171.63 z'/%3E %3Cpath d='M752.79,169.83c25.5,0,45.12,17.89,45.12,43.63c0,26.45-20.64,43.79-45.99,43.79c-25.58,0-46.14-17.74-46.14-43.4 C705.78,187.48,727.52,169.83,752.79,169.83z M776.33,213.62c0-15.46-7.85-28.33-24.33-28.33c-16.95,0-23.7,13.5-23.7,28.88 c0,14.91,7.93,27.62,24.17,27.62C769.27,241.79,776.33,228.29,776.33,213.62z'/%3E %3Cpath d='M813.13,137.57l20.09-8.71v126.82h-20.09V137.57z'/%3E %3Cpath d='M856.37,137.57l20.09-8.71v126.82h-20.09V137.57z'/%3E %3C/g%3E %3Cg%3E %3Cpath d='M382.32,104.43l36.97-53.42h-33.23V40.47h50.63v5.25l-36.07,53.42h35.03v10.54h-53.32V104.43z'/%3E %3Cpath d='M468.36,57.96c15.36,0,27.18,10.78,27.18,26.28c0,15.93-12.43,26.38-27.7,26.38c-15.41,0-27.8-10.68-27.8-26.14 C440.04,68.59,453.14,57.96,468.36,57.96z M482.54,84.33c0-9.31-4.73-17.06-14.65-17.06c-10.21,0-14.28,8.13-14.28,17.4 c0,8.98,4.77,16.64,14.56,16.64C478.29,101.3,482.54,93.17,482.54,84.33z'/%3E %3Cpath d='M504.38,36.12h12.1v30.96c3.26-6.29,9.93-9.12,16.92-9.12c12.1,0,18.15,8.51,18.15,20.04v31.67h-12.2V79.18 c0-7.28-3.78-11.25-10.83-11.25c-7.75,0-12.05,4.77-12.05,12.01v29.73h-12.1V36.12z'/%3E %3Cpath d='M587.72,57.96c15.36,0,27.18,10.78,27.18,26.28c0,15.93-12.43,26.38-27.7,26.38c-15.41,0-27.8-10.68-27.8-26.14 C559.41,68.59,572.5,57.96,587.72,57.96z M601.9,84.33c0-9.31-4.73-17.06-14.65-17.06c-10.21,0-14.28,8.13-14.28,17.4 c0,8.98,4.77,16.64,14.56,16.64C597.65,101.3,601.9,93.17,601.9,84.33z'/%3E %3C/g%3E %3C/g%3E %3Cg%3E %3Cg%3E %3Cpath class='st1' d='M240.97,293H206.7c-14.05,0-25.49-11.44-25.49-25.49v-42.72H53.2c-14.05,0-25.49-11.44-25.49-25.49V28.49 C27.71,14.44,39.15,3,53.2,3h187.77c20.5,0,39.77,7.98,54.27,22.48c14.5,14.49,22.48,33.77,22.48,54.27v136.5 c0,20.5-7.98,39.77-22.48,54.27C280.74,285.02,261.46,293,240.97,293z M198.2,216.29v51.22c0,4.68,3.81,8.5,8.5,8.5h34.27 c32.95,0,59.76-26.81,59.76-59.76v-88.36c-1.72,2.12-3.56,4.17-5.51,6.13c-14.5,14.49-33.77,22.48-54.27,22.48H206.7 c-4.68,0-8.5,3.81-8.5,8.5L198.2,216.29L198.2,216.29z M53.2,19.99c-4.68,0-8.5,3.81-8.5,8.5V199.3c0,4.68,3.81,8.5,8.5,8.5 h128.01v-42.81c0-14.05,11.44-25.49,25.49-25.49h34.24c32.95,0,59.76-26.81,59.76-59.76s-26.81-59.76-59.76-59.76H53.2z'/%3E %3C/g%3E %3Cg%3E %3Cpath class='st2' d='M240.97,116.57c-20.3,0-36.82-16.51-36.82-36.82s16.51-36.82,36.82-36.82s36.82,16.51,36.82,36.82 S261.27,116.57,240.97,116.57z M240.97,59.92c-10.93,0-19.82,8.89-19.82,19.82s8.89,19.82,19.82,19.82 c10.93,0,19.82-8.89,19.82-19.82S251.9,59.92,240.97,59.92z'/%3E %3C/g%3E %3Cg%3E %3Cpath class='st1' d='M138.06,70.96H87.14c-4.69,0-8.5-3.81-8.5-8.5s3.81-8.5,8.5-8.5h50.92c4.69,0,8.5,3.81,8.5,8.5 S142.75,70.96,138.06,70.96z'/%3E %3C/g%3E %3Cg%3E %3Cpath class='st1' d='M121.09,104.91H87.14c-4.69,0-8.5-3.81-8.5-8.5s3.81-8.5,8.5-8.5h33.96c4.69,0,8.5,3.81,8.5,8.5 S125.79,104.91,121.09,104.91z'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E");
+        }
+
+        .etc-sec *, .etc-sec *::before, .etc-sec *::after{ box-sizing: border-box; }
+        html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        .etc-sec{ margin: 0; padding: 0; background: var(--ground); font-family: var(--font); color: var(--ink-body);
+               font-size: var(--fs-body); line-height: var(--lh-body); letter-spacing: var(--ls-body); word-spacing: var(--ws-body);
+               -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .etc-sec img, .etc-sec svg{ max-width: 100%; height: auto; display: block; }
+        .etc-sec a{ text-decoration: none; color: inherit; }
+
+        .etc-sec .ze{ font-family: var(--font); color: var(--ink-body); background: var(--ground);
+              font-size: var(--fs-body); line-height: var(--lh-body); letter-spacing: var(--ls-body); word-spacing: var(--ws-body); }
+        /* Boxed Section Container matching Zoho Expense Page Width (1200px) */
+        .etc-sec .box{
+            max-width: var(--box);
+            margin-inline: auto;
+            width: 100%;
+            padding-inline: var(--gut);
+            box-sizing: border-box;
+        }
+
+        .etc-sec .sec{ position: relative; padding-block: clamp(48px, 5.4vw, 80px); }
+        .etc-sec .sec--alt{ background: var(--ground2); }
+        .etc-sec .sec--white{ background: var(--white); }
+        .etc-sec .sec--dark{ background: var(--forest); color: #DFF3E7; }
+
+        /* Typography & Headings (Screenshots 3 & 4: 48px #000000, 17px #525252) */
+        /* Heading scale mirrored from elitetechcorp.com: weight 600, letter-spacing normal, word-spacing 0 */
+        .etc-sec .h1, .etc-sec .h2, .etc-sec .h3, .etc-sec .h4, .etc-sec h1, .etc-sec h2, .etc-sec h3, .etc-sec h4, .etc-sec h5, .etc-sec h6{
+            font-family: var(--font-heading); color: var(--ink-head); margin: 2px 0 0 0;
+            font-weight: var(--fw-head); letter-spacing: normal; word-spacing: 0px;
+        }
+        .etc-sec .h1{ font-size: clamp(27px, 3.3vw, 40px); line-height: 1.28; }
+        .etc-sec .h2{ font-size: clamp(23px, 2.7vw, 32px); line-height: 1.30; }
+        .etc-sec .h3{ font-size: 20px; line-height: 1.30; color: var(--ink-h3); }
+        .etc-sec .h4{ font-size: 17px; line-height: 1.4; }
+        .etc-sec strong, .etc-sec b{ font-weight: 600; color: #0F172A; }
+        .etc-sec .sec--dark strong, .etc-sec .sec--dark b{ color: #FFFFFF; }
+        .etc-sec .sec--dark .h1, .etc-sec .sec--dark .h2, .etc-sec .sec--dark .h3, .etc-sec .sec--dark .h4{ color: #FFFFFF !important; }
+
+        /* Paragraphs mirrored from elitetechcorp.com: 14px / 1.65 / rgb(68,68,68) */
+        .etc-sec p, .etc-sec .card p, .etc-sec .feat-card p, .etc-sec .ind-card-slide p{
+            font-family: var(--font); font-size: 14.5px; color: var(--ink-para);
+            line-height: 1.65; letter-spacing: normal; word-spacing: 0px; margin-top: 8px;
+        }
+        .etc-sec .lede{
+            font-family: var(--font); font-size: 15.5px; font-weight: 400; color: var(--ink-para);
+            line-height: 1.65; letter-spacing: normal; word-spacing: 0px; margin-top: 16px; max-width: 74ch;
+        }
+        .etc-sec .sec--dark .lede{ color: #A7D3BB; }
+        .etc-sec .sec--dark p{ color: #DFF3E7; }
+
+        /* Gradient highlight pill - green (left) to blue (right), per reference screenshot */
+        .etc-sec .hl{
+            background: linear-gradient(90deg, #3EA900 0%, #2E8C5A 48%, #236EB4 100%);
+            color: #FFFFFF !important; padding: 2px 10px 4px 10px; border-radius: 6px;
+            display: inline-block; font-weight: 600; box-decoration-break: clone;
+            -webkit-box-decoration-break: clone; line-height: inherit;
+            box-shadow: 0 6px 16px -10px rgba(35,110,180,.85);
+        }
+        .etc-sec .sec--dark .hl, .etc-sec .final-sec .hl{ color: #FFFFFF !important; }
+
+        /* Zoho Expense Logo Label (Screenshot 3 style) */
+        .etc-sec .zlogo{
+            display: inline-flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;
+        }
+        .etc-sec .zlogo img, .etc-sec .zlogo-img{
+            width: 150px; height: 34px; object-fit: contain; flex-shrink: 0; display: inline-block;
+        }
+        .etc-sec .sec--dark .zlogo img, .etc-sec .sec--dark .zlogo-img{
+            filter: brightness(0) invert(1);
+        }
+        .etc-sec .zlogo-icon{
+            width: 150px; height: 34px; display: inline-block;
+            background: var(--ze-logo) no-repeat left center;
+            background-size: contain; flex-shrink: 0;
+        }
+        .etc-sec .sec--dark .zlogo-icon{ filter: brightness(0) invert(1); }
+        .etc-sec .zlogo em{
+            font-style: normal; font-size: 12px; font-weight: 600; letter-spacing: .08em;
+            text-transform: uppercase; color: var(--muted);
+            padding-left: 12px; border-left: 1px solid var(--line);
+        }
+        .etc-sec .sec--dark .zlogo em{ color: #A7D3BB; border-left-color: rgba(255,255,255,.25); }
+        .etc-sec .zlogo--center{ justify-content: center; width: 100%; }
+
+        .etc-sec .intro{ max-width: var(--box); margin-inline: auto; margin-bottom: clamp(28px, 3vw, 44px); }
+        .etc-sec .intro--mid{ text-align: center; }
+        .etc-sec .intro--mid .lede{ margin-inline: auto; }
+
+        /* Buttons */
+        .etc-sec .btn{
+            display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+            font-family: var(--font); font-weight: 600; font-size: 16px; line-height: 1; letter-spacing: normal; text-decoration: none;
+            padding: 13px 26px; border-radius: var(--r-sm); border: 1px solid transparent; cursor: pointer;
+            transition: all .22s var(--ease);
+        }
+        .etc-sec .btn svg, .etc-sec .btn i{ font-size: 14px; transition: transform .28s var(--ease); }
+        .etc-sec .btn:hover svg, .etc-sec .btn:hover i{ transform: translateX(3px); }
+        .etc-sec .btn--g{ background: var(--grad); color: #FFF; border-color: #008236; box-shadow: 0 8px 20px -10px rgba(35,110,180,.6); }
+        .etc-sec .btn--g:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px -12px rgba(35,110,180,.7); }
+        .etc-sec .btn--o{ background: var(--white); color: #000000; border: 1px solid var(--line); }
+        .etc-sec .btn--o:hover{ border-color: #000000; transform: translateY(-2px); }
+        .etc-sec .btn--outline-white{ background: transparent; color: #FFF; border: 1px solid rgba(255,255,255,0.4); }
+        .etc-sec .btn--outline-white:hover{ background: rgba(255,255,255,0.15); border-color: #FFF; color: #FFF; }
+        .etc-sec .btnrow{ display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+        .etc-sec .intro--mid .btnrow{ justify-content: center; }
+
+        /* Chips & Badges */
+        .etc-sec .chip{
+            width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+            margin-bottom: 16px; flex: none; font-size: 18px;
+        }
+        .etc-sec .chip--mint{ background: var(--mint); color: var(--green-d); }
+        .etc-sec .chip--sky{ background: var(--sky); color: var(--blue); }
+        .etc-sec .chip--amber{ background: var(--amber); color: #894B00; }
+        .etc-sec .chip--rose{ background: var(--rose); color: #9F0712; }
+        .etc-sec .chip--purple{ background: rgba(139, 92, 246, 0.15); color: #7C3AED; }
+        .etc-sec .chip--teal{ background: rgba(20, 184, 166, 0.15); color: #0D9488; }
+
+        /* Card Container */
+        .etc-sec .card{
+            background: var(--white); border: 1px solid var(--line); border-radius: var(--r);
+            padding: clamp(20px, 2vw, 26px);
+            transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+        }
+        .etc-sec .card:hover{ transform: translateY(-3px); box-shadow: var(--shadow); border-color: #BDBDC4; }
+        .etc-sec .card h3{ margin-bottom: 8px; font-size: 18px; }
+        .etc-sec .card p{ font-size: 14.5px; color: var(--ink3); margin: 0; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FLOATING BUTTONS (WHATSAPP & PHONE - SCREENSHOT 2)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .fab{
+            position: fixed; right: 20px; bottom: 90px; z-index: 55;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .etc-sec .fab a{
+            position: relative; width: 50px; height: 50px; border-radius: 50%;
+            display: grid; place-items: center; text-decoration: none; color: #fff;
+            box-shadow: 0 10px 26px -8px rgba(3,7,18,.45);
+            transition: transform .26s var(--ease);
+        }
+        .etc-sec .fab a:nth-child(1){ background: #25D366; }
+        .etc-sec .fab a:nth-child(2){ background: #128C7E; }
+        .etc-sec .fab a:hover{ transform: scale(1.08) translateY(-2px); }
+        .etc-sec .fab a svg{ width: 24px; height: 24px; }
+        .etc-sec .fab a::before{
+            content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: -1;
+            background: inherit; opacity: .55; animation: fabPulse 2.8s ease-out infinite;
+        }
+        @keyframes fabPulse { 0% { transform: scale(1); opacity: .5; } 70%, 100% { transform: scale(1.75); opacity: 0; } }
+
+        /* ═══════════════════════════════════════════════════════════════
+           1. HERO SECTION (FULL WIDTH WITH INNER CONTAINER & BACKGROUND)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .hero{
+            position: relative; overflow: hidden;
+            background: hsl(0deg 0% 78.89%);
+            padding-block: clamp(46px, 5vw, 78px) clamp(40px, 4.4vw, 68px);
+            height="1000px"
+        }
+        .etc-sec .hero::before{
+            content: ""; position: absolute; inset: -40px 0; z-index: 0; pointer-events: none; opacity: .80;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420' width='420' height='420'%3E%3Cg fill='none' stroke='%23334155' stroke-opacity='.58' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(24, 20)'%3E%3Cpath d='M0 0h40v44l-5-4-5 4-5-4-5 4-5-4-5 4-5-4-5 4V0z'/%3E%3Cpath d='M8 12h24M8 20h24M8 28h14'/%3E%3C/g%3E%3Cg transform='translate(140, 26)'%3E%3Ccircle cx='18' cy='18' r='16'/%3E%3Cpath d='M11 11h14M11 16h14M11 11v13M15 16a4.5 4.5 0 000-5M15 16l7 8'/%3E%3C/g%3E%3Cg transform='translate(240, 22) rotate(-8)'%3E%3Crect x='0' y='0' width='50' height='32' rx='5'/%3E%3Cpath d='M0 9h50M8 21h12M26 21h8'/%3E%3C/g%3E%3Cg transform='translate(350, 20)'%3E%3Cpath d='M14 0a14 14 0 00-14 14c0 11 14 22 14 22s14-11 14-22a14 14 0 00-14-14zm0 18a4 4 0 110-8 4 4 0 010 8z'/%3E%3C/g%3E%3Cg transform='translate(28, 126)'%3E%3Cpath d='M0 36h36M6 36V22M16 36V10M26 36V26'/%3E%3C/g%3E%3Cg transform='translate(144, 122)'%3E%3Cpath d='M0 0h26l12 12v32H0z'/%3E%3Cpath d='M26 0v12h12M8 16h22M8 24h22M8 32h14'/%3E%3C/g%3E%3Cg transform='translate(260, 126) rotate(12)'%3E%3Cpath d='M0 14l30-14-14 30-4-10-12-6z'/%3E%3Cpath d='M12 16l18-16'/%3E%3C/g%3E%3Cg transform='translate(360, 130)'%3E%3Ccircle cx='18' cy='18' r='16'/%3E%3Cpath d='M11 11h14M11 16h14M11 11v13M15 16a4.5 4.5 0 000-5M15 16l7 8'/%3E%3C/g%3E%3Cg transform='translate(20, 232) rotate(6)'%3E%3Crect x='0' y='0' width='50' height='32' rx='5'/%3E%3Cpath d='M0 9h50M8 21h12M26 21h8'/%3E%3C/g%3E%3Cg transform='translate(136, 226)'%3E%3Cpath d='M0 0h40v44l-5-4-5 4-5-4-5 4-5-4-5 4-5-4-5 4V0z'/%3E%3Cpath d='M8 12h24M8 20h24M8 28h14'/%3E%3C/g%3E%3Cg transform='translate(256, 236)'%3E%3Cpath d='M0 36h36M6 36V18M16 36V8M26 36V24'/%3E%3C/g%3E%3Cg transform='translate(352, 228)'%3E%3Cpath d='M0 0h26l12 12v32H0z'/%3E%3Cpath d='M26 0v12h12M8 16h22M8 24h22M8 32h14'/%3E%3C/g%3E%3Cg transform='translate(26, 334)'%3E%3Cpath d='M14 0a14 14 0 00-14 14c0 11 14 22 14 22s14-11 14-22a14 14 0 00-14-14zm0 18a4 4 0 110-8 4 4 0 010 8z'/%3E%3C/g%3E%3Cg transform='translate(142, 336) rotate(-10)'%3E%3Cpath d='M0 14l30-14-14 30-4-10-12-6z'/%3E%3Cpath d='M12 16l18-16'/%3E%3C/g%3E%3Cg transform='translate(254, 332)'%3E%3Ccircle cx='18' cy='18' r='16'/%3E%3Cpath d='M11 11h14M11 16h14M11 11v13M15 16a4.5 4.5 0 000-5M15 16l7 8'/%3E%3C/g%3E%3Cg transform='translate(350, 330) rotate(-6)'%3E%3Crect x='0' y='0' width='50' height='32' rx='5'/%3E%3Cpath d='M0 9h50M8 21h12M26 21h8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            background-size: 360px 360px;
+        }
+        .etc-sec .hero::after{
+            content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+            background: radial-gradient(circle at 10% 8%, rgba(35, 110, 180, 0.08), transparent 50%),
+                        radial-gradient(circle at 90% 16%, rgba(62, 169, 0, 0.08), transparent 50%);
+        }
+        .etc-sec .hero-in{
+            position: relative; z-index: 2; max-width: 1200px; margin-inline: auto; padding-inline: var(--gut);
+            display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: clamp(30px, 3.6vw, 58px); align-items: center;
+        }
+        .etc-sec .hero-copy{
+            position: relative; z-index: 2;
+        }
+        /* Soft Radial Wash: sits behind the words only, so the icons read boldly at the perimeter/edges without disturbing text contrast */
+        .etc-sec .hero-copy::before{
+            content: ""; position: absolute; inset: -40px -55px; z-index: -1; pointer-events: none;
+            background: radial-gradient(78% 74% at 46% 48%,
+                rgba(201, 201, 201, 0.99) 0%,
+                rgba(201, 201, 201, 0.96) 55%,
+                rgba(201, 201, 201, 0.50) 80%,
+                rgba(201, 201, 201, 0) 100%);
+        }
+        .etc-sec .curio{ display: grid; gap: 10px; margin-top: 24px; }
+        .etc-sec .curio__q{
+            background: var(--white); border: 1px solid var(--line); border-radius: var(--r);
+            padding: 13px 16px; display: flex; gap: 12px; align-items: center;
+        }
+        .etc-sec .curio__q b{
+            flex: none; width: 25px; height: 25px; border-radius: var(--r-sm);
+            background: var(--ground2); color: var(--blue);
+            display: grid; place-items: center; font-size: 14px; font-weight: 600;
+        }
+        .etc-sec .curio__q span{ font-size: 15px; line-height: 1.5; color: var(--ink2); }
+        .etc-sec .trust{
+            display: flex; align-items: center; gap: 14px;
+            font-size: 13.5px; color: #4B5563; margin-top: 22px;
+            flex-wrap: nowrap; white-space: nowrap; overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .etc-sec .trust::-webkit-scrollbar{ display: none; }
+        .etc-sec .trust span{ display: inline-flex; align-items: center; gap: 7px; flex-shrink: 0; font-weight: 500; }
+        .etc-sec .trust span i{ font-size: 14px; }
+        .etc-sec .trust-dot{ width: 4px; height: 4px; border-radius: 50%; background: #9CA3AF; display: inline-block; flex-shrink: 0; }
+
+        .etc-sec .partner-badge{
+            display: inline-flex; align-items: center; gap: 8px;
+            background: #FFFFFF; border: 1px solid var(--line); border-radius: 30px;
+            padding: 8px 18px; font-size: 13.5px; font-weight: 600; color: #1F2937;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: transform .2s, border-color .2s;
+        }
+        .etc-sec .partner-badge:hover{ transform: translateY(-2px); border-color: var(--blue); }
+
+        /* Dashboard & Scanner Visual */
+        .etc-sec .dash-card{
+            background: #FFFFFF; border-radius: 16px; padding: 22px; color: var(--ink);
+            box-shadow: var(--shadow-lg); border: 1px solid var(--line); position: relative;
+        }
+        .etc-sec .receipt-scanner{
+            background: var(--ground2); border-radius: 12px; padding: 16px; border: 2px dashed var(--blue);
+            position: relative; overflow: hidden; margin-top: 14px;
+        }
+        .etc-sec .scan-laser{
+            position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green);
+            box-shadow: 0 0 12px var(--green); animation: laserScan 2.5s infinite ease-in-out; z-index: 3;
+        }
+        @keyframes laserScan { 0% { top: 0; } 50% { top: 90%; } 100% { top: 0; } }
+
+        /* ═══════════════════════════════════════════════════════════════
+           2. TRUSTED BY SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .strip-top{
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 960px;
+            margin: 0 auto 32px auto; text-align: center;
+        }
+        .etc-sec .strip-card{
+            background: #FFF; padding: 28px 20px; border-radius: 16px; border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+        }
+        .etc-sec .strip-num{ font-size: 42px; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+        .etc-sec .strip-lbl{ font-size: 15px; font-weight: 600; color: var(--ink); }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CAROUSELS & CARDS (KEY FEATURES & INDUSTRIES)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .carousel-wrap{ position: relative; overflow: hidden; padding: 10px 0; }
+        .etc-sec .carousel-track{ display: flex; gap: 20px; transition: transform 0.6s var(--ease); }
+        .etc-sec .feat-card{
+            min-width: calc(33.333% - 14px); background: #FFF; border-radius: var(--r); padding: 26px 22px;
+            border: 1px solid var(--line); box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;
+            transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+        }
+        .etc-sec .feat-card:hover{ transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: #A0C0E0; }
+        .etc-sec .feat-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+        .etc-sec .ind-card-slide{
+            min-width: calc(33.333% - 14px); background: #FFF; border-radius: var(--r); overflow: hidden;
+            border: 1px solid var(--line); box-shadow: var(--shadow);
+            transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+        }
+        .etc-sec .ind-card-slide:hover{ transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: #A0C0E0; }
+        .etc-sec .ind-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .etc-sec .ind-img{ height: 160px; width: 100%; object-fit: cover; }
+        .etc-sec .ind-body{ padding: 22px; }
+
+        .etc-sec .c-toolbar{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px; }
+        .etc-sec .view-pill-group{ display: inline-flex; background: var(--ground2); padding: 4px; border-radius: 30px; border: 1px solid var(--line); gap: 4px; }
+        .etc-sec .view-pill{
+            background: transparent; border: none; padding: 7px 18px; border-radius: 20px; font-size: 13px; font-weight: 600;
+            color: var(--ink3); cursor: pointer; transition: all .2s;
+        }
+        .etc-sec .view-pill.active{ background: var(--white); color: var(--blue); box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+        .etc-sec .c-arrows{ display: inline-flex; gap: 8px; }
+        .etc-sec .c-arrow{
+            width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--white);
+            color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: all .2s;
+        }
+        .etc-sec .c-arrow:hover{ background: var(--blue); color: #FFF; border-color: var(--blue); }
+
+        .etc-sec .dots{ display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+        .etc-sec .dot{ width: 9px; height: 9px; border-radius: 50%; background: var(--line); cursor: pointer; transition: all 0.3s; }
+        .etc-sec .dot.active{ background: var(--blue); width: 24px; border-radius: 10px; }
+
+        @media (max-width: 991px) {
+            .etc-sec .feat-card, .etc-sec .ind-card-slide{ min-width: calc(50% - 10px); }
+            .etc-sec .feat-grid, .etc-sec .ind-grid{ grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            .etc-sec .feat-card, .etc-sec .ind-card-slide{ min-width: 100%; }
+            .etc-sec .feat-grid, .etc-sec .ind-grid{ grid-template-columns: 1fr; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PRICING SECTION (3 COLUMNS)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .price-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+        .etc-sec .price-col{
+            background: #FFF; border-radius: var(--r); padding: 32px 24px; border: 1px solid var(--line);
+            box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; position: relative;
+        }
+        .etc-sec .price-col.featured{ border: 2px solid var(--green); }
+        .etc-sec .price-badge-top{
+            position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+            background: var(--green-d); color: #FFF; font-size: 11px; font-weight: 700;
+            padding: 4px 14px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .etc-sec .price-list{ list-style: none; padding: 0; margin: 16px 0 28px 0; font-size: 13.5px; }
+        .etc-sec .price-list li{ margin-bottom: 11px; display: flex; align-items: flex-start; gap: 8px; }
+        .etc-sec .price-list li i{ color: var(--green); font-size: 14px; margin-top: 2px; flex-shrink: 0; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           PACKAGE TABS SYSTEM (SCREENSHOT MATCHING PRICING & TABLES)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .pkg-tabs-bar{
+            display: flex; justify-content: center; align-items: center;
+            gap: 12px; margin-bottom: 32px; flex-wrap: wrap;
+        }
+        .etc-sec .pkg-tab-btn{
+            background: #FFFFFF; border: 2px solid #3EA900; color: #1F2937;
+            padding: 10px 24px; border-radius: 8px; font-size: 15px; font-weight: 600;
+            cursor: pointer; transition: all .2s ease; font-family: var(--font);
+        }
+        .etc-sec .pkg-tab-btn:hover{
+            border-color: #3EA900; transform: translateY(-1px);
+        }
+        .etc-sec .pkg-tab-btn.active{
+            background: #3EA900; color: #FFFFFF; border-color: #3EA900;
+            box-shadow: 0 4px 12px rgba(62,169,0,0.25);
+        }
+        .etc-sec .pkg-tab-content{
+            display: none;
+        }
+        .etc-sec .pkg-tab-content.active{
+            display: block;
+        }
+
+        /* Package Detail Table Styling matching Screenshots 2, 3 & 4 */
+        .etc-sec .pkg-detail-table{
+            width: 100%; border-collapse: collapse; text-align: left;
+            font-size: 14px; color: #1F2937; background: #FFFFFF;
+        }
+        .etc-sec .pkg-detail-table thead tr{
+            background: #003366; color: #FFFFFF;
+        }
+        .etc-sec .pkg-detail-table th{
+            padding: 16px 20px; font-weight: 700; font-size: 15px;
+            border-right: 1px solid rgba(255,255,255,0.15);
+        }
+        .etc-sec .pkg-detail-table th:last-child{
+            border-right: none;
+        }
+        .etc-sec .pkg-detail-table td{
+            padding: 14px 20px; border-bottom: 1px solid #E5E7EB;
+            border-right: 1px solid #E5E7EB; vertical-align: top; line-height: 1.6;
+        }
+        .etc-sec .pkg-detail-table td:last-child{
+            border-right: none;
+        }
+        .etc-sec .pkg-detail-table tbody tr:hover{
+            background: #F8FAFC;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TESTIMONIALS (ORIGINAL CLIENT LOGOS & QUOTES)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .tst-track{ display: flex; gap: 24px; transition: transform 0.6s var(--ease); }
+        .etc-sec .tsc{
+            min-width: calc(33.333% - 16px); background: var(--white); border: 1px solid var(--line2);
+            border-radius: 16px; padding: 30px 26px; display: flex; flex-direction: column; justify-content: space-between;
+            box-shadow: 0 1px 2px rgba(3,7,18,.04), 0 10px 28px -20px rgba(3,7,18,.3);
+        }
+        .etc-sec .tsc__stars{ display: flex; gap: 3px; margin-bottom: 16px; color: #F0B100; font-size: 14px; }
+        .etc-sec .tsc p{ font-size: 14.5px; line-height: 1.65; color: var(--ink2); margin: 0 0 20px 0; }
+        .etc-sec .tsc__by{ display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--line2); padding-top: 16px; }
+        .etc-sec .tsc__ph{ width: auto; height: 40px; max-width: 116px; object-fit: contain; object-position: left center; }
+        .etc-sec .tsc__by b{ font-size: 14px; font-weight: 600; color: #000; line-height: 1.35; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FAQ ACCORDION
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .faq-grid{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 28px; }
+        .etc-sec .faq-item{ background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+        .etc-sec .faq-q{
+            padding: 18px 22px; font-size: 15.5px; font-weight: 600; color: var(--ink); cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .etc-sec .faq-a{ padding: 0 22px 20px 22px; font-size: 14px; color: var(--ink3); line-height: 1.65; display: none; }
+        .etc-sec .faq-item.active .faq-a{ display: block; border-top: 1px dashed var(--line2); padding-top: 14px; margin-top: 6px; }
+        .etc-sec .faq-item.active .faq-icon{ transform: rotate(180deg); }
+        .etc-sec .faq-icon{ transition: transform 0.3s; color: var(--blue); }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONTACT SECTION (SCREENSHOT 1 STYLE)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .ct-grid{ display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 40px; align-items: start; }
+        .etc-sec .ct-points{ display: grid; gap: 12px; margin-top: 24px; }
+        .etc-sec .ct-point{
+            display: flex; align-items: center; gap: 14px; background: var(--white); border: 1px solid var(--line);
+            border-radius: var(--r); padding: 14px 18px;
+        }
+        .etc-sec .ct-point-icon{
+            width: 32px; height: 32px; border-radius: 50%; background: var(--mint); color: var(--green-d);
+            display: grid; place-items: center; font-size: 14px; flex: none;
+        }
+        .etc-sec .ct-point-text b{ display: block; font-size: 14px; font-weight: 600; color: var(--ink); }
+        .etc-sec .ct-point-text span{ font-size: 13px; color: var(--ink3); }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FINAL CTA (SCREENSHOT 2 STYLE WITH RECEIPT PATTERN)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .final-sec{
+            background: var(--forest); color: #DFF3E7; position: relative; overflow: hidden;
+        }
+        .etc-sec .final-sec::before{
+            content: ""; position: absolute; inset: -40px 0; opacity: .12; pointer-events: none;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400' fill='none'%3E%3Cg stroke='%23FFFFFF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cg transform='translate(24 26) rotate(-5)'%3E%3Cpath d='M0 0h52v70H0z'/%3E%3Cpath d='M0 44h52'/%3E%3Cpath d='M9 12h24M9 22h34M9 32h18'/%3E%3Cpath d='M9 56h20M34 56h9'/%3E%3C/g%3E%3Cg transform='translate(272 30) rotate(7)'%3E%3Crect x='0' y='0' width='76' height='42' rx='4'/%3E%3Ccircle cx='38' cy='21' r='11'/%3E%3Cpath d='M33 15h10M33 20h10M40 15c3 0 4.5 1.9 4.5 4.5S43 24 40 24h-7l8 6'/%3E%3C/g%3E%3Cg transform='translate(28 176)'%3E%3Crect x='0' y='6' width='50' height='46' rx='4'/%3E%3Cpath d='M0 20h50M13 0v12M37 0v12'/%3E%3Cpath d='M12 32h6M24 32h6M36 32h6M12 42h6M24 42h6'/%3E%3C/g%3E%3Cg transform='translate(166 96)'%3E%3Cpath d='M25 0 50 9v22c0 15.6-11 27-25 32C11 58 0 46.6 0 31V9z'/%3E%3Cpath d='M14 30.5 21.5 38 37 21'/%3E%3C/g%3E%3Cg transform='translate(280 168)'%3E%3Cpath d='M0 16 26 2l26 14'/%3E%3Cpath d='M2 16v28M50 16v28M13 20v20M26 20v20M39 20v20'/%3E%3Cpath d='M0 48h52'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+            background-size: 320px 320px;
+        }
+        .etc-sec .final-steps-grid{
+            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+            max-width: 940px; margin: 32px auto 0; text-align: left;
+        }
+        .etc-sec .final-step-card{
+            background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+            border-radius: var(--r); padding: 20px 22px;
+        }
+        .etc-sec .final-step-card b{
+            display: block; font-size: 11px; font-weight: 600; letter-spacing: .1em;
+            text-transform: uppercase; color: #86EFAC; margin-bottom: 9px;
+        }
+        .etc-sec .final-step-card span{ display: block; font-size: 14.5px; line-height: 1.62; color: #DFF3E7; }
+
+        /* Final CTA Pure White Text & Hero-style Buttons */
+        .etc-sec .final-sec .h2, .etc-sec .final-sec .h2 *{ color: #FFFFFF !important; }
+        .etc-sec .final-sec .lede{ color: #FFFFFF !important; font-size: 17px; line-height: 28px; }
+        .etc-sec .final-sec .zlogo img, .etc-sec .final-sec .zlogo-img{ filter: brightness(0) invert(1); }
+        .etc-sec .final-sec .zlogo em{ color: #FFFFFF !important; border-left-color: rgba(255,255,255,.4) !important; }
+        .etc-sec .final-sec .btn--o{ background: #FFFFFF; color: #000000; border-color: #FFFFFF; font-weight: 600; }
+        .etc-sec .final-sec .btn--o:hover{ background: #F1F5F9; color: #000000; border-color: #FFFFFF; transform: translateY(-2px); }
+
+        @media (max-width: 992px) {
+            .etc-sec .hero-in{ grid-template-columns: 1fr; }
+            .etc-sec .strip-top{ grid-template-columns: 1fr; }
+            .etc-sec .price-grid{ grid-template-columns: 1fr; }
+            .etc-sec .faq-grid{ grid-template-columns: 1fr; }
+            .etc-sec .ct-grid{ grid-template-columns: 1fr; }
+            .etc-sec .final-steps-grid{ grid-template-columns: 1fr; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONTACT SALES MODAL & BUTTON STYLES
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .btn-contact-sales{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 32px;
+            font-family: var(--font);
+            font-size: 15px;
+            font-weight: 600;
+            color: #FFFFFF !important;
+            background: var(--grad);
+            border: 1px solid #008236;
+            border-radius: var(--r-sm);
+            cursor: pointer;
+            box-shadow: 0 8px 20px -10px rgba(35,110,180,.6);
+            transition: all 0.22s var(--ease);
+            text-decoration: none;
+        }
+        .etc-sec .btn-contact-sales:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px -12px rgba(35,110,180,.7);
+        }
+        .etc-sec .modal-overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.68);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+        .etc-sec .modal-overlay.active{
+            opacity: 1;
+            visibility: visible;
+        }
+        .etc-sec .modal-card{
+            background: #FFFFFF;
+            border-radius: 16px;
+            max-width: 640px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px 34px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+            transform: scale(0.92);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .etc-sec .modal-overlay.active .modal-card{
+            transform: scale(1);
+        }
+        .etc-sec .modal-close{
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            background: #F3F4F6;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 24px;
+            color: #4B5563;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .etc-sec .modal-close:hover{
+            background: #E5E7EB;
+            color: #111827;
+        }
+        .etc-sec .modal-form-grid{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 18px;
+        }
+        @media (max-width: 600px) {
+            .etc-sec .modal-form-grid{ grid-template-columns: 1fr; }
+            .etc-sec .modal-card{ padding: 22px 20px; }
+        }
+        .etc-sec .modal-field label{
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #374151;
+            margin-bottom: 5px;
+        }
+        .etc-sec .modal-field input, .etc-sec .modal-field select, .etc-sec .modal-field textarea{
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #111827;
+            background: #F9FAFB;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .etc-sec .modal-field input:focus, .etc-sec .modal-field select:focus, .etc-sec .modal-field textarea:focus{
+            border-color: var(--blue);
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px rgba(35,110,180,0.15);
+        }
+        .etc-sec .modal-field--full{
+            grid-column: 1 / -1;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           SCROLL REVEAL & DYNAMIC ANIMATIONS SYSTEM
+           ═══════════════════════════════════════════════════════════════ */
+        html{
+            scroll-behavior: smooth;
+        }
+
+        .etc-sec .reveal{
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .etc-sec .reveal-left{
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .etc-sec .reveal-right{
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .etc-sec .reveal-scale{
+            opacity: 0;
+            transform: scale(0.93) translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .etc-sec .reveal.is-visible, .etc-sec .reveal-left.is-visible, .etc-sec .reveal-right.is-visible, .etc-sec .reveal-scale.is-visible{
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        .etc-sec .delay-1{ transition-delay: 0.1s !important; }
+        .etc-sec .delay-2{ transition-delay: 0.2s !important; }
+        .etc-sec .delay-3{ transition-delay: 0.3s !important; }
+        .etc-sec .delay-4{ transition-delay: 0.4s !important; }
+        .etc-sec .delay-5{ transition-delay: 0.5s !important; }
+        .etc-sec .delay-6{ transition-delay: 0.6s !important; }
+
+        /* Dynamic Card Hover Effects & Micro-Interactions */
+        .etc-sec .card, .etc-sec .price-col, .etc-sec .feat-card, .etc-sec .ind-card-slide, .etc-sec .mod-box, .etc-sec .ct-point{
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .etc-sec .card:hover, .etc-sec .feat-card:hover, .etc-sec .ind-card-slide:hover, .etc-sec .mod-box:hover{
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(0, 130, 54, 0.12) !important;
+            border-color: rgba(0, 166, 81, 0.35) !important;
+        }
+
+        .etc-sec .price-col:hover{
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 24px 48px -12px rgba(0, 130, 54, 0.2) !important;
+        }
+
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.75; transform: scale(1.08); }
+        }
+
+        .etc-sec .animated-float{
+            animation: subtleFloat 5s ease-in-out infinite;
+        }
+
+        .etc-sec .animated-glow{
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        .etc-sec .btn{
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .etc-sec .btn:hover{
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .etc-sec .btn i{
+            transition: transform 0.25s ease !important;
+        }
+
+        .etc-sec .btn:hover i{
+            transform: translateX(4px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATED ZOHO EXPENSE HERO VISUAL
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .ze-stage{ position: relative; z-index: 2; perspective: 1400px; }
+        .etc-sec .ze-stage::before{
+            content: ""; position: absolute; inset: -6% -4%; z-index: 0; pointer-events: none; border-radius: 50%;
+            background: radial-gradient(closest-side, rgba(62,169,0,.20), transparent 72%),
+                        radial-gradient(closest-side, rgba(35,110,180,.20), transparent 72%);
+            background-position: 22% 22%, 78% 74%; background-size: 62% 62%, 62% 62%; background-repeat: no-repeat;
+            animation: zeAura 9s ease-in-out infinite alternate;
+        }
+        @keyframes zeAura {
+            0%   { transform: scale(1) rotate(0deg);    opacity: .75; }
+            100% { transform: scale(1.09) rotate(6deg); opacity: 1; }
+        }
+        .etc-sec .ze-app{
+            position: relative; z-index: 2; background: #FFFFFF; border: 1px solid var(--line);
+            border-radius: 18px; box-shadow: var(--shadow-lg); overflow: hidden;
+            animation: zeAppIn .95s cubic-bezier(.16,1,.3,1) both, zeAppFloat 7s ease-in-out 1s infinite;
+            transform-style: preserve-3d;
+        }
+        @keyframes zeAppIn {
+            from { opacity: 0; transform: translateY(34px) rotateX(9deg) scale(.95); }
+            to   { opacity: 1; transform: translateY(0) rotateX(0) scale(1); }
+        }
+        @keyframes zeAppFloat {
+            0%,100% { transform: translateY(0)     rotateZ(0deg); }
+            50%     { transform: translateY(-11px) rotateZ(-.35deg); }
+        }
+        .etc-sec .ze-bar{
+            display: flex; align-items: center; gap: 9px; padding: 11px 16px;
+            background: linear-gradient(90deg, #F8FAFC, #FFFFFF); border-bottom: 1px solid var(--line2);
+        }
+        .etc-sec .ze-bar .dotm{ width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+        .etc-sec .ze-bar .ze-mark{
+            width: 112px; height: 24px; background: var(--ze-logo) no-repeat left center;
+            background-size: contain; margin-left: 6px;
+        }
+        .etc-sec .ze-live{
+            margin-left: auto; font-size: 10.5px; font-weight: 600; color: #166534; background: #DCFCE7;
+            border-radius: 20px; padding: 3px 11px; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .etc-sec .ze-live::before{
+            content: ""; width: 6px; height: 6px; border-radius: 50%; background: #16A34A;
+            animation: zeBlink 1.4s ease-in-out infinite;
+        }
+        @keyframes zeBlink { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .25; transform: scale(.72); } }
+        .etc-sec .ze-body{ padding: 16px; display: grid; gap: 12px; }
+
+        /* KPI tiles with count-up + shimmer */
+        .etc-sec .ze-kpis{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .etc-sec .ze-kpi{
+            position: relative; overflow: hidden; background: #F8FAFC; border: 1px solid #E2E8F0;
+            border-radius: 11px; padding: 11px 12px;
+        }
+        .etc-sec .ze-kpi::after{
+            content: ""; position: absolute; top: 0; bottom: 0; width: 45%; left: -60%;
+            background: linear-gradient(100deg, transparent, rgba(255,255,255,.9), transparent);
+            animation: zeShimmer 3.6s ease-in-out infinite;
+        }
+        .etc-sec .ze-kpi:nth-child(2)::after{ animation-delay: .5s; }
+        .etc-sec .ze-kpi:nth-child(3)::after{ animation-delay: 1s; }
+        @keyframes zeShimmer { 0% { left: -60%; } 55%,100% { left: 130%; } }
+        .etc-sec .ze-kpi small{ display: block; font-size: 10.5px; font-weight: 500; color: #64748B; }
+        .etc-sec .ze-kpi b{ display: block; font-size: 17px; font-weight: 700; margin-top: 3px; letter-spacing: -.01em; }
+
+        /* Receipt OCR scanner */
+        .etc-sec .ze-scan{
+            position: relative; overflow: hidden; border: 2px dashed var(--blue); border-radius: 12px;
+            background: #FFFFFF; padding: 13px 15px;
+        }
+        .etc-sec .ze-scan .laser{
+            position: absolute; left: 0; right: 0; height: 3px; border-radius: 3px;
+            background: linear-gradient(90deg, transparent, #3EA900, transparent);
+            box-shadow: 0 0 14px 2px rgba(62,169,0,.7); animation: zeLaser 2.6s cubic-bezier(.6,0,.4,1) infinite;
+        }
+        @keyframes zeLaser { 0% { top: 2%; opacity: 0; } 12% { opacity: 1; } 50% { top: 92%; opacity: 1; } 62% { opacity: 0; } 100% { top: 2%; opacity: 0; } }
+        .etc-sec .ze-scan-head{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .etc-sec .ze-scan-head .lbl{ font-size: 12.5px; font-weight: 700; color: var(--blue); display: inline-flex; align-items: center; gap: 7px; }
+        .etc-sec .ze-ok{ font-size: 12px; font-weight: 700; color: #008236; opacity: 0; animation: zeOk 2.6s ease-in-out infinite; }
+        @keyframes zeOk { 0%,55% { opacity: 0; transform: scale(.85); } 70% { opacity: 1; transform: scale(1.12); } 100% { opacity: 1; transform: scale(1); } }
+        .etc-sec .ze-row{
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 13.5px; padding: 6px 0; border-bottom: 1px solid #E5E7EB;
+            opacity: 0; animation: zeType .5s ease forwards;
+        }
+        .etc-sec .ze-row:last-child{ border-bottom: none; }
+        .etc-sec .ze-row.r1{ animation-delay: .7s; }
+        .etc-sec .ze-row.r2{ animation-delay: 1.1s; }
+        .etc-sec .ze-row.r3{ animation-delay: 1.5s; }
+        @keyframes zeType { from { opacity: 0; transform: translateX(-9px); } to { opacity: 1; transform: none; } }
+
+        /* Approval chain */
+        .etc-sec .ze-flow{ display: flex; align-items: center; gap: 6px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 11px; padding: 11px 12px; }
+        .etc-sec .ze-step{ flex: 1; text-align: center; font-size: 10.5px; font-weight: 600; color: #94A3B8; transition: color .4s; }
+        .etc-sec .ze-step i{
+            display: grid; place-items: center; width: 26px; height: 26px; margin: 0 auto 5px auto;
+            border-radius: 50%; background: #E2E8F0; color: #94A3B8; font-size: 11px; transition: all .45s var(--ease);
+        }
+        .etc-sec .ze-step.on{ color: #166534; }
+        .etc-sec .ze-step.on i{ background: #DCFCE7; color: #16A34A; transform: scale(1.14); box-shadow: 0 0 0 5px rgba(22,163,74,.13); }
+        .etc-sec .ze-link{ flex: none; width: 16px; height: 2px; background: #E2E8F0; border-radius: 2px; transition: background .45s; }
+        .etc-sec .ze-link.on{ background: #16A34A; }
+
+        /* Mini analytics bars */
+        .etc-sec .ze-chart{ display: flex; align-items: flex-end; gap: 7px; height: 58px; padding: 0 2px; }
+        .etc-sec .ze-chart span{
+            flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, #3EA900, #236EB4);
+            transform-origin: bottom; animation: zeGrow 3.4s ease-in-out infinite;
+        }
+        @keyframes zeGrow { 0%,100% { transform: scaleY(.42); opacity: .75; } 50% { transform: scaleY(1); opacity: 1; } }
+
+        /* Floating satellite chips */
+        .etc-sec .ze-chip{
+            position: absolute; z-index: 3; background: #FFFFFF; border: 1px solid var(--line);
+            border-radius: 12px; padding: 9px 13px; box-shadow: var(--shadow-lg);
+            font-size: 12px; font-weight: 600; color: #0F172A; display: flex; align-items: center; gap: 8px;
+            white-space: nowrap;
+        }
+        .etc-sec .ze-chip i{ font-size: 13px; }
+        .etc-sec .ze-chip--a{ top: 7%;     left: -30px;  animation: zeFloatA 6.5s ease-in-out infinite; }
+        .etc-sec .ze-chip--b{ bottom: 18%; right: -24px; animation: zeFloatB 7.5s ease-in-out .6s infinite; }
+        .etc-sec .ze-chip--c{ bottom: -14px; left: 12%;  animation: zeFloatA 8s ease-in-out 1.2s infinite; }
+        @keyframes zeFloatA { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(4px,-13px,0); } }
+        @keyframes zeFloatB { 0%,100% { transform: translate3d(0,0,0); } 50% { transform: translate3d(-6px,12px,0); } }
+
+        @media (max-width: 1180px) { .etc-sec .ze-chip--a, .etc-sec .ze-chip--b{ display: none; } }
+        @media (max-width: 992px)  { .etc-sec .ze-chip--c{ display: none; } }
+
+        /* ═══════════════════════════════════════════════════════════════
+           AUTO CAROUSEL ENGINE (1 CARD / 3s, INFINITE LOOP)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .carousel-wrap{ position: relative; overflow: hidden; padding: 10px 4px 14px 4px; }
+        .etc-sec .carousel-track, .etc-sec .tst-track{
+            display: flex; gap: 20px; will-change: transform;
+            transition: transform .75s cubic-bezier(.5,0,.15,1);
+        }
+        .etc-sec .carousel-track.no-anim, .etc-sec .tst-track.no-anim{ transition: none !important; }
+        .etc-sec .carousel-wrap .feat-card, .etc-sec .carousel-wrap .ind-card-slide, .etc-sec .carousel-wrap .tsc{ flex: 0 0 auto; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FAQ - REVEALS ONE BY ONE, SINGLE OPEN AT A TIME
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .faq-grid{ display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 900px; margin-inline: auto; }
+        .etc-sec .faq-item{
+            background: var(--white); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+            opacity: 0; transform: translateY(26px);
+            transition: opacity .6s var(--ease), transform .6s var(--ease), border-color .3s, box-shadow .3s;
+        }
+        .etc-sec .faq-item.faq-in{ opacity: 1; transform: translateY(0); }
+        .etc-sec .faq-item:hover{ border-color: #A0C0E0; box-shadow: var(--shadow); }
+        .etc-sec .faq-item.active{ border-color: var(--green); box-shadow: 0 14px 32px -22px rgba(0,130,54,.6); }
+        .etc-sec .faq-q{ padding: 17px 22px; font-size: 15.5px; font-weight: 600; color: var(--ink); gap: 16px; }
+        .etc-sec .faq-q:hover{ color: var(--blue); }
+        .etc-sec .faq-a{
+            display: block; padding: 0 22px; max-height: 0; overflow: hidden; opacity: 0;
+            transition: max-height .5s var(--ease), opacity .35s ease, padding .4s var(--ease);
+        }
+        .etc-sec .faq-item.active .faq-a{
+            display: block; max-height: 460px; opacity: 1;
+            padding: 14px 22px 20px 22px; border-top: 1px dashed var(--line2); margin-top: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           GLOBAL SECTION TRANSITIONS & SCROLL EFFECTS
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .sec-anim > *{
+            opacity: 0; transform: translateY(30px);
+            transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
+        }
+        .etc-sec .sec-anim.sec-in > *{ opacity: 1; transform: none; }
+        .etc-sec .sec-anim.sec-in > *:nth-child(1){ transition-delay: .04s; }
+        .etc-sec .sec-anim.sec-in > *:nth-child(2){ transition-delay: .12s; }
+        .etc-sec .sec-anim.sec-in > *:nth-child(3){ transition-delay: .20s; }
+        .etc-sec .sec-anim.sec-in > *:nth-child(4){ transition-delay: .28s; }
+        .etc-sec .sec-anim.sec-in > *:nth-child(5){ transition-delay: .36s; }
+        .etc-sec .sec-anim.sec-in > *:nth-child(6){ transition-delay: .44s; }
+
+        /* Staggered card entrance inside any grid */
+        .etc-sec .stagger > *{
+            opacity: 0; transform: translateY(28px) scale(.985);
+            transition: opacity .68s cubic-bezier(.16,1,.3,1), transform .68s cubic-bezier(.16,1,.3,1);
+        }
+        .etc-sec .stagger.sec-in > *{ opacity: 1; transform: none; }
+        .etc-sec .stagger.sec-in > *:nth-child(1){ transition-delay: .05s; }
+        .etc-sec .stagger.sec-in > *:nth-child(2){ transition-delay: .12s; }
+        .etc-sec .stagger.sec-in > *:nth-child(3){ transition-delay: .19s; }
+        .etc-sec .stagger.sec-in > *:nth-child(4){ transition-delay: .26s; }
+        .etc-sec .stagger.sec-in > *:nth-child(5){ transition-delay: .33s; }
+        .etc-sec .stagger.sec-in > *:nth-child(6){ transition-delay: .40s; }
+        .etc-sec .stagger.sec-in > *:nth-child(7){ transition-delay: .47s; }
+        .etc-sec .stagger.sec-in > *:nth-child(8){ transition-delay: .54s; }
+        .etc-sec .stagger.sec-in > *:nth-child(n+9){ transition-delay: .60s; }
+
+        /* Heading underline sweep on entry */
+        .etc-sec .sweep::after{
+            content: ""; display: block; height: 3px; width: 96px; margin: 12px auto 0 auto; border-radius: 3px;
+            background: linear-gradient(90deg, #3EA900, #236EB4);
+            transform: scaleX(0); transform-origin: center; transition: transform .9s .25s cubic-bezier(.16,1,.3,1);
+        }
+        .etc-sec .sec-in .sweep::after, .etc-sec .is-visible.sweep::after, .etc-sec .is-visible .sweep::after{ transform: scaleX(1); }
+
+        /* Scroll progress bar */
+        .scroll-progress{
+            position: fixed; top: 0; left: 0; height: 3px; width: 0%; z-index: 9999;
+            background: linear-gradient(90deg, #3EA900, #236EB4); transition: width .12s linear;
+        }
+
+        /* Pipeline chips animate left to right */
+        .etc-sec .flow-chip{ opacity: 0; transform: translateY(10px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+        .etc-sec .sec-in .flow-chip, .etc-sec .is-visible .flow-chip{ opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .etc-sec *, .etc-sec *::before, .etc-sec *::after{
+                animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+                transition-duration: .001ms !important; scroll-behavior: auto !important;
+            }
+            .etc-sec .sec-anim > *, .etc-sec .stagger > *, .etc-sec .faq-item{ opacity: 1 !important; transform: none !important; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONTACT FORM SLOT (WPCode shortcode container)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .ct-form-slot{
+            background: #FFFFFF; border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+        }
+        .etc-sec .ct-form-slot:hover{ transform: translateY(-4px); box-shadow: 0 22px 46px -20px rgba(0,130,54,.28); }
+        .etc-sec .ct-form-head{ padding: 22px 28px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB; }
+        .etc-sec .ct-form-head b{ display: block; font-size: 18px; font-weight: 600; color: #111827; }
+        .etc-sec .ct-form-head span{ display: block; margin-top: 4px; font-size: 13.5px; color: #6B7280; line-height: 1.6; }
+        .etc-sec .ct-form-body{ padding: 26px 28px 30px 28px; }
+        .etc-sec .ct-form-body input[type=text], .etc-sec .ct-form-body input[type=email], .etc-sec .ct-form-body input[type=tel], .etc-sec .ct-form-body select, .etc-sec .ct-form-body textarea{
+            width: 100%; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 8px;
+            font-family: var(--font); font-size: 14.5px; color: #111827; background: #FFFFFF; outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .etc-sec .ct-form-body input:focus, .etc-sec .ct-form-body select:focus, .etc-sec .ct-form-body textarea:focus{
+            border-color: var(--blue); box-shadow: 0 0 0 3px rgba(35,110,180,.15);
+        }
+        .etc-sec .ct-form-body input[type=submit], .etc-sec .ct-form-body button[type=submit]{
+            width: 100%; background: linear-gradient(90deg, #3EA900 0%, #236EB4 100%); color: #FFFFFF;
+            border: 1px solid #008236; padding: 14px 24px; border-radius: 8px;
+            font-family: var(--font); font-size: 16px; font-weight: 600; cursor: pointer;
+            box-shadow: 0 8px 20px -10px rgba(0,130,54,.6); transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+        }
+        .etc-sec .ct-form-body input[type=submit]:hover, .etc-sec .ct-form-body button[type=submit]:hover{
+            transform: translateY(-2px); box-shadow: 0 14px 28px -12px rgba(0,130,54,.7);
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CTA / DARK SECTION LOGO -> WHITE
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .final-sec .zlogo-icon, .etc-sec .sec--dark .zlogo-icon{ filter: brightness(0) invert(1); }
+        .etc-sec .final-sec .zlogo em{ color: #FFFFFF !important; border-left-color: rgba(255,255,255,.4) !important; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           ANIMATED ICONS (shared across every section)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .chip, .etc-sec .ic{
+            position: relative;
+            transition: transform .45s cubic-bezier(.34,1.56,.64,1), background-color .35s, color .35s, box-shadow .35s;
+        }
+        .etc-sec .chip i, .etc-sec .ic i{ transition: transform .45s cubic-bezier(.34,1.56,.64,1); display: inline-block; }
+
+        /* gentle idle life, staggered so the page never pulses in unison */
+        @keyframes icoBreathe { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-3px) rotate(-3deg); } }
+        .etc-sec .ico-anim i{ animation: icoBreathe 4.4s ease-in-out infinite; }
+        .etc-sec .ico-anim:nth-of-type(2n) i{ animation-delay: .5s; }
+        .etc-sec .ico-anim:nth-of-type(3n) i{ animation-delay: 1s; }
+        .etc-sec .ico-anim:nth-of-type(4n) i{ animation-delay: 1.5s; }
+        .etc-sec .ico-anim:nth-of-type(5n) i{ animation-delay: 2s; }
+
+        /* halo ping on hover */
+        .etc-sec .chip::after, .etc-sec .ic::after{
+            content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+            box-shadow: 0 0 0 0 currentColor; opacity: .35; transition: box-shadow .55s ease, opacity .55s ease;
+        }
+        .etc-sec .card:hover .chip::after, .etc-sec .ic:hover::after, .etc-sec .pain:hover .ic::after, .etc-sec .tl-item:hover .ic::after, .etc-sec .auto-row:hover .ic::after, .etc-sec .mod-line:hover .ic::after, .etc-sec .persona:hover .ic::after{ box-shadow: 0 0 0 10px currentColor; opacity: 0; }
+
+        .etc-sec .card:hover .chip, .etc-sec .ic-host:hover .ic{ transform: translateY(-3px) scale(1.09) rotate(-6deg); }
+        .etc-sec .card:hover .chip i, .etc-sec .ic-host:hover .ic i{ transform: scale(1.12) rotate(6deg); }
+
+        /* ═══════════════════════════════════════════════════════════════
+           A. PAIN LEDGER  (#problems - replaces the card grid)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .ledger{
+            display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: clamp(24px, 3.4vw, 56px);
+            border-top: 1px solid var(--line);
+        }
+        .etc-sec .pain{
+            position: relative; display: grid; grid-template-columns: 54px 1fr; gap: 16px;
+            padding: 22px 8px 22px 0; border-bottom: 1px solid var(--line);
+            transition: background-color .35s var(--ease), padding-left .35s var(--ease);
+        }
+        .etc-sec .pain::before{
+            content: ""; position: absolute; left: 0; top: 0; bottom: -1px; width: 3px;
+            background: linear-gradient(180deg, #3EA900, #236EB4);
+            transform: scaleY(0); transform-origin: top; transition: transform .45s var(--ease);
+        }
+        .etc-sec .pain:hover{ background: rgba(35,110,180,.04); padding-left: 14px; }
+        .etc-sec .pain:hover::before{ transform: scaleY(1); }
+        /* Numerals: solid green at rest, button gradient on hover */
+        .etc-sec .pain-no{
+            position: relative; font-size: 30px; font-weight: 700; line-height: 1;
+            letter-spacing: -.02em; padding-top: 2px; color: #3EA900;
+            transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+        }
+        .etc-sec .pain-no::after{
+            content: attr(data-n); position: absolute; inset: 0; padding-top: 2px;
+            background: linear-gradient(90deg, #3EA900 0%, #2E8C5A 48%, #236EB4 100%);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent; color: transparent;
+            opacity: 0; transition: opacity .35s ease;
+        }
+        .etc-sec .pain:hover .pain-no{ transform: scale(1.06); }
+        .etc-sec .pain:hover .pain-no::after{ opacity: 1; }
+        .etc-sec .pain h3{ font-size: 16.5px; margin: 0 0 5px 0; color: var(--ink); display: flex; align-items: center; gap: 10px; }
+        .etc-sec .pain h3 .ic{
+            flex: none; width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; font-size: 13px;
+        }
+        .etc-sec .pain p{ margin: 0; font-size: 14px; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           B. DELIVERY TIMELINE  (#why-us - replaces the card grid)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .timeline{ position: relative; padding: 6px 0 6px 0; }
+        .etc-sec .timeline::before{
+            content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; margin-left: -1px;
+            background: linear-gradient(180deg, rgba(62,169,0,.15), #3EA900 12%, #236EB4 88%, rgba(35,110,180,.15));
+        }
+        .etc-sec .tl-item{ position: relative; width: 50%; padding: 0 44px 30px 0; }
+        .etc-sec .tl-item:nth-child(even){ margin-left: 50%; padding: 0 0 30px 44px; }
+        .etc-sec .tl-item .tl-dot{
+            position: absolute; top: 16px; right: -9px; width: 18px; height: 18px; border-radius: 50%;
+            background: #FFFFFF; border: 3px solid #3EA900; z-index: 2;
+            transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .4s, border-color .4s;
+        }
+        .etc-sec .tl-item:nth-child(even) .tl-dot{ right: auto; left: -9px; }
+        .etc-sec .tl-item:hover .tl-dot{ transform: scale(1.35); border-color: #236EB4; box-shadow: 0 0 0 6px rgba(35,110,180,.14); }
+        .etc-sec .tl-body{
+            background: #FFFFFF; border: 1px solid var(--line); border-left: 3px solid #3EA900;
+            border-radius: 4px 14px 14px 4px; padding: 18px 20px;
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-left-color .35s;
+        }
+        .etc-sec .tl-item:nth-child(even) .tl-body{ border-left: 1px solid var(--line); border-right: 3px solid #236EB4; border-radius: 14px 4px 4px 14px; }
+        .etc-sec .tl-item:hover .tl-body{ transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .etc-sec .tl-head{ display: flex; align-items: center; gap: 11px; margin-bottom: 7px; }
+        .etc-sec .tl-head .ic{ flex: none; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; }
+        .etc-sec .tl-step{ font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #94A3B8; }
+        .etc-sec .tl-body h3{ font-size: 16.5px; margin: 0; }
+        .etc-sec .tl-body p{ font-size: 13.8px; margin-top: 6px; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           C. AUTOMATION ROWS  (#use-cases - gradient process pipeline)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .auto-list{ display: grid; gap: 12px; }
+        .etc-sec .auto-row{
+            display: grid; grid-template-columns: 52px minmax(190px, 250px) 1fr; align-items: center; gap: 18px;
+            background: #FFFFFF; border: 1px solid var(--line); border-radius: 14px; padding: 16px 20px;
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+        }
+        .etc-sec .auto-row:hover{ transform: translateX(6px); box-shadow: var(--shadow-lg); border-color: #A0C0E0; }
+        .etc-sec .auto-row .ic{ width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; font-size: 17px; }
+        .etc-sec .auto-row h3{ font-size: 16px; margin: 0; }
+        .etc-sec .auto-row .auto-note{ font-size: 13px; color: var(--ink3); margin-top: 3px; display: block; }
+        /* the gradient process pipeline, per the reference screenshot */
+        .etc-sec .pipe{ display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+        .etc-sec .pipe b{
+            background: linear-gradient(90deg, #3EA900 0%, #2E8C5A 48%, #236EB4 100%);
+            color: #FFFFFF; font-size: 11.5px; font-weight: 600; padding: 5px 12px; border-radius: 6px;
+            white-space: nowrap; box-shadow: 0 5px 14px -9px rgba(35,110,180,.9);
+            opacity: 0; transform: translateY(8px) scale(.94);
+            transition: opacity .45s var(--ease), transform .45s var(--ease);
+        }
+        .etc-sec .sec-in .pipe b, .etc-sec .is-visible .pipe b{ opacity: 1; transform: none; }
+        .etc-sec .pipe b:nth-child(1){ transition-delay: .05s; }
+        .etc-sec .pipe b:nth-child(2){ transition-delay: .13s; }
+        .etc-sec .pipe b:nth-child(3){ transition-delay: .21s; }
+        .etc-sec .pipe b:nth-child(4){ transition-delay: .29s; }
+        .etc-sec .pipe b:nth-child(5){ transition-delay: .37s; }
+        .etc-sec .pipe i{ color: #94A3B8; font-size: 10px; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           D. MODULE INDEX  (#modules - replaces the 18 glass cards)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .mod-index{
+            display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: clamp(20px, 2.6vw, 40px);
+        }
+        .etc-sec .mod-line{
+            display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start;
+            padding: 15px 10px 15px 0; border-bottom: 1px solid rgba(255,255,255,.13);
+            transition: padding-left .35s var(--ease), background-color .35s var(--ease);
+        }
+        .etc-sec .mod-line:hover{ padding-left: 12px; background: rgba(255,255,255,.06); }
+        .etc-sec .mod-line .ic{
+            width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; font-size: 14px;
+            background: rgba(255,255,255,.10); color: #86EFAC; border: 1px solid rgba(255,255,255,.16);
+        }
+        .etc-sec .mod-line:hover .ic{ background: #86EFAC; color: #032E15; border-color: #86EFAC; }
+        .etc-sec .mod-line h4{ font-size: 15px; color: #FFFFFF !important; margin: 0 0 3px 0; }
+        .etc-sec .mod-line p{ font-size: 13px; color: rgba(255,255,255,.78); margin: 0; line-height: 1.55; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           E. PERSONA STRIP  (#intro "Who Needs" - replaces 5 cards)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .persona-strip{
+            display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0;
+            position: relative; margin-bottom: 40px;
+        }
+        .etc-sec .persona-strip::before{
+            content: ""; position: absolute; left: 10%; right: 10%; top: 34px; height: 2px;
+            background: repeating-linear-gradient(90deg, var(--line) 0 7px, transparent 7px 14px);
+        }
+        .etc-sec .persona{ position: relative; text-align: center; padding: 0 10px; }
+        .etc-sec .persona .ic{
+            width: 68px; height: 68px; border-radius: 50%; margin: 0 auto 14px auto;
+            display: grid; place-items: center; font-size: 23px;
+            border: 2px solid #FFFFFF; box-shadow: 0 6px 18px -10px rgba(3,7,18,.45);
+        }
+        .etc-sec .persona:hover .ic{ transform: translateY(-5px) scale(1.08); }
+        .etc-sec .persona h3{ font-size: 15px; margin: 0 0 5px 0; line-height: 1.35; }
+        .etc-sec .persona p{ font-size: 13px; margin: 0; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           F. SOLUTION RAIL  (#solution - replaces 4 identical boxes)
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .rail{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-bottom: 32px; }
+        .etc-sec .rail-step{ position: relative; padding: 0 18px; text-align: center; }
+        .etc-sec .rail-step::after{
+            content: "\f054"; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            position: absolute; right: -8px; top: 26px; font-size: 12px; color: rgba(255,255,255,.35);
+        }
+        .etc-sec .rail-step:last-child::after{ display: none; }
+        .etc-sec .rail-num{
+            width: 56px; height: 56px; margin: 0 auto 14px auto; border-radius: 50%;
+            display: grid; place-items: center; font-size: 18px;
+            background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.24); color: #86EFAC;
+            transition: transform .4s cubic-bezier(.34,1.56,.64,1), background-color .4s, color .4s;
+        }
+        .etc-sec .rail-step:hover .rail-num{ transform: translateY(-5px) scale(1.08); background: #86EFAC; color: #032E15; }
+        .etc-sec .rail-step b{ display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #86EFAC; margin-bottom: 6px; }
+        .etc-sec .rail-step span{ display: block; font-size: 14.5px; font-weight: 600; color: #FFFFFF; line-height: 1.45; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           RESPONSIVE - EVERY SECTION, EVERY BREAKPOINT
+           ═══════════════════════════════════════════════════════════════ */
+        @media (max-width: 1100px) {
+            .etc-sec .auto-row{ grid-template-columns: 48px minmax(160px, 210px) 1fr; gap: 14px; }
+            .etc-sec .mod-index{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 900px) {
+            .etc-sec .persona-strip{ grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 30px; }
+            .etc-sec .persona-strip::before{ display: none; }
+            .etc-sec .rail{ grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
+            .etc-sec .rail-step:nth-child(2)::after{ display: none; }
+            .etc-sec .ledger{ grid-template-columns: 1fr; }
+            /* timeline collapses to a single left-hand spine */
+            .etc-sec .timeline::before{ left: 17px; }
+            .etc-sec .tl-item, .etc-sec .tl-item:nth-child(even){ width: 100%; margin-left: 0; padding: 0 0 22px 46px; }
+            .etc-sec .tl-item .tl-dot, .etc-sec .tl-item:nth-child(even) .tl-dot{ left: 9px; right: auto; }
+            .etc-sec .tl-item .tl-body, .etc-sec .tl-item:nth-child(even) .tl-body{
+                border-left: 3px solid #3EA900; border-right: 1px solid var(--line); border-radius: 4px 14px 14px 4px;
+            }
+        }
+        @media (max-width: 720px) {
+            .etc-sec .auto-row{ grid-template-columns: 44px 1fr; row-gap: 10px; padding: 15px 16px; }
+            .etc-sec .auto-row .pipe{ grid-column: 1 / -1; }
+            .etc-sec .persona-strip{ grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; row-gap: 26px; }
+            .etc-sec .persona{ padding-inline: 6px; }
+            .etc-sec .persona p{ hyphens: none; }
+            .etc-sec .rail{ grid-template-columns: 1fr; }
+            .etc-sec .rail-step::after{ display: none; }
+            .etc-sec .mod-index{ grid-template-columns: 1fr; }
+        }
+        @media (max-width: 520px) {
+            .etc-sec .persona-strip{ grid-template-columns: 1fr; row-gap: 10px; }
+            .etc-sec .persona{
+                display: grid; grid-template-columns: 52px minmax(0, 1fr);
+                column-gap: 14px; row-gap: 3px; text-align: left; align-items: start;
+                padding: 14px 16px; background: #FFFFFF; border: 1px solid var(--line2);
+                border-radius: 14px;
+            }
+            /* explicit placement: the paragraph must sit in the text column, not under the icon */
+            .etc-sec .persona .ic{ grid-column: 1; grid-row: 1 / span 2; align-self: center; width: 46px; height: 46px; margin: 0; font-size: 18px; }
+            .etc-sec .persona h3{ grid-column: 2; grid-row: 1; margin: 0; }
+            .etc-sec .persona p{ grid-column: 2; grid-row: 2; margin: 0; }
+            .etc-sec .pain{ grid-template-columns: 40px 1fr; gap: 12px; }
+            .etc-sec .pain-no{ font-size: 24px; }
+        }
+
+        /* Grid & flex children must be allowed to shrink below their content width */
+        .etc-sec .hero-in > *, .etc-sec .hero-copy, .etc-sec .ze-stage, .etc-sec .ct-grid > *, .etc-sec .box > *{ min-width: 0; }
+        .etc-sec .trust{ min-width: 0; max-width: 100%; }
+        .etc-sec .sec .box{ min-width: 0; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           FULL RESPONSIVE PASS - phone / phablet / tablet / laptop / desktop
+           ═══════════════════════════════════════════════════════════════ */
+        html, .etc-sec{ overflow-x: hidden; max-width: 100%; }
+        .etc-sec img, .etc-sec svg, .etc-sec video, .etc-sec table{ max-width: 100%; }
+
+        /* wide tables must scroll inside themselves, never widen the page */
+        .etc-sec .table-scroll, .etc-sec .pkg-table-wrap{ width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .etc-sec .pkg-detail-table{ min-width: 640px; }
+
+        @media (max-width: 1280px) {
+            :root{ --gut: 22px; }
+        }
+
+        /* ── Laptop / small desktop ─────────────────────────────────── */
+        @media (max-width: 1100px) {
+            .etc-sec .hero-in{ gap: clamp(26px, 3vw, 42px); }
+            .etc-sec .ze-app{ max-width: 560px; margin-inline: auto; }
+        }
+
+        /* ── Tablet ─────────────────────────────────────────────────── */
+        @media (max-width: 992px) {
+            .etc-sec .hero{ padding-block: clamp(34px, 6vw, 54px); }
+            /* minmax(0,1fr) - a plain 1fr track grows to the widest child (the nowrap trust strip) */
+            .etc-sec .hero-in{ grid-template-columns: minmax(0, 1fr); }
+            .etc-sec .hero-copy{ text-align: left; }
+            .etc-sec .ze-stage{ margin-top: 30px; }
+            .etc-sec .trust{ font-size: 13px; }
+            .etc-sec .strip-top, .etc-sec .price-grid, .etc-sec .faq-grid, .etc-sec .ct-grid, .etc-sec .final-steps-grid{ grid-template-columns: 1fr; }
+            .etc-sec .ct-grid{ gap: 28px; }
+            .etc-sec .pkg-tabs-bar{ gap: 8px; }
+            .etc-sec .pkg-tab-btn{ padding: 9px 16px; font-size: 14px; }
+        }
+
+        /* ── Phablet ────────────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            :root{ --gut: 18px; --r: 14px; --r-lg: 18px; }
+            .etc-sec .sec{ padding-block: clamp(34px, 7vw, 52px); }
+            .etc-sec .h1{ font-size: clamp(25px, 6.6vw, 31px); line-height: 1.3; }
+            .etc-sec .h2{ font-size: clamp(21px, 5.4vw, 26px); line-height: 1.32; }
+            .etc-sec .h3{ font-size: 17.5px; }
+            .etc-sec .lede{ font-size: 15px; }
+            .etc-sec .hl{ padding: 2px 8px 3px 8px; }
+            .etc-sec .btnrow{ gap: 10px; }
+            .etc-sec .btn{ padding: 12px 20px; font-size: 15px; }
+            .etc-sec .btnrow .btn{ flex: 1 1 100%; }
+            .etc-sec .intro{ margin-bottom: 24px; }
+            .etc-sec .zlogo{ gap: 9px; margin-bottom: 12px; }
+            .etc-sec .zlogo-icon, .etc-sec .zlogo img, .etc-sec .zlogo-img{ width: 120px; height: 27px; }
+            .etc-sec .zlogo em{ font-size: 10.5px; padding-left: 9px; }
+            .etc-sec .strip-num{ font-size: 34px; }
+            .etc-sec .ze-kpis{ grid-template-columns: 1fr 1fr; }
+            .etc-sec .ze-kpis .ze-kpi:last-child{ grid-column: 1 / -1; }
+            .etc-sec .ze-body{ padding: 13px; gap: 10px; }
+            .etc-sec .ze-flow{ gap: 3px; padding: 10px 8px; }
+            .etc-sec .ze-step{ font-size: 9px; }
+            .etc-sec .ze-step i{ width: 22px; height: 22px; font-size: 9.5px; }
+            .etc-sec .ze-link{ width: 8px; }
+            .etc-sec .fab{ right: 12px; bottom: 76px; }
+            .etc-sec .fab a{ width: 46px; height: 46px; }
+            .etc-sec .c-toolbar{ margin-bottom: 14px; }
+            .etc-sec .faq-q{ padding: 15px 17px; font-size: 15px; }
+            .etc-sec .faq-item.active .faq-a{ padding: 12px 17px 17px 17px; }
+            .etc-sec .ct-form-head, .etc-sec .ct-form-body{ padding-inline: 20px; }
+            .etc-sec .tsc{ padding: 24px 20px; }
+            .etc-sec .final-steps-grid{ margin-top: 24px; }
+        }
+
+        /* ── Phone ──────────────────────────────────────────────────── */
+        @media (max-width: 560px) {
+            :root{ --gut: 16px; }
+            .etc-sec, .etc-sec .ze{ font-size: 14.5px; }
+            .etc-sec .h1{ font-size: clamp(23px, 7.2vw, 28px); }
+            .etc-sec .h2{ font-size: clamp(20px, 6vw, 24px); }
+            .etc-sec .trust{ gap: 10px; font-size: 12.5px; }
+            .etc-sec .partner-badge{ font-size: 12.5px; padding: 7px 14px; }
+            .etc-sec .ze-kpis{ grid-template-columns: 1fr; }
+            .etc-sec .ze-kpis .ze-kpi:last-child{ grid-column: auto; }
+            .etc-sec .ze-scan{ padding: 11px 12px; }
+            .etc-sec .ze-row{ font-size: 12.5px; }
+            .etc-sec .ze-chart{ height: 46px; }
+            .etc-sec .dots{ gap: 6px; margin-top: 18px; }
+            .etc-sec .c-arrow{ width: 34px; height: 34px; }
+            .etc-sec .pkg-tabs-bar{ flex-direction: column; align-items: stretch; }
+            .etc-sec .pkg-tab-btn{ width: 100%; }
+            .etc-sec .price-col{ padding: 26px 20px; }
+            .etc-sec .sweep::after{ width: 72px; margin-top: 10px; }
+            .etc-sec .ct-point{ padding: 12px 14px; gap: 11px; }
+            .etc-sec .final-step-card{ padding: 16px 18px; }
+        }
+
+        /* ── Small phone ────────────────────────────────────────────── */
+        @media (max-width: 380px) {
+            :root{ --gut: 14px; }
+            .etc-sec .h1{ font-size: 22px; }
+            .etc-sec .h2{ font-size: 19px; }
+            .etc-sec .zlogo{ flex-direction: column; align-items: flex-start; gap: 6px; }
+            .etc-sec .zlogo--center{ align-items: center; }
+            .etc-sec .zlogo em{ border-left: none; padding-left: 0; }
+            .etc-sec .pipe b{ font-size: 11px; padding: 4px 9px; }
+        }
+
+        /* ── Landscape phones: don't waste vertical space ───────────── */
+        @media (max-height: 460px) and (orientation: landscape) {
+            .etc-sec .sec{ padding-block: 30px; }
+            .etc-sec .hero{ padding-block: 26px; }
+        }
+
+        /* ── Touch devices: hover effects must not stick ────────────── */
+        @media (hover: none) {
+            .etc-sec .card:hover, .etc-sec .feat-card:hover, .etc-sec .ind-card-slide:hover, .etc-sec .auto-row:hover, .etc-sec .tl-item:hover .tl-body, .etc-sec .price-col:hover, .etc-sec .ct-form-slot:hover{
+                transform: none;
+            }
+            .etc-sec .auto-row:hover{ transform: none; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           VIDEO / YOUTUBE SECTION
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .vid-grid{
+            display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+            gap: clamp(24px, 3vw, 44px); align-items: start;
+        }
+        .etc-sec .vid-frame{
+            position: relative; aspect-ratio: 16 / 9; width: 100%; overflow: hidden;
+            border-radius: var(--r); border: 1px solid var(--line); background: #0B1220;
+            box-shadow: var(--shadow-lg); cursor: pointer; display: block;
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+        }
+        .etc-sec .vid-frame:hover{ transform: translateY(-4px); box-shadow: 0 26px 54px -26px rgba(3,7,18,.5); }
+        .etc-sec .vid-frame:focus-visible{ outline: 3px solid var(--blue); outline-offset: 3px; }
+        .etc-sec .vid-thumb{ width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s var(--ease), filter .4s; }
+        .etc-sec .vid-frame:hover .vid-thumb{ transform: scale(1.045); filter: brightness(.86); }
+        .etc-sec .vid-frame iframe{ width: 100%; height: 100%; border: 0; display: block; }
+        .etc-sec .vid-play{
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+            width: 78px; height: 78px; border-radius: 50%; display: grid; place-items: center;
+            background: linear-gradient(90deg, #3EA900 0%, #236EB4 100%); color: #FFFFFF; font-size: 25px;
+            box-shadow: 0 14px 32px -12px rgba(3,7,18,.6); transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+        }
+        .etc-sec .vid-play::before{
+            content: ""; position: absolute; inset: 0; border-radius: 50%; background: inherit; z-index: -1;
+            animation: vidPing 2.6s ease-out infinite;
+        }
+        @keyframes vidPing { 0% { transform: scale(1); opacity: .55; } 70%, 100% { transform: scale(1.85); opacity: 0; } }
+        .etc-sec .vid-frame:hover .vid-play{ transform: translate(-50%, -50%) scale(1.12); }
+        .etc-sec .vid-play i{ margin-left: 4px; }
+        .etc-sec .vid-badge{
+            position: absolute; left: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(9, 13, 20, .74); color: #FFFFFF; font-size: 12px; font-weight: 600;
+            padding: 6px 13px; border-radius: 20px; backdrop-filter: blur(4px);
+        }
+        .etc-sec .vid-badge i{ color: #FF0000; font-size: 14px; }
+
+        .etc-sec .vid-notes-h{ font-size: 17px; margin: 0 0 14px 0; color: var(--ink); }
+        .etc-sec .vid-chapters{ list-style: none; counter-reset: vc; padding: 0; margin: 0 0 22px 0; display: grid; gap: 10px; }
+        .etc-sec .vid-chapters li{
+            display: grid; grid-template-columns: 38px 1fr; gap: 13px; align-items: start;
+            padding: 12px 14px; background: var(--ground); border: 1px solid var(--line2); border-radius: 12px;
+            transition: transform .3s var(--ease), border-color .3s, background-color .3s;
+        }
+        .etc-sec .vid-chapters li:hover{ transform: translateX(5px); border-color: #A0C0E0; background: #FFFFFF; }
+        .etc-sec .vid-chapters .ic{ width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; }
+        .etc-sec .vid-chapters b{ display: block; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+        .etc-sec .vid-chapters span{ display: block; font-size: 13px; color: var(--ink-para); line-height: 1.55; margin-top: 2px; }
+        .etc-sec .vid-cta-row{ display: flex; justify-content: center; margin-top: clamp(24px, 3vw, 36px); }
+        .etc-sec .vid-cta{ width: auto; min-width: 300px; justify-content: center; }
+
+        @media (max-width: 992px) { .etc-sec .vid-grid{ grid-template-columns: 1fr; } }
+        @media (max-width: 560px) {
+            .etc-sec .vid-play{ width: 62px; height: 62px; font-size: 20px; }
+            .etc-sec .vid-chapters li{ grid-template-columns: 32px 1fr; gap: 11px; padding: 11px 12px; }
+            .etc-sec .vid-chapters .ic{ width: 30px; height: 30px; font-size: 12.5px; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONSULTING & IMPLEMENTATION - NUMBERED STEPPER TRACK
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .stepper{
+            display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 26px 0; margin-bottom: 30px; position: relative;
+        }
+        .etc-sec .step{
+            position: relative; padding: 0 20px 4px 20px;
+            border-left: 1px solid var(--line);
+            transition: transform .35s var(--ease);
+        }
+        .etc-sec .step:hover{ transform: translateY(-5px); }
+        .etc-sec .step::before{
+            content: ""; position: absolute; left: -1px; top: 0; width: 1px; height: 100%;
+            background: linear-gradient(180deg, #3EA900, #236EB4);
+            transform: scaleY(0); transform-origin: top; transition: transform .45s var(--ease);
+        }
+        .etc-sec .step:hover::before{ transform: scaleY(1); }
+        .etc-sec .step-no{
+            display: block; font-size: 26px; font-weight: 700; line-height: 1; color: #3EA900;
+            letter-spacing: -.02em; margin-bottom: 12px;
+            transition: color .35s ease;
+        }
+        .etc-sec .step:hover .step-no{ color: #236EB4; }
+        .etc-sec .step .ic{
+            width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+            font-size: 16px; margin-bottom: 11px;
+        }
+        .etc-sec .step h3{ font-size: 15.5px; margin: 0 0 6px 0; line-height: 1.35; }
+        .etc-sec .step p{ font-size: 13.2px; margin: 0; line-height: 1.6; }
+
+        /* ═══════════════════════════════════════════════════════════════
+           REAL WORLD SCENARIOS - SCENARIO PANELS
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .scenario-board{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .etc-sec .scenario{
+            display: flex; flex-direction: column; overflow: hidden;
+            background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--r);
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+        }
+        .etc-sec .scenario:hover{ transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: #A0C0E0; }
+        .etc-sec .scenario-top{ display: flex; align-items: center; gap: 14px; padding: 18px 20px 0 20px; }
+        .etc-sec .scenario-top .ic{ flex: none; width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; font-size: 16px; }
+        .etc-sec .scenario-no{
+            display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: #94A3B8; margin-bottom: 3px;
+        }
+        .etc-sec .scenario-top h3{ font-size: 15.5px; margin: 0; line-height: 1.32; }
+        .etc-sec .scenario-note{ padding: 0 18px; margin: 10px 0 16px 0; font-size: 13.3px; flex: 1; }
+        /* the gradient band belongs to the automation process, nothing else */
+        .etc-sec .scenario-flow{ margin-top: auto; padding: 14px 20px 16px 20px; background: var(--ground); border-top: 1px solid var(--line2); }
+        .etc-sec .flow-label{
+            display: block; font-size: 10px; font-weight: 700; letter-spacing: .1em;
+            text-transform: uppercase; color: #94A3B8; margin-bottom: 9px;
+        }
+
+        @media (max-width: 1180px) { .etc-sec .stepper{ grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (max-width: 1180px) { .etc-sec .scenario-board{ grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 992px)  { .etc-sec .stepper{ grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (max-width: 760px)  { .etc-sec .scenario-board{ grid-template-columns: 1fr; } }
+        @media (max-width: 700px)  { .etc-sec .stepper{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 0; }
+                                     .etc-sec .step{ padding: 0 14px; }
+                                     .etc-sec .step-no{ font-size: 22px; } }
+        @media (max-width: 430px)  { .etc-sec .stepper{ grid-template-columns: 1fr; }
+                                     .etc-sec .scenario-top{ gap: 12px; padding: 16px 16px 0 16px; }
+                                     .etc-sec .scenario-top .ic{ width: 40px; height: 40px; font-size: 16px; }
+                                     .etc-sec .scenario-note{ padding-inline: 16px; }
+                                     .etc-sec .scenario-flow{ padding: 12px 16px 14px 16px; } }
+
+        /* Manual line breaks in long headings, desktop and tablet only */
+        .etc-sec .br-lg{ display: block; }
+        @media (max-width: 700px) { .etc-sec .br-lg{ display: none; } }
+
+        /* Real Zoho brand mark used wherever the partner status is stated */
+        .etc-sec .zoho-mark{
+            display: inline-block; width: 34px; height: 12px; flex: none;
+            background: var(--zoho-mark) no-repeat center center;
+            background-size: contain; vertical-align: -1px;
+        }
+        /* keep the brand colours on dark backgrounds - do not invert a four-colour logo */
+
+        /* ═══════════════════════════════════════════════════════════════
+           CONSULTING & IMPLEMENTATION - DELIVERY PHASES
+           ═══════════════════════════════════════════════════════════════ */
+        .etc-sec .phases{ display: grid; gap: 14px; }
+        .etc-sec .phase{
+            display: grid; grid-template-columns: 200px 1fr; align-items: stretch;
+            background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+            transition: box-shadow .35s var(--ease), border-color .35s;
+        }
+        .etc-sec .phase:hover{ box-shadow: var(--shadow-lg); border-color: #A0C0E0; }
+        .etc-sec .phase-side{
+            position: relative; padding: 22px 20px;
+            background: linear-gradient(150deg, #032E15 0%, #0C4A2C 55%, #123F63 100%);
+            color: #FFFFFF; display: flex; flex-direction: column; justify-content: center;
+        }
+        .etc-sec .phase-side::after{
+            content: ""; position: absolute; right: 0; top: 16%; bottom: 16%; width: 3px;
+            background: linear-gradient(180deg, #3EA900, #236EB4);
+        }
+        .etc-sec .phase-ic{
+            width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+            background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2);
+            color: #86EFAC; font-size: 16px; margin-bottom: 12px;
+            transition: transform .4s cubic-bezier(.34,1.56,.64,1), background-color .4s, color .4s;
+        }
+        .etc-sec .phase:hover .phase-ic{ transform: translateY(-3px) scale(1.08); background: #86EFAC; color: #032E15; }
+        .etc-sec .phase-name{ font-size: 20px; margin: 0; color: #FFFFFF !important; line-height: 1.2; }
+        .etc-sec .phase-span{
+            display: block; margin-top: 6px; font-size: 10.5px; font-weight: 700;
+            letter-spacing: .12em; text-transform: uppercase; color: #86EFAC;
+        }
+        .etc-sec .phase-items{
+            display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2px 0; padding: 6px 0;
+        }
+        .etc-sec .ph-item{
+            display: grid; grid-template-columns: 38px 1fr; gap: 13px; align-items: start;
+            padding: 14px 20px; transition: background-color .3s;
+        }
+        .etc-sec .ph-item:hover{ background: var(--ground); }
+        .etc-sec .ph-item .ic{ width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 14px; }
+        .etc-sec .ph-item h3{ font-size: 15px; margin: 0 0 4px 0; line-height: 1.3; }
+        .etc-sec .ph-item p{ font-size: 13px; margin: 0; line-height: 1.55; }
+
+        @media (max-width: 900px) {
+            .etc-sec .phase{ grid-template-columns: 1fr; }
+            .etc-sec .phase-side{ flex-direction: row; align-items: center; gap: 14px; padding: 15px 18px; }
+            .etc-sec .phase-side::after{ top: auto; bottom: 0; left: 0; right: 0; width: auto; height: 3px; }
+            .etc-sec .phase-ic{ margin-bottom: 0; }
+            .etc-sec .phase-span{ margin-top: 0; margin-left: auto; }
+        }
+        @media (max-width: 620px) {
+            .etc-sec .phase-items{ grid-template-columns: 1fr; }
+            .etc-sec .ph-item{ padding: 13px 16px; }
+            .etc-sec .phase-name{ font-size: 18px; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           MOBILE POLISH
+           ═══════════════════════════════════════════════════════════════ */
+
+        /* Horizontally scrollable tables: make the affordance visible */
+        .etc-sec .table-scroll, .etc-sec .pkg-table-wrap, .etc-sec [style*="overflow-x:auto"]{ position: relative; }
+        .etc-sec .scroll-hint{
+            display: none; align-items: center; gap: 7px; margin: 0 0 10px 0;
+            font-size: 12px; font-weight: 600; color: var(--ink3);
+        }
+        .etc-sec .scroll-hint i{ color: var(--blue); animation: hintSlide 1.8s ease-in-out infinite; }
+        @keyframes hintSlide { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+
+        @media (max-width: 860px) {
+            .etc-sec .scroll-hint{ display: flex; }
+        }
+
+        @media (max-width: 768px) {
+            /* Trust strip: wrap onto its own lines instead of clipping off-screen */
+            .etc-sec .trust{
+                flex-wrap: wrap; white-space: normal; overflow-x: visible;
+                gap: 8px 14px; row-gap: 8px;
+            }
+            .etc-sec .trust .trust-dot{ display: none; }
+            .etc-sec .trust span{
+                background: #FFFFFF; border: 1px solid var(--line); border-radius: 20px;
+                padding: 6px 12px; font-size: 12.5px; box-shadow: 0 1px 2px rgba(3,7,18,.04);
+            }
+
+            /* Floating buttons must not sit on top of card text */
+            .etc-sec .fab{ right: 10px; bottom: 14px; flex-direction: row; gap: 10px; }
+            .etc-sec .fab a{ width: 44px; height: 44px; }
+            .etc-sec .fab a svg{ width: 21px; height: 21px; }
+            /* room at the foot of each section so the last row clears the buttons */
+            .etc-sec .sec:last-of-type, .etc-sec .final-sec{ padding-bottom: 84px; }
+
+            /* Video: keep the poster from dominating the fold */
+            .etc-sec .vid-notes-h{ font-size: 16px; }
+            .etc-sec .vid-cta{ width: 100%; min-width: 0; }
+            .etc-sec .vid-cta-row{ margin-top: 22px; }
+        }
+
+        @media (max-width: 560px) {
+            /* Section intros read better left aligned on a narrow column */
+            .etc-sec .intro--mid{ text-align: left; }
+            .etc-sec .intro--mid .lede{ margin-inline: 0; }
+            .etc-sec .zlogo--center{ justify-content: flex-start; }
+            .etc-sec .sweep::after{ margin-inline: 0 auto; }
+            .etc-sec .intro--mid .btnrow{ justify-content: stretch; }
+
+            /* Persona strip: icon beside the text, not stacked */
+            .etc-sec .persona-strip{ gap: 12px; }
+
+            /* Comparison and package tables */
+            .etc-sec .pkg-detail-table{ min-width: 560px; font-size: 13px; }
+            .etc-sec .pkg-detail-table th, .etc-sec .pkg-detail-table td{ padding: 11px 13px; }
+
+            /* Pricing tab buttons stack full width */
+            .etc-sec .pkg-tabs-bar{ gap: 8px; }
+
+            /* Scenario panels a touch tighter */
+            .etc-sec .scenario-note{ font-size: 13px; }
+            .etc-sec .pipe b{ font-size: 11px; padding: 4px 10px; }
+
+            /* Phase header row stays legible when it wraps */
+            .etc-sec .phase-side{ flex-wrap: wrap; row-gap: 6px; }
+            .etc-sec .phase-span{ margin-left: auto; }
+        }
+
+        @media (max-width: 400px) {
+            .etc-sec .fab a{ width: 42px; height: 42px; }
+            .etc-sec .trust span{ font-size: 12px; padding: 5px 10px; }
+            .etc-sec .vid-play{ width: 56px; height: 56px; font-size: 18px; }
+            .etc-sec .strip-num{ font-size: 30px; }
+            .etc-sec .phase-name{ font-size: 17px; }
+        }
+
+        /* Anything that scrolls sideways gets momentum scrolling on iOS */
+        .etc-sec [style*="overflow-x:auto"], .etc-sec .table-scroll, .etc-sec .pkg-table-wrap, .etc-sec .carousel-wrap{
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* ═══════════ HERO: screenshot frame matched to the copy column height ═══════════ */
+        .etc-sec .hero-in{ align-items: stretch; }
+        .etc-sec .hero-copy{ display: flex; flex-direction: column; justify-content: center; }
+        .etc-sec .zp-stage{ position: relative; z-index: 2; display: flex; align-items: stretch; min-width: 0; }
+        .etc-sec .zp-stage::before{
+            content: ""; position: absolute; inset: -7% -5%; z-index: 0; pointer-events: none; border-radius: 50%;
+            background: radial-gradient(closest-side, rgba(34,109,180,.20), transparent 72%),
+                        radial-gradient(closest-side, rgba(8,153,73,.18), transparent 72%);
+            background-position: 20% 18%, 80% 78%; background-size: 62% 62%, 62% 62%; background-repeat: no-repeat;
+            animation: zpAura 11s ease-in-out infinite alternate;
+        }
+        @keyframes zpAura { 0% { transform: scale(1) rotate(0deg); opacity: .7; } 100% { transform: scale(1.08) rotate(6deg); opacity: 1; } }
+        .etc-sec .zp-shot{
+            position: relative; margin: 0; width: 100%; flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column;
+            border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #FFFFFF;
+            box-shadow: var(--shadow-lg); animation: zpIn 1s cubic-bezier(.16,1,.3,1) both;
+        }
+        @keyframes zpIn { from { opacity: 0; transform: translateY(28px) scale(.97); } to { opacity: 1; transform: none; } }
+        .etc-sec .zp-shot img{ display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+        .etc-sec .zp-fade{
+            position: absolute; top: 0; bottom: 0; right: 0; width: 68px; pointer-events: none;
+            background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.92));
+        }
+        .etc-sec .zp-cap{
+            position: absolute; left: 0; right: 0; bottom: 0; height: 46px; z-index: 3;
+            background: linear-gradient(180deg, rgba(15,23,42,0), rgba(15,23,42,.92) 55%);
+            display: flex; align-items: flex-end; padding: 0 16px 11px 16px;
+        }
+        .etc-sec .zp-cap-i{
+            position: absolute; left: 16px; right: 16px; bottom: 11px;
+            display: flex; align-items: center; gap: 9px;
+            font-size: 12.5px; font-weight: 600; color: #FFFFFF; white-space: nowrap;
+            overflow: hidden; text-overflow: ellipsis;
+            opacity: 0; transform: translateY(6px); animation: zpCap 16s ease-in-out infinite;
+        }
+        .etc-sec .zp-cap-i i{ color: #7DD3A0; font-size: 13px; flex: none; }
+        @keyframes zpCap {
+            0%, 2%    { opacity: 0; transform: translateY(6px); }
+            5%, 22%   { opacity: 1; transform: translateY(0); }
+            25%, 100% { opacity: 0; transform: translateY(-6px); }
+        }
+        .etc-sec .zp-cap-i.c1{ animation-delay: 0s; }
+        .etc-sec .zp-cap-i.c2{ animation-delay: 4s; }
+        .etc-sec .zp-cap-i.c3{ animation-delay: 8s; }
+        .etc-sec .zp-cap-i.c4{ animation-delay: 12s; }
+        @media (max-width: 992px) {
+            .etc-sec .hero-in{ align-items: start; }
+            .etc-sec .zp-stage{ margin-top: 28px; max-width: 620px; margin-inline: auto; }
+            .etc-sec .zp-shot img{ height: auto; object-fit: contain; }
+        }
+        @media (max-width: 560px) { .etc-sec .zp-cap{ height: 42px; } .etc-sec .zp-cap-i{ font-size: 11.5px; } }
+
+        /* ═══════════ REALITY CHECK (problems) ═══════════ */
+        .etc-sec .rc-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 26px; }
+        .etc-sec .rc{
+            position:relative; display:grid; grid-template-columns:44px minmax(0,1fr); gap:15px; align-items:start;
+            background:#FFF; border:1px solid var(--line); border-radius:14px; padding:18px 20px;
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
+        }
+        .etc-sec .rc:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:#A0C0E0; }
+        .etc-sec .rc-ic{ grid-row:1 / span 4; width:44px; height:44px; border-radius:13px; display:grid; place-items:center; font-size:17px; background:#FEF2F2; color:#DC2626; transition: all .4s cubic-bezier(.34,1.56,.64,1); }
+        .etc-sec .rc:hover .rc-ic{ background:linear-gradient(135deg,#3EA900,#236EB4); color:#FFF; transform:rotate(-8deg) scale(1.08); }
+        .etc-sec .rc h3{ grid-column:2; font-size:16px; margin:0 0 5px 0; }
+        .etc-sec .rc p{ grid-column:2; font-size:13.5px; margin:0 0 11px 0; }
+        .etc-sec .rc-meter{ grid-column:2; height:5px; border-radius:5px; background:#F1F5F9; overflow:hidden; }
+        .etc-sec .rc-meter i{ display:block; height:100%; border-radius:5px; background:linear-gradient(90deg,#F59E0B,#DC2626); width:0; transition: width 1.1s cubic-bezier(.16,1,.3,1); }
+        .etc-sec .sec-in .rc-meter i, .etc-sec .is-visible .rc-meter i{ width: var(--w, 70%); }
+        .etc-sec .rc-cap{ grid-column:2; display:flex; justify-content:space-between; font-size:10.5px; font-weight:600; color:#94A3B8; margin-top:6px; letter-spacing:.04em; text-transform:uppercase; }
+        @media (max-width:900px){ .etc-sec .rc-grid{grid-template-columns:1fr} }
+        @media (max-width:560px){
+            .etc-sec .rc{grid-template-columns:38px minmax(0,1fr); gap:12px; padding:15px 16px}
+            .etc-sec .rc-ic{width:38px;height:38px;font-size:15px}
+        }
+
+</style>
+<noscript>
+        <style>
+            .reveal, .reveal-left, .reveal-right, .reveal-scale,
+            .sec-anim > *, .stagger > *, .faq-item, .flow-chip, .pipe b {
+                opacity: 1 !important; transform: none !important;
+            }
+            .faq-item .faq-a { max-height: none !important; opacity: 1 !important; padding: 14px 22px 20px 22px !important; }
+            .rc-meter i { width: var(--w, 70%) !important; }
+            .carousel-track, .tst-track { flex-wrap: wrap; transform: none !important; }
+            .carousel-wrap .feat-card, .carousel-wrap .ind-card-slide, .carousel-wrap .tsc { width: calc(33.333% - 14px) !important; }
+        </style>
+    </noscript>
+<style>
+/* Elementor bridge: the theme wraps each section, so the page shell
+   rules that used to sit on <body> live on .etc-sec instead. */
+.etc-sec{margin:0!important;padding:0!important}
+[id^="etc-"]>.elementor-container,#video>.elementor-container{max-width:none!important;width:100%!important;margin:0!important}
+[id^="etc-"] .elementor-widget-wrap,#video .elementor-widget-wrap{padding:0!important}
+[id^="etc-"] .elementor-widget:not(:last-child),#video .elementor-widget:not(:last-child){margin-bottom:0!important}
+[id^="etc-"] .elementor-widget-html,#video .elementor-widget-html{width:100%}
+.etc-inner>.elementor-container{max-width:1200px!important;margin:0 auto!important;padding:0 clamp(18px,4vw,48px)!important}
+.etc-sec .c-arrow,.etc-sec .dot,.etc-sec .rail-num{min-width:0!important;min-height:0!important;flex:0 0 auto!important}
+.etc-sec .c-arrow{padding:0!important;aspect-ratio:1/1;border-radius:50%!important;place-items:center;line-height:1}
+.etc-sec .dot{padding:0!important;aspect-ratio:1/1;border-radius:50%!important}
+.etc-sec .box>.card{width:100%;grid-column:1/-1}
+.etc-video-intro{padding-bottom:0!important}
+.etc-video-notes{padding:6px 0 0 6px}
+.etc-video-cta{text-align:center;padding:34px 0 8px}
+.etc-video .elementor-wrapper{border-radius:18px;overflow:hidden;box-shadow:0 18px 48px rgba(16,32,56,.16)}
+@media(max-width:767px){.etc-video-notes{padding:22px 0 0}}
+</style>
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   Elite Tech Corp - landing page update
+   1. taller sections   2. hero video frame   3. real partner logos
+   5/6. flat card content   7. white submit   10. scroll reveal
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. SECTION HEIGHT ──────────────────────────────────────────── */
+.etc-sec .sec{ padding-block: clamp(84px, 8vw, 132px); }
+.etc-sec .sec:not(.etc-video-intro):not(.etc-video-notes){
+    min-height: clamp(560px, 74vh, 880px);
+    display: flex; flex-direction: column; justify-content: center;
+}
+.etc-sec .sec > .box{ width: 100%; }
+.etc-sec .final-sec{ padding-block: clamp(84px, 8vw, 132px) clamp(104px, 9vw, 150px); }
+.etc-sec .intro{ margin-bottom: clamp(40px, 3.8vw, 60px); }
+
+/* the video section is stacked fragments - keep it reading as one block */
+.etc-sec .etc-video-intro{ padding-block: clamp(84px, 8vw, 132px) 0 !important; min-height: 0; }
+.etc-sec .etc-video-notes{ padding: 0 0 clamp(84px, 8vw, 132px) 6px; min-height: 0; }
+
+@media (max-width: 992px){
+    .etc-sec .sec:not(.etc-video-intro):not(.etc-video-notes){ min-height: clamp(460px, 62vh, 640px); }
+}
+@media (max-width: 768px){
+    .etc-sec .sec{ padding-block: clamp(58px, 9vw, 86px); }
+    .etc-sec .sec:not(.etc-video-intro):not(.etc-video-notes){ min-height: clamp(400px, 56vh, 560px); }
+    .etc-sec .etc-video-intro{ padding-block: clamp(58px, 9vw, 86px) 0 !important; }
+    .etc-sec .etc-video-notes{ padding: 22px 0 clamp(58px, 9vw, 86px) 0; }
+}
+@media (max-height: 460px) and (orientation: landscape){
+    .etc-sec .sec{ padding-block: 48px; }
+    .etc-sec .sec:not(.etc-video-intro):not(.etc-video-notes){ min-height: 0; display: block; }
+}
+
+/* ── 2. HERO: Elementor video widget in place of the still ──────── */
+#etc-hero .etc-hero-inner{ width: 100%; }
+#etc-hero .etc-hero-inner > .elementor-container{
+    display: grid !important; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(30px, 3.6vw, 58px); align-items: center;
+    position: relative; z-index: 2;
+}
+#etc-hero .etc-hero-inner > .elementor-container > .elementor-column{
+    width: 100% !important; max-width: 100% !important; flex: none !important;
+}
+.etc-sec .hero.etc-hero-inner{ padding-block: clamp(78px, 7.2vw, 124px) clamp(70px, 6.4vw, 112px); }
+.etc-hero-copy-col .hero-copy{ height: 100%; }
+/* frame the player exactly like the screenshot it replaces */
+.etc-hero-video-col{ position: relative; }
+.etc-hero-video-col::before{
+    content: ""; position: absolute; inset: -9% -6%; z-index: 0; pointer-events: none; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(34,109,180,.20), transparent 72%),
+                radial-gradient(closest-side, rgba(8,153,73,.18), transparent 72%);
+    background-position: 20% 18%, 80% 78%; background-size: 62% 62%, 62% 62%; background-repeat: no-repeat;
+    animation: zpAura 11s ease-in-out infinite alternate;
+}
+.etc-hero-video{ position: relative; z-index: 2; width: 100% !important; max-width: 100% !important; }
+.etc-hero-video .elementor-wrapper{
+    border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #0F172A;
+    box-shadow: var(--shadow-lg);
+    animation: zpIn 1s cubic-bezier(.16,1,.3,1) both;
+}
+@media (max-width: 992px){
+    #etc-hero .etc-hero-inner > .elementor-container{ grid-template-columns: minmax(0, 1fr); }
+    .etc-hero-video{ margin-top: 28px; max-width: 620px; margin-inline: auto; }
+}
+
+/* ── 4. third section now carries the product screenshot ────────── */
+.etc-shot-col .zp-shot{ animation: zpIn 1s cubic-bezier(.16,1,.3,1) both; }
+.etc-shot-col .zp-shot img{ height: auto; object-fit: contain; object-position: left top; }
+
+/* ── 3. REAL ZOHO PARTNER LOGOS ─────────────────────────────────── */
+.etc-sec .zc-mark, .etc-sec .zcat-mark{
+    display: inline-block; flex: none; background-repeat: no-repeat;
+    background-position: center center; background-size: contain; vertical-align: -4px;
+}
+.etc-sec .zc-mark{ width: 86px; height: 20px; background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20940%20296%22%20style%3D%22enable-background%3Anew%200%200%20940%20296%3B%22%20xml%3Aspace%3D%22preserve%22%3E%20%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23FFFFFF%3B%7D%20.st1%7Bfill%3A%23226DB4%3B%7D%20.st2%7Bfill%3A%23E42527%3B%7D%20%3C%2Fstyle%3E%20%3Cg%3E%20%3Cg%3E%20%3Cpath%20d%3D%22M461.5%2C224.1c-7.1%2C21.8-27.7%2C33.2-49.9%2C33.2c-37%2C0-57.4-23.5-57.4-59.6c0-33%2C22.9-58.5%2C56.8-58.5%20c21.7%2C0%2C40.7%2C10.4%2C49.4%2C31l-18.4%2C7.8c-4.9-12.6-16.2-21.4-30.1-21.4c-24.3%2C0-34.4%2C20.8-34.4%2C42c0%2C22.1%2C11%2C41%2C34.9%2C41%20c15.1%2C0%2C26.1-9.2%2C31.3-23L461.5%2C224.1z%22%2F%3E%20%3Cpath%20d%3D%22M476.4%2C171.6h20.1v15.8c5.7-11.5%2C14.8-17%2C27.6-17V189c-16.2%2C0-27.6%2C5.3-27.6%2C23.3v43.4h-20.1V171.6z%22%2F%3E%20%3Cpath%20d%3D%22M614%2C237.4c-7%2C14.8-22.1%2C19.9-37.5%2C19.9c-26.5%2C0-43.2-17.7-43.2-43.9c0-24.6%2C17-43.6%2C42.3-43.6%20c27.2%2C0%2C40.4%2C15.9%2C40.4%2C48.3h-62.2c0%2C14.2%2C8.2%2C24.6%2C23.5%2C24.6c9.1%2C0%2C16.6-3.7%2C21-12.2L614%2C237.4z%20M595.9%2C204.9%20c-0.6-12.7-8.3-20.5-20.2-20.5c-12.6%2C0-20%2C8.9-21.7%2C20.5H595.9z%22%2F%3E%20%3Cpath%20d%3D%22M680.7%2C245.4c-6.4%2C8.5-15.7%2C11.8-26.1%2C11.8c-15.8%2C0-28.2-8-28.2-24.5c0-23.3%2C24.6-27%2C44.2-27h9.9v-1.3%20c0-12-2.8-19.6-16.4-19.6c-8.2%2C0-15.7%2C4.2-18.7%2C12l-15.6-6.7c5.6-14.8%2C21.3-20.2%2C36.3-20.2c19.9%2C0%2C34.3%2C9.6%2C34.3%2C30.9v54.9h-19.8%20V245.4z%20M670.4%2C218.1c-9.3%2C0-24%2C1.1-24%2C13.8c0%2C8.1%2C5.9%2C11.1%2C13.4%2C11.1c10.2%2C0%2C20.7-5.3%2C20.7-16.7v-8.2H670.4z%22%2F%3E%20%3Cpath%20d%3D%22M764.2%2C255.1c-4.3%2C1.3-8.8%2C2-13.8%2C2c-16%2C0-25.5-8.3-25.5-25v-45.7h-11.3v-14.8h11.3v-17.3l20.1-8.7v26.1h18.5v14.8h-18.5%20v43.9c0%2C6.6%2C2.8%2C10.7%2C10.2%2C10.7c2.8%2C0%2C6-0.6%2C9-1.6V255.1z%22%2F%3E%20%3Cpath%20d%3D%22M818.1%2C169.8c25.5%2C0%2C45.1%2C17.9%2C45.1%2C43.6c0%2C26.4-20.6%2C43.8-46%2C43.8c-25.6%2C0-46.1-17.7-46.1-43.4%20C771.1%2C187.5%2C792.8%2C169.8%2C818.1%2C169.8z%20M841.6%2C213.6c0-15.5-7.8-28.3-24.3-28.3c-17%2C0-23.7%2C13.5-23.7%2C28.9%20c0%2C14.9%2C7.9%2C27.6%2C24.2%2C27.6C834.5%2C241.8%2C841.6%2C228.3%2C841.6%2C213.6z%22%2F%3E%20%3Cpath%20d%3D%22M877.9%2C171.6H898v15.8c5.7-11.5%2C14.8-17%2C27.6-17V189c-16.2%2C0-27.6%2C5.3-27.6%2C23.3v43.4h-20.1V171.6z%22%2F%3E%20%3C%2Fg%3E%20%3Cg%3E%20%3Cpath%20d%3D%22M360.2%2C104.4l37-53.4h-33.2V40.5h50.6v5.2l-36.1%2C53.4h35v10.5h-53.3V104.4z%22%2F%3E%20%3Cpath%20d%3D%22M446.2%2C58c15.4%2C0%2C27.2%2C10.8%2C27.2%2C26.3c0%2C15.9-12.4%2C26.4-27.7%2C26.4c-15.4%2C0-27.8-10.7-27.8-26.1%20C417.9%2C68.6%2C431%2C58%2C446.2%2C58z%20M460.4%2C84.3c0-9.3-4.7-17.1-14.7-17.1c-10.2%2C0-14.3%2C8.1-14.3%2C17.4c0%2C9%2C4.8%2C16.6%2C14.6%2C16.6%20C456.1%2C101.3%2C460.4%2C93.2%2C460.4%2C84.3z%22%2F%3E%20%3Cpath%20d%3D%22M482.2%2C36.1h12.1v31c3.3-6.3%2C9.9-9.1%2C16.9-9.1c12.1%2C0%2C18.2%2C8.5%2C18.2%2C20v31.7h-12.2V79.2c0-7.3-3.8-11.3-10.8-11.3%20c-7.8%2C0-12.1%2C4.8-12.1%2C12v29.7h-12.1V36.1z%22%2F%3E%20%3Cpath%20d%3D%22M565.6%2C58c15.4%2C0%2C27.2%2C10.8%2C27.2%2C26.3c0%2C15.9-12.4%2C26.4-27.7%2C26.4c-15.4%2C0-27.8-10.7-27.8-26.1%20C537.3%2C68.6%2C550.4%2C58%2C565.6%2C58z%20M579.8%2C84.3c0-9.3-4.7-17.1-14.7-17.1c-10.2%2C0-14.3%2C8.1-14.3%2C17.4c0%2C9%2C4.8%2C16.6%2C14.6%2C16.6%20C575.5%2C101.3%2C579.8%2C93.2%2C579.8%2C84.3z%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fg%3E%20%3Cg%3E%20%3Cg%3E%20%3Cpath%20class%3D%22st1%22%20d%3D%22M156.4%2C287.3C156.4%2C287.3%2C156.4%2C287.3%2C156.4%2C287.3c-9.9%2C0-19.1-3.8-26.1-10.8L8.1%2C154c-3.3-3.3-3.3-8.7%2C0-12%20L130.4%2C19.5c7-7%2C16.2-10.8%2C26.1-10.8l0%2C0c9.8%2C0%2C19.1%2C3.8%2C26.1%2C10.8L226%2C63.1c3.3%2C3.3%2C3.3%2C8.7%2C0%2C12L153.2%2C148l72.8%2C72.9%20c3.3%2C3.3%2C3.3%2C8.7%2C0%2C12l-43.6%2C43.6C175.5%2C283.5%2C166.3%2C287.3%2C156.4%2C287.3z%20M26.1%2C148l116.3%2C116.5c3.7%2C3.7%2C8.7%2C5.8%2C14%2C5.8h0%20c5.3%2C0%2C10.3-2.1%2C14-5.8l37.6-37.6L135.2%2C154c-3.3-3.3-3.3-8.7%2C0-12L208%2C69.1l-37.5-37.6c-3.7-3.8-8.7-5.8-14-5.8%20c-5.3%2C0-10.3%2C2.1-14%2C5.8L26.1%2C148z%22%2F%3E%20%3C%2Fg%3E%20%3Cg%3E%20%3Cpath%20class%3D%22st2%22%20d%3D%22M250%2C205.4c-2.3%2C0-4.4-0.9-6-2.5L195.2%2C154c-3.3-3.3-3.3-8.7%2C0-12L244%2C93.1c1.6-1.6%2C3.8-2.5%2C6-2.5%20c2.3%2C0%2C4.4%2C0.9%2C6%2C2.5l28.8%2C28.9c14.3%2C14.3%2C14.3%2C37.7%2C0%2C52L256%2C202.9C254.4%2C204.5%2C252.3%2C205.4%2C250%2C205.4z%20M213.2%2C148l36.8%2C36.8%20l22.8-22.8c7.7-7.7%2C7.7-20.3%2C0-28L250%2C111.2L213.2%2C148z%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E"); }
+.etc-sec .zcat-mark{ width: 90px; height: 20px; background-image: url("data:image/svg+xml,%3Csvg%20id%3D%22Layer_1%22%20data-name%3D%22Layer%201%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201005.38%20290%22%3E%20%3Cdefs%3E%20%3Cstyle%3E%20.cls-1%20%7B%20fill%3A%20%23e42527%3B%20%7D%20.cls-2%20%7B%20fill%3A%20%23226db4%3B%20%7D%20%3C%2Fstyle%3E%20%3C%2Fdefs%3E%20%3Cg%3E%20%3Cpath%20d%3D%22m424.45%2C118.04c-8.18%2C24.98-31.71%2C38-57.14%2C38-42.41%2C0-65.77-26.86-65.77-68.19%2C0-37.73%2C26.23-67.02%2C65.05-67.02%2C24.89%2C0%2C46.63%2C11.95%2C56.51%2C35.49l-21.02%2C8.89c-5.57-14.46-18.6-24.53-34.41-24.53-27.85%2C0-39.35%2C23.81-39.35%2C48.07s12.58%2C46.9%2C39.98%2C46.9c17.34%2C0%2C29.92-10.51%2C35.85-26.32l20.3%2C8.71Z%22%2F%3E%20%3Cpath%20d%3D%22m497.58%2C142.48c-7.28%2C9.7-17.97%2C13.57-29.83%2C13.57-18.06%2C0-32.25-9.16-32.25-28.03%2C0-26.68%2C28.21-30.91%2C50.58-30.91h11.32v-1.53c0-13.75-3.23-22.46-18.78-22.46-9.34%2C0-17.97%2C4.85-21.38%2C13.75l-17.88-7.73c6.47-16.98%2C24.44-23.18%2C41.6-23.18%2C22.73%2C0%2C39.26%2C10.96%2C39.26%2C35.4v62.89h-22.64v-11.77Zm-11.77-31.27c-10.6%2C0-27.49%2C1.26-27.49%2C15.81%2C0%2C9.25%2C6.74%2C12.67%2C15.36%2C12.67%2C11.68%2C0%2C23.72-6.11%2C23.72-19.14v-9.34h-11.59Z%22%2F%3E%20%3Cpath%20d%3D%22m593.17%2C153.53c-4.94%2C1.44-10.06%2C2.34-15.81%2C2.34-18.33%2C0-29.2-9.52-29.2-28.66v-52.29h-12.94v-16.89h12.94v-19.86l23-9.97v29.83h21.2v16.89h-21.2v50.22c0%2C7.55%2C3.23%2C12.22%2C11.68%2C12.22%2C3.23%2C0%2C6.83-.72%2C10.33-1.89v18.06Z%22%2F%3E%20%3Cpath%20d%3D%22m667.92%2C142.48c-7.28%2C9.7-17.97%2C13.57-29.83%2C13.57-18.06%2C0-32.25-9.16-32.25-28.03%2C0-26.68%2C28.21-30.91%2C50.58-30.91h11.32v-1.53c0-13.75-3.23-22.46-18.78-22.46-9.34%2C0-17.97%2C4.85-21.38%2C13.75l-17.88-7.73c6.47-16.98%2C24.44-23.18%2C41.6-23.18%2C22.73%2C0%2C39.26%2C10.96%2C39.26%2C35.4v62.89h-22.64v-11.77Zm-11.77-31.27c-10.6%2C0-27.49%2C1.26-27.49%2C15.81%2C0%2C9.25%2C6.74%2C12.67%2C15.36%2C12.67%2C11.68%2C0%2C23.72-6.11%2C23.72-19.14v-9.34h-11.59Z%22%2F%3E%20%3Cpath%20d%3D%22m715.45%2C19.04l23-9.97v145.19h-23V19.04Z%22%2F%3E%20%3Cpath%20d%3D%22m792.27%2C144.46l-37.73-86.43h24.62l25.25%2C61.45%2C23.54-61.45h22.37l-52.92%2C129.2h-22.55l17.43-42.77Z%22%2F%3E%20%3Cpath%20d%3D%22m875.82%2C125.59c3.59%2C9.43%2C13.39%2C13.93%2C23.81%2C13.93%2C7.46%2C0%2C16.71-2.34%2C16.71-11.41%2C0-9.61-10.42-11.86-22.28-14.38-15.45-3.23-32.79-7.01-32.79-28.57%2C0-19.77%2C18.42-29.2%2C35.85-29.2%2C15.27%2C0%2C32.7%2C5.75%2C38.99%2C20.93l-17.07%2C7.37c-3.77-8.54-13.21-11.77-21.11-11.77s-15%2C3.05-15%2C10.87c0%2C8.8%2C9.43%2C10.69%2C21.02%2C12.94%2C15.72%2C3.05%2C34.41%2C6.65%2C34.41%2C29.11s-18.96%2C30.64-38.99%2C30.64c-16.98%2C0-35.22-5.75-41.24-23l17.7-7.46Z%22%2F%3E%20%3Cpath%20d%3D%22m1005.38%2C153.53c-4.94%2C1.44-10.06%2C2.34-15.81%2C2.34-18.33%2C0-29.2-9.52-29.2-28.66v-52.29h-12.94v-16.89h12.94v-19.86l23-9.97v29.83h21.2v16.89h-21.2v50.22c0%2C7.55%2C3.23%2C12.22%2C11.68%2C12.22%2C3.23%2C0%2C6.83-.72%2C10.33-1.89v18.06Z%22%2F%3E%20%3C%2Fg%3E%20%3Cg%3E%20%3Cpath%20d%3D%22m308.3%2C207.75h5.81v22.73c.66-1.03%2C1.48-1.96%2C2.46-2.8.98-.84%2C2.04-1.56%2C3.2-2.15%2C1.15-.59%2C2.35-1.05%2C3.61-1.37%2C1.25-.32%2C2.48-.48%2C3.69-.48%2C2.76%2C0%2C5.18.5%2C7.26%2C1.5%2C2.09%2C1%2C3.83%2C2.36%2C5.25%2C4.07%2C1.41%2C1.71%2C2.48%2C3.7%2C3.2%2C5.96.72%2C2.27%2C1.08%2C4.66%2C1.08%2C7.16s-.37%2C4.99-1.11%2C7.31-1.82%2C4.36-3.25%2C6.12c-1.42%2C1.75-3.17%2C3.15-5.25%2C4.19-2.07%2C1.04-4.44%2C1.55-7.11%2C1.55-1.3%2C0-2.58-.14-3.84-.41-1.27-.27-2.46-.68-3.59-1.23-1.13-.55-2.17-1.24-3.13-2.08-.96-.84-1.78-1.82-2.46-2.94v6.05h-5.81v-53.18Zm18.12%2C48.95c2.19%2C0%2C4.02-.39%2C5.49-1.18%2C1.47-.79%2C2.64-1.83%2C3.52-3.14.88-1.31%2C1.5-2.83%2C1.86-4.56.36-1.73.55-3.54.55-5.43%2C0-1.75-.23-3.46-.68-5.13-.46-1.66-1.15-3.14-2.08-4.43-.93-1.29-2.12-2.32-3.55-3.11-1.44-.79-3.13-1.18-5.09-1.18-2.14%2C0-4%2C.38-5.57%2C1.14-1.57.76-2.87%2C1.79-3.9%2C3.09s-1.79%2C2.81-2.29%2C4.53c-.5%2C1.72-.75%2C3.54-.75%2C5.45s.27%2C3.86.8%2C5.57%2C1.33%2C3.18%2C2.38%2C4.43c1.05%2C1.24%2C2.35%2C2.21%2C3.91%2C2.9%2C1.56.7%2C3.37%2C1.04%2C5.42%2C1.04Z%22%2F%3E%20%3Cpath%20d%3D%22m361.66%2C257.14l-14.15-32.81h6.22l11.01%2C26.25%2C10.15-26.25h5.95l-20.23%2C49.36h-5.88l6.94-16.54Z%22%2F%3E%20%3Cpath%20d%3D%22m398.57%2C258.4l29.19-42.55h-26.66v-4.96h34.25v2.5l-28.44%2C42.35h27.99v5.2h-36.33v-2.53Z%22%2F%3E%20%3Cpath%20d%3D%22m458.69%2C261.54c-2.73%2C0-5.21-.49-7.43-1.47-2.22-.98-4.11-2.32-5.67-4.02-1.56-1.7-2.76-3.69-3.61-5.98-.84-2.29-1.26-4.75-1.26-7.37s.45-5.23%2C1.35-7.55%2C2.15-4.33%2C3.76-6.03c1.61-1.7%2C3.54-3.03%2C5.79-4s4.73-1.45%2C7.42-1.45%2C5.22.49%2C7.45%2C1.47c2.23.98%2C4.14%2C2.32%2C5.71%2C4.03s2.79%2C3.71%2C3.64%2C6c.86%2C2.29%2C1.28%2C4.75%2C1.28%2C7.37s-.45%2C5.2-1.35%2C7.52-2.17%2C4.34-3.79%2C6.03c-1.63%2C1.7-3.57%2C3.03-5.83%2C4-2.26.97-4.74%2C1.45-7.45%2C1.45Zm.1-4.85c2.1%2C0%2C3.92-.39%2C5.47-1.16%2C1.55-.77%2C2.83-1.81%2C3.84-3.11s1.77-2.8%2C2.26-4.5c.49-1.7.74-3.47.74-5.31s-.26-3.72-.77-5.42c-.51-1.7-1.29-3.19-2.32-4.48-1.04-1.29-2.33-2.31-3.88-3.06-1.55-.75-3.35-1.13-5.4-1.13s-3.87.38-5.38%2C1.14c-1.52.76-2.76%2C1.79-3.74%2C3.09-.98%2C1.3-1.7%2C2.8-2.17%2C4.49-.47%2C1.7-.7%2C3.49-.7%2C5.38s.25%2C3.83.75%2C5.54c.5%2C1.71%2C1.26%2C3.2%2C2.27%2C4.46%2C1.01%2C1.27%2C2.27%2C2.26%2C3.78%2C2.97%2C1.5.72%2C3.26%2C1.08%2C5.26%2C1.08Z%22%2F%3E%20%3Cpath%20d%3D%22m485.9%2C207.75h5.81v22.39c1.16-2.26%2C2.77-3.9%2C4.82-4.92s4.33-1.54%2C6.84-1.54c2.26%2C0%2C4.24.38%2C5.95%2C1.14%2C1.71.76%2C3.13%2C1.82%2C4.27%2C3.18%2C1.14%2C1.36%2C2%2C2.96%2C2.58%2C4.8.58%2C1.85.87%2C3.85.87%2C6.02v22.11h-5.81v-22.52c0-3.17-.78-5.57-2.32-7.21-1.55-1.64-3.84-2.46-6.87-2.46-3.26%2C0-5.79.89-7.61%2C2.68-1.81%2C1.79-2.72%2C4.23-2.72%2C7.33v22.18h-5.81v-53.18Z%22%2F%3E%20%3Cpath%20d%3D%22m543.46%2C261.54c-2.73%2C0-5.21-.49-7.43-1.47-2.22-.98-4.11-2.32-5.67-4.02-1.56-1.7-2.76-3.69-3.61-5.98-.84-2.29-1.26-4.75-1.26-7.37s.45-5.23%2C1.35-7.55%2C2.15-4.33%2C3.76-6.03c1.61-1.7%2C3.54-3.03%2C5.79-4s4.73-1.45%2C7.42-1.45%2C5.22.49%2C7.45%2C1.47c2.23.98%2C4.14%2C2.32%2C5.71%2C4.03s2.79%2C3.71%2C3.64%2C6c.86%2C2.29%2C1.28%2C4.75%2C1.28%2C7.37s-.45%2C5.2-1.35%2C7.52-2.17%2C4.34-3.79%2C6.03c-1.63%2C1.7-3.57%2C3.03-5.83%2C4-2.26.97-4.74%2C1.45-7.45%2C1.45Zm.1-4.85c2.1%2C0%2C3.92-.39%2C5.47-1.16%2C1.55-.77%2C2.83-1.81%2C3.84-3.11s1.77-2.8%2C2.26-4.5c.49-1.7.74-3.47.74-5.31s-.26-3.72-.77-5.42c-.51-1.7-1.29-3.19-2.32-4.48-1.04-1.29-2.33-2.31-3.88-3.06-1.55-.75-3.35-1.13-5.4-1.13s-3.87.38-5.38%2C1.14c-1.52.76-2.76%2C1.79-3.74%2C3.09-.98%2C1.3-1.7%2C2.8-2.17%2C4.49-.47%2C1.7-.7%2C3.49-.7%2C5.38s.25%2C3.83.75%2C5.54c.5%2C1.71%2C1.26%2C3.2%2C2.27%2C4.46%2C1.01%2C1.27%2C2.27%2C2.26%2C3.78%2C2.97%2C1.5.72%2C3.26%2C1.08%2C5.26%2C1.08Z%22%2F%3E%20%3C%2Fg%3E%20%3Cg%3E%20%3Cpath%20class%3D%22cls-2%22%20d%3D%22m148.64%2C290L12.75%2C211.54c-7.86-4.54-12.75-13-12.75-22.07v-26.27c0-8.11%2C3.91-15.81%2C10.46-20.59l73.45-53.62%2C55.52%2C32.05-69.89%2C51.03%2C79.1%2C45.67v72.26h0Zm-63.64-180.76l-64.51%2C47.1c-2.18%2C1.59-3.49%2C4.16-3.49%2C6.86v26.27c0%2C3.02%2C1.63%2C5.85%2C4.25%2C7.36l110.4%2C63.74v-33.02l-78.14-45.11c-3.33-1.92-5.44-5.36-5.65-9.2-.21-3.84%2C1.53-7.49%2C4.63-9.76l55.84-40.76-23.33-13.47Z%22%2F%3E%20%3Cpath%20class%3D%22cls-1%22%20d%3D%22m161.49%2C202.11l-55.52-32.05%2C69.85-50.99-81.09-46.8V0l136.17%2C78.61c7.86%2C4.54%2C12.75%2C13%2C12.75%2C22.07v28.49c0%2C8.11-3.91%2C15.81-10.46%2C20.59l-71.7%2C52.34Zm-24.42-33.72l23.33%2C13.47%2C62.76-45.82c2.18-1.59%2C3.49-4.16%2C3.49-6.86v-28.49c0-3.02-1.63-5.85-4.25-7.36L111.73%2C29.43v33.02l80.12%2C46.24h0c3.33%2C1.92%2C5.44%2C5.36%2C5.65%2C9.2.21%2C3.84-1.52%2C7.49-4.63%2C9.76l-55.8%2C40.74Zm46.29-44.98h0Z%22%2F%3E%20%3C%2Fsvg%3E"); }
+.etc-sec .partner-strip{
+    display: flex; justify-content: center; align-items: center;
+    gap: clamp(14px, 2.2vw, 30px); flex-wrap: wrap; margin-top: 22px;
+}
+.etc-sec .partner-badge{
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 600; color: #374151;
+    background: #FFFFFF; border: 1px solid var(--line); border-radius: 999px;
+    padding: 9px 18px; box-shadow: 0 2px 10px -6px rgba(16,32,56,.30);
+}
+@media (max-width: 560px){
+    .etc-sec .partner-badge{ font-size: 12.5px; padding: 8px 14px; gap: 8px; }
+    .etc-sec .zc-mark{ width: 74px; }
+    .etc-sec .zcat-mark{ width: 78px; }
+}
+
+/* ── 5. REAL WORLD SCENARIOS: gradient chips replaced ───────────── */
+.etc-sec .scenario-detail{
+    margin-top: auto; padding: 16px 20px 18px 20px;
+    background: var(--ground); border-top: 1px solid var(--line2);
+}
+.etc-sec .scenario-how{ font-size: 13px; line-height: 1.62; color: var(--ink3); margin: 0; }
+.etc-sec .scenario-how strong{ color: var(--ink); font-weight: 700; }
+.etc-sec .scenario-keys{ list-style: none; margin: 11px 0 0 0; padding: 0; display: grid; gap: 7px; }
+.etc-sec .scenario-keys li{ display: flex; gap: 9px; font-size: 12.5px; line-height: 1.5; color: var(--ink3); }
+.etc-sec .scenario-keys i{ color: var(--green-d); font-size: 11px; margin-top: 4px; flex: none; }
+.etc-sec .kw-row{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 13px; }
+.etc-sec .kw-row span{
+    font-size: 11px; font-weight: 600; color: #475569; background: #FFFFFF;
+    border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px;
+}
+@media (max-width: 430px){ .etc-sec .scenario-detail{ padding: 13px 16px 15px 16px; } }
+
+/* ── 6. INDUSTRY CARDS ──────────────────────────────────────────── */
+.etc-sec .ind-how{ font-size: 13.2px; line-height: 1.62; color: var(--ink3); margin: 8px 0 0 0; }
+.etc-sec .ind-how strong{ color: var(--ink); font-weight: 700; }
+.etc-sec .ind-flow{ font-size: 11.8px; font-weight: 600; color: var(--blue); margin: 10px 0 0 0; line-height: 1.55; }
+.etc-sec .ind-benefit{ font-size: 12.5px; font-weight: 600; color: var(--green-d); margin: 9px 0 0 0; line-height: 1.5; }
+.etc-sec .ind-body .kw-row span{ background: var(--ground); }
+/* the slides are flex items with only a min-width, so the longer copy below
+   would let one card outgrow the others - pin every slide to one track width */
+.etc-sec .carousel-track > .ind-card-slide{
+    flex: 0 0 calc(33.333% - 14px); max-width: calc(33.333% - 14px);
+}
+@media (max-width: 991px){
+    .etc-sec .carousel-track > .ind-card-slide{ flex-basis: calc(50% - 10px); max-width: calc(50% - 10px); }
+}
+@media (max-width: 640px){
+    .etc-sec .carousel-track > .ind-card-slide{ flex-basis: 100%; max-width: 100%; }
+}
+
+/* ── 7. CONTACT: submit button white instead of blue ────────────── */
+.etc-sec .ct-form-body input[type="submit"],
+.etc-sec .ct-form-body button[type="submit"],
+.etc-sec .ct-form-body button,
+.etc-sec .ct-form-body .wpcf7-submit,
+.etc-sec .ct-form-body .wpforms-submit,
+.etc-sec .ct-form-body .elementor-button,
+.etc-sec .ct-form-body .submit-btn{
+    background: #FFFFFF !important;
+    background-image: none !important;
+    background-color: #FFFFFF !important;
+    color: #1F2937 !important;
+    border: 1.5px solid #D5DBE3 !important;
+    box-shadow: 0 6px 18px -12px rgba(16,32,56,.55) !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    text-shadow: none !important;
+    transition: border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease) !important;
+}
+.etc-sec .ct-form-body input[type="submit"]:hover,
+.etc-sec .ct-form-body button[type="submit"]:hover,
+.etc-sec .ct-form-body button:hover,
+.etc-sec .ct-form-body .wpcf7-submit:hover,
+.etc-sec .ct-form-body .wpforms-submit:hover,
+.etc-sec .ct-form-body .elementor-button:hover,
+.etc-sec .ct-form-body .submit-btn:hover{
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+    border-color: #94A3B8 !important;
+    transform: translateY(-1px);
+}
+
+/* ── 10. SCROLL REVEAL: every section, and every eyebrow label ──── */
+.etc-sec .etc-sec-rise{
+    opacity: 0; transform: translateY(36px);
+    transition: opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1);
+}
+.etc-sec .etc-sec-rise.is-visible{ opacity: 1; transform: none; }
+.etc-sec .etc-label-rise{
+    opacity: 0; transform: translateY(-12px);
+    transition: opacity .6s cubic-bezier(.16,1,.3,1) .12s, transform .6s cubic-bezier(.16,1,.3,1) .12s;
+}
+.etc-sec .etc-label-rise.is-visible{ opacity: 1; transform: none; }
+.etc-sec .etc-item-rise{
+    opacity: 0; transform: translateY(18px);
+    transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+}
+.etc-sec .etc-item-rise.is-visible{ opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce){
+    .etc-sec .etc-sec-rise, .etc-sec .etc-label-rise, .etc-sec .etc-item-rise{
+        opacity: 1 !important; transform: none !important; transition: none !important;
+    }
+}
+</style>
+
+<style>
+/* ═══════════ Elite Tech Corp - round 3 ═══════════
+   A. industry cards end flush   C. hero background   D. hero height 780 */
+
+/* ── A. INDUSTRY CARDS: no dead space under short copy ──────────── */
+.etc-sec .ind-card-slide{ display: flex; flex-direction: column; }
+.etc-sec .ind-card-slide .ind-img{ flex: none; }
+.etc-sec .ind-body{ display: flex; flex-direction: column; flex: 1 1 auto; }
+/* the keyword chips sit on the card foot, so every card ends on the same line */
+.etc-sec .ind-body .kw-row{ margin-top: auto; padding-top: 14px; }
+
+/* ── C. HERO BACKGROUND: light again, one shade down from the original ── */
+.etc-sec .hero{ background: #E9EDF3; }
+.etc-sec .hero-copy::before{
+    background: radial-gradient(78% 74% at 46% 48%,
+        rgba(233, 237, 243, 0.99) 0%,
+        rgba(233, 237, 243, 0.96) 55%,
+        rgba(233, 237, 243, 0.50) 80%,
+        rgba(233, 237, 243, 0) 100%);
+}
+
+/* ── D. HERO HEIGHT ─────────────────────────────────────────────── */
+.etc-sec .hero.etc-hero-inner{
+    min-height: 780px;
+    display: flex; flex-direction: column; justify-content: center;
+}
+#etc-hero .etc-hero-inner > .elementor-container{ width: 100%; }
+/* The copy column must size to its own content. A height:100% here pins it to
+   the column box, and because .etc-sec sets overflow-x:hidden (which forces
+   overflow-y to auto) the longer paragraph gets clipped behind a scrollbar. */
+.etc-hero-copy-col .hero-copy{ height: auto; }
+.etc-hero-copy-col > .elementor-widget-wrap > .elementor-widget-html,
+.etc-hero-copy-col .etc-sec{ overflow: visible; }
+@media (max-width: 992px){
+    .etc-sec .hero.etc-hero-inner{ min-height: 0; }
+}
+</style>
+
+<style>
+/* ═══════════ Elite Tech Corp - round 4: hero content panel ═══════════ */
+
+/* the patterned light background stays on the section itself */
+.etc-sec .hero.etc-hero-inner{ overflow: hidden; }
+
+/* white panel for the copy, replacing the oversized radial scrim */
+#etc-hero .hero-copy{
+    background: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, .06);
+    border-radius: 20px;
+    padding: clamp(24px, 2.4vw, 34px);
+    box-shadow: 0 18px 50px -28px rgba(16, 32, 56, .28);
+    height: auto;
+}
+/* the panel is narrower than the old full-width copy column, so the partner
+   strip has to be allowed to wrap instead of running under the panel edge */
+#etc-hero .trust{ flex-wrap: wrap; white-space: normal; row-gap: 8px; }
+#etc-hero .trust > span{ white-space: nowrap; }
+/* the scrim is what overflowed - remove it outright */
+#etc-hero .hero-copy::before{ content: none !important; display: none !important; }
+
+/* nothing inside the hero may scroll (the video frame keeps its own clipping) */
+#etc-hero .elementor-column,
+#etc-hero .elementor-widget-wrap,
+#etc-hero .elementor-widget,
+#etc-hero .elementor-widget-container,
+#etc-hero .etc-sec,
+#etc-hero .hero-copy{
+    overflow: visible !important;
+}
+#etc-hero .etc-hero-video .elementor-wrapper{ overflow: hidden !important; }
+/* and if anything still manages to scroll, do not paint a bar for it */
+#etc-hero .etc-sec,
+#etc-hero .hero-copy{ scrollbar-width: none; -ms-overflow-style: none; }
+#etc-hero .etc-sec::-webkit-scrollbar,
+#etc-hero .hero-copy::-webkit-scrollbar{ width: 0 !important; height: 0 !important; display: none !important; }
+
+@media (max-width: 992px){
+    #etc-hero .hero-copy{ padding: clamp(20px, 4.5vw, 28px); border-radius: 16px; }
+}
+</style>
+
+<style>
+/* ═══════════ Elite Tech Corp - round 6: hero background + gradient submit ═══════════ */
+
+/* ── hero background, painted on the outer section ─────────────── */
+#etc-hero,
+body #etc-hero.elementor-section{
+    background-color: #E9EDF3 !important;
+    background-image:
+        radial-gradient(circle at 10% 8%, rgba(35, 110, 180, 0.08), transparent 50%),
+        radial-gradient(circle at 90% 16%, rgba(62, 169, 0, 0.08), transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 420' width='420' height='420'%3E%3Cg fill='none' stroke='%23334155' stroke-opacity='.46' stroke-width='1.85' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='translate(24, 20)'%3E%3Cpath d='M0 0h40v44l-5-4-5 4-5-4-5 4-5-4-5 4-5-4-5 4V0z'/%3E%3Cpath d='M8 12h24M8 20h24M8 28h14'/%3E%3C/g%3E%3Cg transform='translate(140, 26)'%3E%3Ccircle cx='18' cy='18' r='16'/%3E%3Cpath d='M11 11h14M11 16h14M11 11v13M15 16a4.5 4.5 0 000-5M15 16l7 8'/%3E%3C/g%3E%3Cg transform='translate(240, 22) rotate(-8)'%3E%3Crect x='0' y='0' width='50' height='32' rx='5'/%3E%3Cpath d='M0 9h50M8 21h12M26 21h8'/%3E%3C/g%3E%3Cg transform='translate(350, 20)'%3E%3Cpath d='M14 0a14 14 0 00-14 14c0 11 14 22 14 22s14-11 14-22a14 14 0 00-14-14zm0 18a4 4 0 110-8 4 4 0 010 8z'/%3E%3C/g%3E%3Cg transform='translate(28, 126)'%3E%3Cpath d='M0 36h36M6 36V22M16 36V10M26 36V26'/%3E%3C/g%3E%3Cg transform='translate(144, 122)'%3E%3Cpath d='M0 0h26l12 12v32H0z'/%3E%3Cpath d='M26 0v12h12M8 16h22M8 24h22M8 32h14'/%3E%3C/g%3E%3Cg transform='translate(260, 126) rotate(12)'%3E%3Cpath d='M0 14l30-14-14 30-4-10-12-6z'/%3E%3Cpath d='M12 16l18-16'/%3E%3C/g%3E%3Cg transform='translate(360, 130)'%3E%3Ccircle cx='18' cy='18' r='16'/%3E%3Cpath d='M11 11h14M11 16h14M11 11v13M15 16a4.5 4.5 0 000-5M15 16l7 8'/%3E%3C/g%3E%3Cg transform='translate(20, 232) rotate(6)'%3E%3Crect x='0' y='0' width='50' height='32' rx='5'/%3E%3Cpath d='M0 9h50M8 21h12M26 21h8'/%3E%3C/g%3E%3Cg transform='translate(136, 226)'%3E%3Cpath d='M0 0h40v44l-5-4-5 4-5-4-5 4-5-4-5 4-5-4-5 4V0z'/%3E%3Cpath d='M8 12h24M8 20h24M8 28h14'/%3E%3C/g%3E%3Cg transform='translate(256, 236)'%3E%3Cpath d='M0 36h36M6 36V18M16 36V8M26 36V24'/%3E%3C/g%3E%3Cg transform='translate(352, 228)'%3E%3Cpath d='M0 0h26l12 12v32H0z'/%3E%3Cpath d='M26 0v12h12M8 16h22M8 24h22M8 32h14'/%3E%3C/g%3E%3Cg transform='translate(26, 334)'%3E%3Cpath d='M14 0a14 14 0 00-14 14c0 11 14 22 14 22s14-11 14-22a14 14 0 00-14-14zm0 18a4 4 0 110-8 4 4 0 010 8z'/%3E%3C/g%3E%3Cg transform='translate(142, 336) rotate(-10)'%3E%3Cpath d='M0 14l30-14-14 30-4-10-12-6z'/%3E%3Cpath d='M12 16l18-16'/%3E%3C/g%3E%3Cg transform='translate(254, 332)'%3E%3Ccircle cx='18' cy='18' r='16'/%3E%3Cpath d='M11 11h14M11 16h14M11 11v13M15 16a4.5 4.5 0 000-5M15 16l7 8'/%3E%3C/g%3E%3Cg transform='translate(350, 330) rotate(-6)'%3E%3Crect x='0' y='0' width='50' height='32' rx='5'/%3E%3Cpath d='M0 9h50M8 21h12M26 21h8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat, no-repeat, repeat !important;
+    background-size: 100% 100%, 100% 100%, 360px 360px !important;
+    background-position: 0 0, 0 0, 0 0 !important;
+}
+/* nothing between the section and the white copy panel may paint over it */
+#etc-hero > .elementor-container,
+#etc-hero .elementor-column,
+#etc-hero .elementor-widget-wrap,
+#etc-hero .elementor-widget,
+#etc-hero .elementor-widget-container,
+#etc-hero .elementor-inner-section,
+#etc-hero .elementor-inner-section > .elementor-container,
+#etc-hero .elementor-background-overlay,
+#etc-hero .etc-sec,
+#etc-hero .hero{
+    background: transparent !important;
+}
+/* the old pseudo-element layers are replaced by the section background above */
+#etc-hero .hero::before,
+#etc-hero .hero::after{ content: none !important; display: none !important; }
+
+/* ── contact form submit: same gradient as the hero CTA ─────────── */
+.etc-sec .ct-form-body input[type="submit"],
+.etc-sec .ct-form-body button[type="submit"],
+.etc-sec .ct-form-body button,
+.etc-sec .ct-form-body .wpcf7-submit,
+.etc-sec .ct-form-body .wpforms-submit,
+.etc-sec .ct-form-body .elementor-button,
+.etc-sec .ct-form-body .submit-btn{
+    background: linear-gradient(90deg, #236EB4 0%, #3EA900 100%) !important;
+    background-color: #2E8C5A !important;
+    background-image: linear-gradient(90deg, #236EB4 0%, #3EA900 100%) !important;
+    color: #FFFFFF !important;
+    border: 1px solid #008236 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 8px 20px -10px rgba(35, 110, 180, .6) !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    cursor: pointer;
+    transition: transform .22s ease, box-shadow .22s ease !important;
+}
+.etc-sec .ct-form-body input[type="submit"]:hover,
+.etc-sec .ct-form-body button[type="submit"]:hover,
+.etc-sec .ct-form-body button:hover,
+.etc-sec .ct-form-body .wpcf7-submit:hover,
+.etc-sec .ct-form-body .wpforms-submit:hover,
+.etc-sec .ct-form-body .elementor-button:hover,
+.etc-sec .ct-form-body .submit-btn:hover,
+.etc-sec .ct-form-body input[type="submit"]:focus-visible,
+.etc-sec .ct-form-body button:focus-visible{
+    background-image: linear-gradient(90deg, #236EB4 0%, #3EA900 100%) !important;
+    color: #FFFFFF !important;
+    border-color: #008236 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -12px rgba(35, 110, 180, .7) !important;
+}
+</style>
+
+<style>
+/* ═══════════ Elite Tech Corp - round 7: boxed hero with a column gap ═══════════ */
+#etc-hero .elementor-inner-section{width:100%}
+#etc-hero .elementor-inner-section > .elementor-container{
+    display:flex!important; flex-wrap:nowrap!important; align-items:center!important;
+    gap:0!important; max-width:1200px!important; width:100%!important;
+    margin:0 auto!important; padding:0 24px!important; box-sizing:border-box;
+}
+#etc-hero .elementor-inner-section > .elementor-container > .elementor-column:first-child{
+    width:52%!important; max-width:52%!important; flex:0 0 52%!important;
+}
+#etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child{
+    width:48%!important; max-width:48%!important; flex:0 0 48%!important;
+}
+#etc-hero .elementor-inner-section > .elementor-container > .elementor-column:first-child > .elementor-widget-wrap{
+    padding:0 28px 0 0!important;
+}
+#etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child > .elementor-widget-wrap{
+    padding:0 0 0 28px!important;
+}
+@media (max-width:992px){
+    #etc-hero .elementor-inner-section > .elementor-container{ flex-wrap:wrap!important; padding:0 18px!important; }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:first-child,
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child{
+        width:100%!important; max-width:100%!important; flex:0 0 100%!important;
+    }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:first-child > .elementor-widget-wrap{ padding:0!important; }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child > .elementor-widget-wrap{ padding:28px 0 0 0!important; }
+}
+</style>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   ROUND 10 - YOUTUBE VIDEO FIX (hero, right column)
+   Rounds 8 + 9 (stretch the video to the card height) and the
+   height-sync <script> have been REMOVED from this file. That script
+   wrote an inline "height: Npx !important" which no stylesheet can beat.
+   Result: a true 16:9, rounded, vertically centred video like the
+   preschool-franchise reference. Nothing else on the page is changed.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* right column: vertically centred, natural height (never stretched) */
+@media (min-width:993px){
+    #etc-hero .elementor-inner-section > .elementor-container{ align-items:center!important; }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column{ align-self:center!important; }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child > .elementor-widget-wrap{
+        display:block!important; height:auto!important; align-content:center!important;
+    }
+}
+
+/* the video widget and its wrappers keep their natural height */
+#etc-hero .elementor-widget-video,
+#etc-hero .elementor-widget-video > .elementor-widget-container{
+    display:block!important; flex:none!important; width:100%!important; max-width:100%!important; height:auto!important; margin:0!important;
+}
+
+/* the frame: always 16:9, rounded, light border, soft shadow */
+#etc-hero .elementor-widget-video .elementor-wrapper{
+    position:relative!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+    padding-bottom:0!important;
+    border-radius:22px!important;
+    border:2px solid rgba(255,255,255,.85)!important;
+    background:#0F172A!important;
+    overflow:hidden!important;
+    box-shadow:0 26px 60px -26px rgba(3,7,18,.55)!important;
+    animation:none!important;
+}
+#etc-hero .elementor-widget-video .elementor-wrapper iframe,
+#etc-hero .elementor-widget-video .elementor-wrapper video,
+#etc-hero .elementor-widget-video .elementor-wrapper .elementor-video,
+#etc-hero .elementor-widget-video .elementor-custom-embed-image-overlay{
+    position:absolute!important; inset:0!important;
+    width:100%!important; height:100%!important; max-height:none!important;
+    border:0!important; border-radius:inherit;
+    object-fit:cover;
+}
+
+/* the glow behind the old stretched player is not in the reference */
+.etc-hero-video-col::before{ display:none!important; }
+
+/* tablet / phone: stacked, video under the card */
+@media (max-width:992px){
+    #etc-hero .elementor-widget-video{ max-width:620px!important; margin:0 auto!important; }
+    #etc-hero .elementor-widget-video .elementor-wrapper{ border-radius:18px!important; }
+}
+</style>
+<script>
+/* Safety net: if an old copy of the height-sync script is still cached or pasted
+   somewhere else on the page, strip the inline height it leaves on the video. */
+(function () {
+    function clear() {
+        var w = document.querySelector('#etc-hero .elementor-widget-video .elementor-wrapper');
+        if (!w) return;
+        w.style.removeProperty('height');
+        w.classList.remove('etc-synced');
+    }
+    clear();
+    window.addEventListener('load', clear);
+    window.addEventListener('resize', clear);
+    [400, 900, 1500, 2500].forEach(function (t) { setTimeout(clear, t); });
+})();
+</script>
