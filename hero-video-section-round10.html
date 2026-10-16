@@ -1,0 +1,98 @@
+<style>
+/* ═══════════ Elite Tech Corp - round 10: hero matched to the preschool-franchise layout ═══════════
+   Screenshot 2 vs. screenshot 1:
+   1. photo background with a soft white wash (no icon pattern)
+   2. frosted, rounder content card
+   3. video is a true 16:9 frame, vertically centred - NOT stretched to the card height
+   4. video frame: rounded 22px corners + light border + soft shadow
+   Set your photo below. */
+:root{
+    --etc-hero-photo: url("https://www.elitetechcorp.com/wp-content/uploads/YOUR-CLASSROOM-PHOTO.jpg");
+}
+
+/* ── 1. background ─────────────────────────────────────────────── */
+#etc-hero,
+body #etc-hero.elementor-section{
+    background-color: #D9DEE5 !important;
+    background-image:
+        linear-gradient(rgba(255,255,255,.52), rgba(255,255,255,.52)),
+        var(--etc-hero-photo) !important;
+    background-repeat: no-repeat, no-repeat !important;
+    background-size: 100% 100%, cover !important;
+    background-position: 0 0, center center !important;
+}
+.etc-sec .hero.etc-hero-inner{ min-height: 704px; }
+
+/* ── 2. content card ───────────────────────────────────────────── */
+#etc-hero .hero-copy{
+    background: rgba(255,255,255,.94);
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 28px;
+    padding: clamp(28px, 2.6vw, 40px);
+    box-shadow: 0 24px 60px -30px rgba(16,32,56,.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* ── 3. columns: card left, 16:9 video right, centred together ─── */
+@media (min-width:993px){
+    #etc-hero .elementor-inner-section > .elementor-container{
+        align-items:center!important; max-width:1160px!important;
+    }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:first-child{
+        width:48%!important; max-width:48%!important; flex:0 0 48%!important;
+    }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child{
+        width:52%!important; max-width:52%!important; flex:0 0 52%!important; align-self:center!important;
+    }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:first-child > .elementor-widget-wrap{ padding:0 36px 0 0!important; }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child > .elementor-widget-wrap{
+        padding:0 0 0 36px!important; display:block!important; align-content:center!important;
+    }
+    /* undo round 8/9 stretching */
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child .elementor-widget-video,
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child .elementor-widget-video > .elementor-widget-container{
+        display:block!important; flex:none!important; height:auto!important; width:100%!important; max-width:100%!important;
+    }
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child .elementor-wrapper,
+    #etc-hero .elementor-inner-section > .elementor-container > .elementor-column:last-child .elementor-wrapper.etc-synced{
+        flex:none!important; height:auto!important; min-height:0!important;
+        aspect-ratio:16/9!important; padding-bottom:0!important; position:relative!important;
+    }
+}
+
+/* ── 4. video frame ────────────────────────────────────────────── */
+#etc-hero .etc-hero-video .elementor-wrapper,
+#etc-hero .elementor-widget-video .elementor-wrapper{
+    border-radius: 22px !important;
+    border: 2px solid rgba(255,255,255,.85) !important;
+    background: #0F172A !important;
+    overflow: hidden !important;
+    box-shadow: 0 26px 60px -26px rgba(3,7,18,.55) !important;
+}
+#etc-hero .elementor-widget-video .elementor-wrapper iframe,
+#etc-hero .elementor-widget-video .elementor-wrapper video,
+#etc-hero .elementor-widget-video .elementor-custom-embed-image-overlay{
+    position:absolute!important; inset:0!important; width:100%!important; height:100%!important;
+    border-radius: inherit;
+}
+/* the aura behind the player is not in the reference */
+.etc-hero-video-col::before{ display:none!important; }
+</style>
+<script>
+/* Replaces the round 9 height-sync script: the video keeps its own 16:9 shape now.
+   Inline `height ... !important` beats any stylesheet rule, so it has to be cleared here. */
+(function () {
+    function clear() {
+        var wrap = document.querySelector('#etc-hero .elementor-widget-video .elementor-wrapper');
+        if (!wrap) return;
+        wrap.style.removeProperty('height');
+        wrap.classList.remove('etc-synced');
+    }
+    clear();
+    window.addEventListener('load', clear);
+    window.addEventListener('resize', clear);
+    setTimeout(clear, 900);   /* the old sync script re-applies at 800ms */
+    setTimeout(clear, 1500);
+})();
+</script>
